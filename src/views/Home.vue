@@ -1,11 +1,17 @@
 <template>
   <div class="home">
-      <h1>Hi, I'm Dane.</h1>
+    <Heading>
+      Hi, I'm Dane.
+    </Heading>
   </div>
 </template>
 
 <script>
+import Heading from '@/components/Heading'
 export default {
-  name: 'home'
+  name: 'home',
+  components: {
+    Heading
+  }
 }
 </script>
