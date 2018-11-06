@@ -1,17 +1,19 @@
 <template>
-  <div class="home">
-    <Heading>
-      Hi, I'm Dane.
-    </Heading>
-  </div>
+    <main>
+        <BaseHeading>
+            Hi, I'm Dane.
+        </BaseHeading>
+    </main>
 </template>
 
 <script>
-import Heading from '@/components/Heading'
+import BaseHeading from '@/components/BaseHeading'
+import BaseParagraph from '@/components/BaseParagraph'
 export default {
-  name: 'home',
+  name: 'Home',
   components: {
-    Heading
+    BaseHeading,
+    BaseParagraph
   }
 }
 </script>
