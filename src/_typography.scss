@@ -1,0 +1,25 @@
+@import 'spacing';
+@import 'colors';
+
+:root {
+    --font-primary: 'Open Sans', sans-serif;
+    --font-secondary: 'Times New Roman', serif;
+    --font-title: 'Fredericka the Great', serif;
+    --font-title-weight: normal;
+
+    --heading-line-height: 1.2;
+    --body-line-height: 1.5;
+
+    --text-color: var(--dark-gray);
+
+    --text-base-size: 1em;
+    --text-scale-ratio: 1.618;
+
+    --text-xs: calc(var(--text-sm) / var(--text-scale-ratio));
+    --text-sm: calc(var(--text-md) / var(--text-scale-ratio));
+    --text-md: var(--text-base-size);
+    --text-lg: calc(var(--text-md) * var(--text-scale-ratio));
+    --text-xl: calc(var(--text-lg) * var(--text-scale-ratio));
+    --text-xxl: calc(var(--text-xl) * var(--text-scale-ratio));
+    --text-xxxl: calc(var(--text-xxl) * var(--text-scale-ratio));
+}
