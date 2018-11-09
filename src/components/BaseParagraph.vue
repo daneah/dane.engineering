@@ -15,7 +15,7 @@ p {
     line-height: var(--body-line-height);
     word-break: break-word;
     hyphens: auto;
-    max-width: 75ch;
+    max-width: 60ch;
     text-align: justify;
 
     & + p {
