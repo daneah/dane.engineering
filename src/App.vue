@@ -1,6 +1,8 @@
 <template>
     <div id="app">
-        <router-view />
+        <transition name="fade">
+            <router-view />
+        </transition>
     </div>
 </template>
 
@@ -21,5 +23,15 @@ body {
 
 main {
     padding: var(--space-xxl);
+}
+
+.fade-enter-active {
+  transition-property: opacity;
+  transition-duration: 0.5s;
+}
+
+.fade-leave-to,
+.fade-enter {
+  opacity: 0;
 }
 </style>
