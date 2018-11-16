@@ -5,8 +5,8 @@
         </BaseHeading>
         <ul class="talk-list">
             <li>
-                <BaseHeading level="2">Serverless Django with Zappa</BaseHeading>
-                <BaseHeading level="3">DjangoCon US 2018</BaseHeading>
+                <BaseHeading :level="2">Serverless Django with Zappa</BaseHeading>
+                <BaseHeading :level="3">DjangoCon US 2018</BaseHeading>
                 <div class="talk-instance__visuals">
                     <ResponsiveImage
                         :src="require('@/assets/djangocon.png')"

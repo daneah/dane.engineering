@@ -3,7 +3,6 @@
         <BaseHeading>
             Hi, I'm Dane.
         </BaseHeading>
-        <router-link to="talks">Talks</router-link>
     </main>
 </template>
 
