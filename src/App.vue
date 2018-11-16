@@ -1,5 +1,7 @@
 <template>
     <div id="app">
+        <BaseNav :links="navLinks" />
+
         <transition name="fade">
             <router-view />
         </transition>
@@ -7,8 +9,13 @@
 </template>
 
 <script>
+import BaseNav from '@/components/BaseNav';
+
 export default {
   name: 'App',
+  components: {
+    BaseNav
+  },
   metaInfo () {
     return {
       title: 'GIVE ME A TITLE',
@@ -26,6 +33,14 @@ export default {
         }
       ]
     }
+  },
+  data () {
+    return {
+      navLinks: [
+        { to: 'home', text: 'Home' },
+        { to: 'talks', text: 'Talks' },
+      ]
+    }
   }
 }
 </script>
@@ -40,7 +55,7 @@ body {
 }
 
 main {
-    padding: var(--space-xxl);
+    margin: var(--space-xl) var(--space-xxl);
 }
 
 .fade-enter-active {
