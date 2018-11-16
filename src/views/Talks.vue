@@ -17,6 +17,21 @@ import YouTubeEmbed from '@/components/YouTubeEmbed'
 
 export default {
   name: 'Talks',
+  metaInfo: {
+    title: 'Talks',
+    meta: [
+      {
+        property: 'og:title',
+        content: 'Talks | Dane Hillard',
+        vmid: 'og:title'
+      },
+      {
+        property: 'og:url',
+        content: '//dane.engineering/talks',
+        vmid: 'og:url'
+      }
+    ]
+  },
   components: {
     BaseHeading,
     YouTubeEmbed

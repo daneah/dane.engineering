@@ -8,7 +8,25 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  metaInfo () {
+    return {
+      title: 'GIVE ME A TITLE',
+      titleTemplate: chunk => `${chunk} | Dane Hillard`,
+      meta: [
+        {
+          property: 'og:title',
+          content: 'GIVE ME A TITLE',
+          vmid: 'og:title'
+        },
+        {
+          property: 'og:url',
+          content: 'GIVE ME A URL',
+          vmid: 'og:url'
+        }
+      ]
+    }
+  }
 }
 </script>
 
