@@ -52,6 +52,10 @@ nav {
             &:first-child a {
                 padding-left: 0;
             }
+
+            &.router-link-exact-active a {
+                color: #4652cc;
+            }
         }
     }
 }
