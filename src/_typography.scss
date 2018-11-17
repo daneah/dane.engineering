@@ -22,4 +22,12 @@
     --text-xl: calc(var(--text-lg) * var(--text-scale-ratio));
     --text-xxl: calc(var(--text-xl) * var(--text-scale-ratio));
     --text-xxxl: calc(var(--text-xxl) * var(--text-scale-ratio));
+
+    @media (max-width: 1200px) {
+        --text-base-size: 0.8em;
+    }
+
+    @media (max-width: 480px) {
+        --text-base-size: 0.7em;
+    }
 }
