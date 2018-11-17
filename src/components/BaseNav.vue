@@ -1,14 +1,24 @@
 <template>
     <nav>
         <ul>
-            <router-link
+            <template
                 v-for="link in links"
-                :key="link.to"
-                tag="li"
-                :to="{ name: link.to }"
             >
-                <a>{{ link.text }}</a>
-            </router-link>
+                <router-link
+                    v-if="activeLinks.includes(link)"
+                    :key="link"
+                    tag="li"
+                    :to="{ name: link.to }"
+                >
+                    <a>{{ link.text }}</a>
+                </router-link>
+                <li
+                    v-else
+                    :key="link"
+                >
+                    <span>{{ link.text }}</span>
+                </li>
+            </template>
         </ul>
     </nav>
 </template>
@@ -20,6 +30,12 @@ export default {
     links: {
       type: Array,
       required: true
+    }
+  },
+  computed: {
+    activeLinks () {
+      const currentRoute = this.$route.name
+      return this.links.filter(link => link.to !== currentRoute)
     }
   }
 }
@@ -37,24 +53,24 @@ nav {
         li {
             display: inline-block;
 
-            a {
+            a,
+            span {
                 display: block;
                 padding: var(--space-md) var(--space-sm) 0 var(--space-sm);
                 text-decoration: none;
                 font-size: var(--text-lg);
                 color: var(--text-color);
-
-                &:hover {
-                    text-decoration: underline;
-                }
             }
 
-            &:first-child a {
+            a:hover {
+                text-decoration: underline;
+            }
+
+            &:first-child {
+              a,
+              span {
                 padding-left: 0;
-            }
-
-            &.router-link-exact-active a {
-                color: #4652cc;
+              }
             }
         }
     }
