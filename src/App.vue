@@ -45,8 +45,7 @@ export default {
       titleTemplate: chunk => `${chunk} | Dane Hillard`,
       meta: [
         {
-          property: 'og:title',
-          content: 'GIVE ME A TITLE',
+          property: 'og:title', content: 'GIVE ME A TITLE',
           vmid: 'og:title'
         },
         {
@@ -61,6 +60,7 @@ export default {
     return {
       navLinks: [
         { to: 'talks', text: 'Talks' },
+        { to: 'https://github.com/daneah', text: 'GitHub', external: true },
       ]
     }
   }
@@ -100,7 +100,7 @@ main {
 }
 
 .impact-heading {
-  font-size: var(--text-xxl);
+  font-size: var(--text-xl);
   font-family: var(--font-title);
 }
 
