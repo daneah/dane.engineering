@@ -16,7 +16,6 @@ p {
     word-break: break-word;
     hyphens: auto;
     max-width: 60ch;
-    text-align: justify;
 
     & + p {
         text-indent: var(--space-lg);

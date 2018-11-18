@@ -1,6 +1,27 @@
 <template>
     <div id="app">
-        <BaseNav :links="navLinks" />
+        <BaseNav :links="navLinks">
+            <template slot="brand">
+                <template v-if="$route.name === 'home'">
+                    <div class="impact-heading">Hi, I'm Dane.</div>
+                </template>
+                <template v-else>
+                    <router-link
+                        tag="div"
+                        :to="{ name: 'home' }"
+                    >
+                        <BaseLink
+                            href="/"
+                            class="impact-heading"
+                            :external="false"
+                            :clean="true"
+                        >
+                            Hi, I'm Dane.
+                        </BaseLink>
+                    </router-link>
+                </template>
+            </template>
+        </BaseNav>
 
         <transition name="fade">
             <router-view />
@@ -10,11 +31,13 @@
 
 <script>
 import BaseNav from '@/components/BaseNav';
+import BaseLink from '@/components/BaseLink';
 
 export default {
   name: 'App',
   components: {
-    BaseNav
+    BaseNav,
+    BaseLink
   },
   metaInfo () {
     return {
@@ -37,7 +60,6 @@ export default {
   data () {
     return {
       navLinks: [
-        { to: 'home', text: 'Home' },
         { to: 'talks', text: 'Talks' },
       ]
     }
@@ -52,10 +74,34 @@ body {
     font-size: var(--text-base-size);
     font-family: var(--font-primary);
     color: var(--text-color);
+    padding: var(--space-xl);
+}
+
+#app {
+    display: grid;
+    grid-template-areas:
+        "nav"
+        "main";
+    grid-gap: var(--space-xxl);
+
+    @media (min-width: 700px) {
+        grid-template-columns: max-content auto;
+        grid-template-areas:
+            "nav main";
+    }
+}
+
+nav {
+    grid-area: nav;
 }
 
 main {
-    margin: var(--space-xl) var(--space-xxl);
+    grid-area: main;
+}
+
+.impact-heading {
+  font-size: var(--text-xxl);
+  font-family: var(--font-title);
 }
 
 .fade-enter-active {
