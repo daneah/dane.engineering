@@ -9,27 +9,42 @@
             <template
                 v-for="link in links"
             >
-                <router-link
-                    v-if="activeLinks.includes(link)"
-                    :key="link.to"
-                    tag="li"
-                    :to="{ name: link.to }"
-                    class="nav-link"
-                >
-                    <BaseLink
-                        :href="link.to"
-                        :external="false"
+                <template v-if="link.external">
+                    <li
+                        :key="link.to"
+                        class="nav-link"
                     >
-                        {{ link.text }}
-                    </BaseLink>
-                </router-link>
-                <li
-                    v-else
-                    :key="link.to"
-                    class="nav-link"
-                >
-                    <span>{{ link.text }}</span>
-                </li>
+                        <BaseLink
+                            :href="link.to"
+                            :external="true"
+                        >
+                            {{ link.text }}
+                        </BaseLink>
+                    </li>
+                </template>
+                <template v-else>
+                    <router-link
+                        v-if="activeLinks.includes(link)"
+                        :key="link.to"
+                        tag="li"
+                        :to="{ name: link.to }"
+                        class="nav-link"
+                    >
+                        <BaseLink
+                            :href="link.to"
+                            :external="link.external || false"
+                        >
+                            {{ link.text }}
+                        </BaseLink>
+                    </router-link>
+                    <li
+                        v-else
+                        :key="link.to"
+                        class="nav-link"
+                    >
+                        <span>{{ link.text }}</span>
+                    </li>
+                </template>
             </template>
         </ul>
     </nav>
