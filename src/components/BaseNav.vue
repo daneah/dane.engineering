@@ -1,20 +1,32 @@
 <template>
     <nav>
         <ul>
+            <li class="brand">
+                <slot name="brand">
+                    Brand
+                </slot>
+            </li>
             <template
                 v-for="link in links"
             >
                 <router-link
                     v-if="activeLinks.includes(link)"
-                    :key="link"
+                    :key="link.to"
                     tag="li"
                     :to="{ name: link.to }"
+                    class="nav-link"
                 >
-                    <a>{{ link.text }}</a>
+                    <BaseLink
+                        :href="link.to"
+                        :external="false"
+                    >
+                        {{ link.text }}
+                    </BaseLink>
                 </router-link>
                 <li
                     v-else
-                    :key="link"
+                    :key="link.to"
+                    class="nav-link"
                 >
                     <span>{{ link.text }}</span>
                 </li>
@@ -24,8 +36,13 @@
 </template>
 
 <script>
+import BaseLink from '@/components/BaseLink';
+
 export default {
   name: 'BaseNav',
+  components: {
+    BaseLink
+  },
   props: {
     links: {
       type: Array,
@@ -45,34 +62,14 @@ export default {
 @import '@/main.scss';
 
 nav {
-    margin: 0 var(--space-xxl);
-
     ul {
         list-style: none;
-
-        li {
-            display: inline-block;
-
-            a,
-            span {
-                display: block;
-                padding: var(--space-md) var(--space-sm) 0 var(--space-sm);
-                text-decoration: none;
-                font-size: var(--text-lg);
-                color: var(--text-color);
-            }
-
-            a:hover {
-                text-decoration: underline;
-            }
-
-            &:first-child {
-              a,
-              span {
-                padding-left: 0;
-              }
-            }
-        }
     }
+}
+
+.nav-link {
+  font-size: var(--text-lg);
+  padding: var(--space-xs);
+  padding-left: 0;
 }
 </style>
