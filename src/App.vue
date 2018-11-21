@@ -62,6 +62,7 @@ export default {
         { to: 'talks', text: 'Talks' },
         { to: 'resume', text: 'Résumé' },
         { to: 'https://github.com/daneah', text: 'GitHub', external: true },
+        { to: 'https://twitter.com/easyaspython', text: 'Twitter', external: true },
       ]
     }
   }
