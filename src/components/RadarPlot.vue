@@ -96,7 +96,7 @@ export default {
 .svg-container {
   width: 100%;
   height: 0;
-  padding-top: 47%;
+  padding-top: 100%;
   position: relative;
   max-width: 500px;
 }
