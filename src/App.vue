@@ -60,6 +60,7 @@ export default {
     return {
       navLinks: [
         { to: 'talks', text: 'Talks' },
+        { to: 'resume', text: 'Résumé' },
         { to: 'https://github.com/daneah', text: 'GitHub', external: true },
       ]
     }

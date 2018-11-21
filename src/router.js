@@ -3,6 +3,7 @@ import Meta from 'vue-meta'
 import Router from 'vue-router'
 import Home from '@/views/Home'
 import Talks from '@/views/Talks'
+import Resume from '@/views/Resume'
 
 Vue.use(Router)
 Vue.use(Meta)
@@ -20,6 +21,11 @@ export default new Router({
       path: '/talks',
       name: 'talks',
       component: Talks
+    },
+    {
+      path: '/resume',
+      name: 'resume',
+      component: Resume
     }
   ]
 })
