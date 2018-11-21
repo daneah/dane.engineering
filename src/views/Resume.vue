@@ -3,17 +3,24 @@
         <BaseHeading>Résumé</BaseHeading>
 
         <BaseHeading :level="2">Skills</BaseHeading>
-        <BaseHeading :level="3">Languages</BaseHeading>
-        <RadarPlot
-            :levels="5"
-            :characteristics="languages"
-        />
 
-        <BaseHeading :level="3">Frameworks and Tools</BaseHeading>
-        <RadarPlot
-            :levels="5"
-            :characteristics="frameworksAndTools"
-        />
+        <div class="skills">
+            <div class="skill">
+                <BaseHeading :level="3">Languages</BaseHeading>
+                <RadarPlot
+                    :levels="5"
+                    :characteristics="languages"
+                />
+            </div>
+
+            <div class="skill">
+                <BaseHeading :level="3">Frameworks and Tools</BaseHeading>
+                <RadarPlot
+                    :levels="5"
+                    :characteristics="frameworksAndTools"
+                />
+            </div>
+        </div>
     </main>
 </template>
 
@@ -104,3 +111,14 @@ export default {
   }
 }
 </script>
+
+<style scoped lang="scss">
+.skills {
+  display: grid;
+
+  @media (min-width: 700px) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: var(--space-xxl);
+  }
+}
+</style>
