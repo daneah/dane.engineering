@@ -3,7 +3,10 @@
         ref="svgContainer"
         class="svg-container"
     >
-        <svg :viewBox="`0 0 ${size} ${size}`">
+        <svg
+            :viewBox="`0 0 ${size} ${size}`"
+            preserveAspectRatio="xMinyMin meet"
+        >
             <g :transform="`translate(${size / 2}, ${size / 2})`">
                 <circle
                     v-for="(level, levelIndex) in levels"
