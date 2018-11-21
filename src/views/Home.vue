@@ -30,11 +30,11 @@ export default {
     BaseLink
   },
   metaInfo: {
-    title: 'Home',
+    titleTemplate: 'Dane Hillard',
     meta: [
       {
         property: 'og:title',
-        content: 'Home | Dane Hillard',
+        content: 'Dane Hillard',
         vmid: 'og:title'
       },
       {
