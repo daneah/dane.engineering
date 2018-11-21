@@ -22,11 +22,6 @@ export default {
       required: false,
       default: true
     },
-    relOverride: {
-      type: String,
-      required: false,
-      default: 'noopener,noindex,nofollow'
-    },
     clean: {
       type: Boolean,
       required: false,
@@ -35,7 +30,7 @@ export default {
   },
   computed: {
     rel () {
-      return this.external ? 'noopener,noindex,nofollow' : false;
+      return this.external ? 'noopener noindex nofollow' : false;
     }
   }
 }
