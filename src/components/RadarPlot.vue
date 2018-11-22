@@ -98,7 +98,6 @@ export default {
   height: 0;
   padding-top: 100%;
   position: relative;
-  max-width: 500px;
 }
 
 svg {
