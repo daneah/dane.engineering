@@ -37,17 +37,24 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '@/_colors.scss';
 @import '@/_typography.scss';
 
 a {
-  color: var(--text-color);
+  --link-color: var(--blue);
+  --link-hover-color: var(--black);
 
-  &:hover {
-    color: var(--link-hover-color);
-  }
+  color: var(--link-color);
+  transition: color ease-in-out 0.1s;
 
   &.clean {
     text-decoration: none;
+    color: var(--text-color);
+  }
+
+  &:hover {
+    color: var(--link-hover-color);
+    transform: scale(1.2);
   }
 }
 </style>

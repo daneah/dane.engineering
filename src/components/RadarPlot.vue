@@ -93,6 +93,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '@/_colors.scss';
+
 .svg-container {
   width: 100%;
   height: 0;
@@ -126,9 +128,9 @@ text {
 }
 
 polygon {
-  fill: #2C82C9;
+  fill: var(--blue);
   fill-opacity: 0.7;
-  stroke: #2C82C9;
+  stroke: var(--blue);
   stroke-width: 2;
   stroke-opacity: 0.85;
 }
