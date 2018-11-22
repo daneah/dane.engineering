@@ -117,7 +117,7 @@ export default {
   display: grid;
 
   @media (min-width: 700px) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(auto, 375px));
     grid-gap: var(--space-xxl);
   }
 }
