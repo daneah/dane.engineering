@@ -2,6 +2,7 @@
     <main>
         <BaseHeading>Résumé</BaseHeading>
 
+        <BaseHeading :level="2">Experience</BaseHeading>
         <Timeline :entries="$store.state.employment" />
 
         <BaseHeading :level="2">Skills</BaseHeading>
