@@ -59,7 +59,7 @@ export default {
 }
 
 .timeline__group:not(:first-child) {
-  border-top: 1px solid var(--very-light-gray);
+  border-top: 1px solid var(--gray);
 }
 
 .entries {
