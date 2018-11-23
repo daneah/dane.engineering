@@ -5,7 +5,7 @@
     >
         <svg
             :viewBox="`0 0 ${size} ${size}`"
-            preserveAspectRatio="xMinyMin meet"
+            preserveAspectRatio="xMinYMin meet"
         >
             <g :transform="`translate(${size / 2}, ${size / 2})`">
                 <circle
