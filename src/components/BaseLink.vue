@@ -1,6 +1,6 @@
 <template>
     <a
-        :class="clean ? 'clean' : false"
+        :class="{'clean': clean}"
         :href="href"
         :target="external ? '_blank' : false"
         :rel="rel"

@@ -121,4 +121,8 @@ export default {
     grid-gap: var(--space-xxl);
   }
 }
+
+.skill {
+  margin-top: 0;
+}
 </style>

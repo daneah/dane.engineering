@@ -72,6 +72,15 @@ export default {
 <style lang="scss">
 @import '@/main.scss';
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
+* + * {
+    margin-top: var(--space-md);
+}
+
 body {
     font-size: var(--text-base-size);
     font-family: var(--font-primary);
@@ -98,6 +107,7 @@ nav {
 }
 
 main {
+    margin-top: 0;
     grid-area: main;
 }
 
@@ -114,5 +124,10 @@ main {
 .fade-leave-to,
 .fade-enter {
   opacity: 0;
+}
+
+code {
+  padding: 0.125em .5em;
+  background: var(--very-light-gray);
 }
 </style>

@@ -28,6 +28,7 @@ export default {
 <style scoped lang="scss">
 .embed-container {
   overflow: hidden;
+  margin-top: 0;
   padding-bottom: 56.25%;
   position: relative;
   height: 0;
