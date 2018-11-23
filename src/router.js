@@ -4,6 +4,7 @@ import Router from 'vue-router'
 import Home from '@/views/Home'
 import Talks from '@/views/Talks'
 import Resume from '@/views/Resume'
+import NotFound from '@/views/NotFound'
 
 Vue.use(Router)
 Vue.use(Meta)
@@ -26,6 +27,11 @@ export default new Router({
       path: '/resume',
       name: 'resume',
       component: Resume
+    },
+    {
+      path: '*',
+      name: 'notfound',
+      component: NotFound
     }
   ]
 })
