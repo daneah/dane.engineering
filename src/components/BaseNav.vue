@@ -84,6 +84,7 @@ nav {
 
 .nav-link {
   font-size: var(--text-lg);
+  margin-top: 0;
   padding: var(--space-xs);
   padding-left: 0;
 }
