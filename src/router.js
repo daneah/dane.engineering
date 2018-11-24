@@ -4,6 +4,8 @@ import Router from 'vue-router'
 import Home from '@/views/Home'
 import Talks from '@/views/Talks'
 import Resume from '@/views/Resume'
+import Contact from '@/views/Contact'
+import ContactSuccess from '@/views/ContactSuccess'
 import NotFound from '@/views/NotFound'
 
 Vue.use(Router)
@@ -27,6 +29,16 @@ export default new Router({
       path: '/resume',
       name: 'resume',
       component: Resume
+    },
+    {
+      path: '/contact',
+      name: 'contact',
+      component: Contact
+    },
+    {
+      path: '/thanks',
+      name: 'thanks',
+      component: ContactSuccess
     },
     {
       path: '*',
