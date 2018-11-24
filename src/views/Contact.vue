@@ -3,6 +3,7 @@
         <BaseHeading>Get in Touch</BaseHeading>
 
         <BaseForm
+            action="/thanks"
             name="contact"
             class="form"
             method="post"
@@ -48,12 +49,6 @@ export default {
     BaseHeading,
     BaseForm,
     BaseButton
-  },
-  data () {
-    return {
-      submitted: false,
-      errored: false,
-    }
   },
   metaInfo: {
     title: 'Contact',

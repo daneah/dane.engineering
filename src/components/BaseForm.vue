@@ -1,6 +1,5 @@
 <template>
     <form
-        action=""
         netlify
         netlify-honeypot="pwned"
     >
