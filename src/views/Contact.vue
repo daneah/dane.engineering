@@ -5,8 +5,7 @@
         <BaseForm
             name="contact"
             class="form"
-            method="POST"
-            @form-submission="handleSubmission"
+            method="post"
         >
             <label for="email">email</label>
             <input
@@ -48,21 +47,6 @@ export default {
     return {
       submitted: false,
       errored: false,
-    }
-  },
-  methods: {
-    handleSubmission (form) {
-      fetch('/', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-        body: new FormData(form)
-      })
-      .then(() => {
-        console.log('success!');
-      })
-      .catch(() => {
-        console.log('fail!');
-      });
     }
   },
   metaInfo: {

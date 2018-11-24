@@ -1,25 +1,25 @@
 <template>
     <form
-        data-netlify="true"
-        data-netlify-honeypot="pwned"
-        @submit.prevent="emitSubmissionEvent"
+        action=""
+        netlify
+        netlify-honeypot="pwned"
     >
-        <input
-            type="hidden"
-            name="pwned"
-        >
+        <p class="hidden">
+            <label for="pwned">
+                Don't fill this field out, humans!
+            </label>
+            <input
+                id="pwned"
+                name="pwned"
+            >
+        </p>
         <slot />
     </form>
 </template>
 
 <script>
 export default {
-  name: 'BaseForm',
-  methods: {
-    emitSubmissionEvent () {
-      this.$emit('form-submission', this.$el);
-    }
-  }
+  name: 'BaseForm'
 }
 </script>
 
@@ -39,5 +39,9 @@ textarea {
 
 textarea {
   height: 5em;
+}
+
+.hidden {
+  display: none;
 }
 </style>
