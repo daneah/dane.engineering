@@ -24,10 +24,10 @@
     --text-xxxl: calc(var(--text-xxl) * var(--text-scale-ratio));
 
     @media (max-width: 1200px) {
-        --text-base-size: 0.8em;
+        --text-base-size: 0.85em;
     }
 
     @media (max-width: 480px) {
-        --text-base-size: 0.7em;
+        --text-base-size: 0.8em;
     }
 }
