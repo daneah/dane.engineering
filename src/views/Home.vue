@@ -86,6 +86,27 @@
                 <Card>
                     <template slot="image">
                         <BaseLink
+                            href="https://github.com/ithaka/apiron"
+                        >
+                            <ResponsiveImage
+                                :src="require('@/assets/apiron.png')"
+                                alt="Screenshot of apiron GitHub page"
+                            />
+                        </BaseLink>
+                    </template>
+                    <template slot="title">apiron</template>
+                    <template slot="description">
+                        <p>
+                            <code>apiron</code> is a Python library for building RESTful API clients.
+                            We built this at ITHAKA to speed up development and interact with our internal services more consistently.
+                        </p>
+                    </template>
+                </Card>
+            </li>
+            <li class="project">
+                <Card>
+                    <template slot="image">
+                        <BaseLink
                             href="https://www.danehillard.com"
                             :rel="false"
                         >
@@ -146,10 +167,11 @@ export default {
 .projects {
   list-style: none;
   display: grid;
+  grid-gap: var(--space-md);
 
   @media (min-width: 700px) {
-    grid-template-columns: repeat(2, minmax(auto, 375px));
-    grid-gap: var(--space-xxl);
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: var(--space-xl);
   }
 }
 
