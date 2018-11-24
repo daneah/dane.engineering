@@ -2,22 +2,30 @@
     <main>
         <BaseHeading>About Dane</BaseHeading>
 
-        <BaseParagraph>
-            Dane grew up in Michigan and currently lives in Pittsburgh, Pennsylvania.
-        </BaseParagraph>
+        <div class="about">
+            <div class="bio">
+                <BaseParagraph>
+                    Dane grew up in Michigan and currently lives in Pittsburgh, Pennsylvania.
+                </BaseParagraph>
 
-        <BaseParagraph>
-            Dane has a B.S.E in computer engineering with a minor in mathematics from the University of Michigan.
-            As a software engineer, Dane has worked on research and development at SAIC (now <BaseLink href="https://www.leidos.com/">Leidos</BaseLink>)
-            and personalized cancer genomics at Compendia Bioscience (now part of <BaseLink href="https://www.thermofisher.com">Thermo Fisher Scientific</BaseLink>).
-            As a web application developer at <BaseLink href="https://www.ithaka.org">ITHAKA</BaseLink>,
-            his focus is mainly on web development in Python, Django, and front-end technologies to enable academic research.
-        </BaseParagraph>
+                <BaseParagraph>
+                    Dane has a B.S.E in computer engineering with a minor in mathematics from the University of Michigan.
+                    As a software engineer, Dane has worked on research and development at SAIC (now <BaseLink href="https://www.leidos.com/">Leidos</BaseLink>)
+                    and personalized cancer genomics at Compendia Bioscience (now part of <BaseLink href="https://www.thermofisher.com">Thermo Fisher Scientific</BaseLink>).
+                    As a web application developer at <BaseLink href="https://www.ithaka.org">ITHAKA</BaseLink>,
+                    his focus is mainly on web development in Python, Django, and front-end technologies to enable academic research.
+                </BaseParagraph>
 
-        <BaseParagraph>
-            Dane is an engineer, musician, photographer, dancer, and creative.
-            Contribute to his rampant serial hobbyism by reaching out about stuff you want to build together.
-        </BaseParagraph>
+                <BaseParagraph>
+                    Dane is an engineer, musician, photographer, dancer, and creative.
+                    Contribute to his rampant serial hobbyism by reaching out about stuff you want to build together.
+                </BaseParagraph>
+            </div>
+            <ResponsiveImage
+                :src="require('@/assets/dane-hillard.png')"
+                alt="Portrait of Dane Hillard"
+            />
+        </div>
 
         <BaseHeading :level="2">Projects</BaseHeading>
         <ul class="projects">
@@ -177,5 +185,26 @@ export default {
 
 .project {
   margin-top: 0;
+}
+
+.about {
+  display: grid;
+  grid-gap: var(--space-lg);
+
+  @media (max-width: 700px) {
+    img {
+      width: 50%;
+      min-width: 100px;
+      margin: 0 auto;
+    }
+  }
+
+  @media (min-width: 700px) {
+    grid-template-columns: minmax(200px, max-content) minmax(100px, 250px);
+
+    img {
+      margin-top: 0;
+    }
+  }
 }
 </style>
