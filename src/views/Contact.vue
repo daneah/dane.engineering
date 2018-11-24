@@ -7,6 +7,12 @@
             class="form"
             method="post"
         >
+            <input
+                type="hidden"
+                name="form-name"
+                value="contact"
+            >
+
             <label for="email">email</label>
             <input
                 id="email"
