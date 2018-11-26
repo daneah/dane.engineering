@@ -5,7 +5,7 @@
         <div class="about">
             <div class="bio">
                 <BaseParagraph>
-                    Dane grew up in Michigan and currently lives in Pittsburgh, Pennsylvania.
+                    Dane Hillard is a software engineer and web developer interested in education, biotechnology, and open source.
                 </BaseParagraph>
 
                 <BaseParagraph>
@@ -17,8 +17,7 @@
                 </BaseParagraph>
 
                 <BaseParagraph>
-                    Dane is an engineer, musician, photographer, dancer, and creative.
-                    Contribute to his rampant serial hobbyism by reaching out about stuff you want to build together.
+                    Dane grew up in Michigan and currently lives in Pittsburgh, Pennsylvania.
                 </BaseParagraph>
             </div>
             <ResponsiveImage
@@ -35,58 +34,15 @@
                         <BaseLink href="https://github.com/daneah/pixelize">
                             <ResponsiveImage
                                 :src="require('@/assets/pixelize.png')"
-                                alt="Pixelize project screenshot"
+                                alt="pixelize project screenshot"
                             />
                         </BaseLink>
                     </template>
-                    <template slot="title">Pixelize</template>
+                    <template slot="title">pixelize</template>
                     <template slot="description">
-                        <p>
+                        <BaseParagraph>
                             <code>pixelize</code> is a tool to make glitch art from source images.
-                        </p>
-                    </template>
-                </Card>
-            </li>
-            <li class="project">
-                <Card>
-                    <template slot="image">
-                        <BaseLink
-                            href="https://www.littleleviathan.com"
-                            :rel="false"
-                        >
-                            <ResponsiveImage
-                                :src="require('@/assets/little-leviathan.png')"
-                                alt="Little Leviathan screenshot"
-                            />
-                        </BaseLink>
-                    </template>
-                    <template slot="title">Little Leviathan</template>
-                    <template slot="description">
-                        <p>
-                            Little Leviathan is the name I write music under and is the name of my first album.
-                        </p>
-                    </template>
-                </Card>
-            </li>
-            <li class="project">
-                <Card>
-                    <template slot="image">
-                        <BaseLink
-                            href="https://ballroomdance.club"
-                        >
-                            <ResponsiveImage
-                                :src="require('@/assets/the-ballroom-dance-club.png')"
-                                alt="The Ballroom Dance Club logo"
-                            />
-                        </BaseLink>
-                    </template>
-                    <template slot="title">The Ballroom Dance Club</template>
-                    <template slot="description">
-                        <p>
-                            I was a competitive ballroom dancer for many years.
-                            I totally revamped the local ballroom dance club's website,
-                            helping users better find the schedule, membership options, and information about the dances.
-                        </p>
+                        </BaseParagraph>
                     </template>
                 </Card>
             </li>
@@ -104,10 +60,10 @@
                     </template>
                     <template slot="title">apiron</template>
                     <template slot="description">
-                        <p>
+                        <BaseParagraph>
                             <code>apiron</code> is a Python library for building RESTful API clients.
                             We built this at ITHAKA to speed up development and interact with our internal services more consistently.
-                        </p>
+                        </BaseParagraph>
                     </template>
                 </Card>
             </li>
@@ -115,21 +71,19 @@
                 <Card>
                     <template slot="image">
                         <BaseLink
-                            href="https://www.danehillard.com"
-                            :rel="false"
+                            href="https://codepen.io/collection/DOmwxa/"
                         >
                             <ResponsiveImage
-                                :src="require('@/assets/dane-hillard-photography.png')"
-                                alt="Dane Hillard Photography screenshot"
+                                :src="require('@/assets/mondrian.png')"
+                                alt="Screenshot of the Mondrian collection on CodePen"
                             />
                         </BaseLink>
                     </template>
-                    <template slot="title">Dane Hillard Photography</template>
+                    <template slot="title">Mondrian</template>
                     <template slot="description">
-                        <p>
-                            I'm a fashion and lifestyle photographer.
-                            A majority of clients find me online so a portfolio and blog posts about my work draw people in.
-                        </p>
+                        <BaseParagraph>
+                            A collection of Mondrian works recreated in CSS Grid
+                        </BaseParagraph>
                     </template>
                 </Card>
             </li>
