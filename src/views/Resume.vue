@@ -32,6 +32,9 @@ import BaseHeading from '@/components/BaseHeading'
 import RadarPlot from '@/components/RadarPlot'
 import Timeline from '@/components/Timeline'
 
+const PAGE_TITLE = 'Résumé',
+    PAGE_DESCRIPTION = 'Professional skills and experience for Dane Hillard: Python, Django, JavaScript, CSS, and more.'
+
 export default {
   name: 'Resume',
   components: {
@@ -40,17 +43,27 @@ export default {
     Timeline
   },
   metaInfo: {
-    title: 'Résumé',
+    title: PAGE_TITLE,
     meta: [
       {
         property: 'og:title',
-        content: 'Résumé | Dane Hillard',
+        content: `${PAGE_TITLE} | Dane Hillard`,
         vmid: 'og:title'
       },
       {
         property: 'og:url',
         content: '//dane.engineering/resume',
         vmid: 'og:url'
+      },
+      {
+        name: 'description',
+        content: PAGE_DESCRIPTION,
+        vmid: 'description'
+      },
+      {
+        property: 'og:description',
+        content: PAGE_DESCRIPTION,
+        vmid: 'og:description'
       }
     ]
   }

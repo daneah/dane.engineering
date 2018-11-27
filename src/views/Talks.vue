@@ -24,27 +24,40 @@ import BaseHeading from '@/components/BaseHeading'
 import YouTubeEmbed from '@/components/YouTubeEmbed'
 import ResponsiveImage from '@/components/ResponsiveImage'
 
+const PAGE_TITLE = 'Talks',
+    PAGE_DESCRIPTION = 'Django and Python Conference talks by Dane Hillard'
+
 export default {
   name: 'Talks',
+  components: {
+    BaseHeading,
+    YouTubeEmbed,
+    ResponsiveImage
+  },
   metaInfo: {
-    title: 'Talks',
+    title: PAGE_TITLE,
     meta: [
       {
         property: 'og:title',
-        content: 'Talks | Dane Hillard',
+        content: `${PAGE_TITLE} | Dane Hillard`,
         vmid: 'og:title'
       },
       {
         property: 'og:url',
         content: '//dane.engineering/talks',
         vmid: 'og:url'
+      },
+      {
+        name: 'description',
+        content: PAGE_DESCRIPTION,
+        vmid: 'description'
+      },
+      {
+        property: 'og:description',
+        content: PAGE_DESCRIPTION,
+        vmid: 'og:description'
       }
     ]
-  },
-  components: {
-    BaseHeading,
-    YouTubeEmbed,
-    ResponsiveImage
   }
 }
 </script>

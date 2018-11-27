@@ -43,6 +43,9 @@ import BaseHeading from '@/components/BaseHeading'
 import BaseForm from '@/components/BaseForm'
 import BaseButton from '@/components/BaseButton'
 
+const PAGE_TITLE = 'Contact',
+    PAGE_DESCRIPTION = 'Get in touch with Dane to contribute to his rampant serial hobbyism'
+
 export default {
   name: 'Contact',
   components: {
@@ -51,17 +54,27 @@ export default {
     BaseButton
   },
   metaInfo: {
-    title: 'Contact',
+    title: PAGE_TITLE,
     meta: [
       {
         property: 'og:title',
-        content: 'Contact | Dane Hillard',
+        content: `${PAGE_TITLE} | Dane Hillard`,
         vmid: 'og:title'
       },
       {
         property: 'og:url',
         content: '//dane.engineering/contact',
         vmid: 'og:url'
+      },
+      {
+        name: 'description',
+        content: PAGE_DESCRIPTION,
+        vmid: 'description'
+      },
+      {
+        property: 'og:description',
+        content: PAGE_DESCRIPTION,
+        vmid: 'og:description'
       }
     ]
   }

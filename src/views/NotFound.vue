@@ -24,6 +24,9 @@ import BaseHeading from '@/components/BaseHeading'
 import BaseParagraph from '@/components/BaseParagraph'
 import BaseLink from '@/components/BaseLink'
 
+const PAGE_TITLE = 'Page Not Found',
+    PAGE_DESCRIPTION = 'This page does not exist'
+
 export default {
   name: 'NotFound',
   components: {
@@ -32,7 +35,29 @@ export default {
     BaseLink
   },
   metaInfo: {
-    title: 'Page Not Found'
+    title: 'Page Not Found',
+    meta: [
+      {
+        name: 'description',
+        content: PAGE_DESCRIPTION,
+        vmid: 'description'
+      },
+      {
+        property: 'og:description',
+        content: PAGE_DESCRIPTION,
+        vmid: 'og:description'
+      },
+      {
+        property: 'og:title',
+        content: `${PAGE_TITLE} | Dane Hillard`,
+        vmid: 'og:title'
+      },
+      {
+        property: 'og:url',
+        content: window.location.href,
+        vmid: 'og:url'
+      }
+    ]
   }
 }
 </script>
