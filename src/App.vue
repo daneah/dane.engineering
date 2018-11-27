@@ -52,6 +52,11 @@ export default {
           property: 'og:url',
           content: 'GIVE ME A URL',
           vmid: 'og:url'
+        },
+        {
+          name: 'description',
+          content: 'GIVE ME A DESCRIPTION',
+          vmid: 'description'
         }
       ]
     }
