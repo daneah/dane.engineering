@@ -110,9 +110,9 @@ body {
         "main";
 
     @media (min-width: 700px) {
-        grid-template-columns: max-content 1fr 75vw 1fr;
+        grid-template-columns: max-content auto;
         grid-template-areas:
-            "nav pad-left main pad-right";
+            "nav main";
     }
 }
 
