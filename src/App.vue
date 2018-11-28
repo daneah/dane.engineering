@@ -92,20 +92,20 @@ body {
     font-size: var(--text-base-size);
     font-family: var(--font-primary);
     color: var(--text-color);
-    padding: var(--space-xl);
+    margin-top: 0;
 }
 
 #app {
+    margin-top: 0;
     display: grid;
     grid-template-areas:
         "nav"
         "main";
-    grid-gap: var(--space-xxl);
 
     @media (min-width: 700px) {
-        grid-template-columns: max-content auto;
+        grid-template-columns: max-content 1fr 75vw 1fr;
         grid-template-areas:
-            "nav main";
+            "nav pad-left main pad-right";
     }
 }
 
@@ -114,8 +114,13 @@ nav {
 }
 
 main {
-    margin-top: 0;
     grid-area: main;
+    margin-top: 0;
+    padding: var(--space-lg);
+
+    @media (min-width: 700px) {
+      padding: var(--space-xl);
+    }
 }
 
 .impact-heading {
