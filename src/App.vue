@@ -88,6 +88,13 @@ export default {
     margin-top: var(--space-md);
 }
 
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
 body {
     font-size: var(--text-base-size);
     font-family: var(--font-primary);
