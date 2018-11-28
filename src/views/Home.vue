@@ -132,7 +132,7 @@ export default {
   grid-gap: var(--space-md);
 
   @media (min-width: 700px) {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-gap: var(--space-xl);
   }
 }
@@ -145,7 +145,7 @@ export default {
   display: grid;
   grid-gap: var(--space-lg);
 
-  @media (max-width: 700px) {
+  @media (max-width: 699px) {
     img {
       width: 50%;
       min-width: 100px;

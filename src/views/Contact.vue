@@ -14,7 +14,7 @@
                 value="contact"
             >
 
-            <label for="email">email</label>
+            <label for="email">Email</label>
             <input
                 id="email"
                 type="email"
@@ -22,7 +22,7 @@
                 required="required"
             >
 
-            <label for="message">message</label>
+            <label for="message">Message</label>
             <textarea
                 id="message"
                 name="message"

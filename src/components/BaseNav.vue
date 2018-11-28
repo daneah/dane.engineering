@@ -77,8 +77,23 @@ export default {
 @import '@/main.scss';
 
 nav {
+    --nav-background: #D1EBFF;
+
+    padding: var(--space-lg);
+    background: var(--nav-background);
+
+    @media (min-width: 700px) {
+      min-height: calc(100vh - var(--space-xl) - var(--space-xl));
+      padding: var(--space-xl);
+    }
+
     ul {
         list-style: none;
+
+        @media (min-width: 700px) {
+          position: sticky;
+          top: var(--space-xl);
+        }
     }
 }
 
