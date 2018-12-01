@@ -2,18 +2,14 @@
     <main>
         <BaseHeading>Get in Touch</BaseHeading>
 
-        <BaseForm
+        <NetlifyForm
             action="/thanks"
             name="contact"
             class="form"
             method="post"
+            form-name="contact"
+            submit-button-text="Send"
         >
-            <input
-                type="hidden"
-                name="form-name"
-                value="contact"
-            >
-
             <label for="email">Email</label>
             <input
                 id="email"
@@ -27,21 +23,13 @@
                 id="message"
                 name="message"
             />
-
-            <div>
-                <BaseButton
-                    type="submit"
-                    text="Send"
-                />
-            </div>
-        </BaseForm>
+        </NetlifyForm>
     </main>
 </template>
 
 <script>
 import BaseHeading from '@/components/BaseHeading'
-import BaseForm from '@/components/BaseForm'
-import BaseButton from '@/components/BaseButton'
+import NetlifyForm from '@/components/NetlifyForm'
 
 const PAGE_TITLE = 'Contact',
     PAGE_DESCRIPTION = 'Get in touch with Dane to contribute to his rampant serial hobbyism'
@@ -50,8 +38,7 @@ export default {
   name: 'Contact',
   components: {
     BaseHeading,
-    BaseForm,
-    BaseButton
+    NetlifyForm
   },
   metaInfo: {
     title: PAGE_TITLE,

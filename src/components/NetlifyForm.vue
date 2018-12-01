@@ -3,6 +3,12 @@
         netlify
         netlify-honeypot="pwned"
     >
+        <input
+            type="hidden"
+            name="form-name"
+            :value="formName"
+        >
+
         <p class="hidden">
             <label for="pwned">
                 Don't fill this field out, humans!
@@ -12,13 +18,37 @@
                 name="pwned"
             >
         </p>
+
         <slot />
+
+        <div>
+            <BaseButton
+                type="submit"
+                :text="submitButtonText"
+            />
+        </div>
     </form>
 </template>
 
 <script>
+import BaseButton from '@/components/BaseButton'
+
 export default {
-  name: 'BaseForm'
+  name: 'NetlifyForm',
+  components: {
+    BaseButton
+  },
+  props: {
+    formName: {
+      type: String,
+      required: true
+    },
+    submitButtonText: {
+      type: String,
+      required: false,
+      default: 'Submit'
+    }
+  }
 }
 </script>
 
