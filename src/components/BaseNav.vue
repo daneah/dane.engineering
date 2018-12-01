@@ -46,6 +46,9 @@
                     </li>
                 </template>
             </template>
+            <div class="social">
+                <slot name="social-links" />
+            </div>
         </ul>
     </nav>
 </template>
@@ -102,5 +105,11 @@ nav {
   margin-top: 0;
   padding: var(--space-xs);
   padding-left: 0;
+}
+
+.social li {
+  display: inline-block;
+  margin-right: var(--space-sm);
+  margin-top: 0;
 }
 </style>

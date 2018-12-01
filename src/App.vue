@@ -21,6 +21,52 @@
                     </router-link>
                 </template>
             </template>
+            <template slot="social-links">
+                <li>
+                    <BaseLink
+                        href="https://twitter.com/easyaspython"
+                    >
+                        <img
+                            :src="require('@/assets/twitter.svg')"
+                            alt="Twitter icon"
+                            width="25"
+                        >
+                    </BaseLink>
+                </li>
+                <li>
+                    <BaseLink
+                        href="https://github.com/daneah"
+                    >
+                        <img
+                            :src="require('@/assets/github.svg')"
+                            alt="GitHub icon"
+                            width="25"
+                        >
+                    </BaseLink>
+                </li>
+                <li>
+                    <BaseLink
+                        href="https://dev.to/easyaspython"
+                    >
+                        <img
+                            :src="require('@/assets/dev-badge.svg')"
+                            alt="Dane Hillard's DEV Profile"
+                            height="25"
+                        />
+                    </BaseLink>
+                </li>
+                <li>
+                    <BaseLink
+                        href="https://easyaspython.com"
+                    >
+                        <img
+                            :src="require('@/assets/medium.svg')"
+                            alt="Medium logo"
+                            width="25"
+                        />
+                    </BaseLink>
+                </li>
+            </template>
         </BaseNav>
 
         <transition name="fade">
@@ -65,10 +111,7 @@ export default {
     return {
       navLinks: [
         { to: 'talks', text: 'Talks' },
-        { to: 'https://easyaspython.com', text: 'Writing', external: true },
         { to: 'resume', text: 'Résumé' },
-        { to: 'https://github.com/daneah', text: 'GitHub', external: true },
-        { to: 'https://twitter.com/easyaspython', text: 'Twitter', external: true },
         { to: 'contact', text: 'Contact' },
       ]
     }
