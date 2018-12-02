@@ -50,7 +50,7 @@
                 <ul class="social">
                     <slot name="social-links" />
                 </ul>
-            </li<
+            </li>
         </ul>
     </nav>
 </template>
