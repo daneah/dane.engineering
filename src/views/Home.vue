@@ -87,6 +87,32 @@
                     </template>
                 </Card>
             </li>
+            <li class="project">
+                <Card>
+                    <template slot="image">
+                        <BaseLink
+                            href="/toneshift.pdf"
+                            :external="false"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            <ResponsiveImage
+                                :src="require('@/assets/guitar.jpg')"
+                                alt="Guitar"
+                            />
+                        </BaseLink>
+                    </template>
+                    <template slot="title">ToneShift</template>
+                    <template slot="description">
+                        <BaseParagraph>
+                            Our 2007 senior design project at the University of Michigan
+                            to build a pitch-shifting device for electric guitars.
+                            For contemporary work in this area see <BaseLink href="https://guitarpitchshifter.com">Guitar Pitch Shifter</BaseLink>
+                            or Alan Pagliere's <BaseLink href="http://www.freepatentsonline.com/y2018/0053494.html">work on lap steel guitar tunings</BaseLink>.
+                        </BaseParagraph>
+                    </template>
+                </Card>
+            </li>
         </ul>
     </main>
 </template>
