@@ -52,7 +52,7 @@
                             :src="require('@/assets/dev-badge.svg')"
                             alt="Dane Hillard's DEV Profile"
                             height="25"
-                        />
+                        >
                     </BaseLink>
                 </li>
                 <li>
@@ -63,7 +63,7 @@
                             :src="require('@/assets/medium.svg')"
                             alt="Medium logo"
                             width="25"
-                        />
+                        >
                     </BaseLink>
                 </li>
             </template>
