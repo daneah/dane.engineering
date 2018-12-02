@@ -46,9 +46,9 @@
                     </li>
                 </template>
             </template>
-            <div class="social">
+            <ul class="social">
                 <slot name="social-links" />
-            </div>
+            </ul>
         </ul>
     </nav>
 </template>
