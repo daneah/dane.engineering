@@ -10,11 +10,41 @@
             form-name="contact"
             submit-button-text="Send"
         >
+            <input
+                type="hidden"
+                name="form-name"
+                value="contact"
+            >
+
+            <label for="fname">First name</label>
+            <input
+                id="fname"
+                type="text"
+                name="fname"
+                required="required"
+            >
+
+            <label for="lname">Last name</label>
+            <input
+                id="lname"
+                type="text"
+                name="lname"
+                required="required"
+            >
+
             <label for="email">Email</label>
             <input
                 id="email"
                 type="email"
                 name="email"
+                required="required"
+            >
+
+            <label for="subject">Subject</label>
+            <input
+                id="subject"
+                type="text"
+                name="subject"
                 required="required"
             >
 
