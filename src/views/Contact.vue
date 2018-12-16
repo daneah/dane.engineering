@@ -101,6 +101,6 @@ export default {
 <style scoped lang="scss">
 .form {
   display: grid;
-  grid-template-columns: 30%;
+  grid-template-columns: minmax(20rem, 30%);
 }
 </style>

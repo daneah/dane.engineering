@@ -63,7 +63,7 @@ input,
 textarea {
   padding: var(--space-xs);
   border: 1px solid var(--gray);
-  width: 100%;
+  width: inherit;
 }
 
 textarea {
