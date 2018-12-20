@@ -124,6 +124,8 @@ import BaseLink from '@/components/BaseLink'
 import ResponsiveImage from '@/components/ResponsiveImage'
 import Card from '@/components/Card'
 
+const PAGE_DESCRIPTION = 'Dane Hillard is a software engineer and web developer interested in education, biotechnology, and open source.'
+
 export default {
   name: 'Home',
   components: {
@@ -143,8 +145,18 @@ export default {
       },
       {
         property: 'og:url',
-        content: '//dane.engineering',
+        content: 'https://dane.engineering',
         vmid: 'og:url'
+      },
+      {
+        name: 'description',
+        content: PAGE_DESCRIPTION,
+        vmid: 'description'
+      },
+      {
+        property: 'og:description',
+        content: PAGE_DESCRIPTION,
+        vmid: 'og:description'
       }
     ]
   }
