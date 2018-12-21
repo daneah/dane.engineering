@@ -52,7 +52,7 @@ export default {
       },
       {
         property: 'og:url',
-        content: '//dane.engineering/resume',
+        content: 'https://dane.engineering/resume',
         vmid: 'og:url'
       },
       {

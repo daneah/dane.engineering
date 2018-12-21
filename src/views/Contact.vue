@@ -80,7 +80,7 @@ export default {
       },
       {
         property: 'og:url',
-        content: '//dane.engineering/contact',
+        content: 'https://dane.engineering/contact',
         vmid: 'og:url'
       },
       {

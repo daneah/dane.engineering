@@ -44,7 +44,7 @@ export default {
       },
       {
         property: 'og:url',
-        content: '//dane.engineering/talks',
+        content: 'https://dane.engineering/talks',
         vmid: 'og:url'
       },
       {
