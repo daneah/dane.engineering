@@ -30,7 +30,7 @@ export default {
       },
       {
         property: 'og:url',
-        content: '//dane.engineering/thanks',
+        content: 'https://dane.engineering/thanks',
         vmid: 'og:url'
       },
       {
