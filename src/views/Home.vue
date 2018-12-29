@@ -93,8 +93,6 @@
                         <BaseLink
                             href="/toneshift.pdf"
                             :external="false"
-                            target="_blank"
-                            rel="noopener"
                         >
                             <ResponsiveImage
                                 :src="require('@/assets/guitar.jpg')"
