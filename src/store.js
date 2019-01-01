@@ -9,11 +9,16 @@ export default new Vuex.Store({
       [
         {
           image: 'ithaka.jpg',
-          year: 2014,
+          year: 2018,
           title: 'ITHAKA',
-          subtitle: 'Web Application Developer',
+          subtitle: 'Lead Web Application Developer',
           description: `Leverage PaaS and web framework technologies to develop and maintain resilient, large-scale web applications.
             Test, measure, and optimize performance of front-end and back-end components to improve user experience.`
+        },
+        {
+          year: 2014,
+          title: 'ITHAKA',
+          subtitle: 'Web Application Developer'
         }
       ],
       [
@@ -21,7 +26,10 @@ export default new Vuex.Store({
           image: 'thermo-fisher-scientific.png',
           year: 2014,
           title: 'Thermo Fisher Scientific (Previously Life Technologies)',
-          subtitle: 'Software Development Engineer II'
+          subtitle: 'Software Development Engineer II',
+          description: `Transitioning bioinformatics methods/implementations into operational offerings;
+            integrating third-party data products;
+            designing, building, and maintaining internal tools to support data curation and research.`
         },
         {
           year: 2013,
@@ -32,9 +40,6 @@ export default new Vuex.Store({
           year: 2012,
           title: 'Compendia Bioscience',
           subtitle: 'Software Development Engineer',
-          description: `Transitioning bioinformatics methods/implementations into operational offerings;
-            integrating third-party data products;
-            designing, building, and maintaining internal tools to support data curation and research.`
         },
       ],
       [
