@@ -12,7 +12,7 @@
                     Dane has a B.S.E in computer engineering with a minor in mathematics from the University of Michigan.
                     As a software engineer, Dane has worked on research and development at SAIC (now <BaseLink href="https://www.leidos.com/">Leidos</BaseLink>)
                     and personalized cancer genomics at Compendia Bioscience (now part of <BaseLink href="https://www.thermofisher.com">Thermo Fisher Scientific</BaseLink>).
-                    As a web application developer at <BaseLink href="https://www.ithaka.org">ITHAKA</BaseLink>,
+                    As a lead web application developer at <BaseLink href="https://www.ithaka.org">ITHAKA</BaseLink>,
                     his focus is mainly on web development in Python, Django, and front-end technologies to enable academic research.
                 </BaseParagraph>
 
