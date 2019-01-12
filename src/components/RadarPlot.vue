@@ -38,6 +38,7 @@
                 <g>
                     <polygon
                         :points="points"
+                        :style="{'fill': color, 'stroke': color}"
                     />
                 </g>
             </g>
@@ -57,6 +58,10 @@ export default {
     characteristics: {
       type: Array,
       required: true
+    },
+    color: {
+      type: String,
+      default: 'var(--blue)'
     }
   },
   data () {
@@ -128,9 +133,7 @@ text {
 }
 
 polygon {
-  fill: var(--blue);
   fill-opacity: 0.7;
-  stroke: var(--blue);
   stroke-width: 2;
   stroke-opacity: 0.85;
 }
