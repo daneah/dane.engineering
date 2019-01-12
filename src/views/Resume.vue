@@ -21,6 +21,7 @@
                 <RadarPlot
                     :levels="5"
                     :characteristics="$store.state.skills.frameworksAndTools"
+                    color="var(--dark-gray)"
                 />
             </div>
         </div>
