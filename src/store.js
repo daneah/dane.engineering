@@ -8,7 +8,7 @@ export default new Vuex.Store({
     employment: [
       [
         {
-          image: 'ithaka.jpg',
+          image: require('@/assets/ithaka.jpg'),
           year: 2018,
           title: 'ITHAKA',
           subtitle: 'Lead Web Application Developer',
@@ -23,7 +23,7 @@ export default new Vuex.Store({
       ],
       [
         {
-          image: 'thermo-fisher-scientific.png',
+          image: require('@/assets/thermo-fisher-scientific.png'),
           year: 2014,
           title: 'Thermo Fisher Scientific (Previously Life Technologies)',
           subtitle: 'Software Development Engineer II',
@@ -44,7 +44,7 @@ export default new Vuex.Store({
       ],
       [
         {
-          image: 'saic.jpg',
+          image: require('@/assets/saic.jpg'),
           year: 2011,
           title: 'SAIC',
           subtitle: 'Software Development Engineer',

@@ -13,9 +13,9 @@
                 >
                     <ResponsiveImage
                         v-if="entry.image"
-                        :src="require(`@/assets/${entry.image}`)"
+                        :src="entry.image"
                         class="entry__image"
-                        alt="Company logo"
+                        alt="Timeline image"
                     />
                     <div class="entry__metadata">
                         <div class="entry__year">{{ entry.year }}</div>
