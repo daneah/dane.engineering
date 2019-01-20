@@ -16,10 +16,6 @@ export default {
     videoId: {
       type: String,
       required: true
-    },
-    size: {
-      type: String,
-      default: 'full'
     }
   }
 }
