@@ -6,7 +6,13 @@
 
 <script>
 export default {
-    name: 'BaseParagraph'
+    name: 'BaseParagraph',
+    props: {
+        lead: {
+            type: Boolean,
+            default: false
+        }
+    }
 }
 </script>
 
@@ -16,9 +22,12 @@ p {
     word-break: break-word;
     hyphens: auto;
     max-width: 65ch;
-    font-size: var(--text-lg);
 
-    & + p {
+    &.lead {
+        font-size: var(--text-lg);
+    }
+
+    + p {
         text-indent: var(--space-lg);
         margin-top: var(--space-md);
     }
