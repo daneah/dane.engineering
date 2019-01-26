@@ -23,7 +23,7 @@
                         <div class="entry__subtitle">{{ entry.subtitle }}</div>
                         <BaseParagraph
                             v-if="entry.description"
-                            class="entry__description"
+                            class="entry__description lead"
                         >
                             {{ entry.description }}
                         </BaseParagraph>
