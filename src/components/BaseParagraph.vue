@@ -15,7 +15,8 @@ p {
     line-height: var(--body-line-height);
     word-break: break-word;
     hyphens: auto;
-    max-width: 60ch;
+    max-width: 65ch;
+    font-size: var(--text-lg);
 
     & + p {
         text-indent: var(--space-lg);
