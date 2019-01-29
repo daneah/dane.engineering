@@ -27,9 +27,9 @@ export default new Vuex.Store({
           year: 2014,
           title: 'Thermo Fisher Scientific (Previously Life Technologies)',
           subtitle: 'Software Development Engineer II',
-          description: `Transitioning bioinformatics methods/implementations into operational offerings;
-            integrating third-party data products;
-            designing, building, and maintaining internal tools to support data curation and research.`
+          description: `Transition bioinformatics methods/implementations into operational offerings;
+            integrate third-party data products;
+            design, build, and maintain internal tools to support data curation and research.`
         },
         {
           year: 2013,
