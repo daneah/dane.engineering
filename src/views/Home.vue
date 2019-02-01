@@ -26,6 +26,8 @@
             />
         </div>
 
+        <BookAnnouncement class="book-announcement" />
+
         <BaseHeading :level="2">Projects</BaseHeading>
         <ul class="projects">
             <li class="project">
@@ -119,6 +121,7 @@
 import BaseHeading from '@/components/BaseHeading'
 import BaseParagraph from '@/components/BaseParagraph'
 import BaseLink from '@/components/BaseLink'
+import BookAnnouncement from '@/components/BookAnnouncement'
 import ResponsiveImage from '@/components/ResponsiveImage'
 import Card from '@/components/Card'
 
@@ -130,6 +133,7 @@ export default {
     BaseHeading,
     BaseParagraph,
     BaseLink,
+    BookAnnouncement,
     ResponsiveImage,
     Card
   },
@@ -177,7 +181,8 @@ export default {
   margin-top: 0;
 }
 
-.about {
+.about,
+.book-announcement {
   display: grid;
   grid-gap: var(--space-lg);
 
@@ -196,5 +201,9 @@ export default {
       margin-top: 0;
     }
   }
+}
+
+.book-announcement {
+    margin-top: var(--space-xl);
 }
 </style>
