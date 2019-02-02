@@ -21,6 +21,7 @@
                 </BaseParagraph>
             </div>
             <ResponsiveImage
+                class="portrait"
                 :src="require('@/assets/dane-hillard.png')"
                 alt="Portrait of Dane Hillard"
             />
@@ -205,5 +206,10 @@ export default {
 
 .book-announcement {
     margin-top: var(--space-xl);
+    clip-path: polygon(1% 0%, 100% 2%, 99% 100%, 0% 98%);
+}
+
+.portrait {
+    clip-path: polygon(0% 4%, 95% 0%, 100% 100%, 0% 97%);
 }
 </style>
