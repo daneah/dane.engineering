@@ -1,7 +1,7 @@
 module.exports = {
   root: true,
   env: {
-    node: true
+    node: true,
   },
   extends: [
     'plugin:vue/strongly-recommended',
@@ -13,9 +13,9 @@ module.exports = {
     "vue/html-indent": ["error", 4],
     "vue/html-closing-bracket-newline": ["error", {"multiline": "always"}],
     "vue/html-closing-bracket-spacing": ["error", {"selfClosingTag": "always"}],
-    "vue/order-in-components": ["error"]
+    "vue/order-in-components": ["error"],
   },
   parserOptions: {
-    parser: 'babel-eslint'
+    parser: 'babel-eslint',
   },
 }
