@@ -53,41 +53,41 @@ export default {
     levels: {
       type: Number,
       required: false,
-      default: 3
+      default: 3,
     },
     characteristics: {
       type: Array,
-      required: true
+      required: true,
     },
     color: {
       type: String,
-      default: 'var(--blue)'
+      default: 'var(--blue)',
     }
   },
   data () {
     return {
       size: 500,
-      graphicMultiplier: 0.75
+      graphicMultiplier: 0.75,
     }
   },
   computed: {
     radsBetweenAxes () {
-      return 2 * Math.PI / this.characteristics.length;
+      return 2 * Math.PI / this.characteristics.length
     },
     graphicSize () {
-      return this.size * this.graphicMultiplier;
+      return this.size * this.graphicMultiplier
     },
     points () {
-      let points = [];
+      let points = []
       this.characteristics.forEach((characteristic) => {
         let pointX = Math.cos(this.radsForCharacteristic(characteristic)) * this.graphicSize / 2 * (characteristic.score / this.levels),
-            pointY = Math.sin(this.radsForCharacteristic(characteristic)) * this.graphicSize / 2 * (characteristic.score / this.levels);
+            pointY = Math.sin(this.radsForCharacteristic(characteristic)) * this.graphicSize / 2 * (characteristic.score / this.levels)
 
-        points.push(`${pointX},${pointY}`);
+        points.push(`${pointX},${pointY}`)
       });
 
-      return points.join(" ");
-    }
+      return points.join(" ")
+    },
   },
   methods: {
     radsForCharacteristic (characteristic) {

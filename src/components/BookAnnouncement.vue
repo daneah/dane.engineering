@@ -37,19 +37,22 @@ import BaseParagraph from '@/components/BaseParagraph'
 import ResponsiveImage from '@/components/ResponsiveImage'
 
 export default {
-    name: 'BookAnnouncement',
-    components: {
-        BaseHeading,
-        BaseLink,
-        BaseParagraph,
-        ResponsiveImage,
+  name: 'BookAnnouncement',
+  components: {
+    BaseHeading,
+    BaseLink,
+    BaseParagraph,
+    ResponsiveImage,
+  },
+  computed: {
+    dealAvailable () {
+      const rightNow = new Date()
+      return rightNow.getMonth() === 0 || (rightNow.getMonth() === 1 && rightNow.getDate() <= 7)
     },
-    computed: {
-        dealAvailable () {
-            const rightNow = new Date()
-            return rightNow.getMonth() === 0 || (rightNow.getMonth() === 1 && rightNow.getDate() <= 7)
-        },
-    },
+  },
+  data () {
+    return {}
+  },
 }
 </script>
 

@@ -15,9 +15,12 @@ export default {
   props: {
     videoId: {
       type: String,
-      required: true
+      required: true,
     }
-  }
+  },
+  data () {
+    return {}
+  },
 }
 </script>
 

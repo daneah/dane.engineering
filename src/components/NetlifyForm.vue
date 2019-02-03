@@ -36,19 +36,22 @@ import BaseButton from '@/components/BaseButton'
 export default {
   name: 'NetlifyForm',
   components: {
-    BaseButton
+    BaseButton,
   },
   props: {
     formName: {
       type: String,
-      required: true
+      required: true,
     },
     submitButtonText: {
       type: String,
       required: false,
-      default: 'Submit'
+      default: 'Submit',
     }
-  }
+  },
+  data () {
+    return {}
+  },
 }
 </script>
 

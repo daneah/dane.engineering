@@ -11,13 +11,16 @@ export default {
   props: {
     src: {
       type: String,
-      required: true
+      required: true,
     },
     alt: {
       type: String,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
+  data () {
+    return {}
+  },
 }
 </script>
 

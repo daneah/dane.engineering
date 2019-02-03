@@ -42,14 +42,17 @@ export default {
   name: 'Timeline',
   components: {
     BaseParagraph,
-    ResponsiveImage
+    ResponsiveImage,
   },
   props: {
     entries: {
       type: Array,
       required: true,
     }
-  }
+  },
+  data () {
+    return {}
+  },
 }
 </script>
 

@@ -11,9 +11,12 @@ export default {
     level: {
       required: false,
       default: 1,
-      type: Number
-    }
-  }
+      type: Number,
+    },
+  },
+  data () {
+    return {}
+  },
 }
 </script>
 

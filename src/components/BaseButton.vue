@@ -11,9 +11,12 @@ export default {
     text: {
       type: String,
       required: false,
-      default: 'Submit'
-    }
-  }
+      default: 'Submit',
+    },
+  },
+  data () {
+    return {}
+  },
 }
 </script>
 
