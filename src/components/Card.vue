@@ -23,13 +23,16 @@
 </template>
 
 <script>
-import BaseParagraph from '@/components/BaseParagraph';
+import BaseParagraph from '@/components/BaseParagraph'
 
 export default {
   name: 'Card',
   components: {
-    BaseParagraph
-  }
+    BaseParagraph,
+  },
+  data () {
+    return {}
+  },
 }
 </script>
 

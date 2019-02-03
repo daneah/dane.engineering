@@ -15,24 +15,27 @@ export default {
   props: {
     href: {
       type: String,
-      required: true
+      required: true,
     },
     external: {
       type: Boolean,
       required: false,
-      default: true
+      default: true,
     },
     clean: {
       type: Boolean,
       required: false,
-      default: false
+      default: false,
     }
   },
   computed: {
     rel () {
-      return this.external ? 'noopener noindex nofollow' : false;
-    }
-  }
+      return this.external ? 'noopener noindex nofollow' : false
+    },
+  },
+  data () {
+    return {}
+  },
 }
 </script>
 

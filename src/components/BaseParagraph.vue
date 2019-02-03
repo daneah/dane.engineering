@@ -6,13 +6,16 @@
 
 <script>
 export default {
-    name: 'BaseParagraph',
-    props: {
-        lead: {
-            type: Boolean,
-            default: false
-        }
-    }
+  name: 'BaseParagraph',
+  props: {
+    lead: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  data () {
+    return {}
+  },
 }
 </script>
 

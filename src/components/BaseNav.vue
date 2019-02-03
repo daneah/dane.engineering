@@ -56,25 +56,28 @@
 </template>
 
 <script>
-import BaseLink from '@/components/BaseLink';
+import BaseLink from '@/components/BaseLink'
 
 export default {
   name: 'BaseNav',
   components: {
-    BaseLink
+    BaseLink,
   },
   props: {
     links: {
       type: Array,
-      required: true
+      required: true,
     }
   },
   computed: {
     activeLinks () {
       const currentRoute = this.$route.name
       return this.links.filter(link => link.to !== currentRoute)
-    }
-  }
+    },
+  },
+  data () {
+    return {}
+  },
 }
 </script>
 
