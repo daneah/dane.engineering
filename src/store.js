@@ -13,13 +13,13 @@ export default new Vuex.Store({
           title: 'ITHAKA',
           subtitle: 'Lead Web Application Developer',
           description: `Leverage PaaS and web framework technologies to develop and maintain resilient, large-scale web applications.
-            Test, measure, and optimize performance of front-end and back-end components to improve user experience.`
+            Test, measure, and optimize performance of front-end and back-end components to improve user experience.`,
         },
         {
           year: 2014,
           title: 'ITHAKA',
-          subtitle: 'Web Application Developer'
-        }
+          subtitle: 'Web Application Developer',
+        },
       ],
       [
         {
@@ -29,12 +29,12 @@ export default new Vuex.Store({
           subtitle: 'Software Development Engineer II',
           description: `Transition bioinformatics methods/implementations into operational offerings;
             integrate third-party data products;
-            design, build, and maintain internal tools to support data curation and research.`
+            design, build, and maintain internal tools to support data curation and research.`,
         },
         {
           year: 2013,
           title: 'Life Technologies (Previously Compendia Bioscience)',
-          subtitle: 'Software Development Engineer II'
+          subtitle: 'Software Development Engineer II',
         },
         {
           year: 2012,
@@ -48,13 +48,13 @@ export default new Vuex.Store({
           year: 2011,
           title: 'SAIC',
           subtitle: 'Software Development Engineer',
-          description: `Algorithm design, development, and implementation for C/C++ applications in computer vision and automatic target recognition.`
+          description: `Algorithm design, development, and implementation for C/C++ applications in computer vision and automatic target recognition.`,
         },
         {
           year: 2010,
           title: 'SAIC',
           subtitle: 'Software Engineering Intern',
-          description: 'Update and maintain source code for various C/C++ applications.'
+          description: 'Update and maintain source code for various C/C++ applications.',
         },
       ]
     ],
@@ -62,7 +62,7 @@ export default new Vuex.Store({
       languages: [
         {
           name: 'Java',
-          score: 1
+          score: 1,
         },
         {
           name: 'Ruby',
@@ -79,48 +79,46 @@ export default new Vuex.Store({
         {
           name: 'JavaScript',
           score: 3.5,
-        }
+        },
       ],
       frameworksAndTools: [
         {
           name: 'Django',
-          score: 5
+          score: 5,
         },
         {
           name: 'jQuery',
-          score: 4.5
+          score: 4.5,
         },
         {
           name: 'Vue.js',
-          score: 3.25
+          score: 3.25,
         },
         {
           name: 'React',
-          score: 2
+          score: 2,
         },
         {
           name: 'ZURB Foundation',
-          score: 3.75
+          score: 3.75,
         },
         {
           name: 'Bootstrap',
-          score: 3.75
+          score: 3.75,
         },
         {
           name: 'SASS',
-          score: 5
+          score: 5,
         },
         {
           name: 'Webpack',
-          score: 4
-        }
-      ]
-    }
+          score: 4,
+        },
+      ],
+    },
   },
   mutations: {
-
   },
   actions: {
-
   }
 })
