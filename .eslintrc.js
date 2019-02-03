@@ -3,8 +3,8 @@ module.exports = {
   env: {
     node: true
   },
-  'extends': [
-    'plugin:vue/recommended',
+  extends: [
+    'plugin:vue/strongly-recommended',
   ],
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
@@ -17,5 +17,5 @@ module.exports = {
   },
   parserOptions: {
     parser: 'babel-eslint'
-  }
+  },
 }
