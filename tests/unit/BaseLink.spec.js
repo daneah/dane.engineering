@@ -23,6 +23,17 @@ describe('BaseLink', () => {
         expect(wrapper.contains('a[target="_blank"][rel="noopener noindex nofollow"]')).toBe(true)
     })
 
+    it('Does not render a rel by default for internal links', () => {
+        const wrapper = shallowMount(BaseLink, {
+            propsData: {
+                href: 'https://foo.com',
+                external: false,
+            }
+        })
+        const link = wrapper.find('a')
+        expect(link.attributes('rel')).toBe(undefined)
+    })
+
     it('Renders the specified rel', () => {
         const wrapper = shallowMount(BaseLink, {
             propsData: {
