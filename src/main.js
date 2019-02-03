@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueAnalytics from 'vue-analytics'
-import App from '@/App.vue'
+import App from '@/App'
 import router from '@/router'
 import store from '@/store'
 import '@/registerServiceWorker'
