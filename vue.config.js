@@ -3,6 +3,7 @@ const PrerenderSpaPlugin = require('prerender-spa-plugin')
 
 const productionPlugins = [
   new PrerenderSpaPlugin({
+    renderAfterTime: 5000,
     staticDir: path.join(__dirname, 'dist'),
     routes: [
         '/',
@@ -10,6 +11,8 @@ const productionPlugins = [
         '/resume',
         '/contact',
         '/talks',
+        '/posts',
+        '/post/buttercms-in-vue',
     ],
   }),
 ]
