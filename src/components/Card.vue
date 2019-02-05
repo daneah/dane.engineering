@@ -13,9 +13,9 @@
             </div>
             <div class="card__description">
                 <slot name="description">
-                    <BaseParagraph>
+                    <p>
                         This is the card description.
-                    </BaseParagraph>
+                    </p>
                 </slot>
             </div>
         </div>
@@ -23,13 +23,9 @@
 </template>
 
 <script>
-import BaseParagraph from '@/components/BaseParagraph'
 
 export default {
   name: 'Card',
-  components: {
-    BaseParagraph,
-  },
   data () {
     return {}
   },

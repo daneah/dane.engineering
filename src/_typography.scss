@@ -31,3 +31,41 @@
         --text-base-size: 0.8em;
     }
 }
+
+p {
+    line-height: var(--body-line-height);
+    word-break: break-word;
+    hyphens: auto;
+    max-width: 65ch;
+    font-size: var(--text-lg);
+
+    + p {
+        text-indent: var(--space-lg);
+        margin-top: var(--space-md);
+    }
+}
+
+@for $heading-level from 1 through 6 {
+    h#{$heading-level} {
+        line-height: var(--heading-line-height);
+        margin-bottom: var(--space-xxs);
+    }
+}
+
+h1 {
+    font-family: var(--font-title);
+    font-weight: var(--font-title-weight);
+    font-size: var(--text-xxxl);
+}
+
+h2 {
+    font-size: var(--text-xxl);
+}
+
+h3 {
+    font-size: var(--text-xl);
+}
+
+h4 {
+    font-size: var(--text-lg);
+}

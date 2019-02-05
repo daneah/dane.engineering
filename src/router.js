@@ -6,6 +6,8 @@ import Talks from '@/views/Talks'
 import Resume from '@/views/Resume'
 import Contact from '@/views/Contact'
 import ContactSuccess from '@/views/ContactSuccess'
+import BlogPost from '@/views/BlogPost'
+import BlogPostList from '@/views/BlogPostList'
 import NotFound from '@/views/NotFound'
 
 Vue.use(Router)
@@ -18,32 +20,42 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: Home,
     },
     {
       path: '/talks',
       name: 'talks',
-      component: Talks
+      component: Talks,
     },
     {
       path: '/resume',
       name: 'resume',
-      component: Resume
+      component: Resume,
     },
     {
       path: '/contact',
       name: 'contact',
-      component: Contact
+      component: Contact,
     },
     {
       path: '/thanks',
       name: 'thanks',
-      component: ContactSuccess
+      component: ContactSuccess,
+    },
+    {
+      path: '/posts',
+      name: 'posts',
+      component: BlogPostList,
+    },
+    {
+      path: '/post/:slug',
+      name: 'post',
+      component: BlogPost,
     },
     {
       path: '*',
       name: 'notfound',
-      component: NotFound
+      component: NotFound,
     }
   ]
 })
