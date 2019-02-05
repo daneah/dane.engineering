@@ -101,6 +101,10 @@ img {
   max-width: 100%;
 }
 
+.post {
+  margin-top: 0;
+}
+
 .metadata {
   font-size: var(--text-lg);
   font-style: italic;
