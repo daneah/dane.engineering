@@ -1,18 +1,28 @@
 <template>
-  <main>
-    <article v-if="post.data && post.data.published">
-      <h1>{{ post.data.title }}</h1>
-      <span class="metadata">{{ publishedDate }}</span>
-      <div v-html="post.data.body" />
-    </article>
-  </main>
+  <div class="post">
+    <main>
+      <article v-if="post.data && post.data.published">
+        <h1>{{ post.data.title }}</h1>
+        <span class="metadata">{{ publishedDate }}</span>
+        <div v-html="post.data.body" />
+      </article>
+    </main>
+    <footer>
+      <span>This post is made better with <BaseLink href="https://buttercms.com">Butter</BaseLink></span>
+    </footer>
+  </div>
 </template>
 
 <script>
 import Prism from 'prismjs'
 
+import BaseLink from '@/components/BaseLink'
+
 export default {
   name: 'BlogPost',
+  components: {
+    BaseLink,
+  },
   data () {
     return {
       loading: true,
@@ -95,5 +105,17 @@ img {
   font-size: var(--text-lg);
   font-style: italic;
   color: var(--medium-gray);
+}
+
+footer {
+  border-top: 1px solid var(--very-light-gray);
+  color: var(--medium-gray);
+  font-style: italic;
+  padding: var(--space-lg);
+  margin-top: 0;
+
+  @media (min-width: 700px) {
+    padding: var(--space-xl);
+  }
 }
 </style>
