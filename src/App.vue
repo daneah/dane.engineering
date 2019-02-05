@@ -96,7 +96,7 @@ export default {
         },
         {
           property: 'og:url',
-          content: location.href,
+          content: `https://dane.engineering${location.pathname}`,
           vmid: 'og:url'
         },
         {
@@ -106,7 +106,7 @@ export default {
         },
         {
           property: 'og:image',
-          content: `${location.origin}/img/icons/avatar.png`,
+          content: 'https://dane.engineering/img/icons/avatar.png',
           vmid: 'og:image',
         },
       ]
