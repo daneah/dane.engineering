@@ -62,7 +62,7 @@ export default {
   },
   methods: {
     fetchPosts () {
-      this.butter.post.list({page: 1, pageSize: 10})
+      this.$butter.post.list({page: 1, pageSize: 10})
         .then((response) => {
           this.loading = false
           this.posts = response.data
