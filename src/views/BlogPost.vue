@@ -9,6 +9,8 @@
 </template>
 
 <script>
+import Prism from 'prismjs'
+
 export default {
   name: 'BlogPost',
   data () {
@@ -33,6 +35,9 @@ export default {
         .then((response) => {
           this.loading = false
           this.post = response.data
+          this.$nextTick(() => {
+            Prism.highlightAll()
+          })
         }).catch((response) => {
           console.log(response)
         })
