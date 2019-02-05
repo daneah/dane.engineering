@@ -19,7 +19,7 @@ Vue.use(VueAnalytics, {
 })
 
 const butter = Butter('cd7317f31d717fc87a1374098f53651830003bed')
-Vue.prototype.butter = butter
+Vue.prototype.$butter = butter
 
 new Vue({
   router,

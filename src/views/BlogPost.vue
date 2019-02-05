@@ -31,7 +31,7 @@ export default {
   },
   methods: {
     fetchPost () {
-      this.butter.post.retrieve(this.$route.params.slug)
+      this.$butter.post.retrieve(this.$route.params.slug)
         .then((response) => {
           this.loading = false
           this.post = response.data
