@@ -1,5 +1,6 @@
 <template>
     <img
+        :class="{'limited': !grow}"
         :src="src"
         :alt="alt"
     >
@@ -17,6 +18,11 @@ export default {
       type: String,
       required: true,
     },
+    grow: {
+      type: Boolean,
+      required: false,
+      default: true,
+    },
   },
   data () {
     return {}
@@ -26,7 +32,10 @@ export default {
 
 <style scoped lang="scss">
 img {
+  width: 100%;
+}
+
+img.limited {
   max-width: 100%;
-  height: auto;
 }
 </style>

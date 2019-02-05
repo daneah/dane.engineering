@@ -54,5 +54,12 @@ export default {
 .card__title {
   font-size: var(--text-xl);
   font-weight: bold;
+
+  @media (max-width: 699px) {
+    font-size: var(--text-lg);
+  }
+
+  word-break: break-word;
+  hyphens: auto;
 }
 </style>

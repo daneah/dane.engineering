@@ -110,6 +110,10 @@ nav {
   margin-top: 0;
   padding: var(--space-xs);
   padding-left: 0;
+
+  @media (max-width: 699px) {
+    display: inline-block;
+  }
 }
 
 .social li {
