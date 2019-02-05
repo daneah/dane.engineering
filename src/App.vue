@@ -147,6 +147,7 @@ body {
 }
 
 body {
+    box-sizing: border-box;
     font-size: var(--text-base-size);
     font-family: var(--font-primary);
     color: var(--text-color);
@@ -159,9 +160,10 @@ body {
     grid-template-areas:
         "nav"
         "main";
+    grid-template-columns: 100vw;
 
     @media (min-width: 700px) {
-        grid-template-columns: max-content auto;
+        grid-template-columns: max-content minmax(0, auto);
         grid-template-areas:
             "nav main";
     }

@@ -107,9 +107,8 @@ export default {
 .posts {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, max-content));
-  grid-gap: 1rem;
-  justify-content: space-around;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 400px));
+  grid-gap: 3rem;
 }
 
 .post {
