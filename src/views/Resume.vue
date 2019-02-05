@@ -1,15 +1,15 @@
 <template>
     <main>
-        <BaseHeading>Résumé</BaseHeading>
+        <h1>Résumé</h1>
 
-        <BaseHeading :level="2">Experience</BaseHeading>
+        <h2>Experience</h2>
         <Timeline :entries="$store.state.employment" />
 
-        <BaseHeading :level="2">Skills</BaseHeading>
+        <h2>Skills</h2>
 
         <div class="skills">
             <div class="skill">
-                <BaseHeading :level="3">Languages</BaseHeading>
+                <h3>Languages</h3>
                 <RadarPlot
                     :levels="5"
                     :characteristics="$store.state.skills.languages"
@@ -17,7 +17,7 @@
             </div>
 
             <div class="skill">
-                <BaseHeading :level="3">Frameworks and Tools</BaseHeading>
+                <h3>Frameworks and Tools</h3>
                 <RadarPlot
                     :levels="5"
                     :characteristics="$store.state.skills.frameworksAndTools"
@@ -29,7 +29,6 @@
 </template>
 
 <script>
-import BaseHeading from '@/components/BaseHeading'
 import RadarPlot from '@/components/RadarPlot'
 import Timeline from '@/components/Timeline'
 
@@ -39,7 +38,6 @@ const PAGE_TITLE = 'Résumé',
 export default {
   name: 'Resume',
   components: {
-    BaseHeading,
     RadarPlot,
     Timeline
   },
@@ -50,11 +48,6 @@ export default {
         property: 'og:title',
         content: `${PAGE_TITLE} | Dane Hillard`,
         vmid: 'og:title'
-      },
-      {
-        property: 'og:url',
-        content: 'https://dane.engineering/resume',
-        vmid: 'og:url'
       },
       {
         name: 'description',

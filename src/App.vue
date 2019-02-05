@@ -96,14 +96,19 @@ export default {
         },
         {
           property: 'og:url',
-          content: 'GIVE ME A URL',
+          content: location.href,
           vmid: 'og:url'
         },
         {
           name: 'description',
           content: 'GIVE ME A DESCRIPTION',
           vmid: 'description'
-        }
+        },
+        {
+          property: 'og:image',
+          content: `${location.origin}/img/icons/avatar.png`,
+          vmid: 'og:image',
+        },
       ]
     }
   },
@@ -111,6 +116,7 @@ export default {
     return {
       navLinks: [
         { to: 'talks', text: 'Talks' },
+        { to: 'posts', text: 'Posts' },
         { to: 'resume', text: 'Résumé' },
         { to: 'contact', text: 'Contact' },
       ]
@@ -193,5 +199,16 @@ main {
 code {
   padding: 0.125em .5em;
   background: var(--very-light-gray);
+}
+
+pre {
+  background: var(--very-light-gray);
+  font-size: var(--text-lg);
+  padding: var(--space-md);
+
+  code {
+    padding: 0;
+    background: none;
+  }
 }
 </style>

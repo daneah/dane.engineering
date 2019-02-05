@@ -9,6 +9,7 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "buttercms": "^1.1.4",
     "jest-transform-stub": "^2.0.0",
     "register-service-worker": "^1.0.0",
     "terser": "^3.14.1",

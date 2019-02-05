@@ -1,5 +1,7 @@
+import Butter from 'buttercms'
 import Vue from 'vue'
 import VueAnalytics from 'vue-analytics'
+
 import App from '@/App'
 import router from '@/router'
 import store from '@/store'
@@ -15,6 +17,9 @@ Vue.use(VueAnalytics, {
     sendHitTask: process.env.NODE_ENV === 'production',
   },
 })
+
+const butter = Butter('cd7317f31d717fc87a1374098f53651830003bed')
+Vue.prototype.butter = butter
 
 new Vue({
   router,

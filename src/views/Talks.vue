@@ -1,12 +1,12 @@
 <template>
     <main>
-        <BaseHeading>
+        <h1>
             Talks
-        </BaseHeading>
+        </h1>
         <ul class="talk-list">
             <li>
-                <BaseHeading :level="2">Serverless Django with Zappa</BaseHeading>
-                <BaseHeading :level="3">DjangoCon US 2018</BaseHeading>
+                <h2>Serverless Django with Zappa</h2>
+                <h3>DjangoCon US 2018</h3>
                 <div class="talk-instance__visuals">
                     <ResponsiveImage
                         :src="require('@/assets/djangocon.png')"
@@ -20,17 +20,15 @@
 </template>
 
 <script>
-import BaseHeading from '@/components/BaseHeading'
 import YouTubeEmbed from '@/components/YouTubeEmbed'
 import ResponsiveImage from '@/components/ResponsiveImage'
 
-const PAGE_TITLE = 'Talks',
-    PAGE_DESCRIPTION = 'Django and Python Conference talks by Dane Hillard'
+const PAGE_TITLE = 'Talks'
+const PAGE_DESCRIPTION = 'Django and Python Conference talks by Dane Hillard'
 
 export default {
   name: 'Talks',
   components: {
-    BaseHeading,
     YouTubeEmbed,
     ResponsiveImage
   },
@@ -40,22 +38,17 @@ export default {
       {
         property: 'og:title',
         content: `${PAGE_TITLE} | Dane Hillard`,
-        vmid: 'og:title'
-      },
-      {
-        property: 'og:url',
-        content: 'https://dane.engineering/talks',
-        vmid: 'og:url'
+        vmid: 'og:title',
       },
       {
         name: 'description',
         content: PAGE_DESCRIPTION,
-        vmid: 'description'
+        vmid: 'description',
       },
       {
         property: 'og:description',
         content: PAGE_DESCRIPTION,
-        vmid: 'og:description'
+        vmid: 'og:description',
       }
     ]
   }

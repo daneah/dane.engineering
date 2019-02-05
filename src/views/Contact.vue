@@ -1,6 +1,6 @@
 <template>
     <main>
-        <BaseHeading>Get in Touch</BaseHeading>
+        <h1>Get in Touch</h1>
 
         <NetlifyForm
             action="/thanks"
@@ -58,7 +58,6 @@
 </template>
 
 <script>
-import BaseHeading from '@/components/BaseHeading'
 import NetlifyForm from '@/components/NetlifyForm'
 
 const PAGE_TITLE = 'Contact',
@@ -67,8 +66,7 @@ const PAGE_TITLE = 'Contact',
 export default {
   name: 'Contact',
   components: {
-    BaseHeading,
-    NetlifyForm
+    NetlifyForm,
   },
   metaInfo: {
     title: PAGE_TITLE,
@@ -77,11 +75,6 @@ export default {
         property: 'og:title',
         content: `${PAGE_TITLE} | Dane Hillard`,
         vmid: 'og:title'
-      },
-      {
-        property: 'og:url',
-        content: 'https://dane.engineering/contact',
-        vmid: 'og:url'
       },
       {
         name: 'description',

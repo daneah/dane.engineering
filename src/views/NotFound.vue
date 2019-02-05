@@ -1,8 +1,8 @@
 <template>
     <main>
-        <BaseHeading>Page Not Found</BaseHeading>
+        <h1>Page Not Found</h1>
 
-        <BaseParagraph>
+        <p>
             It looks like the page you're looking for doesn't exist.
             Try going
             <router-link
@@ -15,13 +15,11 @@
                 >home</BaseLink>
             </router-link>
             and starting over.
-        </BaseParagraph>
+        </p>
     </main>
 </template>
 
 <script>
-import BaseHeading from '@/components/BaseHeading'
-import BaseParagraph from '@/components/BaseParagraph'
 import BaseLink from '@/components/BaseLink'
 
 const PAGE_TITLE = 'Page Not Found',
@@ -30,9 +28,7 @@ const PAGE_TITLE = 'Page Not Found',
 export default {
   name: 'NotFound',
   components: {
-    BaseHeading,
-    BaseParagraph,
-    BaseLink
+    BaseLink,
   },
   metaInfo: {
     title: 'Page Not Found',
@@ -52,11 +48,6 @@ export default {
         content: `${PAGE_TITLE} | Dane Hillard`,
         vmid: 'og:title'
       },
-      {
-        property: 'og:url',
-        content: window.location.href,
-        vmid: 'og:url'
-      }
     ]
   }
 }

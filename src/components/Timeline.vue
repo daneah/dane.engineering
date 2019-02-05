@@ -21,12 +21,12 @@
                         <div class="entry__year">{{ entry.year }}</div>
                         <div class="entry__title">{{ entry.title }}</div>
                         <div class="entry__subtitle">{{ entry.subtitle }}</div>
-                        <BaseParagraph
+                        <p
                             v-if="entry.description"
-                            class="entry__description lead"
+                            class="entry__description"
                         >
                             {{ entry.description }}
-                        </BaseParagraph>
+                        </p>
                     </div>
                 </li>
             </ol>
@@ -35,13 +35,11 @@
 </template>
 
 <script>
-import BaseParagraph from '@/components/BaseParagraph'
 import ResponsiveImage from '@/components/ResponsiveImage'
 
 export default {
   name: 'Timeline',
   components: {
-    BaseParagraph,
     ResponsiveImage,
   },
   props: {
