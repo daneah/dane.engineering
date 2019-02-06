@@ -52,7 +52,7 @@ export default {
 }
 
 .card__title {
-  font-size: var(--text-xl);
+  font-size: var(--text-lg);
   font-weight: bold;
 
   @media (max-width: 699px) {
