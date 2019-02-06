@@ -2,39 +2,40 @@
   <main>
     <h1>Posts</h1>
     <p v-if="loading">Loading...</p>
-    <ul
-      v-else-if="posts.data.length"
-      class="posts"
-    >
-      <li
-        v-for="post in posts.data"
-        :key="post.slug"
-        class="post"
-      >
-        <Card>
-          <template slot="image">
-            <router-link
-              :to="{ name: 'post', params: { slug: post.slug } }"
-              v-if="post.featured_image"
-            >
-              <ResponsiveImage
-                :src="postThumbnail(post.featured_image)"
-                alt=""
-              />
-            </router-link>
-            <div v-else />
-          </template>
-          <template slot="title">
-            <router-link
-              :to="{ name: 'post', params: { slug: post.slug } }"
-            >
-              {{ post.title }}
-            </router-link>
-          </template>
-          <template slot="description">{{ post.summary }}</template>
-        </Card>
-      </li>
-    </ul>
+    <CardGrid v-else-if="posts.data.length">
+      <template slot="cards">
+        <ul class="posts">
+          <li
+            v-for="post in posts.data"
+            :key="post.slug"
+            class="post"
+          >
+            <Card>
+              <template slot="image">
+                <router-link
+                  :to="{ name: 'post', params: { slug: post.slug } }"
+                  v-if="post.featured_image"
+                >
+                  <ResponsiveImage
+                    :src="postThumbnail(post.featured_image)"
+                    alt=""
+                  />
+                </router-link>
+                <div v-else />
+              </template>
+              <template slot="title">
+                <router-link
+                  :to="{ name: 'post', params: { slug: post.slug } }"
+                >
+                  {{ post.title }}
+                </router-link>
+              </template>
+              <template slot="description">{{ post.summary }}</template>
+            </Card>
+          </li>
+        </ul>
+      </template>
+    </CardGrid>
     <p v-else>There are no posts available at this time!</p>
   </main>
 </template>
@@ -42,6 +43,7 @@
 <script>
 import BaseLink from '@/components/BaseLink'
 import Card from '@/components/Card'
+import CardGrid from '@/components/CardGrid'
 import ResponsiveImage from '@/components/ResponsiveImage'
 
 const PAGE_TITLE = 'Blog posts'
@@ -52,6 +54,7 @@ export default {
   components: {
     BaseLink,
     Card,
+    CardGrid,
     ResponsiveImage,
   },
   data () {
@@ -107,7 +110,7 @@ export default {
 .posts {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 400px));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-gap: 3rem;
 }
 

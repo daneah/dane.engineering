@@ -30,99 +30,104 @@
         <BookAnnouncement class="book-announcement" />
 
         <h2>Projects</h2>
-        <ul class="projects">
-            <li class="project">
-                <Card>
-                    <template slot="image">
-                        <BaseLink href="https://github.com/daneah/pixelize">
-                            <ResponsiveImage
-                                :src="require('@/assets/pixelize.png')"
-                                alt="pixelize project screenshot"
-                            />
-                        </BaseLink>
-                    </template>
-                    <template slot="title">pixelize</template>
-                    <template slot="description">
-                        <p>
-                            <code>pixelize</code> is a tool to make glitch art from source images.
-                        </p>
-                    </template>
-                </Card>
-            </li>
-            <li class="project">
-                <Card>
-                    <template slot="image">
-                        <BaseLink
-                            href="https://github.com/ithaka/apiron"
-                        >
-                            <ResponsiveImage
-                                :src="require('@/assets/apiron.png')"
-                                alt="Screenshot of apiron GitHub page"
-                            />
-                        </BaseLink>
-                    </template>
-                    <template slot="title">apiron</template>
-                    <template slot="description">
-                        <p>
-                            <code>apiron</code> is a Python library for building RESTful API clients.
-                            We built this at ITHAKA to speed up development and interact with our internal services more consistently.
-                        </p>
-                    </template>
-                </Card>
-            </li>
-            <li class="project">
-                <Card>
-                    <template slot="image">
-                        <BaseLink
-                            href="https://codepen.io/collection/DOmwxa/"
-                        >
-                            <ResponsiveImage
-                                :src="require('@/assets/mondrian.png')"
-                                alt="Screenshot of the Mondrian collection on CodePen"
-                            />
-                        </BaseLink>
-                    </template>
-                    <template slot="title">Mondrian</template>
-                    <template slot="description">
-                        <p>
-                            A collection of Mondrian works recreated in CSS Grid
-                        </p>
-                    </template>
-                </Card>
-            </li>
-            <li class="project">
-                <Card>
-                    <template slot="image">
-                        <BaseLink
-                            href="/toneshift.pdf"
-                            :external="false"
-                        >
-                            <ResponsiveImage
-                                :src="require('@/assets/guitar.jpg')"
-                                alt="Guitar"
-                            />
-                        </BaseLink>
-                    </template>
-                    <template slot="title">ToneShift</template>
-                    <template slot="description">
-                        <p>
-                            Our 2007 senior design project at the University of Michigan
-                            to build a pitch-shifting device for electric guitars.
-                            For contemporary work in this area see <BaseLink href="https://guitarpitchshifter.com">Guitar Pitch Shifter</BaseLink>
-                            or Alan Pagliere's <BaseLink href="http://www.freepatentsonline.com/y2018/0053494.html">work on lap steel guitar tunings</BaseLink>.
-                        </p>
-                    </template>
-                </Card>
-            </li>
-        </ul>
-    </main>
-</template>
+        <CardGrid>
+          <template slot="cards">
+            <ul class="projects">
+                <li class="project">
+                    <Card>
+                        <template slot="image">
+                            <BaseLink href="https://github.com/daneah/pixelize">
+                                <ResponsiveImage
+                                    :src="require('@/assets/pixelize.png')"
+                                    alt="pixelize project screenshot"
+                                />
+                            </BaseLink>
+                        </template>
+                        <template slot="title">pixelize</template>
+                        <template slot="description">
+                            <p>
+                                <code>pixelize</code> is a tool to make glitch art from source images.
+                            </p>
+                        </template>
+                    </Card>
+                </li>
+                <li class="project">
+                    <Card>
+                        <template slot="image">
+                            <BaseLink
+                                href="https://github.com/ithaka/apiron"
+                            >
+                                <ResponsiveImage
+                                    :src="require('@/assets/apiron.png')"
+                                    alt="Screenshot of apiron GitHub page"
+                                />
+                            </BaseLink>
+                        </template>
+                        <template slot="title">apiron</template>
+                        <template slot="description">
+                            <p>
+                                <code>apiron</code> is a Python library for building RESTful API clients.
+                                We built this at ITHAKA to speed up development and interact with our internal services more consistently.
+                            </p>
+                        </template>
+                    </Card>
+                </li>
+                <li class="project">
+                    <Card>
+                        <template slot="image">
+                            <BaseLink
+                                href="https://codepen.io/collection/DOmwxa/"
+                            >
+                                <ResponsiveImage
+                                    :src="require('@/assets/mondrian.png')"
+                                    alt="Screenshot of the Mondrian collection on CodePen"
+                                />
+                            </BaseLink>
+                        </template>
+                        <template slot="title">Mondrian</template>
+                        <template slot="description">
+                            <p>
+                                A collection of Mondrian works recreated in CSS Grid
+                            </p>
+                        </template>
+                    </Card>
+                </li>
+                <li class="project">
+                    <Card>
+                        <template slot="image">
+                            <BaseLink
+                                href="/toneshift.pdf"
+                                :external="false"
+                            >
+                                <ResponsiveImage
+                                    :src="require('@/assets/guitar.jpg')"
+                                    alt="Guitar"
+                                />
+                            </BaseLink>
+                        </template>
+                        <template slot="title">ToneShift</template>
+                        <template slot="description">
+                            <p>
+                                Our 2007 senior design project at the University of Michigan
+                                to build a pitch-shifting device for electric guitars.
+                                For contemporary work in this area see <BaseLink href="https://guitarpitchshifter.com">Guitar Pitch Shifter</BaseLink>
+                                or Alan Pagliere's <BaseLink href="http://www.freepatentsonline.com/y2018/0053494.html">work on lap steel guitar tunings</BaseLink>.
+                            </p>
+                        </template>
+                    </Card>
+                </li>
+              </ul>
+            </template>
+          </CardGrid>
+      </main>
+  </template>
 
 <script>
 import BaseLink from '@/components/BaseLink'
 import BookAnnouncement from '@/components/BookAnnouncement'
-import ResponsiveImage from '@/components/ResponsiveImage'
 import Card from '@/components/Card'
+import CardGrid from '@/components/CardGrid'
+import ResponsiveImage from '@/components/ResponsiveImage'
 
 const PAGE_DESCRIPTION = 'Dane Hillard is a software engineer and web developer interested in education, biotechnology, and open source.'
 
@@ -131,8 +136,9 @@ export default {
   components: {
     BaseLink,
     BookAnnouncement,
+    Card,
+    CardGrid,
     ResponsiveImage,
-    Card
   },
   metaInfo: {
     titleTemplate: 'Dane Hillard',
