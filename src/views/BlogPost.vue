@@ -1,13 +1,16 @@
 <template>
   <div class="post">
     <main>
-      <article v-if="post.data && post.data.published">
+      <article v-if="!loading && post.data && post.data.published">
         <h1>{{ post.data.title }}</h1>
         <span class="metadata">{{ publishedDate }}</span>
         <div v-html="post.data.body" />
       </article>
+      <p v-else>
+        Loading...
+      </p>
     </main>
-    <footer>
+    <footer v-if="!loading && post.data && post.data.published">
       <span>This post is made better with <BaseLink href="https://buttercms.com">Butter</BaseLink></span>
     </footer>
   </div>
