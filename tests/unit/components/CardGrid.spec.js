@@ -20,7 +20,6 @@ describe('CardGrid', () => {
         cards: '<ul class="some-cards"><li>a card</li><li>another card</li></ul>',
       },
     })
-    console.log(wrapper.html())
     expect(wrapper.contains('ul.some-cards')).toBe(true)
   })
 })
