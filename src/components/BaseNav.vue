@@ -31,7 +31,7 @@
                         class="nav-link"
                     >
                         <BaseLink
-                            :href="link.to"
+                            :href="$router.resolve({ name: link.to }).href"
                             :external="link.external || false"
                         >
                             {{ link.text }}
