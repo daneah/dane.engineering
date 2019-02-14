@@ -10,50 +10,50 @@ export default new Vuex.Store({
         {
           image: require('@/assets/ithaka.jpg'),
           year: 2018,
-          title: 'ITHAKA',
-          subtitle: 'Lead Web Application Developer',
+          title: 'Lead Web Application Developer',
+          subtitle: 'ITHAKA',
           description: `Leverage PaaS and web framework technologies to develop and maintain resilient, large-scale web applications.
             Test, measure, and optimize performance of front-end and back-end components to improve user experience.`,
         },
         {
           year: 2014,
-          title: 'ITHAKA',
-          subtitle: 'Web Application Developer',
+          title: 'Web Application Developer',
+          subtitle: 'ITHAKA',
         },
       ],
       [
         {
           image: require('@/assets/thermo-fisher-scientific.png'),
           year: 2014,
-          title: 'Thermo Fisher Scientific (Previously Life Technologies)',
-          subtitle: 'Software Development Engineer II',
+          title: 'Software Development Engineer II',
+          subtitle: 'Thermo Fisher Scientific (Previously Life Technologies)',
           description: `Transition bioinformatics methods/implementations into operational offerings;
             integrate third-party data products;
             design, build, and maintain internal tools to support data curation and research.`,
         },
         {
           year: 2013,
-          title: 'Life Technologies (Previously Compendia Bioscience)',
-          subtitle: 'Software Development Engineer II',
+          title: 'Software Development Engineer II',
+          subtitle: 'Life Technologies (Previously Compendia Bioscience)',
         },
         {
           year: 2012,
-          title: 'Compendia Bioscience',
-          subtitle: 'Software Development Engineer',
+          title: 'Software Development Engineer',
+          subtitle: 'Compendia Bioscience',
         },
       ],
       [
         {
           image: require('@/assets/saic.jpg'),
           year: 2011,
-          title: 'SAIC',
-          subtitle: 'Software Development Engineer',
+          title: 'Software Development Engineer',
+          subtitle: 'SAIC',
           description: `Algorithm design, development, and implementation for C/C++ applications in computer vision and automatic target recognition.`,
         },
         {
           year: 2010,
-          title: 'SAIC',
-          subtitle: 'Software Engineering Intern',
+          title: 'Software Engineering Intern',
+          subtitle: 'SAIC',
           description: 'Update and maintain source code for various C/C++ applications.',
         },
       ]

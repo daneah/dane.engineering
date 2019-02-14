@@ -18,9 +18,9 @@
                         alt="Timeline image"
                     />
                     <div class="entry__metadata">
-                        <div class="entry__year">{{ entry.year }}</div>
                         <div class="entry__title">{{ entry.title }}</div>
                         <div class="entry__subtitle">{{ entry.subtitle }}</div>
+                        <div class="entry__year">{{ entry.year }}</div>
                         <p
                             v-if="entry.description"
                             class="entry__description"
@@ -73,6 +73,7 @@ export default {
   grid-auto-flow: dense;
   grid-template-columns: 50% minmax(75px, 150px);
   grid-gap: var(--space-xl);
+  margin-top: var(--space-xl);
 }
 
 .entry__metadata {
@@ -84,21 +85,22 @@ export default {
 }
 
 .entry__year {
-  font-size: var(--text-xl);
+  font-size: var(--text-md);
   font-weight: bold;
 }
 
 .entry__title {
+  font-size: var(--text-xl);
+  margin-top: 0;
+}
+
+.entry__subtitle {
   font-size: var(--text-lg);
+  font-style: italic;
   margin-top: var(--space-xxs);
 }
 
 .entries li:first-child .entry__metadata {
   margin-top: 0;
-}
-
-.entry__subtitle {
-  font-size: var(--text-md);
-  font-style: italic;
 }
 </style>
