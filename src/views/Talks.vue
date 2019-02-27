@@ -5,11 +5,22 @@
         </h1>
         <ul class="talk-list">
             <li>
+                <h2>Multiple Inheritance and Mixins</h2>
+                <h3>PyCaribbean 2019</h3>
+                <div class="talk-instance__visuals">
+                    <ResponsiveImage
+                        :src="require('@/assets/pycaribbean-2019.png')"
+                        alt="PyCaribbean 2019"
+                    />
+                    <SpeakerDeckEmbed deck-id="3dbcdf7b6a974a1c9bfef291650a9f70" />
+                </div>
+            </li>
+            <li>
                 <h2>Serverless Django with Zappa</h2>
                 <h3>DjangoCon US 2018</h3>
                 <div class="talk-instance__visuals">
                     <ResponsiveImage
-                        :src="require('@/assets/djangocon.png')"
+                        :src="require('@/assets/djangocon-us-2018.png')"
                         alt="DjangoCon US 2018"
                     />
                     <YouTubeEmbed video-id="ZfynWM4-jFE" />
@@ -21,6 +32,7 @@
 
 <script>
 import YouTubeEmbed from '@/components/YouTubeEmbed'
+import SpeakerDeckEmbed from '@/components/SpeakerDeckEmbed'
 import ResponsiveImage from '@/components/ResponsiveImage'
 
 const PAGE_TITLE = 'Talks'
@@ -30,6 +42,7 @@ export default {
   name: 'Talks',
   components: {
     YouTubeEmbed,
+    SpeakerDeckEmbed,
     ResponsiveImage
   },
   metaInfo: {
@@ -59,6 +72,15 @@ export default {
 .talk-list {
   list-style: none;
 
+  h3 {
+    margin-top: var(--space-xs);
+  }
+
+  li:not(:first-child) {
+    h2 {
+      margin-top: var(--space-lg);
+    }
+  }
 }
 
 .talk-instance__visuals {
