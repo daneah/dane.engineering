@@ -85,7 +85,7 @@ export default {
 
 .talk-instance__visuals {
   display: grid;
-  grid-template-columns: minmax(75px, 250px) minmax(250px, 500px);
-  grid-gap: var(--space-sm);
+  grid-template-columns: 100px minmax(250px, 700px);
+  grid-gap: var(--space-md);
 }
 </style>
