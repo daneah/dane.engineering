@@ -99,9 +99,10 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 img {
   max-width: 100%;
+  height: auto;
 }
 
 .post {
