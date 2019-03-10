@@ -13,7 +13,7 @@ import NotFound from '@/views/NotFound'
 Vue.use(Router)
 Vue.use(Meta)
 
-export default new Router({
+const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
@@ -59,3 +59,9 @@ export default new Router({
     }
   ]
 })
+
+router.afterEach((to, from) => {
+  window.scrollTo(0, 0);
+})
+
+export default router;
