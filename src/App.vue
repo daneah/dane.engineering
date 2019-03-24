@@ -189,8 +189,8 @@ main {
 }
 
 .impact-heading {
+  @include title-font;
   font-size: var(--text-xl);
-  font-family: var(--font-title);
 }
 
 .fade-enter-active {
