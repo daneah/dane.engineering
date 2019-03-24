@@ -17,10 +17,9 @@
             </p>
 
             <p>
-                The first chapter is available <strong>free of charge</strong> and the early access currently includes the first three chapters.
+                The first chapter is available <strong>free of charge</strong> and the early access currently includes the first four chapters.
                 If you <BaseLink href="https://bit.ly/clap-py">buy now</BaseLink> you can read new chapters as they're ready
                 and provide feedback along the way so that I can make this book a great learning tool for everyone!
-                <span v-if="dealAvailable">Get 50% off with the code <code>mlhillard</code> until February 7th.</span>
             </p>
         </div>
         <ResponsiveImage
@@ -39,12 +38,6 @@ export default {
   components: {
     BaseLink,
     ResponsiveImage,
-  },
-  computed: {
-    dealAvailable () {
-      const rightNow = new Date()
-      return rightNow.getMonth() === 0 || (rightNow.getMonth() === 1 && rightNow.getDate() <= 7)
-    },
   },
   data () {
     return {}
