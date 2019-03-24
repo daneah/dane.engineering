@@ -51,7 +51,7 @@
                         <img
                             :src="require('@/assets/dev-badge.svg')"
                             alt="Dane Hillard's DEV Profile"
-                            height="25"
+                            width="23"
                         >
                     </BaseLink>
                 </li>
