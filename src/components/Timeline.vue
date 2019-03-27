@@ -28,7 +28,7 @@
                         <div class="entry__years">{{ entry.years.join("&ndash;") }}</div>
                         <ul
                             v-if="entry.responsibilities"
-                            class="responsibility-list"
+                            class="responsibilities"
                         >
                             <li v-for="responsibility in entry.responsibilities">
                                 {{ responsibility }}
@@ -121,7 +121,7 @@ export default {
   margin-top: 0;
 }
 
-.responsibility-list {
+.responsibilities {
   list-style: disc;
 }
 </style>
