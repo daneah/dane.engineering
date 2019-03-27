@@ -3,58 +3,89 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
+const present = new Date().getFullYear()
+
 export default new Vuex.Store({
   state: {
     employment: [
       [
         {
           image: require('@/assets/ithaka.jpg'),
-          year: 2018,
+          years: [2018, present],
           title: 'Lead Web Application Developer',
           subtitle: 'ITHAKA',
-          description: `Leverage PaaS and web framework technologies to develop and maintain resilient, large-scale web applications.
-            Test, measure, and optimize performance of front-end and back-end components to improve user experience.`,
+          responsibilities: [
+            `Manage development, releases, and communications for apiron, an open source package.
+             Collaborate with legal team to determine licensing and privacy obligations.`,
+            'Promote strong development practices around testing, automation, and continuous delivery.',
+            'Encourage development teams to submit blog posts, talk proposals, and cross-team presentations for knowledge sharing.',
+            'Collaborate with quality assurance team to improve automated testing infrastructure.',
+          ],
         },
         {
-          year: 2014,
+          years: [2014, 2018],
           title: 'Web Application Developer',
           subtitle: 'ITHAKA',
+          responsibilities: [
+            'Rotate in regularly to manage incident response for system outages.',
+            'Collaborate with design and marketing to create Build Smarter, an online presence for technical writing.',
+            'Participate in the interview and feedback process for internships and development team hires.',
+            'Help lead a multiple-team effort to overhaul our front-end UI toolset.',
+            'Transition and port existing feature sets from legacy architecture to new architecture.',
+            'Champion transition to HTTPS for all user-facing pages sitewide.',
+          ],
         },
       ],
       [
         {
           image: require('@/assets/thermo-fisher-scientific.png'),
-          year: 2014,
+          years: [2014],
           title: 'Software Development Engineer II',
           subtitle: 'Thermo Fisher Scientific (Previously Life Technologies)',
-          description: `Transition bioinformatics methods/implementations into operational offerings;
-            integrate third-party data products;
-            design, build, and maintain internal tools to support data curation and research.`,
+          responsibilities: [
+            'Collaborate with scientists to develop a working understanding of genomics and molecular biology concepts.',
+            'Transition bioinformatics methods into operational software product offerings.',
+            'Analyze and improve performance of big data storage and querying during data processing.',
+          ],
         },
         {
-          year: 2013,
+          years: [2013, 2014],
           title: 'Software Development Engineer II',
           subtitle: 'Life Technologies (Previously Compendia Bioscience)',
+          responsibilities: [
+            'Integrate third-party data analysis and visualization products with proprietary big data sets.',
+            'Design, build, and maintain internal tools to support data curation and research.',
+          ],
         },
         {
-          year: 2012,
+          years: [2012, 2013],
           title: 'Software Development Engineer',
           subtitle: 'Compendia Bioscience',
+          responsibilities: [
+            'Maintain and execute data processing pipeline software.',
+          ],
         },
       ],
       [
         {
           image: require('@/assets/saic.jpg'),
-          year: 2011,
+          years: [2011, 2012],
           title: 'Software Development Engineer',
           subtitle: 'SAIC',
-          description: `Algorithm design, development, and implementation for C/C++ applications in computer vision and automatic target recognition.`,
+          responsibilities: [
+            'Apply signal processing algorithms to telemetry data for human interpretation.',
+            'Augment telemetry prediction systems to account for additional considerations.',
+            'Develop, iterate on, and integrate rules for telemetry inference engines.',
+          ],
         },
         {
-          year: 2010,
+          years: [2010, 2011],
           title: 'Software Engineering Intern',
           subtitle: 'SAIC',
-          description: 'Update and maintain source code for various C/C++ applications.',
+          responsibilities: [
+            'Maintain legacy C/C++ applications.',
+            'Build a grahical interface for an existing command-line application.',
+          ],
         },
       ]
     ],

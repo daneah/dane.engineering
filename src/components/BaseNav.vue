@@ -121,4 +121,11 @@ nav {
   margin-right: var(--space-sm);
   margin-top: 0;
 }
+
+@media print {
+  .nav-link,
+  .social {
+    display: none;
+  }
+}
 </style>

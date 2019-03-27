@@ -15,18 +15,25 @@
                         v-if="entry.image"
                         :src="entry.image"
                         class="entry__image"
-                        alt="Timeline image"
+                        :alt="`${entry.subtitle} logo`"
                     />
                     <div class="entry__metadata">
-                        <div class="entry__title">{{ entry.title }}</div>
-                        <div class="entry__subtitle">{{ entry.subtitle }}</div>
-                        <div class="entry__year">{{ entry.year }}</div>
-                        <p
-                            v-if="entry.description"
-                            class="entry__description"
+                        <component
+                            :is="`h${headingLevel}`"
+                            class="entry__title"
                         >
-                            {{ entry.description }}
-                        </p>
+                          {{ entry.title }}
+                        </component>
+                        <div class="entry__subtitle">{{ entry.subtitle }}</div>
+                        <div class="entry__years">{{ entry.years.join("&ndash;") }}</div>
+                        <ul
+                            v-if="entry.responsibilities"
+                            class="responsibility-list"
+                        >
+                            <li v-for="responsibility in entry.responsibilities">
+                                {{ responsibility }}
+                            </li>
+                        </ul>
                     </div>
                 </li>
             </ol>
@@ -46,7 +53,11 @@ export default {
     entries: {
       type: Array,
       required: true,
-    }
+    },
+    headingLevel: {
+      type: Number,
+      default: 2,
+    },
   },
   data () {
     return {}
@@ -74,6 +85,10 @@ export default {
   grid-template-columns: 50% minmax(75px, 150px);
   grid-gap: var(--space-xl);
   margin-top: var(--space-xl);
+
+  @media print {
+    grid-template-columns: auto minmax(25px, 50px);
+  }
 }
 
 .entry__metadata {
@@ -82,15 +97,17 @@ export default {
 
 .entry__image {
   grid-column: 2;
+  break-inside: avoid;
 }
 
-.entry__year {
+.entry__years {
   font-size: var(--text-md);
   font-weight: bold;
 }
 
 .entry__title {
   font-size: var(--text-xl);
+  font-weight: normal;
   margin-top: 0;
 }
 
@@ -102,5 +119,9 @@ export default {
 
 .entries li:first-child .entry__metadata {
   margin-top: 0;
+}
+
+.responsibility-list {
+  list-style: disc;
 }
 </style>

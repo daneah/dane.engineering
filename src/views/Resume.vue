@@ -3,7 +3,10 @@
         <h1>Résumé</h1>
 
         <h2>Experience</h2>
-        <Timeline :entries="$store.state.employment" />
+        <Timeline
+            :entries="$store.state.employment"
+            :heading-level="3"
+        />
 
         <h2>Skills</h2>
 
@@ -68,7 +71,7 @@ export default {
 .skills {
   display: grid;
 
-  @media (min-width: 700px) {
+  @media print, (min-width: 700px) {
     grid-template-columns: repeat(2, minmax(auto, 375px));
     grid-gap: var(--space-xxl);
   }
