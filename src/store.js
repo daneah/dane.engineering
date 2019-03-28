@@ -84,7 +84,7 @@ export default new Vuex.Store({
           subtitle: 'SAIC',
           responsibilities: [
             'Maintain legacy C/C++ applications.',
-            'Build a grahical interface for an existing command-line application.',
+            'Build a graphical interface for an existing command-line application.',
           ],
         },
       ]
