@@ -5,6 +5,24 @@
         </h1>
         <ul class="talk-list">
             <li>
+                <h2>Non-traditional paths to software and the skills required</h2>
+                <h3>Test & Code with Brian Okken</h3>
+                <div class="talk-instance__visuals">
+                    <ResponsiveImage
+                        :src="require('@/assets/test-and-code.jpg')"
+                        alt="Test & Code logo"
+                    />
+                    <p>
+                        <BaseLink
+                            href="https://testandcode.com/70"
+                            :external="true"
+                        >
+                            Listen to the podcast
+                        </BaseLink>
+                      </p>
+                </div>
+            </li>
+            <li>
                 <h2>Multiple Inheritance and Mixins</h2>
                 <h3>PyCaribbean 2019</h3>
                 <div class="talk-instance__visuals">
@@ -31,9 +49,10 @@
 </template>
 
 <script>
-import YouTubeEmbed from '@/components/YouTubeEmbed'
-import SpeakerDeckEmbed from '@/components/SpeakerDeckEmbed'
+import BaseLink from '@/components/BaseLink'
 import ResponsiveImage from '@/components/ResponsiveImage'
+import SpeakerDeckEmbed from '@/components/SpeakerDeckEmbed'
+import YouTubeEmbed from '@/components/YouTubeEmbed'
 
 const PAGE_TITLE = 'Talks'
 const PAGE_DESCRIPTION = 'Django and Python Conference talks by Dane Hillard'
@@ -41,9 +60,10 @@ const PAGE_DESCRIPTION = 'Django and Python Conference talks by Dane Hillard'
 export default {
   name: 'Talks',
   components: {
-    YouTubeEmbed,
+    BaseLink,
+    ResponsiveImage,
     SpeakerDeckEmbed,
-    ResponsiveImage
+    YouTubeEmbed,
   },
   metaInfo: {
     title: PAGE_TITLE,
@@ -87,5 +107,9 @@ export default {
   display: grid;
   grid-template-columns: 100px minmax(250px, 700px);
   grid-gap: var(--space-md);
+
+  p:first-of-type {
+    margin-top: 0;
+  }
 }
 </style>
