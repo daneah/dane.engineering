@@ -1,0 +1,18 @@
+{
+    "plugins": [
+        [
+            "prismjs", {
+                "languages": [
+                    "clike",
+                    "css",
+                    "markup",
+                    "javascript",
+                    "python",
+                    "scss"
+                ],
+                "theme": "tomorrow",
+                "css": true
+            }
+        ]
+    ]
+}
