@@ -13,6 +13,8 @@ const productionPlugins = [
         '/talks',
         '/posts',
         '/post/buttercms-in-vue',
+        '/post/truly-taking-time-off-a-checklist',
+        '/post/flexible-approach-python-api-client-development',
     ],
   }),
 ]
