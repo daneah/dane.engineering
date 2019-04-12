@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
+    "prebuild": "curl -X GET 'https://api.buttercms.com/v2/posts/?page=1&page_size=10&auth_token=cd7317f31d717fc87a1374098f53651830003bed' > latest-posts.json",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit"

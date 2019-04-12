@@ -1,5 +1,6 @@
 const path = require('path')
 const PrerenderSpaPlugin = require('prerender-spa-plugin')
+const latestPosts = require('./latest-posts.json')
 
 const productionPlugins = [
   new PrerenderSpaPlugin({
@@ -12,9 +13,7 @@ const productionPlugins = [
         '/contact',
         '/talks',
         '/posts',
-        '/post/buttercms-in-vue',
-        '/post/truly-taking-time-off-a-checklist',
-        '/post/flexible-approach-python-api-client-development',
+        ...latestPosts['data'].map((post) => `/post/${post.slug}`),
     ],
   }),
 ]
