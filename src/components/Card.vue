@@ -1,16 +1,31 @@
 <template>
     <div class="card">
-        <div class="card__image">
-            <slot name="image">
-                <img src="https://via.placeholder.com/250x250">
-            </slot>
+        <div class="card__heading">
+            <router-link
+                v-if="link"
+                :to="link"
+            >
+                <slot name="image">
+                    <img src="https://via.placeholder.com/250x250">
+                </slot>
+                <div class="card__title">
+                    <slot name="title">
+                        Card Title
+                    </slot>
+                </div>
+            </router-link>
+            <template v-else>
+                <slot name="image">
+                    <img src="https://via.placeholder.com/250x250">
+                </slot>
+                <div class="card__title">
+                    <slot name="title">
+                        Card Title
+                    </slot>
+                </div>
+            </template>
         </div>
         <div class="card__body">
-            <div class="card__title">
-                <slot name="title">
-                    Card Title
-                </slot>
-            </div>
             <div class="card__description">
                 <slot name="description">
                     <p>
@@ -26,6 +41,12 @@
 
 export default {
   name: 'Card',
+  props: {
+    link: {
+      type: Object,
+      required: false,
+    }
+  },
   data () {
     return {}
   },
@@ -52,6 +73,9 @@ export default {
 }
 
 .card__title {
+  margin-top: 0;
+  padding: var(--space-sm);
+
   font-size: var(--text-lg);
   font-weight: bold;
 
