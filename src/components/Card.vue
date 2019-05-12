@@ -1,6 +1,6 @@
 <template>
     <div class="card">
-        <div class="card__heading">
+        <div class="card__header">
             <router-link
                 v-if="link"
                 :to="link"
