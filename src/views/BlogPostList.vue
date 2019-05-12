@@ -10,25 +10,16 @@
             :key="post.slug"
             class="post"
           >
-            <Card>
+            <Card :link="{ name: 'post', params: { slug: post.slug }}">
               <template slot="image">
-                <router-link
-                  :to="{ name: 'post', params: { slug: post.slug } }"
-                  v-if="post.featured_image"
-                >
                   <ResponsiveImage
+                    v-if="post.featured_image"
                     :src="postThumbnail(post.featured_image)"
                     alt=""
                   />
-                </router-link>
-                <div v-else />
               </template>
               <template slot="title">
-                <router-link
-                  :to="{ name: 'post', params: { slug: post.slug } }"
-                >
                   {{ post.title }}
-                </router-link>
               </template>
               <template slot="description">{{ post.summary }}</template>
             </Card>

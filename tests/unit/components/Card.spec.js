@@ -15,7 +15,7 @@ describe('Card', () => {
                 image: '<img src="https://foo.com/bar.jpg">'
             }
         })
-        const imageWrapper = wrapper.find('div.card__image')
+        const imageWrapper = wrapper.find('div.card__header')
         expect(imageWrapper.contains('img[src="https://foo.com/bar.jpg"]')).toBe(true)
     })
 
