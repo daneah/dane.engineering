@@ -5,6 +5,25 @@
         </h1>
         <ul class="talk-list">
             <li>
+                <h2>Hot for Teacher</h2>
+                <h3>The Development Hell</h3>
+                <div class="talk-instance__visuals">
+                    <ResponsiveImage
+                        :src="require('@/assets/the-dev-hell.png')"
+                        alt="The Development Hell logo"
+                    />
+                    <p>
+                        <BaseLink
+                            href="https://devhell.info/post/2019-04-06/hot-for-teacher/"
+                            :external="true"
+                        >
+                            Listen to the podcast
+                        </BaseLink>
+                    </p>
+                </div>
+            </li>
+
+            <li>
                 <h2>Non-traditional paths to software and the skills required</h2>
                 <h3>Test & Code with Brian Okken</h3>
                 <div class="talk-instance__visuals">
@@ -22,6 +41,7 @@
                       </p>
                 </div>
             </li>
+
             <li>
                 <h2>Multiple Inheritance and Mixins</h2>
                 <h3>PyCaribbean 2019</h3>
@@ -33,6 +53,7 @@
                     <SpeakerDeckEmbed deck-id="3dbcdf7b6a974a1c9bfef291650a9f70" />
                 </div>
             </li>
+
             <li>
                 <h2>Serverless Django with Zappa</h2>
                 <h3>DjangoCon US 2018</h3>
