@@ -2,10 +2,7 @@
 @import '@/_typography.scss';
 
 a {
-  --link-color: var(--blue);
-  --link-hover-color: var(--black);
-
-  color: var(--link-color);
+  color: var(--link);
   transition: color ease-in-out 0.1s;
 
   &.clean {
@@ -14,7 +11,7 @@ a {
   }
 
   &:hover {
-    color: var(--link-hover-color);
+    color: var(--link-hover);
     transform: scale(1.2);
   }
 }

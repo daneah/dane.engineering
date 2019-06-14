@@ -47,7 +47,7 @@ export default {
 
 <style lang="scss" scoped>
 .book-announcement {
-    background: var(--gray);
+    background: var(--panel-background);
     padding: var(--space-xl);
 }
 </style>

@@ -155,7 +155,8 @@ body {
     box-sizing: border-box;
     font-size: var(--text-base-size);
     font-family: var(--font-primary);
-    color: var(--text-color);
+    color: var(--text);
+    background: var(--background);
     margin-top: 0;
 }
 
@@ -206,6 +207,10 @@ main {
 code {
   padding: 0.125em .5em;
   background: var(--very-light-gray);
+
+  @media (prefers-color-scheme: dark) {
+    background: var(--medium-gray);
+  }
 }
 
 pre {
