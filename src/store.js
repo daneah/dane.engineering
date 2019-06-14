@@ -10,7 +10,7 @@ export default new Vuex.Store({
     employment: [
       [
         {
-          image: require('@/assets/ithaka.jpg'),
+          image: require('@/assets/ithaka.png'),
           years: [2018, present],
           title: 'Lead Web Application Developer',
           subtitle: 'ITHAKA',
