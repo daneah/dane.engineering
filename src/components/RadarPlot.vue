@@ -61,7 +61,7 @@ export default {
     },
     color: {
       type: String,
-      default: 'var(--blue)',
+      default: 'var(--radar-plot-polygon)',
     }
   },
   data () {
@@ -116,13 +116,13 @@ svg {
 
 circle {
   fill: none;
-  stroke: var(--dark-gray);
+  stroke: var(--radar-plot-lines);
   stroke-width: 2;
   stroke-opacity: 0.75;
 }
 
 line {
-  stroke: var(--dark-gray);
+  stroke: var(--radar-plot-lines);
   stroke-width: 1;
   stroke-opacity: 0.5;
 }
