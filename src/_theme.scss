@@ -5,6 +5,8 @@
     --panel-background: var(--gray);
     --radar-plot-text: var(--black);
     --radar-plot-text-shadow: var(--white);
+    --radar-plot-lines: var(--black);
+    --radar-plot-polygon: var(--blue);
     --link: var(--blue);
     --link-hover: var(--black);
 
@@ -15,6 +17,8 @@
         --panel-background: var(--black);
         --radar-plot-text: var(--white);
         --radar-plot-text-shadow: var(--black);
+        --radar-plot-polygon: var(--gray);
+        --radar-plot-lines: var(--white);
         --link: var(--light-blue);
         --link-hover: var(--blue);
     }
