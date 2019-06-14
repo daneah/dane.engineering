@@ -5,6 +5,11 @@ a {
   --link-color: var(--blue);
   --link-hover-color: var(--black);
 
+  @media (prefers-color-scheme: dark) {
+      --link-color: var(--light-blue);
+      --link-hover-color: var(--blue);
+  }
+
   color: var(--link-color);
   transition: color ease-in-out 0.1s;
 

@@ -30,6 +30,10 @@
     @media (max-width: 750px) {
         --text-base-size: 0.8em;
     }
+
+    @media (prefers-color-scheme: dark) {
+        --text-color: var(--white);
+    }
 }
 
 p {

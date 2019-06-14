@@ -1,0 +1,13 @@
+:root {
+    --background: var(--white);
+    --nav-background: var(--light-blue);
+    --radar-plot-text: var(--black);
+    --radar-plot-text-shadow: var(--white);
+
+    @media (prefers-color-scheme: dark) {
+        --background: var(--dark-gray);
+        --nav-background: var(--medium-gray);
+        --radar-plot-text: var(--white);
+        --radar-plot-text-shadow: var(--black);
+    }
+}

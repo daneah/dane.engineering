@@ -85,8 +85,6 @@ export default {
 @import '@/main.scss';
 
 nav {
-    --nav-background: #D1EBFF;
-
     padding: var(--space-lg);
     background: var(--nav-background);
 

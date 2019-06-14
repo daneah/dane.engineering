@@ -129,7 +129,8 @@ line {
 
 text {
   font-size: var(--text-lg);
-  text-shadow: 2px 2px var(--white);
+  fill: var(--radar-plot-text);
+  text-shadow: 2px 2px var(--radar-plot-text-shadow);
 }
 
 polygon {
