@@ -1,13 +1,21 @@
 :root {
+    --text: var(--dark-gray);
     --background: var(--white);
     --nav-background: var(--light-blue);
+    --panel-background: var(--gray);
     --radar-plot-text: var(--black);
     --radar-plot-text-shadow: var(--white);
+    --link: var(--blue);
+    --link-hover: var(--black);
 
     @media (prefers-color-scheme: dark) {
+        --text: var(--white);
         --background: var(--dark-gray);
         --nav-background: var(--medium-gray);
+        --panel-background: var(--black);
         --radar-plot-text: var(--white);
         --radar-plot-text-shadow: var(--black);
+        --link: var(--light-blue);
+        --link-hover: var(--blue);
     }
 }
