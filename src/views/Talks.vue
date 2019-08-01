@@ -12,7 +12,7 @@
                         :src="require('@/assets/pyohio-2019.png')"
                         alt="PyOhio 2019"
                     />
-                    <SpeakerDeckEmbed deck-id="4d0cce7ba6724831a7f1a65cad8584c9" />
+                    <SpeakerDeckEmbed deck-id="22f01cc587cb451382bb62f93063cc67" />
                 </div>
             </li>
             <li>
