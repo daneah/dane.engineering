@@ -7,6 +7,16 @@
             <li>
                 <h2>Adopt-a-pytest</h2>
                 <h3>PyOhio 2019</h3>
+                <p>
+                    <code>pytest</code> is a testing framework that makes writing and running Python tests simpler.
+                    Adopting new tooling in a large system is often a burden.
+                    How can you introduce <code>pytest</code> gradually with minimal pain?
+                </p>
+                <p>
+                    With its simplified syntax, powerful fixture behaviors, detailed test reports, and plugin-based architecture, <code>pytest</code> has a lot to offer.
+                    Whether you're new to Python unit testing or you've been using <code>unittest</code> for a while, <code>pytest</code> may be something to consider.
+                    It's not too hard to get up and running with <code>pytest</code> on a fresh project, but how can you retrofit an existing project without having to refactor the world all at once?
+                </p>
                 <div class="talk-instance__visuals">
                     <ResponsiveImage
                         :src="require('@/assets/pyohio-2019.png')"
@@ -16,8 +26,36 @@
                 </div>
             </li>
             <li>
+                <h2>Good Software Practices</h2>
+                <h3>No Dogma Podcast</h3>
+                <p>
+                    Some of the important principles of software development discussed in <BaseLink href="https://bit.ly/the-python-pro" :external="true"><em>Practices of the Python Pro</em></BaseLink>.
+                    Get a feel for the book as I run through the table of contents with Bryan.
+                </p>
+                <div class="talk-instance__visuals">
+                    <ResponsiveImage
+                        :src="require('@/assets/no-dogma.jpg')"
+                        alt="No Dogma podcast logo"
+                    />
+                    <p>
+                        <BaseLink
+                            href="https://nodogmapodcast.bryanhogan.net/123-dane-hillard-good-software-practices/"
+                            :external="true"
+                        >
+                            Listen to the podcast
+                        </BaseLink>
+                    </p>
+                </div>
+            </li>
+            <li>
                 <h2>Hot for Teacher</h2>
                 <h3>The Development Hell</h3>
+                <p>
+                    What does the process of writing a book look like?
+                    What are the logistics with publishing and authoring?
+                    What gaps does <BaseLink href="https://bit.ly/the-python-pro" :external="true"><em>Practices of the Python Pro</em></BaseLink> address?
+                    Chris and Ed grill me on these questions and more.
+                </p>
                 <div class="talk-instance__visuals">
                     <ResponsiveImage
                         :src="require('@/assets/the-dev-hell.png')"
@@ -37,6 +75,11 @@
             <li>
                 <h2>Non-traditional paths to software and the skills required</h2>
                 <h3>Test & Code with Brian Okken</h3>
+                <p>
+                    We with experience and privilege who are able to teach should help our communities grow.
+                    Underserved, underrepresented, and non-normative groups need access to high-quality resources.
+                    The more we can democratize software development knowledge, the more empathy we can deliver.
+                </p>
                 <div class="talk-instance__visuals">
                     <ResponsiveImage
                         :src="require('@/assets/test-and-code.jpg')"
@@ -56,6 +99,12 @@
             <li>
                 <h2>Multiple Inheritance and Mixins</h2>
                 <h3>PyCaribbean 2019</h3>
+                <p>
+                    Start with old- and new-style classes and inheritance.
+                    Then learn about multiple inheritance, method resolution order, and mixins.
+                    Finish with a few practical mixin examples.
+                    Inspired by <BaseLink href="https://easyaspython.com/mixins-for-fun-and-profit-cb9962760556" :external="true">Mixins for Fun and Profit</BaseLink>.
+                </p>
                 <div class="talk-instance__visuals">
                     <ResponsiveImage
                         :src="require('@/assets/pycaribbean-2019.png')"
@@ -68,6 +117,11 @@
             <li>
                 <h2>Serverless Django with Zappa</h2>
                 <h3>DjangoCon US 2018</h3>
+                <p>
+                    Remove the burden of infrastructure management from your Django applications by going serverless.
+                    Use the Zappa framework to run your Django application as an Amazon Web Services Lambda function.
+                    See how to offload everything but the database into managed solutions so that you can tackle the application itself.
+                </p>
                 <div class="talk-instance__visuals">
                     <ResponsiveImage
                         :src="require('@/assets/djangocon-us-2018.png')"
