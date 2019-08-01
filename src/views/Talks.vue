@@ -5,6 +5,17 @@
         </h1>
         <ul class="talk-list">
             <li>
+                <h2>Adopt-a-pytest</h2>
+                <h3>PyOhio 2019</h3>
+                <div class="talk-instance__visuals">
+                    <ResponsiveImage
+                        :src="require('@/assets/pyohio-2019.png')"
+                        alt="PyOhio 2019"
+                    />
+                    <SpeakerDeckEmbed deck-id="4d0cce7ba6724831a7f1a65cad8584c9" />
+                </div>
+            </li>
+            <li>
                 <h2>Hot for Teacher</h2>
                 <h3>The Development Hell</h3>
                 <div class="talk-instance__visuals">
