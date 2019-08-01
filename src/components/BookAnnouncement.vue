@@ -4,7 +4,7 @@
             <h2>I'm writing a book!</h2>
 
             <p>
-                <BaseLink href="https://bit.ly/the-python-pro"><em>Practices of the Python Pro</em></BaseLink>
+                <BaseLink href="https://bit.ly/the-python-pro" :external="true"><em>Practices of the Python Pro</em></BaseLink>
                 is currently available through Manning's early access program.
                 I've been sharing my experience in Python with others for a few years
                 and this is my biggest attempt in that endeavor, to date!
