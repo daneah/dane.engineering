@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import Prism from 'prismjs'
 
 import BaseLink from '@/components/BaseLink'
@@ -30,6 +31,7 @@ export default {
     return {
       loading: true,
       post: {},
+      seo: {},
     }
   },
   computed: {
@@ -55,14 +57,24 @@ export default {
           console.log(response)
         })
     },
+    fetchPostSeo () {
+      axios.get(`https://api.buttercms.com/v2/content/blog_post_seo/?fields.post_slug=${this.$route.params.slug}&auth_token=${this.$butterApiToken}`)
+        .then((response) => {
+          this.seo = response.data.data.blog_post_seo.length > 0 ? response.data.data.blog_post_seo[0]: {}
+        }).catch((response) => {
+          console.log(response)
+        })
+    },
   },
   watch: {
     $route(to, from) {
       this.fetchPost()
+      this.fetchPostSeo()
     },
   },
   created () {
     this.fetchPost()
+    this.fetchPostSeo()
   },
   metaInfo () {
     let meta = [
@@ -94,6 +106,9 @@ export default {
     return {
       title: this.loading ? 'Loading...' : this.post.data.title,
       meta: meta,
+      link: this.loading || !this.seo.canonical_link ? [] : [
+        { rel: 'canonical', href: this.seo.canonical_link },
+      ],
     }
   },
 }
