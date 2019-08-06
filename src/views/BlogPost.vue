@@ -74,6 +74,7 @@ export default {
   },
   created () {
     this.fetchPost()
+    this.fetchPostSeo()
   },
   metaInfo () {
     let meta = [
