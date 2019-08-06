@@ -50,7 +50,6 @@ export default {
         .then((response) => {
           this.loading = false
           this.post = response.data
-          this.fetchPostSeo(this.post.data.slug)
           this.$nextTick(() => {
             Prism.highlightAll()
           })
