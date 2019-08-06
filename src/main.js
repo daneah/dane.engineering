@@ -18,9 +18,10 @@ Vue.use(VueAnalytics, {
   },
 })
 
-const butter = Butter('cd7317f31d717fc87a1374098f53651830003bed')
+const butterApiToken = 'cd7317f31d717fc87a1374098f53651830003bed'
+const butter = Butter(butterApiToken)
 Vue.prototype.$butter = butter
-
+Vue.prototype.$butterApiToken = butterApiToken
 new Vue({
   router,
   store,
