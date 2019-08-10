@@ -209,7 +209,7 @@ code {
   background: var(--very-light-gray);
 
   @media (prefers-color-scheme: dark) {
-    background: var(--medium-gray);
+    background: var(--black);
   }
 }
 
