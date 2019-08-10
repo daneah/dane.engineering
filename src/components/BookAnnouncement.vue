@@ -23,7 +23,8 @@
             </p>
         </div>
         <ResponsiveImage
-            :src="require('@/assets/practices-of-the-python-pro-cover.png')"
+            :src="require('@/assets/practices-of-the-python-pro-cover.jpg')"
+            :webp="require('@/assets/practices-of-the-python-pro-cover.webp')"
             alt="Book cover for Practices of the Python Pro by Dane Hillard"
         />
     </div>

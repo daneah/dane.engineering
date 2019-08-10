@@ -86,4 +86,8 @@ export default {
   word-break: break-word;
   hyphens: auto;
 }
+
+img {
+  margin-top: 0;
+}
 </style>
