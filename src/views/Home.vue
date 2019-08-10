@@ -9,7 +9,7 @@
                 </p>
 
                 <p>
-                    Dane has a B.S.E in computer engineering with a minor in mathematics from the University of Michigan.
+                    Dane has a B.S.E. in computer engineering with a minor in mathematics from the University of Michigan.
                     As a software engineer, Dane has worked on intelligence research and development at SAIC (now <BaseLink href="https://www.leidos.com/">Leidos</BaseLink>)
                     and personalized cancer genomics at Compendia Bioscience (now part of <BaseLink href="https://www.thermofisher.com">Thermo Fisher Scientific</BaseLink>).
                     As a lead web application developer at <BaseLink href="https://www.ithaka.org">ITHAKA</BaseLink>,
@@ -23,6 +23,7 @@
             <ResponsiveImage
                 class="portrait"
                 :src="require('@/assets/dane-hillard.png')"
+                :webp="require('@/assets/dane-hillard.webp')"
                 alt="Portrait of Dane Hillard"
             />
         </div>
@@ -39,6 +40,7 @@
                             <BaseLink href="https://github.com/daneah/pixelize">
                                 <ResponsiveImage
                                     :src="require('@/assets/pixelize.png')"
+                                    :webp="require('@/assets/pixelize.webp')"
                                     alt="pixelize project screenshot"
                                 />
                             </BaseLink>
@@ -59,6 +61,7 @@
                             >
                                 <ResponsiveImage
                                     :src="require('@/assets/apiron.png')"
+                                    :webp="require('@/assets/apiron.webp')"
                                     alt="Screenshot of apiron GitHub page"
                                 />
                             </BaseLink>
@@ -101,6 +104,7 @@
                             >
                                 <ResponsiveImage
                                     :src="require('@/assets/guitar.jpg')"
+                                    :webp="require('@/assets/guitar.webp')"
                                     alt="Guitar"
                                 />
                             </BaseLink>
@@ -163,14 +167,14 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 .projects {
   list-style: none;
   display: grid;
   grid-gap: var(--space-md);
 
   @media (min-width: 700px) {
-    grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: var(--space-lg);
   }
 }
@@ -206,7 +210,7 @@ export default {
     clip-path: polygon(1% 0%, 100% 2%, 99% 100%, 0% 98%);
 }
 
-.portrait {
+.portrait img {
     clip-path: polygon(0% 4%, 95% 0%, 100% 100%, 0% 97%);
 }
 </style>
