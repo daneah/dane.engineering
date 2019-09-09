@@ -189,6 +189,13 @@ main {
     }
 }
 
+article {
+  ul {
+    font-size: var(--text-lg);
+    max-width: 65ch;
+  }
+}
+
 .impact-heading {
   @include title-font;
   font-size: var(--text-xl);
