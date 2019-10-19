@@ -5,6 +5,22 @@
         </h1>
         <ul class="talk-list">
             <li>
+                <h2>Using a custom template loader at scale</h2>
+                <h3>DjangoCon US 2019</h3>
+                <p>
+                  You can reuse Django templates with the <code>{% include %}</code> tag.
+                  But what if you need to share a template across multiple projects?
+                  Learn how we built a custom template loader to ship template changes&mdash;all without deploying any code.
+                </p>
+                <div class="talk-instance__visuals">
+                    <ResponsiveImage
+                        :src="require('@/assets/djangocon-us-2019.jpg')"
+                        alt="DjangoCon US 2018"
+                    />
+                    <YouTubeEmbed video-id="pocIpg1FZ3c" />
+                </div>
+            </li>
+            <li>
                 <h2>Adopt-a-pytest</h2>
                 <h3>PyOhio 2019</h3>
                 <p>
