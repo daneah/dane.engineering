@@ -17,9 +17,7 @@
             </p>
 
             <p>
-                The first chapter is available <strong>free of charge</strong> and the early access currently includes the first eight chapters.
-                If you <BaseLink href="https://bit.ly/the-python-pro">buy now</BaseLink> you can read new chapters as they're ready
-                and provide feedback along the way so that I can make this book a great learning tool for everyone!
+                The first chapter is available <strong>free of charge</strong> and the full book is available in early access until production is finalized.
             </p>
         </div>
         <ResponsiveImage
