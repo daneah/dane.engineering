@@ -115,6 +115,7 @@ export default {
   data () {
     return {
       navLinks: [
+        { to: 'books', text: 'Books' },
         { to: 'talks', text: 'Talks' },
         { to: 'posts', text: 'Posts' },
         { to: 'resume', text: 'Résumé' },

@@ -9,6 +9,7 @@ import ContactSuccess from '@/views/ContactSuccess'
 import BlogPost from '@/views/BlogPost'
 import BlogPostList from '@/views/BlogPostList'
 import NotFound from '@/views/NotFound'
+import Books from '@/views/Books'
 
 Vue.use(Router)
 Vue.use(Meta)
@@ -51,6 +52,11 @@ const router = new Router({
       path: '/post/:slug',
       name: 'post',
       component: BlogPost,
+    },
+    {
+      path: '/books',
+      name: 'books',
+      component: Books,
     },
     {
       path: '*',
