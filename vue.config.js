@@ -17,6 +17,7 @@ module.exports = {
             '/contact',
             '/talks',
             '/posts',
+            '/books',
             ...latestPosts['data'].map((post) => `/post/${post.slug}`),
           ],
         }),
