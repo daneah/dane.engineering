@@ -2,7 +2,10 @@
     <main>
         <h1>About Dane</h1>
 
-        <div v-if="new Date() <= new Date('2019-10-29')">
+        <div
+            v-if="new Date() <= new Date('2019-10-29')"
+            class="ph-announce"
+        >
             <div>
                 <h2>Practices of the Python Pro is on Product Hunt!</h2>
                 <p>Please join the discussion and write a review!</p>
@@ -38,7 +41,9 @@
             />
         </div>
 
-        <BookAnnouncement class="book-announcement" />
+        <div v-if="new Date() > new Date('2019-10-29')">
+            <BookAnnouncement class="book-announcement" />
+        </div>
 
         <h2>Projects</h2>
         <CardGrid>
@@ -225,9 +230,15 @@ export default {
 }
 
 .product-hunt-embed {
-    background: white;
+    background: var(--white);
     display: inline-block;
     padding: 0;
     margin: 1rem 0;
+}
+
+.ph-announce {
+    background: var(--panel-background);
+    padding: var(--space-xl);
+    display: inline-block;
 }
 </style>
