@@ -2,6 +2,19 @@
     <main>
         <h1>About Dane</h1>
 
+        <div
+            v-if="new Date() <= new Date('2019-10-29')"
+            class="ph-announce"
+        >
+            <div>
+                <h2>Practices of the Python Pro is on Product Hunt!</h2>
+                <p>Please join the discussion and write a review!</p>
+            </div>
+            <div class="product-hunt-embed">
+                <iframe style="border: none;" src="https://cards.producthunt.com/cards/posts/172000?v=1" width="500" height="405" frameborder="0" scrolling="no" allowfullscreen></iframe>
+            </div>
+        </div>
+
         <div class="about">
             <div class="bio">
                 <p>
@@ -28,7 +41,9 @@
             />
         </div>
 
-        <BookAnnouncement class="book-announcement" />
+        <div v-if="new Date() > new Date('2019-10-29')">
+            <BookAnnouncement class="book-announcement" />
+        </div>
 
         <h2>Projects</h2>
         <CardGrid>
@@ -212,5 +227,18 @@ export default {
 
 .portrait img {
     clip-path: polygon(0% 4%, 95% 0%, 100% 100%, 0% 97%);
+}
+
+.product-hunt-embed {
+    background: var(--white);
+    display: inline-block;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.ph-announce {
+    background: var(--panel-background);
+    padding: var(--space-xl);
+    display: inline-block;
 }
 </style>
