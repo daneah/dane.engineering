@@ -8,7 +8,7 @@
           <li
             v-for="post in posts.data"
             :key="post.slug"
-            class="post"
+            class="posts__post"
           >
             <Card :link="{ name: 'post', params: { slug: post.slug }}">
               <template slot="image">
@@ -103,9 +103,9 @@ export default {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
   grid-gap: 3rem;
-}
 
-.post {
-  margin: 0;
+  @at-root #{&}__post {
+    margin: 0;
+  }
 }
 </style>

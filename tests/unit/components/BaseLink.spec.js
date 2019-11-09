@@ -51,7 +51,7 @@ describe('BaseLink', () => {
                 clean: true
             }
         })
-        expect(wrapper.contains('a.clean')).toBe(true)
+        expect(wrapper.contains('.link--clean')).toBe(true)
     })
 
     it('Renders the specified content', () => {

@@ -1,7 +1,7 @@
 <template>
-    <nav>
-        <ul>
-            <li class="brand">
+    <nav class="nav">
+        <ul class="nav__link-list">
+            <li class="nav__brand">
                 <slot name="brand">
                     Brand
                 </slot>
@@ -12,7 +12,7 @@
                 <template v-if="link.external">
                     <li
                         :key="link.to"
-                        class="nav-link"
+                        class="nav__link"
                     >
                         <BaseLink
                             :href="link.to"
@@ -28,7 +28,7 @@
                         :key="link.to"
                         tag="li"
                         :to="{ name: link.to }"
-                        class="nav-link"
+                        class="nav__link"
                     >
                         <BaseLink
                             :href="$router.resolve({ name: link.to }).href"
@@ -40,14 +40,14 @@
                     <li
                         v-else
                         :key="link.to"
-                        class="nav-link"
+                        class="nav__link"
                     >
                         <span>{{ link.text }}</span>
                     </li>
                 </template>
             </template>
             <li>
-                <ul class="social">
+                <ul class="nav__social">
                     <slot name="social-links" />
                 </ul>
             </li>
@@ -84,7 +84,7 @@ export default {
 <style scoped lang="scss">
 @import '@/main.scss';
 
-nav {
+.nav {
     padding: var(--space-lg);
     background: var(--nav-background);
 
@@ -93,7 +93,7 @@ nav {
       padding: var(--space-xl);
     }
 
-    ul {
+    @at-root #{&}__link-list {
         list-style: none;
 
         @media (min-width: 700px) {
@@ -101,28 +101,28 @@ nav {
           top: var(--space-xl);
         }
     }
-}
 
-.nav-link {
-  font-size: var(--text-lg);
-  margin-top: 0;
-  padding: var(--space-xs);
-  padding-left: 0;
+    @at-root #{&}__link {
+      font-size: var(--text-lg);
+      margin-top: 0;
+      padding: var(--space-xs);
+      padding-left: 0;
 
-  @media (max-width: 699px) {
-    display: inline-block;
-  }
-}
+      @media (max-width: 699px) {
+        display: inline-block;
+      }
+    }
 
-.social li {
-  display: inline-block;
-  margin-right: var(--space-sm);
-  margin-top: 0;
+    @at-root #{&}__social li {
+      display: inline-block;
+      margin-right: var(--space-sm);
+      margin-top: 0;
+    }
 }
 
 @media print {
-  .nav-link,
-  .social {
+  .nav__link,
+  .nav__social {
     display: none;
   }
 }

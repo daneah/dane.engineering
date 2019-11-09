@@ -2,19 +2,6 @@
     <main>
         <h1>About Dane</h1>
 
-        <div
-            v-if="new Date() <= new Date('2019-10-29')"
-            class="ph-announce"
-        >
-            <div>
-                <h2>Practices of the Python Pro is on Product Hunt!</h2>
-                <p>Please join the discussion and write a review!</p>
-            </div>
-            <div class="product-hunt-embed">
-                <iframe style="border: none;" src="https://cards.producthunt.com/cards/posts/172000?v=1" width="500" height="405" frameborder="0" scrolling="no" allowfullscreen></iframe>
-            </div>
-        </div>
-
         <div class="about">
             <div class="bio">
                 <p>
@@ -48,8 +35,8 @@
         <h2>Projects</h2>
         <CardGrid>
           <template slot="cards">
-            <ul class="projects">
-                <li class="project">
+            <ul class="project-list">
+                <li class="project-list__project">
                     <Card>
                         <template slot="image">
                             <BaseLink href="https://github.com/daneah/pixelize">
@@ -68,7 +55,7 @@
                         </template>
                     </Card>
                 </li>
-                <li class="project">
+                <li class="project-list__project">
                     <Card>
                         <template slot="image">
                             <BaseLink
@@ -90,7 +77,7 @@
                         </template>
                     </Card>
                 </li>
-                <li class="project">
+                <li class="project-list__project">
                     <Card>
                         <template slot="image">
                             <BaseLink
@@ -110,7 +97,7 @@
                         </template>
                     </Card>
                 </li>
-                <li class="project">
+                <li class="project-list__project">
                     <Card>
                         <template slot="image">
                             <BaseLink
@@ -183,7 +170,7 @@ export default {
 </script>
 
 <style lang="scss">
-.projects {
+.project-list {
   list-style: none;
   display: grid;
   grid-gap: var(--space-md);
@@ -192,10 +179,10 @@ export default {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: var(--space-lg);
   }
-}
 
-.project {
-  margin-top: 0;
+  @at-root #{&}__project {
+    margin-top: 0;
+  }
 }
 
 .about,
@@ -220,25 +207,7 @@ export default {
   }
 }
 
-.book-announcement {
-    margin-top: var(--space-xl);
-    clip-path: polygon(1% 0%, 100% 2%, 99% 100%, 0% 98%);
-}
-
-.portrait img {
+.portrait {
     clip-path: polygon(0% 4%, 95% 0%, 100% 100%, 0% 97%);
-}
-
-.product-hunt-embed {
-    background: var(--white);
-    display: inline-block;
-    padding: 0;
-    margin: 1rem 0;
-}
-
-.ph-announce {
-    background: var(--panel-background);
-    padding: var(--space-xl);
-    display: inline-block;
 }
 </style>

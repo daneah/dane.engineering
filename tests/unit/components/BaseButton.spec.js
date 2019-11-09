@@ -9,10 +9,10 @@ describe('BaseButton', () => {
         expect(wrapper.contains('button')).toBe(true)
     })
 
-    it('Uses the specified text', () => {
+    it('Contains content provided in a slot', () => {
         const wrapper = shallowMount(BaseButton, {
-            propsData: {
-                text: 'I am a button!'
+            slots: {
+                default: 'I am a button!'
             }
         })
         const button = wrapper.find('button')

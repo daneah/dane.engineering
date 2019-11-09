@@ -10,54 +10,38 @@
             form-name="contact"
             submit-button-text="Send"
         >
-            <input
-                type="hidden"
-                name="form-name"
-                value="contact"
-            >
+            <BaseFormField
+                label="First name"
+                inputName="fname"
+            />
 
-            <label for="fname">First name</label>
-            <input
-                id="fname"
-                type="text"
-                name="fname"
-                required="required"
-            >
+            <BaseFormField
+                label="Last name"
+                inputName="lname"
+            />
 
-            <label for="lname">Last name</label>
-            <input
-                id="lname"
-                type="text"
-                name="lname"
-                required="required"
-            >
-
-            <label for="email">Email</label>
-            <input
-                id="email"
+            <BaseFormField
+                label="Email"
+                inputName="email"
                 type="email"
-                name="email"
-                required="required"
-            >
+            />
 
-            <label for="subject">Subject</label>
-            <input
-                id="subject"
-                type="text"
-                name="subject"
-                required="required"
-            >
+            <BaseFormField
+                label="Subject"
+                inputName="subject"
+            />
 
-            <label for="message">Message</label>
-            <textarea
-                id="message"
-                name="message"
+            <BaseTextarea
+                label="Message"
+                inputName="message"
             />
         </NetlifyForm>
     </main>
 </template>
 
 <script>
+import BaseFormField from '@/components/BaseFormField'
+import BaseTextarea from '@/components/BaseTextarea'
 import NetlifyForm from '@/components/NetlifyForm'
 
 const PAGE_TITLE = 'Contact',
@@ -66,6 +50,8 @@ const PAGE_TITLE = 'Contact',
 export default {
   name: 'Contact',
   components: {
+    BaseFormField,
+    BaseTextarea,
     NetlifyForm,
   },
   metaInfo: {

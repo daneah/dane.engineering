@@ -4,7 +4,7 @@
             <h2>I'm writing a book!</h2>
 
             <p>
-                <router-link :to="{'name': 'books'}"><em>Practices of the Python Pro</em></router-link>
+                <router-link class="link" :to="{'name': 'books'}"><em>Practices of the Python Pro</em></router-link>
                 is currently available through Manning's early access program.
                 I've been sharing my experience in Python with others for a few years
                 and this is my biggest attempt in that endeavor, to date!
@@ -48,5 +48,7 @@ export default {
 .book-announcement {
     background: var(--panel-background);
     padding: var(--space-xl);
+    margin-top: var(--space-xl);
+    clip-path: polygon(1% 0%, 100% 2%, 99% 100%, 0% 98%);
 }
 </style>

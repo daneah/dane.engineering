@@ -1,11 +1,11 @@
 @import '@/_colors.scss';
 @import '@/_typography.scss';
 
-a {
+.link {
   color: var(--link);
   transition: color ease-in-out 0.1s;
 
-  &.clean {
+  @at-root #{&}--clean {
     text-decoration: none;
     color: var(--text-color);
   }
