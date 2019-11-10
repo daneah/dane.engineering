@@ -34,11 +34,11 @@
 
         <h2>Projects</h2>
         <CardGrid>
-          <template slot="cards">
+          <template #cards>
             <ul class="project-list">
                 <li class="project-list__project">
                     <Card>
-                        <template slot="image">
+                        <template #image>
                             <BaseLink href="https://github.com/daneah/pixelize">
                                 <ResponsiveImage
                                     :src="require('@/assets/pixelize.png')"
@@ -47,8 +47,8 @@
                                 />
                             </BaseLink>
                         </template>
-                        <template slot="title">pixelize</template>
-                        <template slot="description">
+                        <template #title>pixelize</template>
+                        <template #description>
                             <p>
                                 <code>pixelize</code> is a tool to make glitch art from source images.
                             </p>
@@ -57,7 +57,7 @@
                 </li>
                 <li class="project-list__project">
                     <Card>
-                        <template slot="image">
+                        <template #image>
                             <BaseLink
                                 href="https://github.com/ithaka/apiron"
                             >
@@ -68,8 +68,8 @@
                                 />
                             </BaseLink>
                         </template>
-                        <template slot="title">apiron</template>
-                        <template slot="description">
+                        <template #title>apiron</template>
+                        <template #description>
                             <p>
                                 <code>apiron</code> is a Python library for building RESTful API clients.
                                 We built this at ITHAKA to speed up development and interact with our internal services more consistently.
@@ -79,7 +79,7 @@
                 </li>
                 <li class="project-list__project">
                     <Card>
-                        <template slot="image">
+                        <template #image>
                             <BaseLink
                                 href="https://codepen.io/collection/DOmwxa/"
                             >
@@ -89,8 +89,8 @@
                                 />
                             </BaseLink>
                         </template>
-                        <template slot="title">Mondrian</template>
-                        <template slot="description">
+                        <template #title>Mondrian</template>
+                        <template #description>
                             <p>
                                 A collection of Mondrian works recreated in CSS Grid
                             </p>
@@ -99,7 +99,7 @@
                 </li>
                 <li class="project-list__project">
                     <Card>
-                        <template slot="image">
+                        <template #image>
                             <BaseLink
                                 href="/toneshift.pdf"
                                 :external="false"
@@ -111,8 +111,8 @@
                                 />
                             </BaseLink>
                         </template>
-                        <template slot="title">ToneShift</template>
-                        <template slot="description">
+                        <template #title>ToneShift</template>
+                        <template #description>
                             <p>
                                 Our 2007 senior design project at the University of Michigan
                                 to build a pitch-shifting device for electric guitars.

@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <BaseNav :links="navLinks">
-            <template slot="brand">
+            <template #brand>
                 <template v-if="$route.name === 'home'">
                     <div class="impact-heading">Hi, I'm Dane.</div>
                 </template>
@@ -21,7 +21,7 @@
                     </router-link>
                 </template>
             </template>
-            <template slot="social-links">
+            <template #social-links>
                 <li class="social-link">
                     <BaseLink
                         class="social-link__anchor"
