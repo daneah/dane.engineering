@@ -3,25 +3,25 @@
     <h1>Posts</h1>
     <p v-if="loading">Loading...</p>
     <CardGrid v-else-if="posts.data.length">
-      <template slot="cards">
+      <template #cards>
         <ul class="posts">
           <li
             v-for="post in posts.data"
             :key="post.slug"
-            class="post"
+            class="posts__post"
           >
             <Card :link="{ name: 'post', params: { slug: post.slug }}">
-              <template slot="image">
+              <template #image>
                   <ResponsiveImage
                     v-if="post.featured_image"
                     :src="postThumbnail(post.featured_image)"
                     alt=""
                   />
               </template>
-              <template slot="title">
+              <template #title>
                   {{ post.title }}
               </template>
-              <template slot="description">{{ post.summary }}</template>
+              <template #description>{{ post.summary }}</template>
             </Card>
           </li>
         </ul>
@@ -103,9 +103,9 @@ export default {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
   grid-gap: 3rem;
-}
 
-.post {
-  margin: 0;
+  @at-root #{&}__post {
+    margin: 0;
+  }
 }
 </style>

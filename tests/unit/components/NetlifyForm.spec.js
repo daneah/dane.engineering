@@ -14,7 +14,7 @@ describe('NetlifyForm', () => {
     })
 
     it('Renders a honeypot field', () => {
-        const wrapper = shallowMount(NetlifyForm, {
+        const wrapper = mount(NetlifyForm, {
             propsData: {
                 formName: 'testForm'
             }

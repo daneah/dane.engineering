@@ -6,7 +6,7 @@
             <li>
                 <h2>Practices of the Python Pro</h2>
 
-                <div class="book-cover">
+                <div class="book-list__book__cover">
                     <BaseLink
                         href="https://www.manning.com/books/practices-of-the-python-pro?a_aid=danehillard&a_bid=857f932b"
                         :external="true"
@@ -80,9 +80,9 @@ export default {
 <style scoped lang="scss">
 .book-list {
   list-style: none;
-}
 
-.book-cover {
-  max-width: 500px;
+  @at-root #{&}__book__cover {
+    max-width: 500px;
+  }
 }
 </style>

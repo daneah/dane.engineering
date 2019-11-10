@@ -1,6 +1,6 @@
 <template>
-    <button>
-        {{ text }}
+    <button class="button">
+        <slot />
     </button>
 </template>
 
@@ -21,7 +21,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-button {
+.button {
   display: inline-block;
   font-weight: bold;
   font-size: var(--text-md);

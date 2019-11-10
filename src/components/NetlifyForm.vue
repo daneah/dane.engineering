@@ -3,40 +3,37 @@
         netlify
         netlify-honeypot="pwned"
     >
-        <input
+        <BaseFormField
+            label="Don't fill this field out, humans!"
             type="hidden"
-            name="form-name"
+            inputName="form-name"
             :value="formName"
-        >
-
-        <p class="hidden">
-            <label for="pwned">
-                Don't fill this field out, humans!
-            </label>
-            <input
-                id="pwned"
-                name="pwned"
-            >
-        </p>
+        />
+        <BaseFormField
+            label="Don't fill this field out, humans!"
+            type="hidden"
+            inputName="pwned"
+        />
 
         <slot />
 
         <div>
-            <BaseButton
-                type="submit"
-                :text="submitButtonText"
-            />
+            <BaseButton type="submit">
+                {{ submitButtonText }}
+            </BaseButton>
         </div>
     </form>
 </template>
 
 <script>
 import BaseButton from '@/components/BaseButton'
+import BaseFormField from '@/components/BaseFormField'
 
 export default {
   name: 'NetlifyForm',
   components: {
     BaseButton,
+    BaseFormField,
   },
   props: {
     formName: {
@@ -55,25 +52,6 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-label {
-  display: block;
-  font-size: var(--text-lg);
-  font-weight: bold;
-}
-
-input,
-textarea {
-  padding: var(--space-xs);
-  border: 1px solid var(--gray);
-  width: inherit;
-}
-
-textarea {
-  height: 5em;
-}
-
-.hidden {
-  display: none;
-}
+<style lang="scss">
+@import '@/_forms.scss';
 </style>

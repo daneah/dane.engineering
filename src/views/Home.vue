@@ -2,19 +2,6 @@
     <main>
         <h1>About Dane</h1>
 
-        <div
-            v-if="new Date() <= new Date('2019-10-29')"
-            class="ph-announce"
-        >
-            <div>
-                <h2>Practices of the Python Pro is on Product Hunt!</h2>
-                <p>Please join the discussion and write a review!</p>
-            </div>
-            <div class="product-hunt-embed">
-                <iframe style="border: none;" src="https://cards.producthunt.com/cards/posts/172000?v=1" width="500" height="405" frameborder="0" scrolling="no" allowfullscreen></iframe>
-            </div>
-        </div>
-
         <div class="about">
             <div class="bio">
                 <p>
@@ -47,11 +34,11 @@
 
         <h2>Projects</h2>
         <CardGrid>
-          <template slot="cards">
-            <ul class="projects">
-                <li class="project">
+          <template #cards>
+            <ul class="project-list">
+                <li class="project-list__project">
                     <Card>
-                        <template slot="image">
+                        <template #image>
                             <BaseLink href="https://github.com/daneah/pixelize">
                                 <ResponsiveImage
                                     :src="require('@/assets/pixelize.png')"
@@ -60,17 +47,17 @@
                                 />
                             </BaseLink>
                         </template>
-                        <template slot="title">pixelize</template>
-                        <template slot="description">
+                        <template #title>pixelize</template>
+                        <template #description>
                             <p>
                                 <code>pixelize</code> is a tool to make glitch art from source images.
                             </p>
                         </template>
                     </Card>
                 </li>
-                <li class="project">
+                <li class="project-list__project">
                     <Card>
-                        <template slot="image">
+                        <template #image>
                             <BaseLink
                                 href="https://github.com/ithaka/apiron"
                             >
@@ -81,8 +68,8 @@
                                 />
                             </BaseLink>
                         </template>
-                        <template slot="title">apiron</template>
-                        <template slot="description">
+                        <template #title>apiron</template>
+                        <template #description>
                             <p>
                                 <code>apiron</code> is a Python library for building RESTful API clients.
                                 We built this at ITHAKA to speed up development and interact with our internal services more consistently.
@@ -90,9 +77,9 @@
                         </template>
                     </Card>
                 </li>
-                <li class="project">
+                <li class="project-list__project">
                     <Card>
-                        <template slot="image">
+                        <template #image>
                             <BaseLink
                                 href="https://codepen.io/collection/DOmwxa/"
                             >
@@ -102,17 +89,17 @@
                                 />
                             </BaseLink>
                         </template>
-                        <template slot="title">Mondrian</template>
-                        <template slot="description">
+                        <template #title>Mondrian</template>
+                        <template #description>
                             <p>
                                 A collection of Mondrian works recreated in CSS Grid
                             </p>
                         </template>
                     </Card>
                 </li>
-                <li class="project">
+                <li class="project-list__project">
                     <Card>
-                        <template slot="image">
+                        <template #image>
                             <BaseLink
                                 href="/toneshift.pdf"
                                 :external="false"
@@ -124,8 +111,8 @@
                                 />
                             </BaseLink>
                         </template>
-                        <template slot="title">ToneShift</template>
-                        <template slot="description">
+                        <template #title>ToneShift</template>
+                        <template #description>
                             <p>
                                 Our 2007 senior design project at the University of Michigan
                                 to build a pitch-shifting device for electric guitars.
@@ -183,7 +170,7 @@ export default {
 </script>
 
 <style lang="scss">
-.projects {
+.project-list {
   list-style: none;
   display: grid;
   grid-gap: var(--space-md);
@@ -192,10 +179,10 @@ export default {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: var(--space-lg);
   }
-}
 
-.project {
-  margin-top: 0;
+  @at-root #{&}__project {
+    margin-top: 0;
+  }
 }
 
 .about,
@@ -220,25 +207,7 @@ export default {
   }
 }
 
-.book-announcement {
-    margin-top: var(--space-xl);
-    clip-path: polygon(1% 0%, 100% 2%, 99% 100%, 0% 98%);
-}
-
-.portrait img {
+.portrait {
     clip-path: polygon(0% 4%, 95% 0%, 100% 100%, 0% 97%);
-}
-
-.product-hunt-embed {
-    background: var(--white);
-    display: inline-block;
-    padding: 0;
-    margin: 1rem 0;
-}
-
-.ph-announce {
-    background: var(--panel-background);
-    padding: var(--space-xl);
-    display: inline-block;
 }
 </style>

@@ -3,10 +3,11 @@
         <div class="card__header">
             <router-link
                 v-if="link"
+                class="link"
                 :to="link"
             >
                 <slot name="image">
-                    <img src="https://via.placeholder.com/250x250">
+                    <img class="card__image" src="https://via.placeholder.com/250x250">
                 </slot>
                 <div class="card__title">
                     <slot name="title">
@@ -16,7 +17,7 @@
             </router-link>
             <template v-else>
                 <slot name="image">
-                    <img src="https://via.placeholder.com/250x250">
+                    <img class="card__image" src="https://via.placeholder.com/250x250">
                 </slot>
                 <div class="card__title">
                     <slot name="title">
@@ -65,29 +66,29 @@ export default {
     transform: translateY(-5px);
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
   }
-}
 
-.card__body {
-  margin-top: 0;
-  padding: var(--space-md);
-}
-
-.card__title {
-  margin-top: 0;
-  padding: var(--space-sm);
-
-  font-size: var(--text-lg);
-  font-weight: bold;
-
-  @media (max-width: 699px) {
-    font-size: var(--text-lg);
+  @at-root #{&}__body {
+    margin-top: 0;
+    padding: var(--space-md);
   }
 
-  word-break: break-word;
-  hyphens: auto;
-}
+  @at-root #{&}__title {
+    margin-top: 0;
+    padding: var(--space-sm);
 
-img {
-  margin-top: 0;
+    font-size: var(--text-lg);
+    font-weight: bold;
+
+    @media (max-width: 699px) {
+      font-size: var(--text-lg);
+    }
+
+    word-break: break-word;
+    hyphens: auto;
+  }
+
+  @at-root #{&}__image {
+    margin-top: 0;
+  }
 }
 </style>

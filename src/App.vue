@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <BaseNav :links="navLinks">
-            <template slot="brand">
+            <template #brand>
                 <template v-if="$route.name === 'home'">
                     <div class="impact-heading">Hi, I'm Dane.</div>
                 </template>
@@ -21,9 +21,10 @@
                     </router-link>
                 </template>
             </template>
-            <template slot="social-links">
-                <li>
+            <template #social-links>
+                <li class="social-link">
                     <BaseLink
+                        class="social-link__anchor"
                         href="https://twitter.com/easyaspython"
                     >
                         <img
@@ -33,8 +34,9 @@
                         >
                     </BaseLink>
                 </li>
-                <li>
+                <li class="social-link">
                     <BaseLink
+                        class="social-link__anchor"
                         href="https://github.com/daneah"
                     >
                         <img
@@ -44,8 +46,9 @@
                         >
                     </BaseLink>
                 </li>
-                <li>
+                <li class="social-link">
                     <BaseLink
+                        class="social-link__anchor"
                         href="https://dev.to/easyaspython"
                     >
                         <img
@@ -55,8 +58,9 @@
                         >
                     </BaseLink>
                 </li>
-                <li>
+                <li class="social-link">
                     <BaseLink
+                        class="social-link__anchor"
                         href="https://easyaspython.com"
                     >
                         <img
@@ -229,6 +233,20 @@ pre {
   code {
     padding: 0;
     background: none;
+  }
+}
+
+.social-link {
+  display: inline-block;
+  margin: 0;
+
+  &:first-of-type #{&}__anchor {
+    padding-left: 0;
+  }
+
+  @at-root #{&}__anchor {
+    display: inline-block;
+    padding: var(--space-sm);
   }
 }
 </style>

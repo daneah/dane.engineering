@@ -3,14 +3,14 @@
     <main>
       <article v-if="!loading && post.data && post.data.published">
         <h1>{{ post.data.title }}</h1>
-        <span class="metadata">{{ publishedDate }}</span>
+        <span class="post__metadata">{{ publishedDate }}</span>
         <div v-html="post.data.body" />
       </article>
       <p v-else>
         Loading...
       </p>
     </main>
-    <footer v-if="!loading && post.data && post.data.published">
+    <footer class="post__footer" v-if="!loading && post.data && post.data.published">
       <span>This post is made better with <BaseLink href="https://buttercms.com">Butter</BaseLink></span>
     </footer>
   </div>
@@ -115,30 +115,36 @@ export default {
 </script>
 
 <style lang="scss">
-img {
-  max-width: 100%;
-  height: auto;
-}
+@import '@/_links.scss';
 
 .post {
   margin-top: 0;
-}
 
-.metadata {
-  font-size: var(--text-lg);
-  font-style: italic;
-  color: var(--medium-gray);
-}
+  @at-root #{&}__metadata {
+    font-size: var(--text-lg);
+    font-style: italic;
+    color: var(--medium-gray);
+  }
 
-footer {
-  border-top: 1px solid var(--very-light-gray);
-  color: var(--medium-gray);
-  font-style: italic;
-  padding: var(--space-lg);
-  margin-top: 0;
+  @at-root #{&}__footer {
+    border-top: 1px solid var(--very-light-gray);
+    color: var(--medium-gray);
+    font-style: italic;
+    padding: var(--space-lg);
+    margin-top: 0;
 
-  @media (min-width: 700px) {
-    padding: var(--space-xl);
+    @media (min-width: 700px) {
+      padding: var(--space-xl);
+    }
+  }
+
+  a {
+    @extend %link;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
   }
 }
 </style>

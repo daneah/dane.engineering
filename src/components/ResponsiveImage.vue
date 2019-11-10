@@ -1,5 +1,5 @@
 <template>
-    <picture>
+    <picture class="responsive-image">
         <source
             v-if="webp"
             :srcset="webp"
@@ -7,7 +7,7 @@
             media="(min-width: 0px)"
         >
         <img
-            :class="{'limited': !grow}"
+            :class="['responsive-image__image', {'responsive-image__image--limited': !grow}]"
             :src="src"
             :alt="alt"
         >
@@ -43,12 +43,12 @@ export default {
 </script>
 
 <style scoped lang="scss">
-img {
+.responsive-image__image {
   width: 100%;
   margin-top: 0;
-}
 
-img.limited {
-  max-width: 100%;
+  @at-root #{&}--limited {
+    max-width: 100%;
+  }
 }
 </style>

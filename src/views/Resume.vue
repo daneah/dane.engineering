@@ -10,8 +10,8 @@
 
         <h2>Skills</h2>
 
-        <div class="skills">
-            <div class="skill">
+        <div class="skills-list">
+            <div class="skills-list__skill">
                 <h3>Languages</h3>
                 <RadarPlot
                     :levels="5"
@@ -19,7 +19,7 @@
                 />
             </div>
 
-            <div class="skill">
+            <div class="skills-list__skill">
                 <h3>Frameworks and Tools</h3>
                 <RadarPlot
                     :levels="5"
@@ -67,16 +67,16 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.skills {
+.skills-list {
   display: grid;
 
   @media print, (min-width: 700px) {
     grid-template-columns: repeat(2, minmax(auto, 375px));
     grid-gap: var(--space-xxl);
   }
-}
 
-.skill {
-  margin-top: 0;
+  @at-root #{&}__skill {
+    margin-top: 0;
+  }
 }
 </style>
