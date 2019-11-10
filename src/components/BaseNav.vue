@@ -112,12 +112,6 @@ export default {
         display: inline-block;
       }
     }
-
-    @at-root #{&}__social li {
-      display: inline-block;
-      margin-right: var(--space-sm);
-      margin-top: 0;
-    }
 }
 
 @media print {

@@ -115,10 +115,7 @@ export default {
 </script>
 
 <style lang="scss">
-img {
-  max-width: 100%;
-  height: auto;
-}
+@import '@/_links.scss';
 
 .post {
   margin-top: 0;
@@ -139,6 +136,15 @@ img {
     @media (min-width: 700px) {
       padding: var(--space-xl);
     }
+  }
+
+  a {
+    @extend %link;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
   }
 }
 </style>

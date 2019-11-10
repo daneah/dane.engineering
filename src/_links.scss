@@ -1,17 +1,20 @@
 @import '@/_colors.scss';
 @import '@/_typography.scss';
 
-.link {
+%link {
   color: var(--link);
   transition: color ease-in-out 0.1s;
+
+  &:hover {
+    color: var(--link-hover);
+  }
+}
+
+.link {
+  @extend %link;
 
   @at-root #{&}--clean {
     text-decoration: none;
     color: var(--text-color);
-  }
-
-  &:hover {
-    color: var(--link-hover);
-    transform: scale(1.2);
   }
 }
