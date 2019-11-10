@@ -1,10 +1,10 @@
 <template>
     <div class="talk">
         <component :is="`h${headingLevel}`" class="talk__title">
-            <slot name="title" />
+            {{ title }}
         </component>
         <component :is="`h${headingLevel + 1}`" class="talk__subtitle">
-            <slot name="subtitle" />
+            {{ subtitle }}
         </component>
         <div class="talk__description">
             <slot name="description" />
@@ -23,6 +23,14 @@ export default {
       type: Number,
       required: false,
       default: 1,
+    },
+    title: {
+      type: String,
+      required: true,
+    },
+    subtitle: {
+      type: String,
+      required: true,
     },
   },
 }

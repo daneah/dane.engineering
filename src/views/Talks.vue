@@ -4,9 +4,11 @@
 
         <ul class="talk-list">
             <li class="talk-list__talk">
-                <Talk :headingLevel="2">
-                    <template #title>Using a custom template loader at scale</template>
-                    <template #subtitle>DjangoCon US 2019</template>
+                <Talk
+                    :headingLevel="2"
+                    title="Using a custom template loader at scale"
+                    subtitle="DjangoCon US 2019"
+                >
                     <template #description>
                         <p>
                             You can reuse Django templates with the <code>{% include %}</code> tag.
@@ -25,9 +27,11 @@
             </li>
 
             <li class="talk-list__talk">
-                <Talk :headingLevel="2">
-                    <template #title>Adopt-a-pytest</template>
-                    <template #subtitle>PyOhio 2019</template>
+                <Talk
+                    :headingLevel="2"
+                    title="Adopt-a-pytest"
+                    subtitle="PyOhio 2019"
+                >
                     <template #description>
                         <p>
                             <code>pytest</code> is a testing framework that makes writing and running Python tests simpler.
@@ -51,9 +55,11 @@
             </li>
 
             <li class="talk-list__talk">
-                <Talk :headingLevel="2">
-                    <template #title>Good Software Practices</template>
-                    <template #subtitle>No Dogma Podcast</template>
+                <Talk
+                    :headingLevel="2"
+                    title="Good Software Practices"
+                    subtitle="No Dogma Podcast"
+                >
                     <template #description>
                         <p>
                             Some of the important principles of software development discussed in <BaseLink href="https://bit.ly/the-python-pro" :external="true"><em>Practices of the Python Pro</em></BaseLink>.
@@ -77,9 +83,11 @@
                 </Talk>
             </li>
             <li class="talk-list__talk">
-                <Talk :headingLevel="2">
-                    <template #title>Hot for Teacher</template>
-                    <template #subtitle>The Development Hell</template>
+                <Talk
+                    :headingLevel="2"
+                    title="Hot for Teacher"
+                    subtitle="The Development Hell"
+                >
                     <template #description>
                         <p>
                             What does the process of writing a book look like?
@@ -106,9 +114,11 @@
             </li>
 
             <li class="talk-list__talk">
-                <Talk :headingLevel="2">
-                    <template #title>Non-traditional paths to software and the skills required</template>
-                    <template #subtitle>Test & Code with Brian Okken</template>
+                <Talk
+                    :headingLevel="2"
+                    title="Non-traditional paths to software and the skills required"
+                    subtitle="Test & Code with Brian Okken"
+                >
                     <template #description>
                         <p>
                             We with experience and privilege who are able to teach should help our communities grow.
@@ -130,13 +140,15 @@
                           </BaseLink>
                       </p>
                     </template>
-                </Talk<
+                </Talk>
             </li>
 
             <li class="talk-list__talk">
-                <Talk :headingLevel="2">
-                    <template #title>Multiple Inheritance and Mixins</template>
-                    <template #subtitle>PyCaribbean 2019</template>
+                <Talk
+                    :headingLevel="2"
+                    title="Multiple Inheritance and Mixins"
+                    subtitle="PyCaribbean 2019"
+                >
                     <template #description>
                         <p>
                             Start with old- and new-style classes and inheritance.
@@ -156,9 +168,11 @@
             </li>
 
             <li class="talk-list__talk">
-                <Talk :headingLevel="2">
-                    <template #title>Serverless Django with Zappa</template>
-                    <template #subtitle>DjangoCon US 2018</template>
+                <Talk
+                    :headingLevel="2"
+                    title="Serverless Django with Zappa"
+                    subtitle="DjangoCon US 2018"
+                >
                     <template #description>
                         <p>
                             Remove the burden of infrastructure management from your Django applications by going serverless.
