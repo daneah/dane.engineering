@@ -10,7 +10,15 @@
                 *
             </abbr>
         </label>
+        <textarea
+            v-if="editable"
+            class="form-field__input form-field__input--editable"
+            :id="inputName"
+            :name="inputName"
+            :required="required"
+        />
         <input
+            v-else
             :id="inputName"
             class="form-field__input"
             :type="type"
@@ -38,6 +46,11 @@ export default {
       required: false,
       default: 'text',
     },
+    editable: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
     required: {
       type: Boolean,
       required: false,
@@ -53,8 +66,26 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.Wrapper {
-  display: block;
-  width: inherit;
+.form-field {
+  @at-root #{&}__label {
+    display: block;
+    font-size: var(--text-lg);
+    font-weight: bold;
+  }
+
+  @at-root #{&}__input {
+    padding: var(--space-xs);
+    border: 1px solid var(--gray);
+    width: 100%;
+
+    @at-root #{&}--editable {
+      height: 5em;
+    }
+  }
+
+  @at-root #{&}--hidden {
+    display: none;
+    margin: 0;
+  }
 }
 </style>
