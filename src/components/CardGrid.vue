@@ -10,8 +10,8 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.cards .card {
+<style lang="scss" scoped>
+.cards ::v-deep .card {
   height: 100%;
 }
 </style>

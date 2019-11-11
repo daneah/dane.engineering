@@ -114,7 +114,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '@/_links.scss';
 
 .post {
@@ -138,11 +138,11 @@ export default {
     }
   }
 
-  a {
+  & ::v-deep a {
     @extend %link;
   }
 
-  img {
+  & ::v-deep img {
     max-width: 100%;
     height: auto;
   }

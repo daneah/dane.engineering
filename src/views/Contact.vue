@@ -31,7 +31,8 @@
                 inputName="subject"
             />
 
-            <BaseTextarea
+            <BaseFormField
+                :editable="true"
                 label="Message"
                 inputName="message"
             />
@@ -41,7 +42,6 @@
 
 <script>
 import BaseFormField from '@/components/BaseFormField'
-import BaseTextarea from '@/components/BaseTextarea'
 import NetlifyForm from '@/components/NetlifyForm'
 
 const PAGE_TITLE = 'Contact',
@@ -51,7 +51,6 @@ export default {
   name: 'Contact',
   components: {
     BaseFormField,
-    BaseTextarea,
     NetlifyForm,
   },
   metaInfo: {

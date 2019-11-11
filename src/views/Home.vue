@@ -169,7 +169,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .project-list {
   list-style: none;
   display: grid;
