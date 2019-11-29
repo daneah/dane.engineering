@@ -22,53 +22,34 @@
                 </template>
             </template>
             <template #social-links>
-                <li class="social-link">
-                    <BaseLink
-                        class="social-link__anchor"
-                        href="https://twitter.com/easyaspython"
-                    >
-                        <img
-                            :src="require('@/assets/twitter.svg')"
-                            alt="Twitter icon"
-                            width="25"
-                        >
-                    </BaseLink>
+                <li class="nav-social-links__link">
+                    <SocialLink
+                        url="https://twitter.com/easyaspython"
+                        :image="require('@/assets/twitter.svg')"
+                        imageAlt="Twitter icon"
+                    />
                 </li>
-                <li class="social-link">
-                    <BaseLink
-                        class="social-link__anchor"
-                        href="https://github.com/daneah"
-                    >
-                        <img
-                            :src="require('@/assets/github.svg')"
-                            alt="GitHub icon"
-                            width="25"
-                        >
-                    </BaseLink>
+                <li class="nav-social-links__link">
+                    <SocialLink
+                        url="https://github.com/daneah"
+                        :image="require('@/assets/github.svg')"
+                        imageAlt="GitHub icon"
+                    />
                 </li>
-                <li class="social-link">
-                    <BaseLink
-                        class="social-link__anchor"
-                        href="https://dev.to/easyaspython"
-                    >
-                        <img
-                            :src="require('@/assets/dev-badge.svg')"
-                            alt="Dane Hillard's DEV Profile"
-                            width="23"
-                        >
-                    </BaseLink>
+                <li class="nav-social-links__link">
+                    <SocialLink
+                        url="https://dev.to/easyaspython"
+                        :image="require('@/assets/dev-badge.svg')"
+                        imageAlt="Dane Hillard's DEV Profile"
+                        :size="23"
+                    />
                 </li>
-                <li class="social-link">
-                    <BaseLink
-                        class="social-link__anchor"
-                        href="https://easyaspython.com"
-                    >
-                        <img
-                            :src="require('@/assets/medium.svg')"
-                            alt="Medium logo"
-                            width="25"
-                        >
-                    </BaseLink>
+                <li class="nav-social-links__link">
+                    <SocialLink
+                        url="https://easyaspython.com"
+                        :image="require('@/assets/medium.svg')"
+                        imageAlt="Medium logo"
+                    />
                 </li>
             </template>
         </BaseNav>
@@ -82,12 +63,14 @@
 <script>
 import BaseNav from '@/components/BaseNav';
 import BaseLink from '@/components/BaseLink';
+import SocialLink from '@/components/SocialLink';
 
 export default {
   name: 'App',
   components: {
     BaseNav,
-    BaseLink
+    BaseLink,
+    SocialLink,
   },
   metaInfo () {
     return {
@@ -136,6 +119,7 @@ export default {
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 * + * {
@@ -157,7 +141,6 @@ body {
 }
 
 body {
-    box-sizing: border-box;
     font-size: var(--text-base-size);
     font-family: var(--font-primary);
     color: var(--text);
@@ -236,17 +219,9 @@ pre {
   }
 }
 
-.social-link {
+.nav-social-links__link {
   display: inline-block;
   margin: 0;
-
-  &:first-of-type #{&}__anchor {
-    padding-left: 0;
-  }
-
-  @at-root #{&}__anchor {
-    display: inline-block;
-    padding: var(--space-sm);
-  }
+  margin-left: calc(-1 * var(--space-sm));
 }
 </style>

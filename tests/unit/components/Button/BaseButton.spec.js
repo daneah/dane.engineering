@@ -1,12 +1,12 @@
 import { shallowMount } from '@vue/test-utils'
 
-import BaseButton from '@/components/BaseButton'
+import BaseButton from '@/components/Button/BaseButton'
 
 
 describe('BaseButton', () => {
     it('Renders a button', () => {
         const wrapper = shallowMount(BaseButton)
-        expect(wrapper.contains('button')).toBe(true)
+        expect(wrapper.contains('button.dh-button')).toBe(true)
     })
 
     it('Contains content provided in a slot', () => {
