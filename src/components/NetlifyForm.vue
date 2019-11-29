@@ -17,23 +17,29 @@
 
         <slot />
 
-        <div>
-            <BaseButton type="submit">
+        <div class="button-group">
+            <PrimaryButton class="button-group__button" type="submit">
                 {{ submitButtonText }}
-            </BaseButton>
+            </PrimaryButton>
+
+            <SecondaryButton class="button-group__button" type="reset">
+                Clear
+            </SecondaryButton>
         </div>
     </form>
 </template>
 
 <script>
-import BaseButton from '@/components/BaseButton'
+import PrimaryButton from '@/components/Button/PrimaryButton'
+import SecondaryButton from '@/components/Button/SecondaryButton'
 import BaseFormField from '@/components/BaseFormField'
 
 export default {
   name: 'NetlifyForm',
   components: {
-    BaseButton,
+    PrimaryButton,
     BaseFormField,
+    SecondaryButton,
   },
   props: {
     formName: {
@@ -51,3 +57,13 @@ export default {
   },
 }
 </script>
+
+<style scoped lang="scss">
+.button-group {
+  @at-root #{&}__button {
+    &:not(:first-child) {
+      margin-left: var(--space-md);
+    }
+  }
+}
+</style>

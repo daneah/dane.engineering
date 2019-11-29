@@ -77,6 +77,8 @@ export default {
     padding: var(--space-xs);
     border: 1px solid var(--gray);
     width: 100%;
+    font-family: var(--font-primary);
+    font-size: var(--text-base-size);
 
     @at-root #{&}--editable {
       height: 5em;

@@ -89,7 +89,7 @@ export default {
     background: var(--nav-background);
 
     @media (min-width: 700px) {
-      min-height: calc(100vh - var(--space-xl) - var(--space-xl));
+      min-height: 100vh;
       padding: var(--space-xl);
     }
 
