@@ -128,7 +128,7 @@ line {
 }
 
 text {
-  font-size: var(--text-lg);
+  font-size: var(--text-md);
   fill: var(--radar-plot-text);
   text-shadow: 2px 2px var(--radar-plot-text-shadow);
 }

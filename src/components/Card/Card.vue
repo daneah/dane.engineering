@@ -6,9 +6,7 @@
                 class="link"
                 :to="link"
             >
-                <slot name="image">
-                    <img class="card__image" src="https://via.placeholder.com/250x250">
-                </slot>
+                <slot name="image" />
                 <div class="card__title">
                     <slot name="title">
                         Card Title
@@ -16,9 +14,7 @@
                 </div>
             </router-link>
             <template v-else>
-                <slot name="image">
-                    <img class="card__image" src="https://via.placeholder.com/250x250">
-                </slot>
+                <slot name="image" />
                 <div class="card__title">
                     <slot name="title">
                         Card Title
@@ -87,8 +83,8 @@ export default {
     hyphens: auto;
   }
 
-  @at-root #{&}__image {
-    margin-top: 0;
+  &::v-deep img {
+    max-width: 100%;
   }
 }
 </style>

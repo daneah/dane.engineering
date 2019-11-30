@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import RadarPlot from '@/components/RadarPlot'
+import RadarPlot from '@/components/RadarPlot/RadarPlot'
 import Timeline from '@/components/Timeline'
 
 const PAGE_TITLE = 'Résumé',

@@ -1,6 +1,6 @@
 import { shallowMount } from '@vue/test-utils'
 
-import RadarPlot from '@/components/RadarPlot'
+import RadarPlot from '@/components/RadarPlot/RadarPlot'
 
 
 describe('RadarPlot', () => {

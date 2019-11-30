@@ -4,3 +4,17 @@
 @import 'spacing';
 @import 'typography';
 @import 'links';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: var(--text-base-size);
+    font-family: var(--font-primary);
+    color: var(--text);
+    background: var(--background);
+    margin-top: 0;
+}
