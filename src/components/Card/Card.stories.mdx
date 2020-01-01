@@ -1,0 +1,64 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import { withKnobs, text } from '@storybook/addon-knobs'
+import { withA11y } from '@storybook/addon-a11y'
+
+import Card from './Card'
+
+# Cards
+
+<Meta
+  title='Components|Card'
+  decorators={[withKnobs, withA11y]}
+  component={Card}
+/>
+
+## Text only
+
+<Preview>
+  <Story name='Text only'>{{
+    components: { Card },
+    props: {
+      title: {
+        default: text('Title', 'Card title'),
+      },
+      description: {
+        default: text('Description', 'This is the card description.'),
+      },
+    },
+    template: `
+    <Card>
+        <template #title>{{ title }}</template>
+        <template #description>{{ description }}</template>
+    </Card>
+    `,
+  }}</Story>
+</Preview>
+
+## With image
+
+<Preview>
+  <Story name='With image'>{{
+    components: { Card },
+    props: {
+      title: {
+        default: text('Title', 'Kittens'),
+      },
+      description: {
+        default: text('Description', 'They are adorable.'),
+      },
+    },
+    template: `
+    <Card>
+        <template #image>
+          <img src="https://placekitten.com/1500/350" alt="kitty">
+        </template>
+        <template #title>{{ title }}</template>
+        <template #description>{{ description }}</template>
+    </Card>
+    `,
+  }}</Story>
+</Preview>
+
+## Props
+
+<Props of={Card} />

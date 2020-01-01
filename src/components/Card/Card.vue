@@ -8,12 +8,14 @@
             >
                 <slot name="image" />
                 <div class="card__title">
+                    <!-- @slot The title of the card -->
                     <slot name="title">
                         Card Title
                     </slot>
                 </div>
             </router-link>
             <template v-else>
+                <!-- @slot An image to display above the card title -->
                 <slot name="image" />
                 <div class="card__title">
                     <slot name="title">
@@ -24,6 +26,7 @@
         </div>
         <div class="card__body">
             <div class="card__description">
+                <!-- @slot The card description -->
                 <slot name="description">
                     <p>
                         This is the card description.
@@ -39,6 +42,9 @@
 export default {
   name: 'Card',
   props: {
+    /**
+     * A link to navigate to by clicking the card title or image
+    */
     link: {
       type: Object,
       required: false,

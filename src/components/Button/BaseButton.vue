@@ -12,6 +12,9 @@
 export default {
   name: 'BaseButton',
   props: {
+    /**
+     * The HTML5 `type` attribute to use for the underlying `<button>` element
+    */
     type: {
       type: String,
       required: false,
