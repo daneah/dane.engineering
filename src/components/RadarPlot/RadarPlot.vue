@@ -50,15 +50,24 @@
 export default {
   name: 'RadarPlot',
   props: {
+    /**
+     * The number of concentric rings on the plot, which also represents the maximum score each characteristic may have.
+    */
     levels: {
       type: Number,
       required: false,
       default: 3,
     },
+    /**
+     * A list of objects with a `name` and `score` to be plotted.
+    */
     characteristics: {
       type: Array,
       required: true,
     },
+    /**
+     * The color to fill the plot with
+    */
     color: {
       type: String,
       default: 'var(--radar-plot-polygon)',
@@ -128,7 +137,7 @@ line {
 }
 
 text {
-  font-size: var(--text-lg);
+  font-size: var(--text-md);
   fill: var(--radar-plot-text);
   text-shadow: 2px 2px var(--radar-plot-text-shadow);
 }

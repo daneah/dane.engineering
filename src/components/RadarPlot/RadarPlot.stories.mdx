@@ -1,0 +1,38 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import { withKnobs, object, number } from '@storybook/addon-knobs'
+import { withA11y } from '@storybook/addon-a11y'
+
+import RadarPlot from './RadarPlot'
+
+# Radar plot
+
+<Meta
+  title='Components|RadarPlot'
+  decorators={[withKnobs, withA11y]}
+  component={RadarPlot}
+/>
+
+<Preview>
+  <Story name='Basic'>{{
+    components: { RadarPlot },
+    props: {
+      levels: {
+        default: number('Levels', 5),
+      },
+      characteristics: {
+        default: object('Characteristics', [
+          { name: 'Flying', score: 1 },
+          { name: 'Cooking', score: 3 },
+          { name: 'Running', score: 0.5 },
+          { name: 'Reading', score: 3 },
+          { name: 'Swimming', score: 4.5 }
+        ]),
+      },
+    },
+    template: '<RadarPlot :levels="levels" :characteristics="characteristics" />',
+  }}</Story>
+</Preview>
+
+## Props
+
+<Props of={RadarPlot} />

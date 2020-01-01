@@ -116,12 +116,6 @@ export default {
 <style lang="scss">
 @import '@/main.scss';
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 * + * {
     margin-top: var(--space-md);
 }
@@ -138,14 +132,6 @@ body {
   html {
     overflow: auto;
   }
-}
-
-body {
-    font-size: var(--text-base-size);
-    font-family: var(--font-primary);
-    color: var(--text);
-    background: var(--background);
-    margin-top: 0;
 }
 
 #app {

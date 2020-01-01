@@ -7,7 +7,8 @@
     "prebuild": "curl -X GET 'https://api.buttercms.com/v2/posts/?page=1&page_size=10&auth_token=cd7317f31d717fc87a1374098f53651830003bed' > latest-posts.json",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "test:unit": "vue-cli-service test:unit"
+    "test:unit": "vue-cli-service test:unit",
+    "storybook": "start-storybook"
   },
   "dependencies": {
     "buttercms": "^1.2.1",
@@ -22,6 +23,11 @@
     "vuex": "^3.1.2"
   },
   "devDependencies": {
+    "@storybook/addon-a11y": "5.3.0-rc.6",
+    "@storybook/addon-actions": "5.3.0-rc.6",
+    "@storybook/addon-docs": "^5.3.0-rc.6",
+    "@storybook/addon-knobs": "5.3.0-rc.6",
+    "@storybook/vue": "5.3.0-rc.6",
     "@vue/cli-plugin-babel": "^4.1.1",
     "@vue/cli-plugin-eslint": "^4.1.1",
     "@vue/cli-plugin-pwa": "^4.1.1",
@@ -33,6 +39,7 @@
     "babel-eslint": "^10.0.3",
     "babel-jest": "^24.9.0",
     "babel-plugin-prismjs": "^1.1.1",
+    "babel-preset-vue": "^2.0.2",
     "eslint": "^6.7.1",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-node": "^10.0.0",

@@ -131,7 +131,7 @@
 <script>
 import BaseLink from '@/components/BaseLink'
 import BookAnnouncement from '@/components/BookAnnouncement'
-import Card from '@/components/Card'
+import Card from '@/components/Card/Card'
 import CardGrid from '@/components/CardGrid'
 import ResponsiveImage from '@/components/ResponsiveImage'
 
