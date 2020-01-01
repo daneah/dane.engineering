@@ -12,7 +12,7 @@
                         :external="true"
                     >
                         <ResponsiveImage
-                            :src="require('@/assets/practices-of-the-python-pro-cover.jpg')"
+                            :src="require('@/assets/practices-of-the-python-pro-cover.png')"
                             :webp="require('@/assets/practices-of-the-python-pro-cover.webp')"
                             alt="Book cover for Practices of the Python Pro by Dane Hillard"
                         />
