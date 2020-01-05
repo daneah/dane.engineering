@@ -22,3 +22,6 @@ coverage/
 *.sw*
 
 latest-posts.json
+
+# Build
+public/storybook/

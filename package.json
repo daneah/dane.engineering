@@ -9,7 +9,7 @@
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
     "storybook": "start-storybook",
-    "storybook:build": "build-storybook"
+    "storybook:build": "build-storybook -c .storybook -o public/storybook"
   },
   "dependencies": {
     "buttercms": "^1.2.1",
@@ -26,8 +26,9 @@
   "devDependencies": {
     "@storybook/addon-a11y": "5.3.0-rc.9",
     "@storybook/addon-actions": "5.3.0-rc.9",
-    "@storybook/addon-docs": "^5.3.0-rc.9",
+    "@storybook/addon-docs": "5.3.0-rc.9",
     "@storybook/addon-knobs": "5.3.0-rc.9",
+    "@storybook/addon-viewport": "5.3.0-rc.9",
     "@storybook/vue": "5.3.0-rc.9",
     "@vue/cli-plugin-babel": "^4.1.1",
     "@vue/cli-plugin-eslint": "^4.1.1",
