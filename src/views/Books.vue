@@ -6,6 +6,13 @@
             <li>
                 <h2>Practices of the Python Pro</h2>
 
+                <BaseLink
+                  href="https://www.manning.com/books/practices-of-the-python-pro?a_aid=danehillard&a_bid=857f932b"
+                  :external="true"
+                >
+                  <PrimaryButton>Buy now</PrimaryButton>
+                </BaseLink>
+
                 <div class="book-list__book__cover">
                     <BaseLink
                         href="https://www.manning.com/books/practices-of-the-python-pro?a_aid=danehillard&a_bid=857f932b"
@@ -20,21 +27,30 @@
                 </div>
 
                 <p>
-                    Professional developers know the many benefits of writing application code that’s clean, well-organized, and easy to maintain.
-                    By learning and following established patterns and best practices, you can take your code and your career to a new level.
-                    With <em>Practices of the Python Pro</em>, you’ll learn to design professional-level, clean, easily-maintainable software at scale using the incredibly popular programming language, Python.
-                    You’ll find easy-to-grok examples that use pseudocode and Python to introduce software development best practices, along with dozens of instantly-useful techniques that will help you code like a pro.
+                    As you start your adventure in writing software, you'll often find yourself scrambling to a working solution.
+                    Learning syntax, data structures, and code style for a programming language serve as additional barriers along the way.
                 </p>
 
                 <p>
-                    I wrote this book for people like my friend who moved into a career in software from pharmacology, or my friend who uses Python to gain new insights into protein folding.
-                    The uses for software are unimaginably diverse, as are the people who read and write it.
-                    I want <em>Practices of the Python Pro</em> to help as many people as possible learn to write code they can rely on and collaborate on!
-                    If you'd like to learn how to make your code last, please
+                    As you gain experience, you might start to hear from others how certain practices make code easier to work with.
+                    Often, these practices are provided without justification, or in the worst cases without much explanation about how they even work.
+                    Without a solid handle on these concepts you'll face challenges scaling software to serve larger and larger projects.
+                </p>
+
+                <p>
+                    <em>Practices of the Python Pro</em> will teach you some of the key aspects of writing maintainable software.
+                    From separation of concerns to encapsulation to abstraction, the book contains small examples in Python that you can follow to level up your software development skills.
+                    Learn about the benefits of composition over inheritance, how to use inversion of control to achieve loose coupling, and how to create performance tests and functional tests.
+                    Full of concepts you can apply to most any language or framework, <em>Practices of the Python Pro</em> will have you writing more maintainable code with confidence faster than ever before.
+                </p>
+
+                <p>
+                    Whether you're just starting out in programming, using software to supplement your data science work, or applying code in novel ways to art or music, <em>Practices of the Python Pro</em> has something for you.
+                    Are you ready to get started?
                     <BaseLink
                         href="https://www.manning.com/books/practices-of-the-python-pro?a_aid=danehillard&a_bid=857f932b"
                         :external="true"
-                    >buy the book</BaseLink>!
+                    >Buy the book</BaseLink> today!
                 </p>
             </li>
         </ul>
@@ -43,6 +59,7 @@
 
 <script>
 import BaseLink from '@/components/BaseLink'
+import PrimaryButton from '@/components/Button/PrimaryButton'
 import ResponsiveImage from '@/components/ResponsiveImage'
 
 const PAGE_TITLE = 'Books',
@@ -52,6 +69,7 @@ export default {
   name: 'PythonBook',
   components: {
     BaseLink,
+    PrimaryButton,
     ResponsiveImage,
   },
   metaInfo:  {
