@@ -73,7 +73,7 @@ export default {
 .entry {
   display: grid;
   grid-auto-flow: dense;
-  grid-template-columns: 50% minmax(75px, 150px);
+  grid-template-columns: auto minmax(75px, 150px);
   grid-gap: var(--space-xl);
   margin-top: var(--space-xl);
 
