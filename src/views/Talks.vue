@@ -6,6 +6,36 @@
             <li class="talk-list__talk">
                 <Talk
                     :headingLevel="2"
+                    title="Practices of the Python Pro"
+                    subtitle="Talk Python To Me"
+                >
+                    <template #description>
+                        <p>
+                            When you can call yourself a professional developer? Sure, getting paid to write code is probably part of the formula. But when is your skillset up to that level?
+                        </p>
+                        <p>
+                            Many folks in the industry suffer from imposter syndrome and other types of uncertainty. Yet, there are real techniques and skills you should know before you meet this bar.
+                        </p>
+                    </template>
+                    <template #visuals>
+                        <ResponsiveImage
+                            :src="require('@/assets/talk-python.png')"
+                            alt="Talk Python podcast logo"
+                        />
+                        <p>
+                            <BaseLink
+                                href="https://talkpython.fm/episodes/show/246/practices-of-the-python-pro"
+                                :external="true"
+                            >
+                                Listen to the podcast
+                            </BaseLink>
+                        </p>
+                    </template>
+                </Talk>
+            </li>
+            <li class="talk-list__talk">
+                <Talk
+                    :headingLevel="2"
                     title="Using a custom template loader at scale"
                     subtitle="DjangoCon US 2019"
                 >
@@ -72,12 +102,12 @@
                             alt="No Dogma podcast logo"
                         />
                         <p>
-                        <BaseLink
-                            href="https://nodogmapodcast.bryanhogan.net/123-dane-hillard-good-software-practices/"
-                            :external="true"
-                        >
-                            Listen to the podcast
-                        </BaseLink>
+                            <BaseLink
+                                href="https://nodogmapodcast.bryanhogan.net/123-dane-hillard-good-software-practices/"
+                                :external="true"
+                            >
+                                Listen to the podcast
+                            </BaseLink>
                         </p>
                     </template>
                 </Talk>
@@ -127,18 +157,18 @@
                         </p>
                     </template>
                     <template #visuals>
-                      <ResponsiveImage
-                          :src="require('@/assets/test-and-code.jpg')"
-                          alt="Test & Code logo"
-                      />
-                      <p class="talk-list__talk__description">
-                          <BaseLink
-                              href="https://testandcode.com/70"
-                              :external="true"
-                          >
-                              Listen to the podcast
-                          </BaseLink>
-                      </p>
+                        <ResponsiveImage
+                            :src="require('@/assets/test-and-code.jpg')"
+                            alt="Test & Code logo"
+                        />
+                        <p class="talk-list__talk__description">
+                            <BaseLink
+                                href="https://testandcode.com/70"
+                                :external="true"
+                            >
+                                Listen to the podcast
+                            </BaseLink>
+                        </p>
                     </template>
                 </Talk>
             </li>
