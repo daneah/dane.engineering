@@ -7,7 +7,7 @@
                 <h2>Practices of the Python Pro</h2>
 
                 <BaseLink
-                  href="https://www.manning.com/books/practices-of-the-python-pro?a_aid=danehillard&a_bid=857f932b"
+                  href="https://thepythonpro.com"
                   :external="true"
                 >
                   <PrimaryButton>Buy now</PrimaryButton>
@@ -15,7 +15,7 @@
 
                 <div class="book-list__book__cover">
                     <BaseLink
-                        href="https://www.manning.com/books/practices-of-the-python-pro?a_aid=danehillard&a_bid=857f932b"
+                        href="https://thepythonpro.com"
                         :external="true"
                     >
                         <ResponsiveImage
@@ -48,7 +48,7 @@
                     Whether you're just starting out in programming, using software to supplement your data science work, or applying code in novel ways to art or music, <em>Practices of the Python Pro</em> has something for you.
                     Are you ready to get started?
                     <BaseLink
-                        href="https://www.manning.com/books/practices-of-the-python-pro?a_aid=danehillard&a_bid=857f932b"
+                        href="https://thepythonpro.com"
                         :external="true"
                     >Buy the book</BaseLink> today!
                 </p>

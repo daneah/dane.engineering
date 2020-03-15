@@ -92,7 +92,7 @@
                 >
                     <template #description>
                         <p>
-                            Some of the important principles of software development discussed in <BaseLink href="https://bit.ly/the-python-pro" :external="true"><em>Practices of the Python Pro</em></BaseLink>.
+                            Some of the important principles of software development discussed in <BaseLink href="https://thepythonpro.com" :external="true"><em>Practices of the Python Pro</em></BaseLink>.
                             Get a feel for the book as I run through the table of contents with Bryan.
                         </p>
                     </template>
