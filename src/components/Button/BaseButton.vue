@@ -1,9 +1,10 @@
 <template>
     <button
-        @click="$emit('click')"
+        @click="emitClick()"
         :type="type"
         class="dh-button"
     >
+        <!-- @slot The button text content -->
         <slot />
     </button>
 </template>
@@ -23,6 +24,16 @@ export default {
   },
   data () {
     return {}
+  },
+  methods: {
+    emitClick() {
+      /**
+       * Click event
+       *
+       * @event click
+       */
+      this.$emit('click')
+    }
   },
 }
 </script>
