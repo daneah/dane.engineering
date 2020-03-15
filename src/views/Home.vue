@@ -33,6 +33,11 @@
         </div>
 
         <h2>Projects</h2>
+        <p>
+            I like to make things.
+            Some of the projects below were for school or work, but I chose to make them because they were fun and challenging.
+            Go build something!
+        </p>
         <CardGrid>
           <template #cards>
             <ul class="project-list">
