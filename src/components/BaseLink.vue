@@ -28,13 +28,13 @@ export default {
       default: false,
     }
   },
+  data () {
+    return {}
+  },
   computed: {
     rel () {
       return this.external ? 'noopener noindex nofollow' : false
     },
-  },
-  data () {
-    return {}
   },
 }
 </script>

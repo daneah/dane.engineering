@@ -69,14 +69,14 @@ export default {
       required: true,
     }
   },
+  data () {
+    return {}
+  },
   computed: {
     activeLinks () {
       const currentRoute = this.$route.name
       return this.links.filter(link => link.to !== currentRoute)
     },
-  },
-  data () {
-    return {}
   },
 }
 </script>
