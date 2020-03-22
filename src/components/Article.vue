@@ -11,7 +11,7 @@
 
 <script>
 import BaseLink from "@/components/BaseLink";
-import Badge from "@/components/Badge";
+import Badge from "@/components/Badge/Badge";
 
 export default {
   name: "Article",

@@ -48,6 +48,7 @@ export default {
     link: {
       type: Object,
       required: false,
+      default: undefined,
     }
   },
   data () {
