@@ -15,8 +15,8 @@ export default new Vuex.Store({
           title: 'Lead Web Application Developer',
           subtitle: 'ITHAKA',
           responsibilities: [
-            'Collaborate with the design, brand, and product development teams to build a design system for the JSTOR platform',
-            'Support and provide direction for developers on various cross-team initiatives',
+            'Collaborate with the design, brand, and product development teams to build a design system for the JSTOR platform.',
+            'Support and provide direction for developers on various cross-team initiatives.',
             `Manage development, releases, and communications for apiron, an open source package.'
              Collaborate with legal team to determine licensing and privacy obligations.`,
             'Promote strong development practices around testing, automation, and continuous delivery.',
