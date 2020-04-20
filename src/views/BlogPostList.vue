@@ -39,6 +39,13 @@
         <ul class="external-article-list">
             <li>
                 <Article
+                    title="Effective Python Testing With Pytest"
+                    site="Real Python"
+                    link="https://realpython.com/pytest-python-testing/"
+                />
+            </li>
+            <li>
+                <Article
                     title="An Effective Python Environment: Making Yourself at Home"
                     site="Real Python"
                     link="https://realpython.com/effective-python-environment/"
