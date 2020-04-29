@@ -16,7 +16,7 @@
                     </template>
                     <template #visuals>
                         <ResponsiveImage
-                            :src="require('@/assets/django-chat.png')"
+                            :src="require('@/assets/django-chat.jpg')"
                             alt="Django Chat podcast logo"
                         />
                         <p>
