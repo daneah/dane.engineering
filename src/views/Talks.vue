@@ -7,6 +7,33 @@
                 <Talk
                     :headingLevel="2"
                     title="Practices of the Python Pro"
+                    subtitle="Django Chat"
+                >
+                    <template #description>
+                        <p>
+                            We discuss using Django at scale, pytest, and teaching beginners.
+                        </p>
+                    </template>
+                    <template #visuals>
+                        <ResponsiveImage
+                            :src="require('@/assets/django-chat.png')"
+                            alt="Django Chat podcast logo"
+                        />
+                        <p>
+                            <BaseLink
+                                href="https://djangochat.com/episodes/practices-of-the-python-pro-dane-hillard"
+                                :external="true"
+                            >
+                                Listen to the podcast
+                            </BaseLink>
+                        </p>
+                    </template>
+                </Talk>
+            </li>
+            <li class="talk-list__talk">
+                <Talk
+                    :headingLevel="2"
+                    title="Practices of the Python Pro"
                     subtitle="Talk Python To Me"
                 >
                     <template #description>
