@@ -1,5 +1,6 @@
 :root {
     --text: var(--dark-gray);
+    --text-muted: var(--medium-gray);
     --background: var(--white);
     --nav-background: var(--light-blue);
     --panel-background: var(--gray);
@@ -12,6 +13,7 @@
 
     @media (prefers-color-scheme: dark) {
         --text: var(--white);
+        --text-muted: var(--gray);
         --background: var(--dark-gray);
         --nav-background: var(--medium-gray);
         --panel-background: var(--black);
