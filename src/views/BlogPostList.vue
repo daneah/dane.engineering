@@ -74,13 +74,6 @@
             </li>
             <li>
                 <Article
-                    title="Mixins for Fun and Profit"
-                    site="Easy as Python"
-                    link="https://easyaspython.com/mixins-for-fun-and-profit-cb9962760556"
-                />
-            </li>
-            <li>
-                <Article
                     title="Django's cached template loader"
                     site="Build Smarter"
                     link="https://medium.com/build-smarter/djangos-cached-template-loader-829f7b176e6f"
