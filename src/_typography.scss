@@ -43,6 +43,21 @@ p {
     }
 }
 
+code {
+    hyphens: none;
+}
+
+blockquote {
+    margin: var(--space-xl) var(--space-xl);
+    padding-left: var(--space-lg);
+    color: var(--text-muted);
+    border-left: 8px solid var(--text-muted);
+
+    p {
+        font-size: 2em;
+    }
+}
+
 @for $heading-level from 1 through 6 {
     h#{$heading-level} {
         line-height: var(--heading-line-height);
