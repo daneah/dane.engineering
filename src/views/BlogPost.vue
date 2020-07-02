@@ -106,7 +106,9 @@ export default {
     return {
       title: this.loading ? 'Loading...' : this.post.data.title,
       meta: meta,
-      link: this.loading || !this.seo.canonical_link ? [] : [
+      link: this.loading || !this.seo.canonical_link ? [
+        { rel: 'canonical', href: `https://dane.engineering/post/${this.$route.params.slug}/` },
+      ] : [
         { rel: 'canonical', href: this.seo.canonical_link },
       ],
     }
