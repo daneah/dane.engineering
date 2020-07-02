@@ -7,6 +7,33 @@
                 <Talk
                     :headingLevel="2"
                     title="Practices of the Python Pro"
+                    subtitle="Data Futurology"
+                >
+                    <template #description>
+                        <p>
+                            We discuss paths to software development, some fun tools, and laser harps.
+                        </p>
+                    </template>
+                    <template #visuals>
+                        <ResponsiveImage
+                            :src="require('@/assets/data-futurology.jpg')"
+                            alt="Felipe Flores from the Data Futurology podcast"
+                        />
+                        <p>
+                            <BaseLink
+                                href="https://www.datafuturology.com/podcast/2020/5/26/113-practices-of-the-python-pro-with-dane-hillard-author-and-lead-web-application-developer"
+                                :external="true"
+                            >
+                                Listen to the podcast
+                            </BaseLink>
+                        </p>
+                    </template>
+                </Talk>
+            </li>
+            <li class="talk-list__talk">
+                <Talk
+                    :headingLevel="2"
+                    title="Practices of the Python Pro"
                     subtitle="Django Chat"
                 >
                     <template #description>
