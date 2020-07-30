@@ -15,13 +15,12 @@ export default new Vuex.Store({
           title: 'Lead Web Application Developer',
           subtitle: 'ITHAKA',
           responsibilities: [
-            'Collaborate with the design, brand, and product development teams to build a design system for the JSTOR platform.',
-            'Support and provide direction for developers on various cross-team initiatives.',
-            `Manage development, releases, and communications for apiron, an open source package.'
-             Collaborate with legal team to determine licensing and privacy obligations.`,
-            'Promote strong development practices around testing, automation, and continuous delivery.',
-            'Encourage development teams to submit blog posts, talk proposals, and cross-team presentations for knowledge sharing.',
-            'Collaborate with quality assurance team to improve automated testing infrastructure.',
+            'Co-lead a team of 15 front end developers writing applications serving millions of active users.',
+            'Worked with engineering leadership to create diversified avenues for team learning and discussion, resulting in mentorship groups, open office hours, and recurring tech talk spaces.',
+            `Created, released, and oversaw maintenance of apiron, ITHAKA's first actively-maintained open source software.`,
+            'Co-championed the value of a design system for the JSTOR platform. Worked with design, brand, and product development to define the direction and lead the implementation.',
+            'Built an internal code and architecture documentation system using Sphinx, and built a mind map to identify opportunities for knowledge sharing.',
+            'Coordinated the upgrade of 30+ user-facing JSTOR applications to new Django and Python versions with no down time.',
           ],
         },
         {
@@ -29,12 +28,11 @@ export default new Vuex.Store({
           title: 'Web Application Developer',
           subtitle: 'ITHAKA',
           responsibilities: [
-            'Rotate in regularly to manage incident response for system outages.',
-            'Collaborate with design and marketing to create Build Smarter, an online presence for technical writing.',
-            'Participate in the interview and feedback process for internships and development team hires.',
-            'Help lead a multiple-team effort to overhaul our front-end UI toolset.',
-            'Transition and port existing feature sets from legacy architecture to new architecture.',
-            'Champion transition to HTTPS for all user-facing pages sitewide.',
+            'Helped transition core JSTOR functionality from a proprietary CMS to AWS-hosted Django applications.',
+            'Took Build Smarter, a public-facing outlet for our technical learnings, from concept to reality in collaboration with design and marketing.',
+            'Championed the transition to HTTPS for all user-facing pages on the JSTOR platform.',
+            'Represented ITHAKA and JSTOR as a speaker at 4 technical conferences nationally and internationally.',
+            'Designed and implemented continuous integration and publishing pipelines for internally-shared Python software.',
           ],
         },
       ],
@@ -45,9 +43,8 @@ export default new Vuex.Store({
           title: 'Software Development Engineer II',
           subtitle: 'Thermo Fisher Scientific (Previously Life Technologies)',
           responsibilities: [
-            'Collaborate with scientists to develop a working understanding of genomics and molecular biology concepts.',
-            'Transition bioinformatics methods into operational software product offerings.',
-            'Analyze and improve performance of big data storage and querying during data processing.',
+            'Built a feature extraction and translation tool for Variant Call Format (VCF) files.',
+            'Optimized and scaled a bioinformatics processing pipeline to hundreds of oncogemonics datasets.',
           ],
         },
         {
@@ -55,8 +52,8 @@ export default new Vuex.Store({
           title: 'Software Development Engineer II',
           subtitle: 'Life Technologies (Previously Compendia Bioscience)',
           responsibilities: [
-            'Integrate third-party data analysis and visualization products with proprietary big data sets.',
-            'Design, build, and maintain internal tools to support data curation and research.',
+            'Introduced tight feedback loops in our data processing pipeline to save developers potentially hours of wasted time.',
+            'Designed and built internal tools to support our data curation and research teams.',
           ],
         },
         {
@@ -64,7 +61,7 @@ export default new Vuex.Store({
           title: 'Software Development Engineer',
           subtitle: 'Compendia Bioscience',
           responsibilities: [
-            'Maintain and execute data processing pipeline software.',
+            'Integrated and operated a bioinformatics processing pipeline for oncogenomics datasets.',
           ],
         },
       ],
@@ -75,9 +72,9 @@ export default new Vuex.Store({
           title: 'Software Development Engineer',
           subtitle: 'SAIC',
           responsibilities: [
-            'Apply signal processing algorithms to telemetry data for human interpretation.',
-            'Augment telemetry prediction systems to account for additional considerations.',
-            'Develop, iterate on, and integrate rules for telemetry inference engines.',
+            'Developed novel inference algorithms for telemetry data.',
+            'Implemented an image processing algorithm to translate data between coordinate systems.',
+            'Retrofitted an existing prediction pipeline to enable dynamic input data.',
           ],
         },
         {
@@ -85,8 +82,7 @@ export default new Vuex.Store({
           title: 'Software Engineering Intern',
           subtitle: 'SAIC',
           responsibilities: [
-            'Maintain legacy C/C++ applications.',
-            'Build a graphical interface for an existing command-line application.',
+            'Built an interactive graphical interface in MATLAB on top of existing software for easier analysis.',
           ],
         },
       ]
@@ -120,24 +116,12 @@ export default new Vuex.Store({
           score: 5,
         },
         {
-          name: 'jQuery',
-          score: 4.5,
-        },
-        {
-          name: 'Vue.js',
+          name: 'Vue',
           score: 3.25,
         },
         {
           name: 'React',
           score: 2,
-        },
-        {
-          name: 'ZURB Foundation',
-          score: 3.75,
-        },
-        {
-          name: 'Bootstrap',
-          score: 3.75,
         },
         {
           name: 'SASS',
@@ -146,6 +130,10 @@ export default new Vuex.Store({
         {
           name: 'Webpack',
           score: 4,
+        },
+        {
+          name: 'LitElement',
+          score: 3.5,
         },
       ],
     },
