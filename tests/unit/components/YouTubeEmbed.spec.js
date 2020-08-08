@@ -10,7 +10,7 @@ describe('YouTubeEmbed', () => {
                 videoId: 'foo'
             }
         })
-        expect(wrapper.contains('div.embed-container')).toBe(true)
+        expect(wrapper.find('div.embed-container').element).toBeTruthy()
     })
 
     it('Renders a YouTube iframe', () => {
@@ -19,6 +19,6 @@ describe('YouTubeEmbed', () => {
                 videoId: 'foo'
             }
         })
-        expect(wrapper.contains('iframe[src="https://www.youtube.com/embed/foo"]')).toBe(true)
+        expect(wrapper.find('iframe[src="https://www.youtube.com/embed/foo"]').element).toBeTruthy()
     })
 })

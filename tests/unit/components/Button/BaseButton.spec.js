@@ -6,7 +6,7 @@ import BaseButton from '@/components/Button/BaseButton'
 describe('BaseButton', () => {
     it('Renders a button', () => {
         const wrapper = shallowMount(BaseButton)
-        expect(wrapper.contains('button.dh-button')).toBe(true)
+        expect(wrapper.find('button.dh-button').element).toBeTruthy()
     })
 
     it('Contains content provided in a slot', () => {

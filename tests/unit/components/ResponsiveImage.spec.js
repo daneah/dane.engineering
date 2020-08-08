@@ -11,7 +11,7 @@ describe('ResponsiveImage', () => {
                 alt: 'Test image'
             }
         })
-        expect(wrapper.contains('img[src="test.jpg"][alt="Test image"]')).toBe(true)
+        expect(wrapper.find('img[src="test.jpg"][alt="Test image"]').element).toBeTruthy()
     })
 
     it('Renders a picture with webp source when provided', () => {
@@ -22,6 +22,6 @@ describe('ResponsiveImage', () => {
                 alt: 'Test image'
             }
         })
-        expect(wrapper.contains('picture source[srcset="test.webp"]')).toBe(true)
+        expect(wrapper.find('picture source[srcset="test.webp"]').element).toBeTruthy()
     })
 })

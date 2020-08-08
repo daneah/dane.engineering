@@ -4,15 +4,6 @@ import BaseNav from '@/components/BaseNav'
 
 
 describe('BaseNav', () => {
-    it('Renders without error', () => {
-        const wrapper = shallowMount(BaseNav, {
-            propsData: {
-                links: []
-            },
-        })
-        expect(wrapper.isVueInstance()).toBe(true)
-    })
-
     it('Renders the specified links', () => {
         const wrapper = mount(BaseNav, {
             propsData: {
@@ -44,6 +35,6 @@ describe('BaseNav', () => {
                 $route
             }
         })
-        expect(wrapper.contains('a[href="/foo"]')).toBe(false)
+        expect(wrapper.find('a[href="/foo"]').element).toBeFalsy()
     })
 })
