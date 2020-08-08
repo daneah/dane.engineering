@@ -6,7 +6,7 @@ import Card from '@/components/Card/Card'
 describe('Card', () => {
     it('Renders a card', () => {
         const wrapper = shallowMount(Card)
-        expect(wrapper.contains('div.card')).toBe(true)
+        expect(wrapper.find('div.card').element).toBeTruthy()
     })
 
     it('Uses the specified image', () => {
@@ -16,7 +16,7 @@ describe('Card', () => {
             }
         })
         const imageWrapper = wrapper.find('div.card__header')
-        expect(imageWrapper.contains('img[src="https://foo.com/bar.jpg"]')).toBe(true)
+        expect(imageWrapper.find('img[src="https://foo.com/bar.jpg"]').element).toBeTruthy()
     })
 
     it('Uses the specified title', () => {
@@ -26,7 +26,7 @@ describe('Card', () => {
             }
         })
         const titleWrapper = wrapper.find('div.card__title')
-        expect(titleWrapper.contains('h1.test')).toBe(true)
+        expect(titleWrapper.find('h1.test').element).toBeTruthy()
     })
 
     it('Uses the specified description', () => {
@@ -36,6 +36,6 @@ describe('Card', () => {
             }
         })
         const descriptionWrapper = wrapper.find('div.card__description')
-        expect(descriptionWrapper.contains('p.test')).toBe(true)
+        expect(descriptionWrapper.find('p.test').element).toBeTruthy()
     })
 })

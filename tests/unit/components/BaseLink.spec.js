@@ -10,7 +10,7 @@ describe('BaseLink', () => {
                 href: 'https://foo.com'
             }
         })
-        expect(wrapper.contains('a[href="https://foo.com"]')).toBe(true)
+        expect(wrapper.find('a[href="https://foo.com"]').element).toBeTruthy()
     })
 
     it('Renders safe rel for external links', () => {
@@ -20,7 +20,7 @@ describe('BaseLink', () => {
                 external: true
             }
         })
-        expect(wrapper.contains('a[target="_blank"][rel="noopener noindex nofollow"]')).toBe(true)
+        expect(wrapper.find('a[target="_blank"][rel="noopener noindex nofollow"]').element).toBeTruthy()
     })
 
     it('Does not render a rel by default for internal links', () => {
@@ -41,7 +41,7 @@ describe('BaseLink', () => {
                 rel: 'some-rel-value'
             }
         })
-        expect(wrapper.contains('a[rel="some-rel-value"]')).toBe(true)
+        expect(wrapper.find('a[rel="some-rel-value"]').element).toBeTruthy()
     })
 
     it('Renders a clean link', () => {
@@ -51,7 +51,7 @@ describe('BaseLink', () => {
                 clean: true
             }
         })
-        expect(wrapper.contains('.link--clean')).toBe(true)
+        expect(wrapper.find('.link--clean').element).toBeTruthy()
     })
 
     it('Renders the specified content', () => {

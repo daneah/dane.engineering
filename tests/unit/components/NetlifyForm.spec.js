@@ -10,7 +10,7 @@ describe('NetlifyForm', () => {
                 formName: 'testForm'
             }
         })
-        expect(wrapper.contains('form[netlify]')).toBe(true)
+        expect(wrapper.find('form[netlify]').element).toBeTruthy()
     })
 
     it('Renders a honeypot field', () => {
@@ -19,7 +19,7 @@ describe('NetlifyForm', () => {
                 formName: 'testForm'
             }
         })
-        expect(wrapper.contains('input[name="pwned"]')).toBe(true)
+        expect(wrapper.find('input[name="pwned"]').element).toBeTruthy()
     })
 
     it('Renders a submit button with the specified text', () => {
@@ -42,6 +42,6 @@ describe('NetlifyForm', () => {
                 default: '<input type="text" name="test">'
             }
         })
-        expect(wrapper.find('form').contains('input[name="test"]')).toBe(true)
+        expect(wrapper.find('form').find('input[name="test"]').element).toBeTruthy()
     })
 })

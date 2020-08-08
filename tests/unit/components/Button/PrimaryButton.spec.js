@@ -6,7 +6,7 @@ import PrimaryButton from '@/components/Button/PrimaryButton'
 describe('PrimaryButton', () => {
     it('Renders a button', () => {
         const wrapper = mount(PrimaryButton)
-        expect(wrapper.contains('button.dh-button.dh-button--primary')).toBe(true)
+        expect(wrapper.find('button.dh-button.dh-button--primary').element).toBeTruthy()
     })
 
     it('Contains content provided in a slot', () => {

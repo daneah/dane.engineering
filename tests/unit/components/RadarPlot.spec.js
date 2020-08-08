@@ -10,7 +10,7 @@ describe('RadarPlot', () => {
                 characteristics: []
             }
         })
-        expect(wrapper.contains('div.svg-container')).toBe(true)
+        expect(wrapper.find('div.svg-container').element).toBeTruthy()
     })
 
     it('Renders the specified number of levels', () => {
@@ -50,6 +50,6 @@ describe('RadarPlot', () => {
                 characteristics: []
             }
         })
-        expect(wrapper.contains('polygon')).toBe(true)
+        expect(wrapper.find('polygon').element).toBeTruthy()
     })
 })

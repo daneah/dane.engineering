@@ -1,44 +1,35 @@
 import { shallowMount } from '@vue/test-utils'
 
 import BookAnnouncement from '@/components/BookAnnouncement'
+import ResponsiveImage from '@/components/ResponsiveImage'
 
 
 describe('BookAnnouncement', () => {
-    it('Renders without error', () => {
-        const wrapper = shallowMount(BookAnnouncement, {
-            stubs: {
-                'router-link': '<a>Stubbed</a>',
-            },
-        })
-        expect(wrapper.isVueInstance()).toBe(true)
-    })
-
     it('Renders a div', () => {
         const wrapper = shallowMount(BookAnnouncement, {
             stubs: {
-                'router-link': '<a>Stubbed</a>',
+                'router-link': true,
             },
         })
-        expect(wrapper.is('div.book-announcement')).toBe(true)
+        expect(wrapper.element.tagName).toBe('DIV')
+        expect(wrapper.element.classList.contains('book-announcement')).toBe(true)
     })
 
     it('Renders a heading', () => {
         const wrapper = shallowMount(BookAnnouncement, {
             stubs: {
-                'BaseHeading': '<h2></h2>',
-                'router-link': '<a>Stubbed</a>',
+                'router-link': true,
             },
         })
-        expect(wrapper.contains('h2')).toBe(true)
+        expect(wrapper.find('h2').element).toBeTruthy()
     })
 
     it('Renders the book cover', () => {
         const wrapper = shallowMount(BookAnnouncement, {
             stubs: {
-                'ResponsiveImage': '<img class="book-cover" />',
-                'router-link': '<a>Stubbed</a>',
+                'router-link': true,
             },
         })
-        expect(wrapper.contains('img.book-cover')).toBe(true)
+        expect(wrapper.findComponent(ResponsiveImage)).toBeTruthy()
     })
 })

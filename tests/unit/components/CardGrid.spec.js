@@ -4,14 +4,10 @@ import CardGrid from '@/components/CardGrid'
 
 
 describe('CardGrid', () => {
-  it('Renders without error', () => {
-    const wrapper = shallowMount(CardGrid)
-    expect(wrapper.isVueInstance()).toBe(true)
-  })
-
   it('Renders a wrapper div', () => {
     const wrapper = shallowMount(CardGrid)
-    expect(wrapper.is('div.cards')).toBe(true)
+    expect(wrapper.element.tagName).toBe('DIV')
+    expect(wrapper.element.classList.contains('cards')).toBe(true)
   })
 
   it('Renders slot content', () => {
@@ -20,6 +16,6 @@ describe('CardGrid', () => {
         cards: '<ul class="some-cards"><li>a card</li><li>another card</li></ul>',
       },
     })
-    expect(wrapper.contains('ul.some-cards')).toBe(true)
+    expect(wrapper.find('ul.some-cards').element).toBeTruthy()
   })
 })
