@@ -1,5 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
-import { withKnobs, text } from '@storybook/addon-knobs'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
 
 import Card from './Card'
 
@@ -7,57 +6,32 @@ import Card from './Card'
 
 <Meta
   title='Components/Card'
-  decorators={[withKnobs]}
   component={Card}
 />
 
-## Text only
-
-<Preview>
-  <Story name='Text only'>{{
+export const Template = (args, { argTypes }) => ({
+    props: Object.keys(argTypes),
     components: { Card },
-    props: {
-      title: {
-        default: text('Title', 'Card title'),
-      },
-      description: {
-        default: text('Description', 'This is the card description.'),
-      },
-    },
-    template: `
-    <Card>
-        <template #title>{{ title }}</template>
-        <template #description>{{ description }}</template>
-    </Card>
-    `,
-  }}</Story>
-</Preview>
+    template: `<div style="width: 250px"><Card>
+      <template #image><span v-html="image"></span></template>
+      <template #title>{{ title }}</template>
+      <template #description>{{ description }}</template>
+    </Card></div>`,
+})
 
-## With image
-
-<Preview>
-  <Story name='With image'>{{
-    components: { Card },
-    props: {
-      title: {
-        default: text('Title', 'Kittens'),
-      },
-      description: {
-        default: text('Description', 'They are adorable.'),
-      },
-    },
-    template: `
-    <Card>
-        <template #image>
-          <img src="https://placekitten.com/1500/350" alt="kitty">
-        </template>
-        <template #title>{{ title }}</template>
-        <template #description>{{ description }}</template>
-    </Card>
-    `,
-  }}</Story>
-</Preview>
+<Canvas>
+  <Story
+    name='Canvas'
+    args={{
+      title: 'Kittens',
+      description: 'They are adorable.',
+      image: '<img src="https://placekitten.com/500/350" alt="kitty" />',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
 
 ## Props
 
-<Props of={Card} />
+<ArgsTable story="Canvas" />
