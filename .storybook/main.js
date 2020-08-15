@@ -3,12 +3,12 @@ module.exports = {
     '@storybook/addon-docs/preset',
   ],
   addons: [
-    '@storybook/addon-knobs/register',
-    '@storybook/addon-actions/register',
-    '@storybook/addon-a11y/register',
-    '@storybook/addon-viewport/register',
+    '@storybook/addon-controls',
+    '@storybook/addon-actions',
+    '@storybook/addon-a11y',
+    '@storybook/addon-viewport',
   ],
   stories: [
-    '../src/components/**/*.stories.(js|mdx)',
+    '../src/components/**/*.stories.@(js|mdx)',
   ],
 };

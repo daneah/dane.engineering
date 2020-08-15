@@ -1,5 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
-import { withKnobs, text, color as colorKnob } from '@storybook/addon-knobs'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
 
 import Badge from './Badge'
 
@@ -7,46 +6,25 @@ import Badge from './Badge'
 
 <Meta
   title='Components/Badge'
-  decorators={[withKnobs]}
   component={Badge}
+  argTypes={{ color: { control: 'color' } }}
 />
 
-## Default
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Badge },
+  template: `<Badge :color="color">{{ text }}</Badge>`
+})
 
-<Preview>
-  <Story name='Default'>{{
-    components: { Badge },
-    props: {
-      text: {
-        default: text('Badge text', 'Badge'),
-      },
-    },
-    template: `
-        <Badge>
-            {{ text }}
-        </Badge>
-    `,
-  }}</Story>
-</Preview>
+<Canvas withToolbar>
+  <Story
+    name='Canvas'
+    args={{
+      text: 'Badge text',
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
 
-## Color
-
-<Preview>
-  <Story name='Color'>{{
-    components: { Badge },
-    props: {
-      badgeColor: {
-        default: colorKnob('Badge color', '#773333'),
-      },
-    },
-    template: `
-        <Badge :color="badgeColor">
-            Badge
-        </Badge>
-    `,
-  }}</Story>
-</Preview>
-
-## Props
-
-<Props of={Badge} />
+<ArgsTable story='Canvas' />

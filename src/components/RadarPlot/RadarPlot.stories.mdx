@@ -1,5 +1,4 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
-import { withKnobs, object, number } from '@storybook/addon-knobs'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
 
 import RadarPlot from './RadarPlot'
 
@@ -7,31 +6,38 @@ import RadarPlot from './RadarPlot'
 
 <Meta
   title='Components/RadarPlot'
-  decorators={[withKnobs]}
   component={RadarPlot}
+  argTypes={{
+    levels: { control: { type: 'number', min: 2 } },
+    characteristics: { control: 'object' },
+    color: { control: 'color' }
+  }}
 />
 
-<Preview>
-  <Story name='Basic'>{{
-    components: { RadarPlot },
-    props: {
-      levels: {
-        default: number('Levels', 5),
-      },
-      characteristics: {
-        default: object('Characteristics', [
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { RadarPlot },
+  template: '<div style="width: 350px"><RadarPlot :levels="levels" :characteristics="characteristics" :color="color" /></div>',
+})
+
+<Canvas>
+  <Story
+    name='Canvas'
+    args={{
+      levels: 5,
+      characteristics: [
           { name: 'Flying', score: 1 },
           { name: 'Cooking', score: 3 },
           { name: 'Running', score: 0.5 },
           { name: 'Reading', score: 3 },
-          { name: 'Swimming', score: 4.5 }
-        ]),
-      },
-    },
-    template: '<RadarPlot :levels="levels" :characteristics="characteristics" />',
-  }}</Story>
-</Preview>
+          { name: 'Swimming', score: 1.5 }
+      ],
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
 
 ## Props
 
-<Props of={RadarPlot} />
+<ArgsTable story='Canvas' />

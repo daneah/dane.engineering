@@ -1,6 +1,5 @@
-import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks'
 import { action } from '@storybook/addon-actions'
-import { withKnobs, text } from '@storybook/addon-knobs'
 
 import BaseButton from './BaseButton'
 import PrimaryButton from './PrimaryButton'
@@ -18,56 +17,57 @@ Secondary buttons are more muted in appearance but still provide clear expectati
 
 <Meta
   title='Components/Button'
-  decorators={[withKnobs]}
   component={BaseButton}
 />
 
+export const PrimaryTemplate = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { PrimaryButton },
+  template: `<PrimaryButton @click="handleClick" :type="type">
+    {{ text }}
+  </PrimaryButton>`,
+  methods: {
+    handleClick: action('Clicked!'),
+  },
+})
+
 ## Primary
 
-<Preview>
-  <Story name='Primary'>{{
-    components: { PrimaryButton },
-    props: {
-      text: {
-        default: text('Text', 'Primary', 'primary'),
-      },
-    },
-    template: '<PrimaryButton @click="click">{{ text }}</PrimaryButton>',
-    methods: {
-      click: action('Clicked!'),
-    },
-  }}</Story>
-</Preview>
+<Canvas>
+  <Story
+    name='Primary'
+    args={{
+      text: 'Primary',
+    }}
+  >
+    {PrimaryTemplate.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story='Primary' />
 
 ## Secondary
 
-<Preview>
-  <Story name='Secondary'>{{
-    components: { SecondaryButton },
-    props: {
-      text: {
-        default: text('Text', 'Secondary', 'secondary'),
-      },
-    },
-    template: '<SecondaryButton @click="click">{{ text }}</SecondaryButton>',
-    methods: {
-      click: action('Clicked!'),
-    },
-  }}</Story>
-</Preview>
+export const SecondaryTemplate = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { SecondaryButton },
+  template: `<SecondaryButton @click="handleClick" :type="type">
+    {{ text }}
+  </SecondaryButton>`,
+  methods: {
+    handleClick: action('Clicked!'),
+  },
+})
 
-## As a submit button
+<Canvas>
+  <Story
+    name='Secondary'
+    args={{
+      text: 'Secondary',
+    }}
+  >
+    {SecondaryTemplate.bind({})}
+  </Story>
+</Canvas>
 
-<Preview>
-  <Story name='As submit button'>{{
-    components: { PrimaryButton },
-    template: '<PrimaryButton @click="click" type="submit">Submit</PrimaryButton>',
-    methods: {
-      click: action('Submitted!'),
-    },
-  }}</Story>
-</Preview>
-
-## Props
-
-<Props of={BaseButton} />
+<ArgsTable story='Secondary' />
