@@ -17,7 +17,7 @@
                 </p>
 
                 <p>
-                    Dane grew up in Michigan and currently lives in Pittsburgh, Pennsylvania.
+                    Dane grew up in Michigan and currently lives in Philadelphia, Pennsylvania.
                 </p>
             </div>
             <ResponsiveImage
