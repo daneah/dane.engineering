@@ -39,6 +39,13 @@
         <ul class="external-article-list">
             <li>
                 <Article
+                    title="Python Packages: Five Real Python Favorites"
+                    site="Real Python"
+                    link="https://realpython.com/python-packages/"
+                />
+            </li>
+            <li>
+                <Article
                     title="Effective Python Testing With Pytest"
                     site="Real Python"
                     link="https://realpython.com/pytest-python-testing/"
