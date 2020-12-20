@@ -3,7 +3,10 @@
     <main>
       <article v-if="!loading && post.data && post.data.published">
         <h1>{{ post.data.title }}</h1>
-        <span class="post__metadata">{{ publishedDate }}</span>
+        <div class="post__metadata">
+          {{ publishedDate }}
+          <span class="post__metadata" v-if="publishedDate !== lastUpdatedDate">(Updated {{ lastUpdatedDate }})</span>
+        </div>
         <div v-html="post.data.body" />
       </article>
       <p v-else>
@@ -36,15 +39,17 @@ export default {
   },
   computed: {
     publishedDate () {
-      const pubDate = new Date(this.post.data.published)
-      let options = {
-        year: "numeric", month: "long",
-        day: "numeric", hour: "2-digit", minute: "2-digit"
-      }
-      return pubDate.toLocaleTimeString('en-us', options)
-    }
+      return this.getLocalDate(this.post.data.published)
+    },
+    lastUpdatedDate () {
+      return this.getLocalDate(this.post.data.updated)
+    },
   },
   methods: {
+    getLocalDate (timestamp) {
+      const date = new Date(timestamp)
+      return new Intl.DateTimeFormat('en-US', { dateStyle: "medium" }).format(date)
+    },
     fetchPost () {
       this.$butter.post.retrieve(this.$route.params.slug)
         .then((response) => {
