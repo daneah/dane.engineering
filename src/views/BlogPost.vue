@@ -5,7 +5,7 @@
         <h1>{{ post.data.title }}</h1>
         <div class="post__metadata">
           {{ publishedDate }}
-          <span class="post__metadata" v-if="publishedDate !== lastUpdatedDate">(Updated {{ lastUpdatedDate }})</span>
+          <span v-if="publishedDate !== lastUpdatedDate">(Updated {{ lastUpdatedDate }})</span>
         </div>
         <div v-html="post.data.body" />
       </article>
