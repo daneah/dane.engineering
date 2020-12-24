@@ -59,7 +59,7 @@ export default {
             Prism.highlightAll()
           })
         }).catch((response) => {
-          console.log(response)
+          console.error(response)
         })
     },
     fetchPostSeo () {
@@ -67,7 +67,7 @@ export default {
         .then((response) => {
           this.seo = response.data.data.blog_post_seo.length > 0 ? response.data.data.blog_post_seo[0]: {}
         }).catch((response) => {
-          console.log(response)
+          console.error(response)
         })
     },
   },
