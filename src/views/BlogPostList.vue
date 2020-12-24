@@ -118,7 +118,11 @@ export default {
   },
   methods: {
     fetchPosts () {
-      this.$butter.post.list({page: 1, pageSize: 10})
+      this.$butter.post.list({
+        "page": 1,
+        "page_size": 25,
+        "exclude_body": true,
+      })
         .then((response) => {
           this.loading = false
           this.posts = response.data
