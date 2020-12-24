@@ -21,7 +21,7 @@ coverage/
 *.sln
 *.sw*
 
-latest-posts.json
-
 # Build
 public/storybook/
+public/feed.xml
+latest-posts.json

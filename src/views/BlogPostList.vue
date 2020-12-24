@@ -123,7 +123,7 @@ export default {
           this.loading = false
           this.posts = response.data
         }).catch((response) => {
-          console.log(response)
+          console.error(response)
         })
     },
     postThumbnail (imageUrl) {
