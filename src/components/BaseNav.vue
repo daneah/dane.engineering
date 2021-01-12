@@ -52,16 +52,24 @@
                 </ul>
             </li>
         </ul>
+        <EthicalAd
+            id="sidebar"
+            class="ethical"
+            type="text"
+            :keywords="['python', 'webdev', 'django']"
+        />
     </nav>
 </template>
 
 <script>
 import BaseLink from '@/components/BaseLink'
+import EthicalAd from '@/components/EthicalAd'
 
 export default {
   name: 'BaseNav',
   components: {
     BaseLink,
+    EthicalAd,
   },
   props: {
     links: {
@@ -118,6 +126,17 @@ export default {
   .nav__link,
   .nav__social {
     display: none;
+  }
+}
+
+.ethical {
+  @media (min-width: 700px) {
+    position: fixed;
+    max-width: 160px;
+  }
+
+  ::v-deep .ea-content {
+    margin: 0 !important;
   }
 }
 </style>
