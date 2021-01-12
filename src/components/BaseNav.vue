@@ -56,6 +56,7 @@
             id="sidebar"
             class="ethical"
             type="text"
+            :key="$router.history.current.path"
             :keywords="['python', 'webdev', 'django']"
         />
     </nav>
