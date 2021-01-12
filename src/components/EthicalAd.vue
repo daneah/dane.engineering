@@ -24,7 +24,7 @@ export default {
   },
   computed: {
     darkMode () {
-      return window && window.matchMedia('(prefers-color-scheme: dark)').matches
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
     },
   },
 }
