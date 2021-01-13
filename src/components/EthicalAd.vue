@@ -23,7 +23,7 @@ export default {
     },
   },
   mounted () {
-    ethicalads && ethicalads.load()
+    window.ethicalads && window.ethicalads.load()
   },
   computed: {
     darkMode () {
