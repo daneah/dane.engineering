@@ -56,6 +56,7 @@
             id="sidebar"
             class="ethical"
             type="text"
+            :key="$route.path"
             :keywords="['python', 'webdev', 'django']"
         />
     </nav>

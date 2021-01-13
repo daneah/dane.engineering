@@ -5,6 +5,10 @@ import BaseNav from '@/components/BaseNav'
 
 describe('BaseNav', () => {
     it('Renders the specified links', () => {
+        const $route = {
+            path: '/foo',
+            name: 'foo',
+        }
         const wrapper = mount(BaseNav, {
             propsData: {
                 links: [
@@ -12,6 +16,9 @@ describe('BaseNav', () => {
                     {'to': 'https://biz.org', 'external': true, 'text': 'NPO Biz'},
                 ]
             },
+            mocks: {
+                $route
+            }
         })
         let bigBizLink = wrapper.find('a[href="https://biz.com"]')
         expect(bigBizLink.text()).toBe('Big Biz')

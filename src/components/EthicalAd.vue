@@ -22,6 +22,9 @@ export default {
       default: [],
     },
   },
+  mounted () {
+    window.ethicalads && window.ethicalads.load()
+  },
   computed: {
     darkMode () {
       return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
