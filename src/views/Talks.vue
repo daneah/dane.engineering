@@ -176,7 +176,7 @@
                         <p>
                             What does the process of writing a book look like?
                             What are the logistics with publishing and authoring?
-                            What gaps does <BaseLink href="https://www.manning.com/books/practices-of-the-python-pro?utm_source=danehillard&utm_medium=affiliate&utm_campaign=book_hillard_practices_1_3_20&a_aid=danehillard&a_bid=3ff2fffc" :external="true"><em>Practices of the Python Pro</em></BaseLink> address?
+                            What gaps does <BaseLink href="https://thepythonpro.com" :external="true"><em>Practices of the Python Pro</em></BaseLink> address?
                             Chris and Ed grill me on these questions and more.
                         </p>
                     </template>
