@@ -22,9 +22,8 @@
               <li
                   v-for="responsibility in responsibilities"
                   class="entry__responsibilities__responsibility"
-              >
-                  {{ responsibility }}
-              </li>
+                  v-html="responsibility"
+              />
           </ul>
       </div>
   </div>
