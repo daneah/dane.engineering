@@ -1,24 +1,13 @@
 <template>
     <div class="book-announcement">
         <div class="book-plug">
-            <h2>I wrote a book!</h2>
+            <h2>I'm writing another book!</h2>
 
             <p>
-                After much ado, <router-link class="link" :to="{'name': 'books'}"><em>Practices of the Python Pro</em></router-link>
-                is now available for purchase through Manning Books.
-            </p>
-
-            <p>
-                This book is geared toward people just getting into software development,
-                or using Python as a supplement to their work in a different discipline.
-                Please share with anyone looking to learn more about software development principles and best practices!
+                I'm writing <BaseLink href="https://pypackages.com" :external="true"><em>Publishing Python Packages</em></BaseLink> for Manning Books.
+                Visit the site to learn more and sign up for updates.
             </p>
         </div>
-        <ResponsiveImage
-            :src="require('@/assets/practices-of-the-python-pro-cover.png')"
-            :webp="require('@/assets/practices-of-the-python-pro-cover.webp')"
-            alt="Book cover for Practices of the Python Pro by Dane Hillard"
-        />
     </div>
 </template>
 

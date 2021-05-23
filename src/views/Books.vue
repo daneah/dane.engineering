@@ -4,6 +4,28 @@
 
         <ul class="book-list">
             <li>
+                <h2>Publishing Python Packages</h2>
+
+                <BaseLink
+                  href="https://pypackages.com"
+                  :external="true"
+                >
+                  <PrimaryButton>More info</PrimaryButton>
+                </BaseLink>
+
+                <p>
+                  The life of a maintainer can be hard.
+                  Beyond writing working code, you have to triage issues, review pull requests, and create releases regularly.
+                  Don't let the logistics of package management get in your way.
+                </p>
+
+                <p>
+                  I'm currently writing <em>Publishing Python Packages</em>, a book about creating and streamlining a repeatable process for authoring and maintaining Python packages.
+                  Whether you're looking to create your first published Python package or trying to reduce the maintenance burden of the packages you already work on, <em>Publishing Python Packages</em> has something for you.
+                </p>
+            </li>
+
+            <li>
                 <h2>Practices of the Python Pro</h2>
 
                 <BaseLink
