@@ -39,6 +39,13 @@
         <ul class="external-article-list">
             <li>
                 <Article
+                    title="Build a Blog Using Django, Vue, and GraphQL"
+                    site="Real Python"
+                    link="https://realpython.com/python-django-blog/"
+                />
+            </li>
+            <li>
+                <Article
                     title="Python Packages: Five Real Python Favorites"
                     site="Real Python"
                     link="https://realpython.com/python-packages/"
