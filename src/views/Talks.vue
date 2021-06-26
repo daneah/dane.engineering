@@ -7,6 +7,33 @@
                 <Talk
                     :headingLevel="2"
                     title="Practices of the Python Pro"
+                    subtitle="Profitable Python"
+                >
+                    <template #description>
+                        <p>
+                            We discuss leadership, mentorship, and approachability.
+                        </p>
+                    </template>
+                    <template #visuals>
+                        <ResponsiveImage
+                            :src="require('@/assets/profitable-python.jpg')"
+                            alt="Profitable Python logo"
+                        />
+                        <p>
+                            <BaseLink
+                                href="https://anchor.fm/profitablepythonfm/episodes/Practices-of-the-Python-Pro--Dane-Hillard-ekop2b"
+                                :external="true"
+                            >
+                                Listen to the podcast
+                            </BaseLink>
+                        </p>
+                    </template>
+                </Talk>
+            </li>
+            <li class="talk-list__talk">
+                <Talk
+                    :headingLevel="2"
+                    title="Practices of the Python Pro"
                     subtitle="Data Futurology"
                 >
                     <template #description>

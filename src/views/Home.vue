@@ -44,6 +44,28 @@
                 <li class="project-list__project">
                     <Card>
                         <template #image>
+                            <BaseLink
+                                href="https://github.com/ithaka/pharos"
+                            >
+                                <ResponsiveImage
+                                    :src="require('@/assets/pharos.png')"
+                                    :webp="require('@/assets/pharos.webp')"
+                                    alt="The colored orb logo for Pharos, JSTOR's design system"
+                                />
+                            </BaseLink>
+                        </template>
+                        <template #title>Pharos</template>
+                        <template #description>
+                            <p>
+                                Pharos is JSTOR's design system.
+                                It contains our design decisions, a component library, a Storybook playground, and more.
+                            </p>
+                        </template>
+                    </Card>
+                </li>
+                <li class="project-list__project">
+                    <Card>
+                        <template #image>
                             <BaseLink href="https://github.com/daneah/pixelize">
                                 <ResponsiveImage
                                     :src="require('@/assets/pixelize.png')"
