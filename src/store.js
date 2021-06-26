@@ -19,7 +19,7 @@ export default new Vuex.Store({
             'Coordinated the upgrade of 30+ user-facing JSTOR applications to new Django and Python versions with no down time.',
             'Identified infrastructure cost reductions and non-profit vendor discounts, saving over $50K annually.',
             `Created, released, and oversaw maintenance of <a class="link" href="https://github.com/ithaka/apiron">apiron</a>, ITHAKA's first actively-maintained open source software.`,
-            'Worked with design, brand, and product development to define the direction and lead the implementation of the <a class="link" href="https://github.com/ithaka/pharos">Pharos</a> design system.',
+            'Worked with design, brand, and product development to define the direction and lead the implementation of the <a class="link" href="https://pharos.jstor.org">Pharos</a> design system.',
             'Built an internal code and architecture documentation system using Sphinx, and built a mind map to identify opportunities for knowledge sharing.',
             'Worked with engineering leadership to create diversified avenues for team learning and discussion, resulting in mentorship groups, open office hours, and recurring tech talk spaces.',
           ],
