@@ -15,6 +15,7 @@ export default new Vuex.Store({
           title: 'Lead Web Application Developer',
           subtitle: 'ITHAKA',
           responsibilities: [
+            'Provide technical product ownership in micro frontend architecture and developer ergonomics.',
             'Co-lead a team of 15+ front end developers writing web applications serving ~20M monthly active users.',
             'Coordinated the upgrade of 30+ user-facing JSTOR applications to new Django and Python versions with no down time.',
             'Identified infrastructure cost reductions and non-profit vendor discounts, saving over $50K annually.',
