@@ -6,6 +6,33 @@
             <li class="talk-list__talk">
                 <Talk
                     :headingLevel="2"
+                    title="The Challenges of Developing Into a Python Professional"
+                    subtitle="The Real Python Podcast"
+                >
+                    <template #description>
+                        <p>
+                            We discuss philosophy on the design principles that go into writing code. We talk about namespaces, object-oriented design, and how to keep your code extensible.
+                        </p>
+                    </template>
+                    <template #visuals>
+                        <ResponsiveImage
+                            :src="require('@/assets/real-python.jpg')"
+                            alt="The Real Python Podcast logo"
+                        />
+                        <p>
+                            <BaseLink
+                                href="https://realpython.com/podcasts/rpp/49/"
+                                :external="true"
+                            >
+                                Listen to the podcast
+                            </BaseLink>
+                        </p>
+                    </template>
+                </Talk>
+            </li>
+            <li class="talk-list__talk">
+                <Talk
+                    :headingLevel="2"
                     title="Practices of the Python Pro"
                     subtitle="Profitable Python"
                 >
