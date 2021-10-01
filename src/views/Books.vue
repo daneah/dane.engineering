@@ -3,15 +3,28 @@
         <h1>Books</h1>
 
         <ul class="book-list">
-            <li>
+            <li class="book-list__book">
                 <h2>Publishing Python Packages</h2>
 
                 <BaseLink
                   href="https://pypackages.com"
                   :external="true"
                 >
-                  <PrimaryButton>More info</PrimaryButton>
+                  <PrimaryButton>Get early access</PrimaryButton>
                 </BaseLink>
+
+                <div class="book-list__book__cover">
+                    <BaseLink
+                        href="https://pypackages.com"
+                        :external="true"
+                    >
+                        <ResponsiveImage
+                            :src="require('@/assets/publishing-python-packages-cover.jpg')"
+                            :webp="require('@/assets/publishing-python-packages-cover.webp')"
+                            alt="Book cover for Publishing Python Packages by Dane Hillard"
+                        />
+                    </BaseLink>
+                </div>
 
                 <p>
                   The life of a maintainer can be hard.
@@ -25,7 +38,7 @@
                 </p>
             </li>
 
-            <li>
+            <li class="book-list__book">
                 <h2>Practices of the Python Pro</h2>
 
                 <BaseLink
@@ -122,7 +135,11 @@ export default {
   list-style: none;
 
   @at-root #{&}__book__cover {
-    max-width: 500px;
+    max-width: 300px;
+  }
+
+  @at-root #{&}__book {
+    margin-bottom: var(--space-xxl);
   }
 }
 </style>
