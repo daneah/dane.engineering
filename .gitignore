@@ -25,3 +25,6 @@ coverage/
 public/storybook/
 public/feed.xml
 latest-posts.json
+
+# asdf
+.tool-versions

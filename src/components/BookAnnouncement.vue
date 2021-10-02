@@ -8,6 +8,11 @@
                 Visit the site to learn more and sign up for updates.
             </p>
         </div>
+        <ResponsiveImage
+            :src="require('@/assets/publishing-python-packages-cover.jpg')"
+            :webp="require('@/assets/publishing-python-packages-cover.webp')"
+            alt="Book cover for Publishing Python Packages by Dane Hillard"
+        />
     </div>
 </template>
 
