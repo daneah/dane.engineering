@@ -4,11 +4,11 @@
         <p v-if="loading">
             Loading...
         </p>
-        <CardGrid v-else-if="posts.data.length">
+        <CardGrid v-else-if="posts.length">
             <template #cards>
                 <ul class="posts">
                     <li
-                        v-for="post in posts.data"
+                        v-for="post in posts"
                         :key="post.slug"
                         class="posts__post"
                     >
@@ -16,7 +16,9 @@
                             <template #image>
                                 <ResponsiveImage
                                     v-if="post.featured_image"
-                                    :src="postThumbnail(post.featured_image)"
+                                    :src="post.thumbnailSrc"
+                                    :height="post.thumbnailHeight"
+                                    :width="post.thumbnailWidth"
                                     alt=""
                                 />
                             </template>
@@ -117,10 +119,12 @@ export default {
   data () {
     return {
       loading: true,
-      posts: {},
+      posts: [],
     }
   },
   created () {
+    this.BUTTER_DOMAIN = 'https://cdn.buttercms.com'
+    this.THUMBNAIL_SIZE = 500
     this.fetchPosts()
   },
   methods: {
@@ -131,17 +135,31 @@ export default {
         "exclude_body": true,
       })
         .then((response) => {
-          this.loading = false
-          this.posts = response.data
+          let imageDimensionCalls = [];
+
+          response.data.data.forEach((post, postIndex) => {
+            const imageId = post.featured_image.replace(`${this.BUTTER_DOMAIN}/`, '')
+            const imageUrl = `${this.BUTTER_DOMAIN}/resize=width:${this.THUMBNAIL_SIZE},height:${this.THUMBNAIL_SIZE}/${imageId}`
+            const imageDimensionsUrl = `${this.BUTTER_DOMAIN}/resize=width:${this.THUMBNAIL_SIZE},height:${this.THUMBNAIL_SIZE}/imagesize/${imageId}`
+              imageDimensionCalls.push(fetch(imageDimensionsUrl).then((response) => response.json()).then((data) => data))
+          })
+
+          Promise.all(imageDimensionCalls).then((values) => {
+            response.data.data.forEach((post, postIndex) => {
+              const value = values[postIndex]
+              const imageId = post.featured_image.replace(`${this.BUTTER_DOMAIN}/`, '')
+              const imageUrl = `${this.BUTTER_DOMAIN}/resize=width:${this.THUMBNAIL_SIZE},height:${this.THUMBNAIL_SIZE}/${imageId}`
+              post.thumbnailSrc = imageUrl
+              post.thumbnailHeight = value.height
+              post.thumbnailWidth = value.width
+            })
+            this.posts = response.data.data
+            this.loading = false
+          })
+
         }).catch((response) => {
           console.error(response)
         })
-    },
-    postThumbnail (imageUrl) {
-      const butterPrefix = 'https://cdn.buttercms.com/'
-      const thumbnailSize = 500
-      const imageId = imageUrl.replace(butterPrefix, '')
-      return `${butterPrefix}resize=width:${thumbnailSize},height:${thumbnailSize}/${imageId}`
     },
   },
   metaInfo: {
