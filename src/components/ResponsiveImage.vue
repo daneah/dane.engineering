@@ -10,6 +10,8 @@
             :class="['responsive-image__image', {'responsive-image__image--limited': !grow}]"
             :src="src"
             :alt="alt"
+            :height="height"
+            :width="width"
         >
     </picture>
 </template>
@@ -34,6 +36,14 @@ export default {
       type: Boolean,
       required: false,
       default: true,
+    },
+    height: {
+      type: Number,
+      required: false,
+    },
+    width: {
+      type: Number,
+      required: false,
     },
   },
   data () {

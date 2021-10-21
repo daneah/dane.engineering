@@ -92,6 +92,7 @@ export default {
 
   &::v-deep img {
     max-width: 100%;
+    height: auto;
   }
 }
 </style>
