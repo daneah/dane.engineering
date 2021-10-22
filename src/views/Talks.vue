@@ -6,6 +6,29 @@
             <li class="talk-list__talk">
                 <Talk
                     :headingLevel="2"
+                    title="graphene-django or: How I learned to stop RESTing and Love the Graph"
+                    subtitle="DjangoCon US 2021"
+                >
+                    <template #description>
+                        <p>
+                            Though controversial, people generally agree that a major value of Python type hints is safety.
+                            Robust type safety reduces a whole category of defect to nothing, allowing developers to focus on bigger problems.
+                            What if we could do this for our API calls?
+                        </p>
+                    </template>
+                    <template #visuals>
+                        <ResponsiveImage
+                            :src="require('@/assets/djangocon-us-2021.png')"
+                            alt="DjangoCon US 2021"
+                        />
+                        <YouTubeEmbed video-id="LoJD36m1JRM" />
+                    </template>
+                </Talk>
+            </li>
+
+            <li class="talk-list__talk">
+                <Talk
+                    :headingLevel="2"
                     title="The Challenges of Developing Into a Python Professional"
                     subtitle="The Real Python Podcast"
                 >
@@ -30,6 +53,7 @@
                     </template>
                 </Talk>
             </li>
+
             <li class="talk-list__talk">
                 <Talk
                     :headingLevel="2"
@@ -57,6 +81,7 @@
                     </template>
                 </Talk>
             </li>
+
             <li class="talk-list__talk">
                 <Talk
                     :headingLevel="2"
@@ -84,6 +109,7 @@
                     </template>
                 </Talk>
             </li>
+
             <li class="talk-list__talk">
                 <Talk
                     :headingLevel="2"
@@ -111,6 +137,7 @@
                     </template>
                 </Talk>
             </li>
+
             <li class="talk-list__talk">
                 <Talk
                     :headingLevel="2"
@@ -141,6 +168,7 @@
                     </template>
                 </Talk>
             </li>
+
             <li class="talk-list__talk">
                 <Talk
                     :headingLevel="2"
@@ -157,7 +185,7 @@
                     <template #visuals>
                         <ResponsiveImage
                             :src="require('@/assets/djangocon-us-2019.jpg')"
-                            alt="DjangoCon US 2018"
+                            alt="DjangoCon US 2019"
                         />
                         <YouTubeEmbed video-id="pocIpg1FZ3c" />
                     </template>
@@ -220,6 +248,7 @@
                     </template>
                 </Talk>
             </li>
+
             <li class="talk-list__talk">
                 <Talk
                     :headingLevel="2"
