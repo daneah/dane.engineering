@@ -12,6 +12,8 @@
             :src="require('@/assets/publishing-python-packages-cover.jpg')"
             :webp="require('@/assets/publishing-python-packages-cover.webp')"
             alt="Book cover for Publishing Python Packages by Dane Hillard"
+            width="264"
+            height="331"
         />
     </div>
 </template>

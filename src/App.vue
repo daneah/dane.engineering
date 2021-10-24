@@ -41,7 +41,6 @@
                         url="https://dev.to/easyaspython"
                         :image="require('@/assets/dev-badge.svg')"
                         imageAlt="Dane Hillard's DEV Profile"
-                        :size="23"
                     />
                 </li>
                 <li class="nav-social-links__link">
