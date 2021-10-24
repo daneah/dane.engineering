@@ -1,7 +1,7 @@
 <template>
     <div class="embed-container">
         <iframe
-            :src="`//speakerdeck.com/player/${deckId}`"
+            :src="`https://speakerdeck.com/player/${deckId}`"
             frameborder="0"
             allowfullscreen
             allowtransparency

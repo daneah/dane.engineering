@@ -1,18 +1,19 @@
 import Vue from 'vue'
 import Meta from 'vue-meta'
 import Router from 'vue-router'
-import Home from '@/views/Home'
-import Talks from '@/views/Talks'
-import Resume from '@/views/Resume'
-import Contact from '@/views/Contact'
-import ContactSuccess from '@/views/ContactSuccess'
-import BlogPost from '@/views/BlogPost'
-import BlogPostList from '@/views/BlogPostList'
-import NotFound from '@/views/NotFound'
-import Books from '@/views/Books'
 
 Vue.use(Router)
 Vue.use(Meta)
+
+const Home = () => import('@/views/Home')
+const Talks = () => import('@/views/Talks')
+const Resume = () => import('@/views/Resume')
+const Contact = () => import('@/views/Contact')
+const ContactSuccess = () => import('@/views/ContactSuccess')
+const BlogPost = () => import('@/views/BlogPost')
+const BlogPostList = () => import('@/views/BlogPostList')
+const NotFound = () => import('@/views/NotFound')
+const Books = () => import('@/views/Books')
 
 const router = new Router({
   mode: 'history',
