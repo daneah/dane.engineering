@@ -5,7 +5,6 @@
             frameborder="0"
             allowfullscreen
             allowtransparency
-            loading="lazy"
         />
     </div>
 </template>
