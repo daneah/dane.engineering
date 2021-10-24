@@ -8,10 +8,12 @@
         >
         <img
             :class="['responsive-image__image', {'responsive-image__image--limited': !grow}]"
+            :decoding="decoding"
             :src="src"
             :alt="alt"
             :height="height"
             :width="width"
+            :loading="loading"
         >
     </picture>
 </template>
@@ -45,6 +47,16 @@ export default {
       type: Number,
       required: false,
     },
+    decoding: {
+      type: String,
+      required: false,
+      default: 'async',
+    },
+    loading: {
+      type: String,
+      required: false,
+      default: 'lazy',
+    },
   },
   data () {
     return {}
@@ -55,6 +67,7 @@ export default {
 <style scoped lang="scss">
 .responsive-image__image {
   width: 100%;
+  height: auto;
   margin-top: 0;
 
   @at-root #{&}--limited {

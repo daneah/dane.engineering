@@ -25,6 +25,8 @@
                 :src="require('@/assets/dane-hillard.png')"
                 :webp="require('@/assets/dane-hillard.webp')"
                 alt="Portrait of Dane Hillard"
+                width="250"
+                height="344"
             />
         </div>
 
@@ -51,6 +53,8 @@
                                     :src="require('@/assets/pharos.png')"
                                     :webp="require('@/assets/pharos.webp')"
                                     alt="The colored orb logo for Pharos, JSTOR's design system"
+                                    width="1000"
+                                    height="588"
                                 />
                             </BaseLink>
                         </template>
@@ -71,6 +75,8 @@
                                     :src="require('@/assets/pixelize.png')"
                                     :webp="require('@/assets/pixelize.webp')"
                                     alt="pixelize project screenshot"
+                                    width="1110"
+                                    height="784"
                                 />
                             </BaseLink>
                         </template>
@@ -92,6 +98,8 @@
                                     :src="require('@/assets/apiron.png')"
                                     :webp="require('@/assets/apiron.webp')"
                                     alt="Screenshot of apiron GitHub page"
+                                    width="1320"
+                                    height="724"
                                 />
                             </BaseLink>
                         </template>
@@ -113,6 +121,8 @@
                                 <ResponsiveImage
                                     :src="require('@/assets/mondrian.png')"
                                     alt="Screenshot of the Mondrian collection on CodePen"
+                                    width="1610"
+                                    height="1322"
                                 />
                             </BaseLink>
                         </template>
@@ -135,6 +145,8 @@
                                     :src="require('@/assets/guitar.jpg')"
                                     :webp="require('@/assets/guitar.webp')"
                                     alt="Guitar"
+                                    width="333"
+                                    height="249"
                                 />
                             </BaseLink>
                         </template>

@@ -8,6 +8,7 @@
                 :src="image"
                 :alt="imageAlt"
                 :width="size"
+                :height="size"
             >
         </BaseLink>
     </div>
