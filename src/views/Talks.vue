@@ -29,6 +29,30 @@
             <li class="talk-list__talk">
                 <Talk
                     :headingLevel="2"
+                    title="Keeping code safe and modern with semantic searches"
+                    subtitle="PyGotham TV 2021"
+                >
+                    <template #description>
+                        <p>
+                            Linting helps us avoid common mistakes and use our team’s preferred style and syntax.
+                            Deprecation warnings help us know that changes may be coming soon and offer suggestions about how to migrate.
+                            The time leading up to and during a migration often becomes a pain, leading to all-at-once changes that slow teams down.
+                            Can we do better?
+                        </p>
+                    </template>
+                    <template #visuals>
+                        <ResponsiveImage
+                            :src="require('@/assets/pygotham-tv-2021.png')"
+                            alt="PyGotham TV 2021"
+                        />
+                        <YouTubeEmbed video-id="g6D6I4s0f68" />
+                    </template>
+                </Talk>
+            </li>
+
+            <li class="talk-list__talk">
+                <Talk
+                    :headingLevel="2"
                     title="The Challenges of Developing Into a Python Professional"
                     subtitle="The Real Python Podcast"
                 >
