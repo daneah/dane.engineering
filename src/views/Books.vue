@@ -4,7 +4,7 @@
 
         <ul class="book-list">
             <li class="book-list__book">
-                <h2>Publishing Python Packages</h2>
+                <h2>Publishing Python Packages: Test, share, and automate your projects</h2>
 
                 <BaseLink
                   href="https://pypackages.com"
@@ -21,7 +21,7 @@
                         <ResponsiveImage
                             :src="require('@/assets/publishing-python-packages-cover.jpg')"
                             :webp="require('@/assets/publishing-python-packages-cover.webp')"
-                            alt="Book cover for Publishing Python Packages by Dane Hillard"
+                            alt="Book cover for Publishing Python Packages: Test, share, and automate your projects by Dane Hillard"
                             width="264"
                             height="331"
                         />
@@ -35,8 +35,9 @@
                 </p>
 
                 <p>
-                  I'm currently writing <em>Publishing Python Packages</em>, a book about creating and streamlining a repeatable process for authoring and maintaining Python packages.
-                  Whether you're looking to create your first published Python package or trying to reduce the maintenance burden of the packages you already work on, <em>Publishing Python Packages</em> has something for you.
+                  <em>Publishing Python Packages: Test, share, and automate your projects</em> is a book about creating and streamlining a repeatable process for authoring and maintaining Python packages.
+                  Whether you're looking to create your first published Python package or trying to reduce the maintenance burden of the packages you already work on,
+                  <em>Publishing Python Packages: Test, share, and automate your projects</em> has something for you.
                 </p>
             </li>
 
