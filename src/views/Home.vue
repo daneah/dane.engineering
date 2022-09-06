@@ -30,10 +30,6 @@
             />
         </div>
 
-        <div v-if="new Date() > new Date('2019-10-29')">
-            <BookAnnouncement class="book-announcement" />
-        </div>
-
         <h2>Projects</h2>
         <p>
             I like to make things.
@@ -169,7 +165,6 @@
 
 <script>
 import BaseLink from '@/components/BaseLink'
-import BookAnnouncement from '@/components/BookAnnouncement'
 import Card from '@/components/Card/Card'
 import CardGrid from '@/components/CardGrid'
 import ResponsiveImage from '@/components/ResponsiveImage'
@@ -180,7 +175,6 @@ export default {
   name: 'Home',
   components: {
     BaseLink,
-    BookAnnouncement,
     Card,
     CardGrid,
     ResponsiveImage,
