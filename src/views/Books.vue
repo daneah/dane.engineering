@@ -10,7 +10,7 @@
                   href="https://pypackages.com"
                   :external="true"
                 >
-                  <PrimaryButton>Get early access</PrimaryButton>
+                  <PrimaryButton>Buy now</PrimaryButton>
                 </BaseLink>
 
                 <div class="book-list__book__cover">
