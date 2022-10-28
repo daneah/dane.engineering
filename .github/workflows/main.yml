@@ -11,13 +11,8 @@ jobs:
         with:
           node-version: '16'
 
-      - uses: actions/cache@v2
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-modules-${{ hashFiles('package-lock.json') }}
-
       - name: Install dependencies
-        run: npm install  # don't use npm ci as this will remove cached node_modules
+        run: yarn install  # don't use npm ci as this will remove cached node_modules
 
       - name: Test
-        run: npm run test:unit
+        run: yarn test:unit
