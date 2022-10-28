@@ -5,8 +5,8 @@
           :src="image"
           class="entry__image"
           :alt="`${subtitle} logo`"
-          width="400"
-          height="400"
+          :width="400"
+          :height="400"
       />
       <div class="entry__metadata">
           <component

@@ -6,12 +6,9 @@
     "serve": "vue-cli-service serve",
     "fetch-posts": "curl -X GET 'https://api.buttercms.com/v2/posts/?page=1&page_size=10&auth_token=cd7317f31d717fc87a1374098f53651830003bed' > latest-posts.json",
     "fetch-feed": "curl -X GET 'https://api.buttercms.com/v2/feeds/rss/?auth_token=cd7317f31d717fc87a1374098f53651830003bed' | jq --raw-output .data > public/feed.xml",
-    "prebuild": "npm run fetch-posts && npm run fetch-feed",
-    "build": "vue-cli-service build",
+    "build": "yarn fetch-posts && yarn fetch-feed && vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "test:unit": "vue-cli-service test:unit",
-    "storybook": "start-storybook",
-    "storybook:build": "build-storybook -c .storybook -o public/storybook"
+    "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
     "buttercms": "^1.2.3",
@@ -26,12 +23,8 @@
     "vuex": "^3.5.1"
   },
   "devDependencies": {
-    "@storybook/addon-a11y": "6.0.7",
-    "@storybook/addon-actions": "6.0.7",
-    "@storybook/addon-controls": "^6.0.7",
-    "@storybook/addon-docs": "6.0.7",
-    "@storybook/addon-viewport": "6.0.7",
-    "@storybook/vue": "6.0.7",
+    "@babel/core": "^7.19.6",
+    "@vue/babel-preset-app": "^5.0.8",
     "@vue/cli-plugin-babel": "^4.5.3",
     "@vue/cli-plugin-eslint": "^4.5.3",
     "@vue/cli-plugin-pwa": "^4.5.3",
@@ -39,20 +32,31 @@
     "@vue/cli-service": "^4.5.3",
     "@vue/eslint-config-standard": "^5.1.2",
     "@vue/test-utils": "^1.0.3",
+    "autoprefixer": "^9.0.0",
+    "axios": "^1.1.3",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^24.9.0",
+    "babel-loader": "^9.0.0",
     "babel-plugin-prismjs": "^1.1.1",
     "babel-preset-vue": "^2.0.2",
+    "convert-source-map": "^2.0.0",
     "eslint": "^6.8.0",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-node": "^10.0.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "eslint-plugin-vue": "^6.2.2",
+    "jest-serializer-vue": "^2.0.2",
+    "postcss": "^8.4.18",
     "prerender-spa-plugin": "^3.4.0",
+    "prettier": "^2.7.1",
     "sass": "^1.35.1",
     "sass-loader": "^8.0.2",
-    "vue-template-compiler": "^2.6.11"
-  }
+    "vue-jest": "^3.0.7",
+    "vue-loader": "^17.0.1",
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^4.5.0"
+  },
+  "packageManager": "yarn@3.2.4"
 }
