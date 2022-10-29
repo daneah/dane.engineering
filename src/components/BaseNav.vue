@@ -26,16 +26,23 @@
                     <router-link
                         v-if="activeLinks.includes(link)"
                         :key="link.to"
-                        tag="li"
                         :to="{ name: link.to }"
+                        custom
+                        v-slot="{ navigate }"
                         class="nav__link"
                     >
-                        <BaseLink
-                            :href="$router.resolve({ name: link.to }).href"
-                            :external="link.external || false"
+                        <li
+                            @click="navigate"
+                            @keypress.enter="navigate"
+                            role="link"
                         >
-                            {{ link.text }}
-                        </BaseLink>
+                            <BaseLink
+                                :href="$router.resolve({ name: link.to }).href"
+                                :external="link.external || false"
+                            >
+                                {{ link.text }}
+                            </BaseLink>
+                        </li>
                     </router-link>
                     <li
                         v-else

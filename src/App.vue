@@ -7,17 +7,24 @@
                 </template>
                 <template v-else>
                     <router-link
-                        tag="div"
                         :to="{ name: 'home' }"
+                        custom
+                        v-slot="{ navigate }"
                     >
-                        <BaseLink
-                            href="/"
-                            class="impact-heading"
-                            :external="false"
-                            :clean="true"
+                        <div
+                            @click="navigate"
+                            @keypress.enter="navigate"
+                            role="link"
                         >
-                            Hi, I'm Dane.
-                        </BaseLink>
+                            <BaseLink
+                                href="/"
+                                class="impact-heading"
+                                :external="false"
+                                :clean="true"
+                            >
+                                Hi, I'm Dane.
+                            </BaseLink>
+                        </div>
                     </router-link>
                 </template>
             </template>

@@ -22,8 +22,8 @@
                             :src="require('@/assets/publishing-python-packages-cover.jpg')"
                             :webp="require('@/assets/publishing-python-packages-cover.webp')"
                             alt="Book cover for Publishing Python Packages: Test, share, and automate your projects by Dane Hillard"
-                            width="264"
-                            height="331"
+                            :width="264"
+                            :height="331"
                         />
                     </BaseLink>
                 </div>
@@ -60,8 +60,8 @@
                             :src="require('@/assets/practices-of-the-python-pro-cover.png')"
                             :webp="require('@/assets/practices-of-the-python-pro-cover.webp')"
                             alt="Book cover for Practices of the Python Pro by Dane Hillard"
-                            width="720"
-                            height="901"
+                            :width="720"
+                            :height="901"
                         />
                     </BaseLink>
                 </div>
