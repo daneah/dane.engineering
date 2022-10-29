@@ -6,13 +6,20 @@
             It looks like the page you're looking for doesn't exist.
             Try going
             <router-link
-                tag="span"
                 :to="{ name: 'home' }"
+                custom
+                v-slot="{ navigate }"
             >
-                <BaseLink
-                    href="/"
-                    :external="false"
-                >home</BaseLink>
+                <span
+                    @click="navigate"
+                    @keypress.enter="navigate"
+                    role="link"
+                >
+                    <BaseLink
+                        href="/"
+                        :external="false"
+                    >home</BaseLink>
+                </span>
             </router-link>
             and starting over.
         </p>

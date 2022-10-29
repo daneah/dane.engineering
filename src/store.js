@@ -3,15 +3,21 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-const present = new Date().getFullYear()
-
 export default new Vuex.Store({
   state: {
     employment: [
       [
         {
           image: require('@/assets/ithaka.png'),
-          years: [2022, present],
+          years: [2022, 'present'],
+          title: 'Technical Architect',
+          subtitle: 'ITHAKA',
+          responsibilities: [
+            'Guiding the evolution of ITHAKA\'s UI Engineering platform and practices to enable our mission to provide affordable access to knowledge and education for people around the world.',
+          ],
+        },
+        {
+          years: [2022, 2022],
           title: 'Principal Engineer',
           subtitle: 'ITHAKA',
           responsibilities: [
@@ -19,7 +25,7 @@ export default new Vuex.Store({
           ],
         },
         {
-          years: [2018, 2022],
+          years: [2018, 2021],
           title: 'Lead Web Application Developer',
           subtitle: 'ITHAKA',
           responsibilities: [
@@ -127,14 +133,14 @@ export default new Vuex.Store({
         },
         {
           name: 'Vue',
-          score: 3.25,
+          score: 4,
         },
         {
           name: 'React',
-          score: 2,
+          score: 3,
         },
         {
-          name: 'SASS',
+          name: 'SCSS',
           score: 5,
         },
         {
@@ -142,7 +148,11 @@ export default new Vuex.Store({
           score: 4,
         },
         {
-          name: 'LitElement',
+          name: 'lit',
+          score: 4,
+        },
+        {
+          name: 'Fastify',
           score: 3.5,
         },
       ],
