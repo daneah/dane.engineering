@@ -3,6 +3,7 @@
         <BaseLink
             class="social-link__anchor"
             :href="url"
+            :rel="rel"
         >
             <img
                 :src="image"
@@ -23,6 +24,11 @@ export default {
     BaseLink,
   },
   props: {
+    rel: {
+      type: String,
+      required: false,
+      default: undefined,
+    },
     url: {
       type: String,
       required: true,

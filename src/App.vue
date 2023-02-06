@@ -38,6 +38,14 @@
                 </li>
                 <li class="nav-social-links__link">
                     <SocialLink
+                        rel="me"
+                        url="https://fosstodon.org/@daneah"
+                        :image="require('@/assets/mastodon.svg')"
+                        imageAlt="Mastodon icon"
+                    />
+                </li>
+                <li class="nav-social-links__link">
+                    <SocialLink
                         url="https://github.com/daneah"
                         :image="require('@/assets/github.svg')"
                         imageAlt="GitHub icon"
