@@ -3,7 +3,7 @@
         :class="['link', {'link--clean': clean}]"
         :href="href"
         :target="external ? '_blank' : false"
-        :rel="rel"
+        :rel="finalRel"
     >
         <slot />
     </a>
@@ -13,6 +13,11 @@
 export default {
   name: 'BaseLink',
   props: {
+    rel: {
+      type: String,
+      required: false,
+      default: undefined,
+    },
     href: {
       type: String,
       required: true,
@@ -32,8 +37,8 @@ export default {
     return {}
   },
   computed: {
-    rel () {
-      return this.external ? 'noopener noindex nofollow' : false
+    finalRel () {
+      return this.rel || (this.external ? 'noopener noindex nofollow' : false)
     },
   },
 }
