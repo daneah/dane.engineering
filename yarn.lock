@@ -3529,12 +3529,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-plugin-prismjs@npm:^1.1.1":
-  version: 1.1.1
-  resolution: "babel-plugin-prismjs@npm:1.1.1"
+"babel-plugin-prismjs@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "babel-plugin-prismjs@npm:2.1.0"
   peerDependencies:
-    prismjs: ^1.0.0
-  checksum: b3e9cf266c3815163001083a287b4a50063f9f0eca5c8f3243e2967621befe7b479f382f25ace2f67959aa64131fa40fd8d923f6c9305b8787954a3cfd2dfbfc
+    prismjs: ^1.18.0
+  checksum: 8bc59ca46b493cb255ec914e26a0dd39c1aaee881e3701d6726db40152d4a176a96ac1438f80b0d705b188bee4106538de809bc79dff9774400da3d8331affce
   languageName: node
   linkType: hard
 
@@ -5330,7 +5330,7 @@ __metadata:
     babel-eslint: ^10.1.0
     babel-jest: ^24.9.0
     babel-loader: ^9.0.0
-    babel-plugin-prismjs: ^1.1.1
+    babel-plugin-prismjs: ^2.1.0
     babel-preset-vue: ^2.0.2
     buttercms: ^1.2.3
     convert-source-map: ^2.0.0
@@ -5345,7 +5345,7 @@ __metadata:
     postcss: ^8.4.18
     prerender-spa-plugin: ^3.4.0
     prettier: ^2.7.1
-    prismjs: ^1.23.0
+    prismjs: ^1.29.0
     register-service-worker: ^1.7.1
     sass: ^1.35.1
     sass-loader: ^8.0.2
@@ -11817,7 +11817,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prismjs@npm:^1.23.0":
+"prismjs@npm:^1.29.0":
   version: 1.29.0
   resolution: "prismjs@npm:1.29.0"
   checksum: 007a8869d4456ff8049dc59404e32d5666a07d99c3b0e30a18bd3b7676dfa07d1daae9d0f407f20983865fd8da56de91d09cb08e6aa61f5bc420a27c0beeaf93

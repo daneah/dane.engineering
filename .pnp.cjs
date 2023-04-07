@@ -43,7 +43,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["babel-eslint", "virtual:8bb93c8ce79fefcf527779e83c1a526c9d539a3c05cd25c2648db064dd07ec95e8bc0556e32fe674f2fb2845e5d0eba9f4928015e33fc5dd8b1ba4a784281618#npm:10.1.0"],\
             ["babel-jest", "virtual:8bb93c8ce79fefcf527779e83c1a526c9d539a3c05cd25c2648db064dd07ec95e8bc0556e32fe674f2fb2845e5d0eba9f4928015e33fc5dd8b1ba4a784281618#npm:24.9.0"],\
             ["babel-loader", "virtual:8bb93c8ce79fefcf527779e83c1a526c9d539a3c05cd25c2648db064dd07ec95e8bc0556e32fe674f2fb2845e5d0eba9f4928015e33fc5dd8b1ba4a784281618#npm:9.0.0"],\
-            ["babel-plugin-prismjs", "virtual:8bb93c8ce79fefcf527779e83c1a526c9d539a3c05cd25c2648db064dd07ec95e8bc0556e32fe674f2fb2845e5d0eba9f4928015e33fc5dd8b1ba4a784281618#npm:1.1.1"],\
+            ["babel-plugin-prismjs", "virtual:8bb93c8ce79fefcf527779e83c1a526c9d539a3c05cd25c2648db064dd07ec95e8bc0556e32fe674f2fb2845e5d0eba9f4928015e33fc5dd8b1ba4a784281618#npm:2.1.0"],\
             ["babel-preset-vue", "npm:2.0.2"],\
             ["buttercms", "npm:1.2.9"],\
             ["convert-source-map", "npm:2.0.0"],\
@@ -5238,17 +5238,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["babel-plugin-prismjs", [\
-        ["npm:1.1.1", {\
-          "packageLocation": "./.yarn/cache/babel-plugin-prismjs-npm-1.1.1-58803d3cf8-b3e9cf266c.zip/node_modules/babel-plugin-prismjs/",\
+        ["npm:2.1.0", {\
+          "packageLocation": "./.yarn/cache/babel-plugin-prismjs-npm-2.1.0-487daf4f78-8bc59ca46b.zip/node_modules/babel-plugin-prismjs/",\
           "packageDependencies": [\
-            ["babel-plugin-prismjs", "npm:1.1.1"]\
+            ["babel-plugin-prismjs", "npm:2.1.0"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:8bb93c8ce79fefcf527779e83c1a526c9d539a3c05cd25c2648db064dd07ec95e8bc0556e32fe674f2fb2845e5d0eba9f4928015e33fc5dd8b1ba4a784281618#npm:1.1.1", {\
-          "packageLocation": "./.yarn/__virtual__/babel-plugin-prismjs-virtual-7021d40aa3/0/cache/babel-plugin-prismjs-npm-1.1.1-58803d3cf8-b3e9cf266c.zip/node_modules/babel-plugin-prismjs/",\
+        ["virtual:8bb93c8ce79fefcf527779e83c1a526c9d539a3c05cd25c2648db064dd07ec95e8bc0556e32fe674f2fb2845e5d0eba9f4928015e33fc5dd8b1ba4a784281618#npm:2.1.0", {\
+          "packageLocation": "./.yarn/__virtual__/babel-plugin-prismjs-virtual-0964e49652/0/cache/babel-plugin-prismjs-npm-2.1.0-487daf4f78-8bc59ca46b.zip/node_modules/babel-plugin-prismjs/",\
           "packageDependencies": [\
-            ["babel-plugin-prismjs", "virtual:8bb93c8ce79fefcf527779e83c1a526c9d539a3c05cd25c2648db064dd07ec95e8bc0556e32fe674f2fb2845e5d0eba9f4928015e33fc5dd8b1ba4a784281618#npm:1.1.1"],\
+            ["babel-plugin-prismjs", "virtual:8bb93c8ce79fefcf527779e83c1a526c9d539a3c05cd25c2648db064dd07ec95e8bc0556e32fe674f2fb2845e5d0eba9f4928015e33fc5dd8b1ba4a784281618#npm:2.1.0"],\
             ["@types/prismjs", null],\
             ["prismjs", "npm:1.29.0"]\
           ],\
@@ -7524,7 +7524,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["babel-eslint", "virtual:8bb93c8ce79fefcf527779e83c1a526c9d539a3c05cd25c2648db064dd07ec95e8bc0556e32fe674f2fb2845e5d0eba9f4928015e33fc5dd8b1ba4a784281618#npm:10.1.0"],\
             ["babel-jest", "virtual:8bb93c8ce79fefcf527779e83c1a526c9d539a3c05cd25c2648db064dd07ec95e8bc0556e32fe674f2fb2845e5d0eba9f4928015e33fc5dd8b1ba4a784281618#npm:24.9.0"],\
             ["babel-loader", "virtual:8bb93c8ce79fefcf527779e83c1a526c9d539a3c05cd25c2648db064dd07ec95e8bc0556e32fe674f2fb2845e5d0eba9f4928015e33fc5dd8b1ba4a784281618#npm:9.0.0"],\
-            ["babel-plugin-prismjs", "virtual:8bb93c8ce79fefcf527779e83c1a526c9d539a3c05cd25c2648db064dd07ec95e8bc0556e32fe674f2fb2845e5d0eba9f4928015e33fc5dd8b1ba4a784281618#npm:1.1.1"],\
+            ["babel-plugin-prismjs", "virtual:8bb93c8ce79fefcf527779e83c1a526c9d539a3c05cd25c2648db064dd07ec95e8bc0556e32fe674f2fb2845e5d0eba9f4928015e33fc5dd8b1ba4a784281618#npm:2.1.0"],\
             ["babel-preset-vue", "npm:2.0.2"],\
             ["buttercms", "npm:1.2.9"],\
             ["convert-source-map", "npm:2.0.0"],\
