@@ -55,7 +55,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-vue", "virtual:8bb93c8ce79fefcf527779e83c1a526c9d539a3c05cd25c2648db064dd07ec95e8bc0556e32fe674f2fb2845e5d0eba9f4928015e33fc5dd8b1ba4a784281618#npm:6.2.2"],\
             ["jest-serializer-vue", "npm:2.0.2"],\
             ["jest-transform-stub", "npm:2.0.0"],\
-            ["postcss", "npm:8.4.18"],\
+            ["postcss", "npm:8.4.21"],\
             ["prerender-spa-plugin", "npm:3.4.0"],\
             ["prettier", "npm:2.7.1"],\
             ["prismjs", "npm:1.29.0"],\
@@ -7536,7 +7536,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-vue", "virtual:8bb93c8ce79fefcf527779e83c1a526c9d539a3c05cd25c2648db064dd07ec95e8bc0556e32fe674f2fb2845e5d0eba9f4928015e33fc5dd8b1ba4a784281618#npm:6.2.2"],\
             ["jest-serializer-vue", "npm:2.0.2"],\
             ["jest-transform-stub", "npm:2.0.0"],\
-            ["postcss", "npm:8.4.18"],\
+            ["postcss", "npm:8.4.21"],\
             ["prerender-spa-plugin", "npm:3.4.0"],\
             ["prettier", "npm:2.7.1"],\
             ["prismjs", "npm:1.29.0"],\
@@ -14353,6 +14353,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/postcss-npm-8.4.18-f1d73c0a84-9349fd9984.zip/node_modules/postcss/",\
           "packageDependencies": [\
             ["postcss", "npm:8.4.18"],\
+            ["nanoid", "npm:3.3.4"],\
+            ["picocolors", "npm:1.0.0"],\
+            ["source-map-js", "npm:1.0.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:8.4.21", {\
+          "packageLocation": "./.yarn/cache/postcss-npm-8.4.21-9ad76bf58d-e39ac60ccd.zip/node_modules/postcss/",\
+          "packageDependencies": [\
+            ["postcss", "npm:8.4.21"],\
             ["nanoid", "npm:3.3.4"],\
             ["picocolors", "npm:1.0.0"],\
             ["source-map-js", "npm:1.0.2"]\
