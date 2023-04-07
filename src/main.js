@@ -2,8 +2,6 @@ import Butter from 'buttercms'
 import Vue from 'vue'
 import VueAnalytics from 'vue-analytics'
 
-import 'prismjs/themes/prism-tomorrow.css'
-
 import App from '@/App'
 import router from '@/router'
 import store from '@/store'

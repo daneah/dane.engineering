@@ -57,5 +57,10 @@
     "vue-template-compiler": "^2.6.11",
     "webpack": "^4.5.0"
   },
-  "packageManager": "yarn@3.5.0"
+  "packageManager": "yarn@3.5.0",
+  "postcss": {
+    "plugins": {
+        "autoprefixer": {}
+    }
+  }
 }
