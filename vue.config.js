@@ -1,5 +1,6 @@
 const path = require('path')
 const PrerenderSpaPlugin = require('prerender-spa-plugin')
+const autoprefixer = require('autoprefixer')
 
 module.exports = {
   lintOnSave: false,
@@ -24,5 +25,14 @@ module.exports = {
       ]
       config.plugins.push(...productionPlugins)
     }
+  },
+  css: {
+    loaderOptions: {
+      postcss: {
+        plugins: [
+          autoprefixer,
+        ],
+      },
+    },
   },
 }
