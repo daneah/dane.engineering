@@ -43,7 +43,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["babel-eslint", "virtual:8bb93c8ce79fefcf527779e83c1a526c9d539a3c05cd25c2648db064dd07ec95e8bc0556e32fe674f2fb2845e5d0eba9f4928015e33fc5dd8b1ba4a784281618#npm:10.1.0"],\
             ["babel-jest", "virtual:8bb93c8ce79fefcf527779e83c1a526c9d539a3c05cd25c2648db064dd07ec95e8bc0556e32fe674f2fb2845e5d0eba9f4928015e33fc5dd8b1ba4a784281618#npm:24.9.0"],\
             ["babel-loader", "virtual:8bb93c8ce79fefcf527779e83c1a526c9d539a3c05cd25c2648db064dd07ec95e8bc0556e32fe674f2fb2845e5d0eba9f4928015e33fc5dd8b1ba4a784281618#npm:9.0.0"],\
-            ["babel-plugin-prismjs", "virtual:8bb93c8ce79fefcf527779e83c1a526c9d539a3c05cd25c2648db064dd07ec95e8bc0556e32fe674f2fb2845e5d0eba9f4928015e33fc5dd8b1ba4a784281618#npm:1.1.1"],\
+            ["babel-plugin-prismjs", "virtual:8bb93c8ce79fefcf527779e83c1a526c9d539a3c05cd25c2648db064dd07ec95e8bc0556e32fe674f2fb2845e5d0eba9f4928015e33fc5dd8b1ba4a784281618#npm:2.1.0"],\
             ["babel-preset-vue", "npm:2.0.2"],\
             ["buttercms", "npm:1.2.9"],\
             ["convert-source-map", "npm:2.0.0"],\
@@ -55,7 +55,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-vue", "virtual:8bb93c8ce79fefcf527779e83c1a526c9d539a3c05cd25c2648db064dd07ec95e8bc0556e32fe674f2fb2845e5d0eba9f4928015e33fc5dd8b1ba4a784281618#npm:6.2.2"],\
             ["jest-serializer-vue", "npm:2.0.2"],\
             ["jest-transform-stub", "npm:2.0.0"],\
-            ["postcss", "npm:8.4.18"],\
             ["prerender-spa-plugin", "npm:3.4.0"],\
             ["prettier", "npm:2.7.1"],\
             ["prismjs", "npm:1.29.0"],\
@@ -5238,17 +5237,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["babel-plugin-prismjs", [\
-        ["npm:1.1.1", {\
-          "packageLocation": "./.yarn/cache/babel-plugin-prismjs-npm-1.1.1-58803d3cf8-b3e9cf266c.zip/node_modules/babel-plugin-prismjs/",\
+        ["npm:2.1.0", {\
+          "packageLocation": "./.yarn/cache/babel-plugin-prismjs-npm-2.1.0-487daf4f78-8bc59ca46b.zip/node_modules/babel-plugin-prismjs/",\
           "packageDependencies": [\
-            ["babel-plugin-prismjs", "npm:1.1.1"]\
+            ["babel-plugin-prismjs", "npm:2.1.0"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:8bb93c8ce79fefcf527779e83c1a526c9d539a3c05cd25c2648db064dd07ec95e8bc0556e32fe674f2fb2845e5d0eba9f4928015e33fc5dd8b1ba4a784281618#npm:1.1.1", {\
-          "packageLocation": "./.yarn/__virtual__/babel-plugin-prismjs-virtual-7021d40aa3/0/cache/babel-plugin-prismjs-npm-1.1.1-58803d3cf8-b3e9cf266c.zip/node_modules/babel-plugin-prismjs/",\
+        ["virtual:8bb93c8ce79fefcf527779e83c1a526c9d539a3c05cd25c2648db064dd07ec95e8bc0556e32fe674f2fb2845e5d0eba9f4928015e33fc5dd8b1ba4a784281618#npm:2.1.0", {\
+          "packageLocation": "./.yarn/__virtual__/babel-plugin-prismjs-virtual-0964e49652/0/cache/babel-plugin-prismjs-npm-2.1.0-487daf4f78-8bc59ca46b.zip/node_modules/babel-plugin-prismjs/",\
           "packageDependencies": [\
-            ["babel-plugin-prismjs", "virtual:8bb93c8ce79fefcf527779e83c1a526c9d539a3c05cd25c2648db064dd07ec95e8bc0556e32fe674f2fb2845e5d0eba9f4928015e33fc5dd8b1ba4a784281618#npm:1.1.1"],\
+            ["babel-plugin-prismjs", "virtual:8bb93c8ce79fefcf527779e83c1a526c9d539a3c05cd25c2648db064dd07ec95e8bc0556e32fe674f2fb2845e5d0eba9f4928015e33fc5dd8b1ba4a784281618#npm:2.1.0"],\
             ["@types/prismjs", null],\
             ["prismjs", "npm:1.29.0"]\
           ],\
@@ -7524,7 +7523,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["babel-eslint", "virtual:8bb93c8ce79fefcf527779e83c1a526c9d539a3c05cd25c2648db064dd07ec95e8bc0556e32fe674f2fb2845e5d0eba9f4928015e33fc5dd8b1ba4a784281618#npm:10.1.0"],\
             ["babel-jest", "virtual:8bb93c8ce79fefcf527779e83c1a526c9d539a3c05cd25c2648db064dd07ec95e8bc0556e32fe674f2fb2845e5d0eba9f4928015e33fc5dd8b1ba4a784281618#npm:24.9.0"],\
             ["babel-loader", "virtual:8bb93c8ce79fefcf527779e83c1a526c9d539a3c05cd25c2648db064dd07ec95e8bc0556e32fe674f2fb2845e5d0eba9f4928015e33fc5dd8b1ba4a784281618#npm:9.0.0"],\
-            ["babel-plugin-prismjs", "virtual:8bb93c8ce79fefcf527779e83c1a526c9d539a3c05cd25c2648db064dd07ec95e8bc0556e32fe674f2fb2845e5d0eba9f4928015e33fc5dd8b1ba4a784281618#npm:1.1.1"],\
+            ["babel-plugin-prismjs", "virtual:8bb93c8ce79fefcf527779e83c1a526c9d539a3c05cd25c2648db064dd07ec95e8bc0556e32fe674f2fb2845e5d0eba9f4928015e33fc5dd8b1ba4a784281618#npm:2.1.0"],\
             ["babel-preset-vue", "npm:2.0.2"],\
             ["buttercms", "npm:1.2.9"],\
             ["convert-source-map", "npm:2.0.0"],\
@@ -7536,7 +7535,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-vue", "virtual:8bb93c8ce79fefcf527779e83c1a526c9d539a3c05cd25c2648db064dd07ec95e8bc0556e32fe674f2fb2845e5d0eba9f4928015e33fc5dd8b1ba4a784281618#npm:6.2.2"],\
             ["jest-serializer-vue", "npm:2.0.2"],\
             ["jest-transform-stub", "npm:2.0.0"],\
-            ["postcss", "npm:8.4.18"],\
             ["prerender-spa-plugin", "npm:3.4.0"],\
             ["prettier", "npm:2.7.1"],\
             ["prismjs", "npm:1.29.0"],\
@@ -20721,7 +20719,7 @@ const DEFAULT_COMPRESSION_LEVEL = `mixed`;
 function toUnixTimestamp(time) {
   if (typeof time === `string` && String(+time) === time)
     return +time;
-  if (Number.isFinite(time)) {
+  if (typeof time === `number` && Number.isFinite(time)) {
     if (time < 0) {
       return Date.now() / 1e3;
     } else {
@@ -21303,7 +21301,7 @@ class ZipFS extends BasePortableFakeFS {
       resolvedP = ppath.resolve(parentP, ppath.basename(resolvedP));
       if (!resolveLastComponent || this.symlinkCount === 0)
         break;
-      const index = this.libzip.name.locate(this.zip, resolvedP.slice(1));
+      const index = this.libzip.name.locate(this.zip, resolvedP.slice(1), 0);
       if (index === -1)
         break;
       if (this.isSymbolicLink(index)) {
@@ -21328,7 +21326,7 @@ class ZipFS extends BasePortableFakeFS {
   allocateUnattachedSource(content) {
     const error = this.libzip.struct.errorS();
     const { buffer, byteLength } = this.allocateBuffer(content);
-    const source = this.libzip.source.fromUnattachedBuffer(buffer, byteLength, 0, true, error);
+    const source = this.libzip.source.fromUnattachedBuffer(buffer, byteLength, 0, 1, error);
     if (source === 0) {
       this.libzip.free(error);
       throw this.makeLibzipError(error);
@@ -21337,7 +21335,7 @@ class ZipFS extends BasePortableFakeFS {
   }
   allocateSource(content) {
     const { buffer, byteLength } = this.allocateBuffer(content);
-    const source = this.libzip.source.fromBuffer(this.zip, buffer, byteLength, 0, true);
+    const source = this.libzip.source.fromBuffer(this.zip, buffer, byteLength, 0, 1);
     if (source === 0) {
       this.libzip.free(buffer);
       throw this.makeLibzipError(this.libzip.getError(this.zip));
@@ -27771,7 +27769,7 @@ const makeInterface = (libzip) => ({
     locate: libzip.cwrap(`zip_name_locate`, `number`, [`number`, `string`, `number`])
   },
   source: {
-    fromUnattachedBuffer: libzip.cwrap(`zip_source_buffer_create`, `number`, [`number`, `number`, `number`, `number`]),
+    fromUnattachedBuffer: libzip.cwrap(`zip_source_buffer_create`, `number`, [`number`, ...number64, `number`, `number`]),
     fromBuffer: libzip.cwrap(`zip_source_buffer`, `number`, [`number`, `number`, ...number64, `number`]),
     free: libzip.cwrap(`zip_source_free`, null, [`number`]),
     keep: libzip.cwrap(`zip_source_keep`, null, [`number`]),
@@ -29668,7 +29666,7 @@ ${candidates.map((candidate) => `Not found: ${getPathForDisplay(candidate)}
       conditions: (_a = opts2.conditions) != null ? _a : defaultExportsConditions,
       readFileSyncFn: tryReadFile
     });
-    if (resolved instanceof URL) {
+    if (resolved instanceof url.URL) {
       return resolveUnqualified(npath.toPortablePath(url.fileURLToPath(resolved)), { extensions: opts2.extensions });
     } else {
       if (resolved.startsWith(`#`))

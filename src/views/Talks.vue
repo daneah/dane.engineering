@@ -6,6 +6,28 @@
             <li class="talk-list__talk">
                 <Talk
                     :headingLevel="2"
+                    title="Python packaging and effective developer tooling"
+                    subtitle="PyBites"
+                >
+                    <template #description>
+                        <p>
+                            I speak with Bob about the drivers behind writing <BaseLink href="https://pypackages.com" rel="noopener"><em>Publishing Python Packages</em></BaseLink>,
+                            a little bit about the process of writing the book, and some highlights of the content inside.
+                            Watch below, or <BaseLink href="https://www.pybitespodcast.com/1501156/12592983-110-dane-hillard-on-python-packaging-and-effective-developer-tooling">listen to the podcast</BaseLink>.
+                        </p>
+                    </template>
+                    <template #visuals>
+                        <ResponsiveImage
+                            :src="require('@/assets/pybites.png')"
+                            alt="PyBites podcast logo"
+                        />
+                        <YouTubeEmbed video-id="wqfbNs3z_lk" />
+                    </template>
+                </Talk>
+            </li>
+            <li class="talk-list__talk">
+                <Talk
+                    :headingLevel="2"
                     title="graphene-django or: How I learned to stop RESTing and Love the Graph"
                     subtitle="DjangoCon US 2021"
                 >
