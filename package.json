@@ -16,11 +16,13 @@
   },
   "dependencies": {
     "@unhead/vue": "^1.1.29",
+    "@vue/shared": "^3.3.4",
     "axios": "^1.4.0",
     "buttercms": "^1.2.12",
     "highlight.js": "^11.8.0",
     "pinia": "^2.1.3",
     "vue": "^3.3.4",
+    "vue-gtag": "^2.0.1",
     "vue-router": "^4.2.2"
   },
   "devDependencies": {
