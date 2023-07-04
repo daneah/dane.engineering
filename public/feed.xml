@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:media="http://search.yahoo.com/mrss/" version="2.0">
+   <channel>
+      <title>Latest blog posts</title>
+      <link>https://dane.engineering/post/rss/</link>
+      <description />
+      <atom:link href="https://dane.engineering/post/rss/" rel="self" />
+      <language>en-us</language>
+      <lastBuildDate>Tue, 10 Sep 2019 03:15:00 +0000</lastBuildDate>
+      
+      <item>
+         <title>Using Custom Authentication Backends in Django</title>
+         <link>https://dane.engineering/post/using-custom-authentication-backends-in-django</link>
+         <media:content medium="image" url="https://cdn.buttercms.com/4AyZR9tBTPu4Pint0JN7"/>
+         <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Dane Hillard</dc:creator>
+         <pubDate>Tue, 10 Sep 2019 03:15:00 +0000</pubDate>
+         <guid>https://dane.engineering/post/using-custom-authentication-backends-in-django</guid>
+         <description>Learn the interface Django exposes for custom authentication and how to use it to authenticate against an external system.</description>
+         <content:encoded>
+        <![CDATA[<h2>Introduction</h2>
+<p>If you&rsquo;re working in an organization with an established product line that serves live users, supporting a new site with Django probably entails integrating with an existing authentication system. Many organizations use widely-adopted authentication systems provided by services like Google, Facebook, or GitHub. A few Python packages provide authentication integration with these services, but most of them expect you to be handling the final user accounts on with Django. What happens when you need to work with user accounts that live in another system altogether?</p>
+<p>In this article, you&rsquo;ll see the interface that Django exposes for authenticating to an external system. By the end, you should understand the pieces involved in mapping an external system&rsquo;s information to Django&rsquo;s native <code>User</code> objects in order to work with them on your own site.</p>
+<h2>Django&rsquo;s default authentication</h2>
+<p>In the <a href="https://dane.engineering/post/learn-the-django-user-authentication-system" target="_blank" rel="noopener">Django User Authentication System</a>, we covered the basics of how default authentication works in Django. Ultimately, you can interact with <code>User</code> objects and understand if a user <code>is_authenticated</code> or not. Using the default authentication system, you can make use of many of Django&rsquo;s built-in features like its login and logout views and password reset workflow.</p>
+<p>When working with an external authentication system, you have to manage these pieces yourself. Some of them may not make sense to you depending on how your authentication system works.</p>
+<h2>Authentication Backends</h2>
+<p>As with many of Django&rsquo;s systems, authentication is modeled as a plugin system. Django will try to authenticate users through a series of authentication backends. The default backend checks a user&rsquo;s username and password against all the existing <code>User</code> objects in the database to authenticate them. The <code>AUTHENTICATION_BACKENDS</code> setting is your entrypoint to intercept this workflow and point Django to your external system.</p>
+<p>An authentication backend is a class that, minimally, implements two methods:</p>
+<ul>
+<li><code>get_user(user_id)</code> &mdash; a <code>user_id</code> can be whatever unique identifier your external system uses to distinguish users, and <code>get_user</code> returns either a user object matching the given <code>user_id</code> or <code>None</code>.</li>
+<li><code>authenticate(request, **credentials)</code> &mdash; the request is the current HTTP request, and the <code>credentials</code> keyword arguments are whatever credentials your external system needs to check if a user should be authenticated or not. This is often a username and password, but it could be an API token or some other scheme. <code>authenticate</code> returns an authenticated <code>User</code> object or <code>None</code>.</li>
+</ul>
+<p>Inside your authentication backend&rsquo;s authenticate method, you can pass along the credentials to your external system via a REST API or another common authentication scheme like LDAP or SAML.</p>
+<p>Using the wonderful <a href="https://yesno.wtf/" target="_blank" rel="noopener">Yes or No?</a> API, you could build an authentication backend that authenticates a user occasionally if the API permits:</p>
+<pre class="language-python"><code>import requests
+
+class FickleAuthBackend:
+    def authenticate(self, request, username):
+        response = requests.get(
+            'https://yesno.wtf/api/'
+        ).json()
+        return User(username=username, password='') if response['answer'] == 'yes' else None</code></pre>
+<p>While <code>authenticate</code> can return a <code>User</code> object or <code>None</code>, it may also return an <code>AnonymousUser</code> object, or raise <code>PermissionDenied</code> to explicitly halt any further authentication checks. This allows for a variety of ways to proceed, and anonymous users may still have certain permissions. You&rsquo;ll want to account for that in your middleware and views.</p>
+<p>If the external user service provides additional information about the user, <code>get_user</code> might be a good place to grab some of that data. You can add attributes to the user object in <code>authenticate</code> before you return it if you&rsquo;d like, but be careful of how many attributes you add dynamically.</p>
+<h2>Permissions</h2>
+<p>I also covered Django&rsquo;s permission scheme in The Django User Authentication System: when given a user, you can inquire about their permissions generally or against specific objects using the <code>has_perm</code> method. Custom authentication backends can override permission checking methods and Django will check against those first before falling back to its default checks. This allows you to make queries to your external system about permissions in addition to authentication:</p>
+<pre class="language-python"><code>...
+def has_perm(self, user_obj, perm, obj=None):
+    response = requests.get(
+        'https://yesno.wtf/api/'
+    ).json()
+    return response['answer'] == 'yes'</code></pre>
+<p><code>has_perm</code> can also raise <code>PermissionDenied</code> to halt further authorization checks, similar to <code>authenticate</code>.</p>
+<h2>Extending and customizing user models</h2>
+<p>If you&rsquo;d like to fully integrate Django with your external system, there&rsquo;s much more you can do by way of the <code>User</code> model. I won&rsquo;t dive too deeply into that portion of Django, but it is fully laid out in <a href="https://docs.djangoproject.com/en/2.2/topics/auth/customizing/" target="_blank" rel="noopener">Customizing authentication in Django</a>.</p>
+<p>This kind of customization lets you use the built-in behaviors of a user while adding your own information and behaviors through proxy models, or one-to-one mappings to custom models. For example, you can pull in information from your external system, creating a new user in your Django database each time a new user authenticates for the first time.</p>
+<p>If you&rsquo;re working in an ecosystem with a mature external user management service, I recommend consistently keeping user-related data and behavior there instead of fragmenting it into your Django code.</p>
+<p>For internal tools or tools with a separate audience and differing information storage needs, though, custom user models may work well for you.</p>
+<h2>Conclusion</h2>
+<p>Django provides a flexible and extensible way to customize user authentication, whether you want to let another system do most of the user account management or want to do it yourself. Using custom authentication backends, you can easily integrate with external systems using almost anything you do in Python. These integrations give you the power to customize permissions checking as well, opening the floor for many possibilities all while working within Django&rsquo;s native interfaces.</p>]]>
+      </content:encoded>
+      </item>
+      
+      <item>
+         <title>Learn the Django User Authentication System</title>
+         <link>https://dane.engineering/post/learn-the-django-user-authentication-system</link>
+         <media:content medium="image" url="https://cdn.buttercms.com/jHR42w7SS2Goykp4udig"/>
+         <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Dane Hillard</dc:creator>
+         <pubDate>Tue, 06 Aug 2019 00:25:00 +0000</pubDate>
+         <guid>https://dane.engineering/post/learn-the-django-user-authentication-system</guid>
+         <description>Learn the basic pieces of Django authentication and how they work together to get you up and running with users</description>
+         <content:encoded>
+        <![CDATA[<h2>Introduction</h2>
+<p>Giving users the ability to create an account they can sign into is a common function for many websites.</p>
+<p>Users might need an account to participate in a comment thread, save their personal information, or transfer money. Whatever the use case may be, you need to build an authentication system that&rsquo;s simple and safe for your users.</p>
+<p>After reading this post, you should have a solid understanding of how Django thinks about authentication &ndash; from users, to groups, to permissions. You&rsquo;ll also see how Django plays things safe where it can in order to help you avoid inadvertently contributing your users&rsquo; information to &ldquo;<a href="https://haveibeenpwned.com/" target="_blank" rel="noopener">Have I Been Pwned</a>&rdquo;.</p>
+<h2>Users</h2>
+<p>For most websites, the basic entity of authentication is a user. A user is identified by some unique string, which is almost always an email address or username.</p>
+<p>To prove someone is who they say they are, they must provide a password when creating an account, and again at any time they want to authenticate themselves. This should be familiar: you go through this kind of workflow any time you sign up for a service like Twitter or Netflix.</p>
+<p>Django provides a <code>User</code> model for creating and managing users. <a href="https://kite.com/python/docs/django.contrib.auth.models.User" target="_blank" rel="noopener">Django users</a> have a username and password, but can also optionally have an email address and a first and last name:</p>
+<pre class="language-python"><code>from django.contrib.auth.models import User
+
+
+rafaela = User('rafaela', password='$uper$ecretpassword')
+
+# OR
+
+rafaela = User(
+    'Rafaela',
+    email='rafaela@example.com',
+    password='$upser$ecretpassword',
+    first_name='Rafaela',
+    last_name='L&ograve;pez',
+)</code></pre>
+<p>If you prefer to identify users by their email addresses, I recommend filling the username with the email address and keeping the address in the <code>email</code> field as well. This will allow users to authenticate using their email address while also allowing you to continue using Django&rsquo;s built-in features that deal with email.</p>
+<p>Django provides a level of security when it comes to passwords. It has a built-in set of password validators, some of which are enabled by default in new projects. You can write your own validators to enforce any password rules you might need, but choose wisely &ndash; it&rsquo;s been shown that <a href="https://www.riskcontrolstrategies.com/2018/01/08/new-nist-guidelines-wrong/" target="_blank" rel="noopener">many password rules lead to decreased security</a>!</p>
+<p>In addition to password validation, Django safely stores password information by default. Django salts and hashes passwords before storing them when a user is created, so their plaintext password is no longer available outside the context of the initial registration request or when they log in.</p>
+<p>Storing passwords in plaintext is a surprisingly common oversight in the industry, so let Django be your safety rail here!</p>
+<p>Like other models you may have used in Django, user objects can be queried and filtered and so on:</p>
+<pre class="language-python"><code>User.objects.filter(first_name='Rafaela')</code></pre>
+<p>User objects have several other fields, attributes, and methods that will make sense in context as you read on about the Django features that involve users. Let&rsquo;s start by looking at <em>groups</em>.</p>
+<h2>Groups</h2>
+<p><a href="https://kite.com/python/docs/django.contrib.auth.models.Group" target="_blank" rel="noopener">Django groups</a> are, in short, a collection of users. Users can belong to multiple groups, but note that groups can&rsquo;t belong to other groups &ndash; so it&rsquo;s a shallow hierarchy. Groups are useful for creating &ldquo;categories&rdquo; of users for any number of things, like giving a particular group access to a feature on your website.</p>
+<p>You can create a user group simply by giving it a name:</p>
+<pre class="language-python"><code>from django.contrib.auth.models import Group
+
+
+awesome_users = Group.objects.create(name='awesome_users')</code></pre>
+<p>User objects have a many-to-many relationship with groups, and you can access or set a user&rsquo;s groups via its groups field:</p>
+<pre class="language-python"><code>rafaela.groups.add(awesome_users)</code></pre>
+<p>The most common use of groups is pairing them with the idea of <em>permissions</em>.</p>
+<h2>Permissions</h2>
+<p>Users shouldn&rsquo;t have free reign to do whatever they like on your website. Any person could create an account and delete others&rsquo; posts!</p>
+<p>Permissions are a generic way of determining if a Django user can perform a particular action. Permissions are often namespaced by the Django app and model in question, though they don&rsquo;t have to be. You can check if a user (or a group they&rsquo;re a member of) has permission to act on a particular object or type of object using <code>has_perm</code>:</p>
+<pre class="language-python"><code>from treats.models import IceCream
+
+
+if rafaela.has_perm('treats.eat_ice_cream'):
+    IceCream.objects.create(eater=rafaela)</code></pre>
+<p>Now we know there are <em>users</em>, who can belong to <em>groups</em>, and users and groups may have <em>permissions</em> to act on different types of model objects.</p>
+<p>But how do you figure out which users are which?</p>
+<h2>Authentication</h2>
+<p><a href="https://kite.com/python/docs/django.contrib.auth.authenticate" target="_blank" rel="noopener">Django can authenticate a user</a> by checking a supplied set of credentials against the existing set of registered users. If a user matches, Django will return that user object. Otherwise, it will return <code>None</code>:</p>
+<pre class="language-python"><code>from django.contrib.auth import authenticate
+
+
+user = authenticate(
+    username='rafaela',
+    password='$uper$ecretpassword'
+)</code></pre>
+<p>You can use this to check if a user has supplied valid credentials, but this won&rsquo;t keep a user logged in. In order to do that, you&rsquo;ll want to use Django&rsquo;s login method in addition to authenticating the user. The method accepts the current request object and the authenticated user object, and if successful, will redirect the user to a success page:</p>
+<pre class="language-python"><code>from django.contrib.auth import login
+
+
+...
+
+if user:
+    login(request, user)
+else:
+    # invalid login, redirect to some kind of error page</code></pre>
+<p>When a user has successfully logged in, they&rsquo;ll need a way to stay logged in. Logging in for every page load would be a bummer! Let&rsquo;s go over how to do this.<br />Sessions</p>
+<p>Each time a user requests a page on your website, the incoming HTTP request sent from their browser gets processed by a number of layers, ultimately ending up in Django as an <code>HttpRequest</code> object.</p>
+<p>If you&rsquo;ve written a view before, you know that one of its expected arguments is an <code>HttpRequest</code> object (usually called <code>request</code>). If the Django authentication features are installed in your apps and middlewares (enabled by default for new projects), the request will have a reference to the user at <code>request.user</code>.</p>
+<p>Django achieves this using sessions, which are bits of information stored in the database that are fetched based on a special cookie set in the user&rsquo;s browser. When the user visits a page, the value from the cookie is used to check if there is an active session in the database. If so, the user is authenticated. If the session has expired or didn&rsquo;t exist, the user will need to log in again.</p>
+<p>For most use cases, you won&rsquo;t need to interact with the session directly. However, you can get and set arbitrary data in the session for integrating with third party applications or doing more complicated things for your users that, for example, rely on actions they&rsquo;ve taken so far during their current visit.</p>
+<p>As you get started with Django authentication, you can think of sessions mostly as the factor that keeps your users logged in.</p>
+<p>So, how can you tell if a user is logged in?</p>
+<h2>Handling authenticated users</h2>
+<p>The request object will always have a reference to a user, so you&rsquo;ll need to be able to distinguish what kind of user they are. You can get a basic sense of this by checking the <code>request.user.is_authenticated</code> attribute. This attribute is a boolean indicating whether the user is logged in or not.</p>
+<p>If they&rsquo;re not authenticated, <code>request.user</code> will be an <code>AnonymousUser</code> object, which means the person is not yet logged in or is perhaps a first-time visitor. You can use the <code>request.user.is_authenticated</code> distinction for actions that only logged-in users are allowed to perform.</p>
+<h2>Conclusion</h2>
+<p>Django has a vast feature set for authenticating users and interacting with user objects to get things done.</p>
+<p>This article has just scratched the surface; I encourage you to explore <a href="https://docs.djangoproject.com/en/2.2/topics/auth/default/" target="_blank" rel="noopener">Django&rsquo;s exceedingly thorough documentation</a> to learn what else is possible.</p>
+<p>Remember that Django tries hard to be secure and obvious by default, which gives you a great jumping-off point for a majority of projects. As is also customary in Django, everything can be customized or replaced to your liking as you advance. So go forth and create some users!</p>]]>
+      </content:encoded>
+      </item>
+      
+      <item>
+         <title>Form habits by making the right thing easiest</title>
+         <link>https://dane.engineering/post/form-habits-by-making-the-right-thing-easiest</link>
+         <media:content medium="image" url="https://cdn.buttercms.com/uXDRHbYHTO6PxnMbSg5e"/>
+         <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Dane Hillard</dc:creator>
+         <pubDate>Sat, 20 Apr 2019 16:45:00 +0000</pubDate>
+         <guid>https://dane.engineering/post/form-habits-by-making-the-right-thing-easiest</guid>
+         <description>Tools should always work for you, not against you! Invest some time making sure you configure them to adapt to shifting conditions.</description>
+         <content:encoded>
+        <![CDATA[<p>I'm a creature of habit. I tend to configure things the way I like them, lock that in, and hunker down into the little ecosystem I've made for myself forevermore. When something arises and begins causing friction, my only hope of adapting effectively is to find a new configuration that I can quickly cut over to.</p>
+<p>For some time, I've made git commits using a command you're probably used to seeing:</p>
+<pre class="language-undefined"><code>$ git commit --all --message 'Make the code less wonky'</code></pre>
+<p>This works alright, but I had this undercurrent of unease about it for the last while.</p>
+<p><code>git</code> allows you to specify longer descriptions by formatting your messages a certain way. When you push that commit to tools like GitHub or GitLab and open a pull request, they'll use the short description as the title and the longer description will get plugged into the pull request's description field. Providing this is a matter of strategically adding some newlines to your commit messages, but I often found myself accidentally closing the quotes on the first line of the message or just plain forgetting to provide the long-form description. This was friction.</p>
+<pre class="language-undefined"><code>$ git commit --all --message 'Make the code less wonky
+
+* Fix a bug
+* Add some comments
+* Remove bitcoin mining malware'</code></pre>
+<p>GitHub also recently added a feature for <a href="https://help.github.com/en/articles/creating-a-commit-on-behalf-of-an-organization" target="_blank" rel="noopener">making commits "on behalf of" an organization</a>&mdash;useful if you contribute to open source as part of your day-to-day work at your company. Part of this feature involves adding even more information to the commit, with more newlines to remember:</p>
+<pre class="language-undefined"><code>$ git commit --all --message 'Add a bit of wonk back in
+
+* We want those bitcoins so add the malware back
+* That "bug" was a "feature" it turns out
+
+
+on-behalf-of: @some-org &lt;my.email@some.org&gt;'</code></pre>
+<p>This gets pretty unruly, especially if you're trying to <a href="https://sethrobertson.github.io/GitBestPractices/#commit" target="_blank" rel="noopener">commit early and often</a> (something you should do!). I really wanted to start making more descriptive commits, and wanted to have the proper attribution in open source, but this is a lot of friction. Fortunately, <code>git</code> provided a solution that allowed me to adapt.</p>
+<p>You can configure <code>git</code> to use a template for your commits, which can be stored in a file. When you don't provide a <code>--message</code> argument at the command line, <code>git</code> will open a text editor where you can edit the commit message, pre-populated with the content of your template. I figured this could be a great way to simplify some of my workflow and prompt me to add more descriptive content to my commits. This automatic prompting is small effort but adds a bit of productivity <em>and</em> improves the information I communicate to others, so it's a big win.</p>
+<p>I started by creating the template that fit the commit format to which I aspired:</p>
+<pre class="language-undefined"><code>Summary of change
+
+Longer description of change
+
+
+on-behalf-of: @some-org &lt;my.name@some.org&gt;</code></pre>
+<p>And then I told <code>git</code> to use it for the repositories I was interested in:</p>
+<pre class="language-undefined"><code>$ git config commit.template /path/to/commit.template</code></pre>
+<p>That's about it in terms of setup! But I was able to start reaping its benefits immediately; my command to invoke the commit process is shorter without the <code>--message</code> flag (and the message that follows), and the process of thinking about what to say <em>about</em> the commit is now separate, which gives me a chance to pause and think of something more valuable to say than just <a href="https://xkcd.com/1296/" target="_blank" rel="noopener" title="XKCD: Git Commit"><code>haaaaaands</code></a>.</p>
+<p>In case I'm feeling lazy or forgetful, the template also has my back and reminds me that adding context is good to do. It also always has the <code>on-behalf-of</code> commit trailer, so I barely need to think about it. Overall this has saved me a lot of cumulative time, and has made me more thoughtful about what I'm sharing and putting out there. Even on repositories where I don't have this configured (because the configuration has different requirements and I haven't gotten around to it yet), I've at least switched to always using a text editor to edit my commit messages.</p>
+<p>So the moral of this story isn't about <code>git</code>. Making the "right" thing the easiest possible option is the way I can truly form habits. If you're like me, if two things are equally easy I'll flip flop on them until I drive myself up the wall, and if the "wrong" thing is easiest I'm doomed. So go out there and squeeze some productivity out of your tooling by making it work for you!</p>]]>
+      </content:encoded>
+      </item>
+      
+      <item>
+         <title>A flexible approach to Python API client development</title>
+         <link>https://dane.engineering/post/flexible-approach-python-api-client-development</link>
+         <media:content medium="image" url="https://cdn.buttercms.com/lkdoCykTV63O1nTwxThl"/>
+         <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Dane Hillard</dc:creator>
+         <pubDate>Thu, 11 Apr 2019 17:15:00 +0000</pubDate>
+         <guid>https://dane.engineering/post/flexible-approach-python-api-client-development</guid>
+         <description>Learn how the apiron Python package eases API client development and maintenance using a declarative approach</description>
+         <content:encoded>
+        <![CDATA[<p>Are you working in a microservice-oriented architecture? Is there an API you want to use that doesn't have a Python SDK? Although high-level HTTP libraries like <code>requests</code> aid development by reducing the work you need to do to get up and running, they don't provide much structure around APIs specifically. This can lead to several pieces of similar calling code peppered throughout your system, in the worst cases leading to divergent approaches.</p>
+<p>Let's take a look at what a set of API calls could look like using <code>requests</code>. I'll use the <a href="https://pokeapi.co" target="_blank" rel="noopener">Pok&eacute;API</a>, a fantastic (and free!) API for querying Pok&eacute;mon metadata. The most useful endpoint is <code>/pokemon/:pokemon</code>, which is the main entrypoint for getting information about a particular Pok&eacute;mon. You can call this endpoint using <code>requests</code>:</p>
+<pre class="language-python"><code>&gt;&gt;&gt; import requests
+&gt;&gt;&gt; ditto = requests.get('https://pokeapi.co/api/v2/pokemon/ditto')</code></pre>
+<p>This returns a bevy of information, much of which links to other endpoints. To inspect the data more easily, you'll want to get the returned JSON as a Python dictionary:</p>
+<pre class="language-python"><code>&gt;&gt;&gt; ditto = requests.get('https://pokeapi.co/api/v2/pokemon/ditto').json()</code></pre>
+<p>You can verify you've received a response about Ditto by checking its name:</p>
+<pre class="language-python"><code>&gt;&gt;&gt; ditto['name']
+'ditto'</code></pre>
+<p>You can also see that Ditto has one move, named "transform":</p>
+<pre class="language-python"><code>&gt;&gt;&gt; ditto['moves'][0]['move']['name']
+'transform'</code></pre>
+<p>You can also get the endpoint for learning more about the transform move:</p>
+<pre class="language-python"><code>&gt;&gt;&gt; ditto['moves'][0]['move']['url']
+'https://pokeapi.co/api/v2/move/144/'</code></pre>
+<p>You can then call the <code>/move/:move_id</code> endpoint using <code>requests</code> to get its info. That will lead to another response which links to yet further endpoints. <strong>There are so many endpoints!</strong> They're all under the same Pok&eacute;API umbrella, but there's not much structure in the code which reflects this fact. If some of these endpoints return a single string value instead of JSON, the code to interact with the data will need to change as well. Is there a better way to keep this all straight?</p>
+<p>At scale, it's important to understand all the APIs and endpoints your code is calling, in part so that you don't spend effort creating code that duplicates existing functionality. It also makes it easier to survey usage to understand if you've migrated fully away from a deprecated API or endpoint. To do this you need a single source of truth for an API and its endpoints, and ideally a homogeneous way of interacting with them.</p>
+<p><a href="https://github.com/ithaka/apiron" target="_blank" rel="noopener"><code>apiron</code></a> is a Python package that addresses these desires by providing a declarative approach that produces SDK-like interaction for you to use. Through introspection of your declared configuration, <code>apiron</code> allows you to start talking to an API quickly and leads you toward a centralized configuration for all of your API dependencies. Let's look at how you might set up the Pok&eacute;API using <code>apiron</code>.</p>
+<p>With <code>apiron</code> you can define a <code>Service</code>, which has a <code>domain</code> and a collection of <code>Endpoint</code>s. The Pok&eacute;mon and move endpoints happen to return JSON, so using a <code>JsonEndpoint</code> will end up returning the response as a dictionary by default. Each endpoint has placeholders that can be filled in dynamically:</p>
+<pre class="language-python"><code>from apiron import Service, JsonEndpoint
+
+
+class PokeAPI(Service):
+    domain = 'https://pokeapi.co'
+
+    pokemon = JsonEndpoint(path='/api/v2/pokemon/{pokemon}')
+    move = JsonEndpoint(path='/api/v2/move/{move_id}')</code></pre>
+<p>&nbsp;This is all fine, but how do you interact with it? <code>apiron</code> provides SDK-like interaction for calling your configured service. That is, <code>apiron</code> tries to feel like something purpose-built for the API you need to use while being flexible enough to do this for any number of APIs. Here's how to make the call to get Ditto's information and information about the transform move:</p>
+<pre class="language-python"><code>ditto = PokeAPI.pokemon(pokemon='ditto')
+transform = PokeAPI.move(move_id=144)</code></pre>
+<p>From this code, it's easier to see that you're calling the Pok&eacute;API and using the Pok&eacute;mon and move endpoints. It's also easier to see what data is being plugged into the calls. If you're using an IDE, you can also jump to those endpoint definitions to see that they return JSON, so you get an idea of what to expect when using the responses. As you look through the <code>PokeAPI</code> class, you can also see which endpoints are already implemented at a glance, and quickly add any that aren't available yet if you know the right path and returned data type.</p>
+<p>If the Pok&eacute;API moves to a new domain, or if an endpoint's path changes, there's one clear place to react to that change. You can also call an endpoint with different headers, cookies, and more without having to duplicate much boilerplate. The readability and inspectability of this approach have improved my experience dealing with numerous services with numerous endpoints. In addition to helping users develop clients for APIs they want to use, this package can potentially reduce the effort needed for API providers to give their consumers a Python SDK. I really hope you'll try it out and tell me all the ways you can think of to break it!</p>]]>
+      </content:encoded>
+      </item>
+      
+      <item>
+         <title>Truly taking time off: A checklist</title>
+         <link>https://dane.engineering/post/truly-taking-time-off-a-checklist</link>
+         <media:content medium="image" url="https://cdn.buttercms.com/WuEgrKNTz6MbzkswHWPw"/>
+         <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Dane Hillard</dc:creator>
+         <pubDate>Sun, 03 Mar 2019 18:34:00 +0000</pubDate>
+         <guid>https://dane.engineering/post/truly-taking-time-off-a-checklist</guid>
+         <description>Learn some things I do to help me disconnect from work and enjoy my time off</description>
+         <content:encoded>
+        <![CDATA[<p>I recently returned from nearly two weeks off from my typical day-to-day work. Part of this time was to attend a conference (<a href="http://pycaribbean.com">PyCaribbean</a> was amazing!) and the rest was a legitimate vacation. In the past I've had trouble really disconnecting and enjoying my time away, so this time I took deliberate measures to make sure I didn't fall into the same trap again.</p>
+<h2>Empty your brain</h2>
+<p>My time away coincided with a pretty busy time for my team, leading up to a deadline. This can be one of the more difficult times to step away. Paramount to your team's success and your ease of mind while you're gone is making sure everything you have in your head gets out. Disseminate everything you know or have in progress so that there's shared understanding. Ideally, pair with a coworker leading up to your vacation to transition anything that needs to keep rolling while you're gone.</p>
+<p>Make agreements as a team about what's expected of you before you leave so that you can commit to getting those things done. It will not only help the team feel harmonized, but will give you a clear stopping point that will mentally let you switch to vacation mode.</p>
+<h2>Escape from Slack</h2>
+<p>Slack can be far and away the biggest source of distraction any time you're taking some time to yourself. This is especially true if you use it on your mobile devices. If you only do one thing after syncing up with your team, it should be this.</p>
+<p>Slack statuses can be set until a specific date and time, or indefinitely. Set a status with an emoji indicating you're away/on vacation/unavailable, indicating when you'll be back if possible.<br /><img src="https://cdn.buttercms.com/XRUCr0J7R3SfRfb3Wl0B" alt="undefined" width="502" height="194" /></p>
+<p>In addition to a status, Slack lets you explicitly set yourself to "Away." This makes it more clear in the interface that you're not around, so it helps manage expectations!</p>
+<p>I chose the nuclear option on this trip and signed myself out of Slack completely. In addition to removing the occasional distracting notification, it made me less likely to check Slack on impulse during down time.</p>
+<h2>Escape from email</h2>
+<p>In a similar vein to Slack, email is one of those things a lot of us check "just in case." There is rarely anything compelling in your inbox, at least nothing that can't wait until you're back. Just make sure there's a protocol for true emergencies, like a personal phone number or email. Ideally these are behind some sort of "BREAK IN CASE OF EMERGENCY" glass. Set an auto-reply message similar to your Slack status, but in addition include the names or contact information of people to contact in your stead. This helps folks get their questions and concerns addressed more quickly.</p>
+<h2>Escape from your calendar</h2>
+<p>Calendar reminders are another source of distraction, and one I only realized when I was preparing for this trip. Calendars are also handy for trip planning and organizing, so if there are still recurring work meetings floating around they can cause clutter.</p>
+<p>Decline meetings that fall under the time you'll be gone. If they're recurring, make sure you only decline the instance instead of the series! Declining meetings reminds people you won't be attending, which helps them plan their agendas while you're out.</p>
+<h2>Escape from the pager</h2>
+<p>If you're on rotation for your team's application monitoring, make sure that you're not scheduled during the time you're out. Swap with someone if you are (and show your appreciation). If unattended alerts get escalated to everyone, you can consider removing yourself from the escalation policy temporarily as well. I didn't think of that beforehand, so I was still caught by a few escalated alerts.</p>
+<h2>It's about balance</h2>
+<p>I mentioned that in the past I've had a hard time disconnecting. Part of this is because I personally don't mind being mildly available even when I'm out. This is the balance I'm comfortable with. For others, the balance falls elsewhere, further toward some end of the spectrum. The tips above fall at the "unavailable" end of the spectrum, so you can draw on the bits and pieces you need to strike the right balance for yourself. Be healthy and be well!</p>]]>
+      </content:encoded>
+      </item>
+      
+      <item>
+         <title>Integrating ButterCMS in your Vue application</title>
+         <link>https://dane.engineering/post/buttercms-in-vue</link>
+         <media:content medium="image" url="https://cdn.buttercms.com/isNUPRWOS4OiOOnRHZZ3"/>
+         <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Dane Hillard</dc:creator>
+         <pubDate>Tue, 05 Feb 2019 04:11:00 +0000</pubDate>
+         <guid>https://dane.engineering/post/buttercms-in-vue</guid>
+         <description>My maiden voyage into the world of headless CMS</description>
+         <content:encoded>
+        <![CDATA[<p>Although sites like Medium provide audience reach and a consistent experience, the list of reasons I'm no longer happy with it keeps growing. I've done most of my recent writing on <a href="https://dev.to" target="_blank" rel="noopener">dev.to</a>, which has been a refreshing change and will probably be where I continue to syndicate several of the posts I write here.</p>
+<p>This post is my maiden voyage into headless CMS, and I've chosen <a target="_blank" rel="noopener">ButterCMS</a> for the moment. Its small but focused API was plenty for me to get this up and running! Best of all, it's free for non-commercial use.</p>
+<p>Right after you sign up with Butter, you'll get an API key and links to an impressive array of framework-specific instructions for how to get set up. I found the instructions for Vue very easy to follow, and was able to go from signing up to retrieving the test blog post within 15 minutes or so! I'm using single-file components (SFCs) in my app, so I started by grabbing a list of blog posts and creating the template together. Butter returns a <code>data</code>&nbsp;property that contains the list of posts, each of which has a title, slug, body, and so on. We can fetch these when the <code>BlogPostList</code> component is created, so that the data becomes available around the time it mounts. I also put in a loading state for the rare occasion where the API response takes a noticeable amount of time:</p>
+<pre class="language-markup"><code>&lt;template&gt;
+  &lt;main&gt;
+    &lt;h1&gt;Posts&lt;/h1&gt;
+    &lt;span v-if="loading"&gt;Loading...&lt;/span&gt;
+    &lt;ul v-else-if="posts.data.length"&gt;
+      &lt;li v-for="post in posts.data" :key="post.slug"&gt;
+        &lt;router-link :to="{ name: 'post', params: { slug: post.slug } }"&gt;
+          {{ post.title }}
+        &lt;/router-link&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/main&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import Butter from 'buttercms'
+
+const butter = Butter('YOUR API KEY')
+
+export default {
+  name: 'BlogPostList',
+  data () {
+    return {
+      loading: true,
+      posts: {},
+    }
+  },
+  methods: {
+    fetchPosts () {
+      butter.post.list({ page: 1, pageSize: 10 })
+        .then((response) =&gt; {
+          this.loading = false
+          this.posts = response.data
+        }).catch((response) =&gt; {
+          console.log(response)
+        })
+    },
+  },
+  created () {
+    this.fetchPosts()
+  },
+}
+&lt;/script&gt;</code></pre>
+<p>The code for displaying a single post is much the same&mdash;a <code>data</code> property contains information about the post and we can fetch the post as the component is created:</p>
+<pre class="language-markup"><code>&lt;template&gt;
+  &lt;main&gt;
+    &lt;article v-if="post.data"&gt;
+      &lt;h1&gt;{{ post.data.title }}&lt;/h1&gt;
+      &lt;span class="metadata"&gt;{{ publishedDate }}&lt;/span&gt;
+      &lt;div v-html="post.data.body" /&gt;
+    &lt;/article&gt;
+  &lt;/main&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import Butter from 'buttercms'
+
+const butter = Butter('YOUR API KEY')
+
+export default {
+  name: 'BlogPost',
+  data () {
+    return {
+      loading: true,
+      post: {},
+    }
+  },
+  methods: {
+    fetchPost () {
+      butter.post.retrieve(this.$route.params.slug)
+        .then((response) =&gt; {
+          this.loading = false
+          this.post = response.data
+        }).catch((response) =&gt; {
+          console.log(response)
+        })
+    },
+  },
+  created () {
+    this.fetchPost()
+  },
+}
+&lt;/script&gt;</code></pre>
+<p>This is about all you need in order to start fetching a list of posts and rendering each post! The rest of the work is in dropping all the SEO into place (I use <a href="https://github.com/nuxt/vue-meta" target="_blank" rel="noopener"><code>vue-meta</code></a> for this) and styling the content as you wish. One additional thing I did to make using Butter easier throughout my Vue app was adding it to the Vue prototype:</p>
+<pre class="language-javascript"><code>import Butter from 'buttercms'
+
+const butter = Butter('YOUR API KEY')
+Vue.prototype.$butter = butter</code></pre>
+<p>Then I can just type <code>this.$butter</code> in a component's methods instead of initializing the API client each time.</p>
+<hr />
+<p>The features I like about butter so far are:</p>
+<ul>
+<li>The easy-to-use API and corresponding JavaScript client</li>
+<li>The small amount of time it took to get started</li>
+<li>The image API they provide (through Filestack)</li>
+</ul>
+<p>The features that could use some work are:</p>
+<ul>
+<li>Adding code blocks to your posts: it's way nicer than Medium, but not as good an experience in the WYSIWYG as other more basic things</li>
+<li>Terminology: this isn't unique to Butter; a CMS can be complex so it's difficult to distinguish all the concepts you can configure, create, and customize</li>
+</ul>]]>
+      </content:encoded>
+      </item>
+      
+      <item>
+         <title>Python Mixins for Fun and Profit</title>
+         <link>https://dane.engineering/post/python-mixins</link>
+         <media:content medium="image" url="https://cdn.buttercms.com/waB9vSy9SzG8EgPvLyEK"/>
+         <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Dane Hillard</dc:creator>
+         <pubDate>Thu, 22 Dec 2016 02:18:00 +0000</pubDate>
+         <guid>https://dane.engineering/post/python-mixins</guid>
+         <description>Learn how the mixin pattern works in Python and what you can use it for to clean up your code.</description>
+         <content:encoded>
+        <![CDATA[<p>There are people out there who have the time, motivation, and resources to cook meals entirely from scratch. They&rsquo;ll turn flour, water, and eggs into pasta and turn cheese, cream, and spices into a sauce. These people make delicious food, but it takes time. Can you imagine how much longer it would take if they also milled the wheat, farmed the chickens, and milked the cows themselves?</p>
+<p>When creating software, there&rsquo;s sometimes a limit to the depth you should go. When pieces of what you&rsquo;d like to achieve have already been executed well by others, it makes a lot of sense to reuse them. Instead of milling wheat and raising cows, you can buy flour and butchered beef. You can start from scratch, but not <em>scratch</em> scratch.</p>
+<p>One way to set yourself up for success in object-oriented programming is through a concept called a mixin. In Python, mixins are supported via <a href="https://en.wikipedia.org/wiki/Multiple_inheritance" target="_blank" rel="follow noopener" title="Multiple inheritance on Wikipedia">multiple inheritance</a>.</p>
+<blockquote>
+<p>Mixins take various forms depending on the language, but at the end of the day they encapsulate behavior that can be reused in other classes.</p>
+</blockquote>
+<p>The delineation between using true inheritance and using mixins is nuanced, but it comes down to the fact that a mixin is independent enough that it doesn&rsquo;t feel the same as a parent class. Mixins aren&rsquo;t generally used on their own, but aren&rsquo;t abstract classes either.</p>
+<p>Suppose you&rsquo;ve written a slew of Python software and your application is ready to launch. You&rsquo;re about to hit the button when someone comes over and says &ldquo;what kinds of things are we logging?&rdquo; <em>Dear God</em>, you think. <em>We aren&rsquo;t logging anything!</em> You could go ahead and add the following boilerplate to all your modules to get started with logging:</p>
+<pre class="language-python"><code>import logging
+
+
+class EssentialFunctioner(object):
+    def __init__(self):
+        ...
+
+        self.logger = logging.getLogger(
+            '.'.join([
+                self.__module__,
+                self.__class__.__name__
+            ])
+        )
+
+    def do_the_thing(self):
+        try:
+            ...
+        except BadThing:
+            self.logger.error('OH NOES')</code></pre>
+<p>That&rsquo;s not too bad, but imagine doing this to twenty or thirty classes. Not fun. How can mixins help? Have a look. Create a <code>LoggerMixin</code> that does the same work as above:</p>
+<pre class="language-python"><code>import logging
+
+
+class LoggerMixin(object):
+    @property
+    def logger(self):
+        name = '.'.join([
+            self.__module__,
+            self.__class__.__name__
+        ])
+        return logging.getLogger(name)</code></pre>
+<p>With this nicely encapsulated, you can now go around adding the following to your existing code:</p>
+<pre class="language-python"><code>class EssentialFunctioner(LoggerMixin, object):
+    def do_the_thing(self):
+        try:
+            ...
+        except BadThing:
+            self.logger.error('OH NOES')
+
+
+class BusinessLogicer(LoggerMixin, object):
+    def __init__(self):
+        super().__init__()
+        self.logger.debug('Giving the logic the business...')</code></pre>
+<p>You wrote the functionality just once, but now you can use it everywhere! All you have to do is inherit from <code>LoggerMixin</code> and you can proceed using <code>self.logger</code> as if you&rsquo;d set that up in <code>EssentialFunctioner</code> and <code>BusinessLogicer</code>! Pretty awesome.</p>
+<p>There are certain places where heavy use of mixins can save a ton of time or cognitive load. A use case that came up recently was in a Django project where several class-based views needed to serve only traffic within our organization's intranet. An existing middleware does this check, raising an <code>Http404</code> if a request comes from outside the network. Adding that functionality to our classes was fairly easy, using <code>decorator_from_middleware</code> and <code>method_decorator</code> on the views&rsquo; dispatch methods:</p>
+<pre class="language-python"><code>from django.utils.decorators import decorator_from_middleware, method_decorator
+from django.views import generic
+
+from app import middleware
+
+
+network_protected = decorator_from_middleware(
+    middleware.NetworkProtectionMiddleware
+)
+
+
+@method_decorator(network_protected, name='dispatch')
+class SecretView(generic.View):
+    ...</code></pre>
+<p>However, when I added a second piece of functionality I had to decorate those views too. I was getting a little tired of decorating.</p>
+<p><img src="https://cdn.buttercms.com/1e91buzyQX63FjtsPpFb" alt="undefined" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p>Instead, I refactored the network protection integration into a mixin, allowing all our class-based views to inherit from this as they saw fit:</p>
+<pre class="language-python"><code>from django.utils.decorators import decorator_from_middleware, method_decorator
+from django.views import generic
+
+
+network_protected = decorator_from_middleware(
+    middleware.NetworkProtectionMiddleware
+)
+
+
+class NetworkProtectionMixin(object):
+    @method_decorator(network_protected)
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
+
+
+class SecretView(NetworkProtectionMixin, generic.View):
+    ...</code></pre>
+<p>A similar approach can be used for Django&rsquo;s permissions, authentication, and more. This is powerful, and when used correctly can result in wonderfully expressive code. It also reduces complexity, allowing easier unit testing and comprehension.</p>
+<p>At the end of the day, mixins are a DRY way to architect code, abstracting potentially complex functionality so that developers can concentrate more fully on the task at hand instead of propping up all the pieces. Rejoice!</p>]]>
+      </content:encoded>
+      </item>
+      
+   </channel>
+</rss>
+
+
+

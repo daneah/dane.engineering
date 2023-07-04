@@ -1,6 +1,7 @@
 import { shallowMount } from '@vue/test-utils'
+import { describe, it, expect } from "vitest"
 
-import CardGrid from '@/components/CardGrid'
+import CardGrid from '@/components/CardGrid.vue'
 
 
 describe('CardGrid', () => {

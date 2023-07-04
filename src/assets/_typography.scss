@@ -1,0 +1,96 @@
+@import 'spacing';
+@import 'colors';
+
+:root {
+  --font-primary: 'Open Sans', sans-serif;
+  --font-secondary: 'Times New Roman', serif;
+  --font-title: 'Fredericka the Great', Georgia, serif;
+  --font-title-weight: normal;
+
+  --heading-line-height: 1.2;
+  --body-line-height: 1.5;
+
+  --text-base-size: 1rem;
+  --text-scale-ratio: 1.618;
+
+  --text-xs: calc(var(--text-sm) / var(--text-scale-ratio));
+  --text-sm: calc(var(--text-md) / var(--text-scale-ratio));
+  --text-md: var(--text-base-size);
+  --text-lg: calc(var(--text-md) * var(--text-scale-ratio));
+  --text-xl: calc(var(--text-lg) * var(--text-scale-ratio));
+  --text-xxl: calc(var(--text-xl) * var(--text-scale-ratio));
+  --text-xxxl: calc(var(--text-xxl) * var(--text-scale-ratio));
+
+  @media (max-width: 1200px) {
+    --text-base-size: 0.85em;
+  }
+
+  @media (max-width: 750px) {
+    --text-base-size: 0.8em;
+  }
+}
+
+p {
+  line-height: var(--body-line-height);
+  word-break: break-word;
+  hyphens: auto;
+  max-width: 65ch;
+  font-size: var(--text-lg);
+
+  + p {
+    text-indent: var(--space-lg);
+    margin-top: var(--space-md);
+  }
+}
+
+code {
+  hyphens: none;
+}
+
+blockquote {
+  margin: var(--space-xl) var(--space-xl);
+  padding-left: var(--space-lg);
+  color: var(--text-muted);
+  border-left: 8px solid var(--text-muted);
+
+  p {
+    font-size: 2em;
+  }
+}
+
+@for $heading-level from 1 through 6 {
+  h#{$heading-level} {
+    line-height: var(--heading-line-height);
+    margin-bottom: var(--space-xxs);
+  }
+}
+
+@font-face {
+  font-family: 'Fredericka the Great';
+  src: url('./FrederickatheGreat-Regular.ttf') format('truetype');
+  font-display: fallback;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F,
+    U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@mixin title-font {
+  font-family: var(--font-title);
+  font-weight: normal;
+}
+
+h1 {
+  @include title-font;
+  font-size: var(--text-xxl);
+}
+
+h2 {
+  font-size: var(--text-xl);
+}
+
+h3 {
+  font-size: var(--text-lg);
+}
+
+h4 {
+  font-size: var(--text-md);
+}

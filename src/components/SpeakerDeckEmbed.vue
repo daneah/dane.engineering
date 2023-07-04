@@ -1,30 +1,20 @@
-<template>
-    <div class="embed-container">
-        <iframe
-            :src="`https://speakerdeck.com/player/${deckId}`"
-            frameborder="0"
-            allowfullscreen
-            allowtransparency
-        />
-    </div>
-</template>
-
-</template>
-
-<script>
-export default {
-  name: 'SpeakerDeckEmbed',
-  props: {
-    deckId: {
-      type: String,
-      required: true,
-    }
-  },
-  data () {
-    return {}
-  },
+<script setup lang="ts">
+interface SpeakerDeckEmbedProps {
+  deckId: string
 }
+defineProps<SpeakerDeckEmbedProps>()
 </script>
+
+<template>
+  <div class="embed-container">
+    <iframe
+      :src="`https://speakerdeck.com/player/${deckId}`"
+      frameborder="0"
+      allowfullscreen
+      allowtransparency
+    />
+  </div>
+</template>
 
 <style scoped lang="scss">
 .embed-container {

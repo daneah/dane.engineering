@@ -1,74 +1,50 @@
+<script setup lang="ts">
+import ResponsiveImage from '@/components/ResponsiveImage.vue'
+
+export type TimelineEntryProps = {
+  image?: string
+  headingLevel?: number
+  title: string
+  subtitle: string
+  years: number[]
+  responsibilities?: string[]
+}
+
+const props = withDefaults(defineProps<TimelineEntryProps>(), {
+  headingLevel: 2,
+  responsibilities: () => []
+})
+
+const displayYears = props.years.map((year) => (year < 0 ? 'present' : year)).join('&ndash;')
+</script>
+
 <template>
   <div class="entry">
-      <ResponsiveImage
-          v-if="image"
-          :src="image"
-          class="entry__image"
-          :alt="`${subtitle} logo`"
-          :width="400"
-          :height="400"
-      />
-      <div class="entry__metadata">
-          <component
-              :is="`h${headingLevel}`"
-              class="entry__title"
-          >
-              {{ title }}
-          </component>
-          <div class="entry__subtitle">{{ subtitle }}</div>
-          <div class="entry__years">{{ years.join("&ndash;") }}</div>
-          <ul
-              v-if="responsibilities"
-              class="entry__responsibilities"
-          >
-              <li
-                  v-for="responsibility in responsibilities"
-                  class="entry__responsibilities__responsibility"
-                  v-html="responsibility"
-              />
-          </ul>
-      </div>
+    <ResponsiveImage
+      v-if="image"
+      :src="image"
+      class="entry__image"
+      :alt="`${subtitle} logo`"
+      :width="400"
+      :height="400"
+    />
+    <div class="entry__metadata">
+      <component :is="`h${headingLevel}`" class="entry__title">
+        {{ title }}
+      </component>
+      <div class="entry__subtitle">{{ subtitle }}</div>
+      <div class="entry__years" v-html="displayYears" />
+      <ul v-if="responsibilities" class="entry__responsibilities">
+        <li
+          v-for="(responsibility, responsibilityIndex) in responsibilities"
+          :key="`responsibility-${responsibilityIndex}`"
+          class="entry__responsibilities__responsibility"
+          v-html="responsibility"
+        />
+      </ul>
+    </div>
   </div>
 </template>
-
-<script>
-import ResponsiveImage from '@/components/ResponsiveImage'
-
-export default {
-  name: 'TimelineEntry',
-  components: {
-    ResponsiveImage,
-  },
-  props: {
-    image: {
-      type: String,
-      required: false,
-    },
-    headingLevel: {
-      type: Number,
-      required: false,
-      default: 2,
-    },
-    title: {
-      type: String,
-      required: true,
-    },
-    subtitle: {
-      type: String,
-      required: true,
-    },
-    years: {
-      type: Array,
-      required: true,
-    },
-    responsibilities: {
-      type: Array,
-      required: false,
-      default: [],
-    },
-  },
-}
-</script>
 
 <style scoped lang="scss">
 .entry {

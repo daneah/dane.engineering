@@ -1,6 +1,7 @@
 import { shallowMount } from '@vue/test-utils'
+import { describe, it, expect } from "vitest"
 
-import BaseLink from '@/components/BaseLink'
+import BaseLink from '@/components/Link/BaseLink.vue'
 
 
 describe('BaseLink', () => {

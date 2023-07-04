@@ -1,0 +1,27 @@
+:root {
+  --text: var(--dark-gray);
+  --text-muted: var(--medium-gray);
+  --background: var(--white);
+  --nav-background: var(--light-blue);
+  --panel-background: var(--gray);
+  --radar-plot-text: var(--black);
+  --radar-plot-text-shadow: var(--white);
+  --radar-plot-lines: var(--black);
+  --radar-plot-polygon: var(--blue);
+  --link: var(--blue);
+  --link-hover: var(--black);
+
+  @media (prefers-color-scheme: dark) {
+    --text: var(--white);
+    --text-muted: var(--gray);
+    --background: var(--dark-gray);
+    --nav-background: var(--medium-gray);
+    --panel-background: var(--black);
+    --radar-plot-text: var(--white);
+    --radar-plot-text-shadow: var(--black);
+    --radar-plot-polygon: var(--gray);
+    --radar-plot-lines: var(--white);
+    --link: var(--light-blue);
+    --link-hover: var(--gray);
+  }
+}

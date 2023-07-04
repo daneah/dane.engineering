@@ -1,28 +1,22 @@
-<template>
-    <div class="embed-container">
-        <iframe
-            :src="`https://www.youtube.com/embed/${videoId}`"
-            frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-        />
-    </div>
-</template>
+<script setup lang="ts">
+import '@/components/YouTubeEmbed.vue'
 
-<script>
-export default {
-  name: 'YouTubeEmbed',
-  props: {
-    videoId: {
-      type: String,
-      required: true,
-    }
-  },
-  data () {
-    return {}
-  },
+interface YouTubeEmbedProps {
+  videoId: string
 }
+defineProps<YouTubeEmbedProps>()
 </script>
+
+<template>
+  <div class="embed-container">
+    <iframe
+      :src="`https://www.youtube.com/embed/${videoId}`"
+      frameborder="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    />
+  </div>
+</template>
 
 <style scoped lang="scss">
 .embed-container {

@@ -1,6 +1,7 @@
 import { shallowMount } from '@vue/test-utils'
+import { describe, it, expect } from "vitest"
 
-import RadarPlot from '@/components/RadarPlot/RadarPlot'
+import RadarPlot from '@/components/RadarPlot/RadarPlot.vue'
 
 
 describe('RadarPlot', () => {

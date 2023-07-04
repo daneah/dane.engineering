@@ -1,6 +1,7 @@
 import { shallowMount } from '@vue/test-utils'
+import { describe, it, expect } from "vitest"
 
-import ResponsiveImage from '@/components/ResponsiveImage'
+import ResponsiveImage from '@/components/ResponsiveImage.vue'
 
 
 describe('ResponsiveImage', () => {
@@ -8,7 +9,9 @@ describe('ResponsiveImage', () => {
         const wrapper = shallowMount(ResponsiveImage, {
             propsData: {
                 src: 'test.jpg',
-                alt: 'Test image'
+                alt: 'Test image',
+                height: 100,
+                width: 100
             }
         })
         expect(wrapper.find('img[src="test.jpg"][alt="Test image"]').element).toBeTruthy()
@@ -19,7 +22,9 @@ describe('ResponsiveImage', () => {
             propsData: {
                 src: 'test.jpg',
                 webp: 'test.webp',
-                alt: 'Test image'
+                alt: 'Test image',
+                height: 100,
+                width: 100
             }
         })
         expect(wrapper.find('picture source[srcset="test.webp"]').element).toBeTruthy()
