@@ -4122,7 +4122,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/shared@npm:3.3.4, @vue/shared@npm:^3.3.0":
+"@vue/shared@npm:3.3.4, @vue/shared@npm:^3.3.0, @vue/shared@npm:^3.3.4":
   version: 3.3.4
   resolution: "@vue/shared@npm:3.3.4"
   checksum: 12fe53ff816bfa29ea53f89212067a86512c626b8d30149ff28b36705820f6150e1fb4e4e46897ad9eddb1d1cfc02d8941053939910eed69a905f7a5509baabe
@@ -5345,6 +5345,7 @@ __metadata:
     "@vue/eslint-config-prettier": ^7.1.0
     "@vue/eslint-config-typescript": ^11.0.3
     "@vue/server-renderer": ^3.3.4
+    "@vue/shared": ^3.3.4
     "@vue/test-utils": ^2.3.2
     "@vue/tsconfig": ^0.4.0
     axios: ^1.4.0

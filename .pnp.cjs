@@ -47,6 +47,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@vue/eslint-config-prettier", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:7.1.0"],\
             ["@vue/eslint-config-typescript", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:11.0.3"],\
             ["@vue/server-renderer", "virtual:174fadbea44493263729fa2b6f65daab4b25e9b0a7a008d5887cf4635c65a7954c0e996fdf3e5d8529a9ab481440768b691dd3c59aca8db6f1f12ce74ed59685#npm:3.3.4"],\
+            ["@vue/shared", "npm:3.3.4"],\
             ["@vue/test-utils", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:2.4.0"],\
             ["@vue/tsconfig", "npm:0.4.0"],\
             ["axios", "npm:1.4.0"],\
@@ -8630,6 +8631,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@vue/eslint-config-prettier", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:7.1.0"],\
             ["@vue/eslint-config-typescript", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:11.0.3"],\
             ["@vue/server-renderer", "virtual:174fadbea44493263729fa2b6f65daab4b25e9b0a7a008d5887cf4635c65a7954c0e996fdf3e5d8529a9ab481440768b691dd3c59aca8db6f1f12ce74ed59685#npm:3.3.4"],\
+            ["@vue/shared", "npm:3.3.4"],\
             ["@vue/test-utils", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:2.4.0"],\
             ["@vue/tsconfig", "npm:0.4.0"],\
             ["axios", "npm:1.4.0"],\
