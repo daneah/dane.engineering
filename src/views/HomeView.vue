@@ -15,11 +15,11 @@ import pixelizePng from '@/assets/pixelize.png'
 import pixelizeWebp from '@/assets/pixelize.webp'
 import portraitPng from '@/assets/dane-hillard.png'
 import portraitWebp from '@/assets/dane-hillard.webp'
-import {useHead} from "@unhead/vue";
+import { useHead } from '@unhead/vue'
 
 useHead({
   titleTemplate: null,
-  title: 'Dane Hillard',
+  title: 'Dane Hillard'
 })
 </script>
 

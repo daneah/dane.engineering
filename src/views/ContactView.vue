@@ -1,11 +1,22 @@
 <script setup lang="ts">
-import {useHead} from "@unhead/vue";
+import { useHead } from '@unhead/vue'
 
 import BaseFormField from '@/components/BaseFormField.vue'
 import NetlifyForm from '@/components/NetlifyForm.vue'
 
+const pageDescription = 'Get in touch with Dane to contribute to his rampant serial hobbyism'
 useHead({
   title: 'Contact',
+  meta: [
+    {
+      name: 'description',
+      content: pageDescription
+    },
+    {
+      property: 'og:description',
+      content: pageDescription
+    }
+  ]
 })
 </script>
 

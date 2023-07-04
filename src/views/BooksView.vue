@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {useHead} from "@unhead/vue";
+import { useHead } from '@unhead/vue'
 
 import BaseLink from '@/components/Link/BaseLink.vue'
 import BaseButton from '@/components/Button/BaseButton.vue'
@@ -10,8 +10,19 @@ import publishingPythonPackagesWebp from '@/assets/publishing-python-packages-co
 import practicesOfThePythonProPng from '@/assets/practices-of-the-python-pro-cover.png'
 import practicesOfThePythonProWebp from '@/assets/practices-of-the-python-pro-cover.webp'
 
+const pageDescription = 'Programming and software development books written by Dane Hillard'
 useHead({
   title: 'Books',
+  meta: [
+    {
+      name: 'description',
+      content: pageDescription
+    },
+    {
+      property: 'og:description',
+      content: pageDescription
+    }
+  ]
 })
 </script>
 

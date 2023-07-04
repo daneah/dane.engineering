@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Butter from 'buttercms'
-import {useHead} from "@unhead/vue";
+import { useHead } from '@unhead/vue'
 import type { Ref } from 'vue'
 import { ref } from 'vue'
 
@@ -9,8 +9,19 @@ import CardGrid from '@/components/CardGrid.vue'
 import ResponsiveImage from '@/components/ResponsiveImage.vue'
 import Article from '@/components/ExternalArticle.vue'
 
+const pageDescription = 'Blog posts about (mostly) web application development by Dane Hillard'
 useHead({
   title: 'Blog posts',
+  meta: [
+    {
+      name: 'description',
+      content: pageDescription
+    },
+    {
+      property: 'og:description',
+      content: pageDescription
+    }
+  ]
 })
 
 interface FullPostData extends Butter.Post {

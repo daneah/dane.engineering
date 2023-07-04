@@ -2,10 +2,10 @@
 import highlight from 'highlight.js/lib/common'
 import type { Ref } from 'vue'
 import { useRoute } from 'vue-router'
-import {nextTick, onMounted, ref} from 'vue'
+import { nextTick, onMounted, ref } from 'vue'
 import Butter from 'buttercms'
-import {useHead} from "@unhead/vue";
-import axios from "axios";
+import { useHead } from '@unhead/vue'
+import axios from 'axios'
 
 import BaseLink from '@/components/Link/BaseLink.vue'
 
@@ -55,12 +55,19 @@ onMounted(async () => {
           highlight.highlightAll()
         })
       )
-      await axios.get(`https://api.buttercms.com/v2/content/blog_post_seo/?fields.post_slug=${route.params.slug}&auth_token=${apiToken}`)
-          .then((response) => {
-            canonicalLink.value = response.data.data.blog_post_seo.length > 0 ? response.data.data.blog_post_seo[0].canonical_link : ''
-          }).catch((response) => {
-        console.error(response)
-      })
+      await axios
+        .get(
+          `https://api.buttercms.com/v2/content/blog_post_seo/?fields.post_slug=${route.params.slug}&auth_token=${apiToken}`
+        )
+        .then((response) => {
+          canonicalLink.value =
+            response.data.data.blog_post_seo.length > 0
+              ? response.data.data.blog_post_seo[0].canonical_link
+              : ''
+        })
+        .catch((response) => {
+          console.error(response)
+        })
       loading.value = false
     })
     .catch((response) => {
@@ -73,8 +80,8 @@ const getLocalDate = (timestamp: Date): string => {
   return new Intl.DateTimeFormat('en-US', { dateStyle: 'medium' }).format(date)
 }
 
-const publishedDate = () => post.value?.data ? getLocalDate(post.value?.data.published) : ''
-const lastUpdatedDate = () => post.value?.data ? getLocalDate(post.value?.data.updated) : ''
+const publishedDate = () => (post.value?.data ? getLocalDate(post.value?.data.published) : '')
+const lastUpdatedDate = () => (post.value?.data ? getLocalDate(post.value?.data.updated) : '')
 </script>
 
 <template>
@@ -84,7 +91,9 @@ const lastUpdatedDate = () => post.value?.data ? getLocalDate(post.value?.data.u
         <h1>{{ post?.data.title }}</h1>
         <div class="post__metadata">
           {{ publishedDate() }}
-          <span v-if="publishedDate() !== lastUpdatedDate()">(Updated {{ lastUpdatedDate() }})</span>
+          <span v-if="publishedDate() !== lastUpdatedDate()"
+            >(Updated {{ lastUpdatedDate() }})</span
+          >
         </div>
         <div v-html="post.data.body" />
       </article>

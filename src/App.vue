@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { RouterView, useRoute } from 'vue-router'
-import {useHead} from "@unhead/vue";
+import { useHead } from '@unhead/vue'
 import BaseNav from '@/components/BaseNav.vue'
 import BaseLink from '@/components/Link/BaseLink.vue'
 import SocialLink from '@/components/SocialLink.vue'
@@ -9,7 +9,7 @@ import github from '@/assets/github.svg'
 import mastodon from '@/assets/mastodon.svg'
 import dev from '@/assets/dev-badge.svg'
 import medium from '@/assets/medium.svg'
-import avatar from '@public/img/icons/avatar.png'
+import avatar from '@/assets/avatar.png'
 
 const navLinks = [
   { to: 'books', text: 'Books' },
@@ -21,6 +21,8 @@ const navLinks = [
 
 const route = useRoute()
 
+const pageDescription =
+  'Dane Hillard is a software engineer and web developer interested in education, biotechnology, and open source.'
 useHead({
   titleTemplate: '%s | Dane Hillard',
   link: [
@@ -31,14 +33,22 @@ useHead({
   ],
   meta: [
     {
+      name: 'description',
+      content: pageDescription
+    },
+    {
+      property: 'og:description',
+      content: pageDescription
+    },
+    {
       property: 'og:url',
       content: () => `https://dane.engineering${route.fullPath}${route.fullPath ? '/' : ''}`
     },
     {
       property: 'og:image',
-      content: avatar,
+      content: avatar
     }
-  ],
+  ]
 })
 </script>
 
