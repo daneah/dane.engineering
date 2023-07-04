@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /thanks
+Disallow: /contact/*
+Disallow: /posts/*
+Disallow: /talks/*
