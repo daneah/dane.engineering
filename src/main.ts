@@ -11,9 +11,9 @@ import router from './router'
 const app = createApp(App)
 
 app.use(VueGtag, {
-    config: {
-        id: 'G-4MRJHT8BYG'
-    }
+  config: {
+    id: 'G-4MRJHT8BYG'
+  }
 })
 app.use(createHead())
 app.use(createPinia())
