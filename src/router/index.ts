@@ -33,7 +33,7 @@ const router = createRouter({
     {
       path: '/thanks/',
       name: 'thanks',
-      component: () => import('@/views/HomeView.vue')
+      component: () => import('@/views/ContactSuccessView.vue')
     },
     {
       path: '/posts/',
