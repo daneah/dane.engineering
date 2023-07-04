@@ -38,7 +38,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@storybook/vue3", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:7.0.24"],\
             ["@storybook/vue3-vite", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:7.0.24"],\
             ["@tsconfig/node18", "npm:2.0.1"],\
-            ["@types/express", "npm:4.17.17"],\
             ["@types/jsdom", "npm:21.1.1"],\
             ["@types/node", "npm:18.16.19"],\
             ["@unhead/addons", "npm:1.1.29"],\
@@ -55,7 +54,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint", "npm:8.44.0"],\
             ["eslint-plugin-storybook", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:0.6.12"],\
             ["eslint-plugin-vue", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:9.15.1"],\
-            ["express", "npm:4.18.2"],\
             ["highlight.js", "npm:11.8.0"],\
             ["jsdom", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:22.1.0"],\
             ["npm-run-all", "npm:4.1.5"],\
@@ -8622,7 +8620,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@storybook/vue3", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:7.0.24"],\
             ["@storybook/vue3-vite", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:7.0.24"],\
             ["@tsconfig/node18", "npm:2.0.1"],\
-            ["@types/express", "npm:4.17.17"],\
             ["@types/jsdom", "npm:21.1.1"],\
             ["@types/node", "npm:18.16.19"],\
             ["@unhead/addons", "npm:1.1.29"],\
@@ -8639,7 +8636,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint", "npm:8.44.0"],\
             ["eslint-plugin-storybook", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:0.6.12"],\
             ["eslint-plugin-vue", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:9.15.1"],\
-            ["express", "npm:4.18.2"],\
             ["highlight.js", "npm:11.8.0"],\
             ["jsdom", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:22.1.0"],\
             ["npm-run-all", "npm:4.1.5"],\
