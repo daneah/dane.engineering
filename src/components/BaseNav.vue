@@ -53,11 +53,11 @@ const activeLinks: ComputedRef<NavLinkProps[]> = computed((): NavLinkProps[] => 
       </li>
     </ul>
     <EthicalAd
-        id="sidebar"
-        class="ethical"
-        type="text"
-        :key="route.path"
-        :keywords="['python', 'webdev', 'django']"
+      id="sidebar"
+      class="ethical"
+      type="text"
+      :key="route.path"
+      :keywords="['python', 'webdev', 'django']"
     />
   </nav>
 </template>

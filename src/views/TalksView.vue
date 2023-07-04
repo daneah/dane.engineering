@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {useHead} from "@unhead/vue";
+import { useHead } from '@unhead/vue'
 
 import Talk from '@/components/TalkSummary.vue'
 import BaseLink from '@/components/Link/BaseLink.vue'
@@ -22,8 +22,20 @@ import testAndCode from '@/assets/test-and-code.jpg'
 import pycaribbean from '@/assets/pycaribbean-2019.png'
 import djangocon2018 from '@/assets/djangocon-us-2018.png'
 
+const pageDescription =
+  'Conference talks, meetup presentations, and podcast appearances by Dane Hillard'
 useHead({
   title: 'Talks',
+  meta: [
+    {
+      name: 'description',
+      content: pageDescription
+    },
+    {
+      property: 'og:description',
+      content: pageDescription
+    }
+  ]
 })
 </script>
 

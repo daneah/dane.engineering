@@ -2,7 +2,7 @@ import './assets/main.scss'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-import { createHead } from "@unhead/vue"
+import { createHead } from '@unhead/vue'
 
 import App from './App.vue'
 import router from './router'

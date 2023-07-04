@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {useHead} from "@unhead/vue";
+import { useHead } from '@unhead/vue'
 
 import RadarPlot from '@/components/RadarPlot/RadarPlot.vue'
 import Timeline from '@/components/TimelineEntryList.vue'
@@ -10,8 +10,20 @@ import type { TimelineEntryProps } from '@/components/TimelineEntry.vue'
 const timeline = useTimelineStore()
 const skills = useSkillsStore()
 
+const pageDescription =
+  'Professional skills and experience for Dane Hillard: Python, Django, JavaScript, CSS, and more.'
 useHead({
   title: 'Résumé',
+  meta: [
+    {
+      name: 'description',
+      content: pageDescription
+    },
+    {
+      property: 'og:description',
+      content: pageDescription
+    }
+  ]
 })
 </script>
 
