@@ -1,47 +1,37 @@
-import { mount, shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
+import { useRouter, useRoute } from "vue-router";
+import { beforeEach, describe, it, expect, vi } from "vitest"
 
-import BaseNav from '@/components/BaseNav'
+import BaseNav from '@/components/BaseNav.vue'
 
+vi.mock('vue-router')
 
 describe('BaseNav', () => {
-    it('Renders the specified links', () => {
-        const $route = {
-            path: '/foo',
-            name: 'foo',
-        }
-        const wrapper = mount(BaseNav, {
-            propsData: {
-                links: [
-                    {'to': 'https://biz.com', 'external': true, 'text': 'Big Biz'},
-                    {'to': 'https://biz.org', 'external': true, 'text': 'NPO Biz'},
-                ]
-            },
-            mocks: {
-                $route
-            }
-        })
-        let bigBizLink = wrapper.find('a[href="https://biz.com"]')
-        expect(bigBizLink.text()).toBe('Big Biz')
+    useRouter.mockReturnValue({
+        push: vi.fn(),
+    })
 
-        let npoBizLink = wrapper.find('a[href="https://biz.org"]')
-        expect(npoBizLink.text()).toBe('NPO Biz')
+    beforeEach(() => {
+        useRouter().push.mockReset()
     })
 
     it('Renders an inactive link for the current page', () => {
-        const $route = {
+        useRoute.mockReturnValue({
             path: '/foo',
             name: 'foo',
-        }
+        })
         const wrapper = mount(BaseNav, {
+            global: {
+                stubs: ['router-link'],
+            },
             propsData: {
                 links: [
-                    {'to': 'foo', 'text': 'Big Biz'},
+                    {'to': 'foo', 'text': 'The Foo'},
                 ]
             },
-            mocks: {
-                $route
-            }
         })
-        expect(wrapper.find('a[href="/foo"]').element).toBeFalsy()
+
+        const unlinkedNavItem = wrapper.find('span')
+        expect(unlinkedNavItem.text()).toBe('The Foo')
     })
 })

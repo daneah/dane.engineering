@@ -1,6 +1,7 @@
 import { mount, shallowMount } from '@vue/test-utils'
+import { describe, it, expect } from "vitest"
 
-import Timeline from '@/components/Timeline'
+import Timeline from '@/components/TimelineEntryList.vue'
 
 
 describe('Timeline', () => {

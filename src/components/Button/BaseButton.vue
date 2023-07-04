@@ -1,42 +1,28 @@
-<template>
-    <button
-        @click="emitClick()"
-        :type="type"
-        class="dh-button"
-    >
-        <!-- @slot The button text content -->
-        <slot />
-    </button>
-</template>
+<script setup lang="ts">
+const emit = defineEmits(['click'])
 
-<script>
-export default {
-  name: 'BaseButton',
-  props: {
-    /**
-     * The HTML5 `type` attribute to use for the underlying `<button>` element
-    */
-    type: {
-      type: String,
-      required: false,
-      default: 'button',
-    },
-  },
-  data () {
-    return {}
-  },
-  methods: {
-    emitClick() {
-      /**
-       * Click event
-       *
-       * @event click
-       */
-      this.$emit('click')
-    }
-  },
+type ButtonType = 'button' | 'submit' | 'reset'
+type ButtonVariant = 'primary' | 'secondary'
+export type ButtonProps = {
+  type?: ButtonType
+  variant?: ButtonVariant
+}
+
+withDefaults(defineProps<ButtonProps>(), {
+  type: 'button',
+  variant: 'primary'
+})
+
+const emitClick = () => {
+  emit('click')
 }
 </script>
+
+<template>
+  <button @click="emitClick()" :type="type" :class="['dh-button', `dh-button--${variant}`]">
+    <slot />
+  </button>
+</template>
 
 <style scoped lang="scss">
 .dh-button {
@@ -58,7 +44,7 @@ export default {
     background: var(--blue);
 
     &:hover {
-        background: var(--dark-blue);
+      background: var(--dark-blue);
     }
   }
 
@@ -66,7 +52,7 @@ export default {
     background: var(--gray);
 
     &:hover {
-        background: var(--medium-gray);
+      background: var(--medium-gray);
     }
   }
 }

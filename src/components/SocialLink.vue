@@ -1,54 +1,26 @@
-<template>
-    <div class="social-link">
-        <BaseLink
-            class="social-link__anchor"
-            :href="url"
-            :rel="rel"
-        >
-            <img
-                :src="image"
-                :alt="imageAlt"
-                :width="size"
-                :height="size"
-            >
-        </BaseLink>
-    </div>
-</template>
+<script setup lang="ts">
+import BaseLink from '@/components/Link/BaseLink.vue'
 
-<script>
-import BaseLink from '@/components/BaseLink'
-
-export default {
-  name: 'SocialLink',
-  components: {
-    BaseLink,
-  },
-  props: {
-    rel: {
-      type: String,
-      required: false,
-      default: undefined,
-    },
-    url: {
-      type: String,
-      required: true,
-    },
-    image: {
-      type: String,
-      required: true,
-    },
-    imageAlt: {
-      type: String,
-      required: true,
-    },
-    size: {
-      type: Number,
-      required: false,
-      default: 25,
-    },
-  },
+interface SocialLinkProps {
+  url: string
+  rel?: string
+  image: string
+  imageAlt: string
+  size?: number
 }
+
+withDefaults(defineProps<SocialLinkProps>(), {
+  size: 25
+})
 </script>
+
+<template>
+  <div class="social-link">
+    <BaseLink class="social-link__anchor" :href="url" :rel="rel">
+      <img :src="image" :alt="imageAlt" :width="size" :height="size" />
+    </BaseLink>
+  </div>
+</template>
 
 <style scoped lang="scss">
 .social-link {

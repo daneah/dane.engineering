@@ -1,62 +1,38 @@
-<template>
-    <form
-        netlify
-        netlify-honeypot="pwned"
-    >
-        <BaseFormField
-            label="Don't fill this field out, humans!"
-            type="hidden"
-            inputName="form-name"
-            :value="formName"
-        />
-        <BaseFormField
-            label="Don't fill this field out, humans!"
-            type="hidden"
-            inputName="pwned"
-        />
+<script setup lang="ts">
+import BaseButton from '@/components/Button/BaseButton.vue'
+import BaseFormField from '@/components/BaseFormField.vue'
 
-        <slot />
-
-        <div class="button-group">
-            <PrimaryButton class="button-group__button" type="submit">
-                {{ submitButtonText }}
-            </PrimaryButton>
-
-            <SecondaryButton class="button-group__button" type="reset">
-                Clear
-            </SecondaryButton>
-        </div>
-    </form>
-</template>
-
-<script>
-import PrimaryButton from '@/components/Button/PrimaryButton'
-import SecondaryButton from '@/components/Button/SecondaryButton'
-import BaseFormField from '@/components/BaseFormField'
-
-export default {
-  name: 'NetlifyForm',
-  components: {
-    PrimaryButton,
-    BaseFormField,
-    SecondaryButton,
-  },
-  props: {
-    formName: {
-      type: String,
-      required: true,
-    },
-    submitButtonText: {
-      type: String,
-      required: false,
-      default: 'Submit',
-    }
-  },
-  data () {
-    return {}
-  },
+interface NetlifyFormProps {
+  formName: string
+  submitButtonText?: string
 }
+
+withDefaults(defineProps<NetlifyFormProps>(), {
+  submitButtonText: 'Submit'
+})
 </script>
+
+<template>
+  <form netlify netlify-honeypot="pwned">
+    <BaseFormField
+      label="Don't fill this field out, humans!"
+      type="hidden"
+      inputName="form-name"
+      :value="formName"
+    />
+    <BaseFormField label="Don't fill this field out, humans!" type="hidden" inputName="pwned" />
+
+    <slot />
+
+    <div class="button-group">
+      <BaseButton class="button-group__button" type="submit">
+        {{ submitButtonText }}
+      </BaseButton>
+
+      <BaseButton variant="secondary" class="button-group__button" type="reset"> Clear </BaseButton>
+    </div>
+  </form>
+</template>
 
 <style scoped lang="scss">
 .button-group {
