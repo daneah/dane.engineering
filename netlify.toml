@@ -1,11 +1,14 @@
 [[headers]]
   for = "/*"
+
   [headers.values]
     X-Frame-Options = "SAMEORIGIN"
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
 
+[[headers]]
   for = "/toneshift.pdf"
+
   [headers.values]
     Content-Disposition = "attachment; filename=toneshift.pdf"
 
