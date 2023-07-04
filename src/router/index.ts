@@ -16,52 +16,44 @@ const router = createRouter({
       component: () => import('@/views/HomeView.vue')
     },
     {
-      path: '/talks',
+      path: '/talks/',
       name: 'talks',
-      // component: Talks,
       component: () => import('@/views/TalksView.vue')
     },
     {
-      path: '/resume',
+      path: '/resume/',
       name: 'resume',
-      // component: Resume,
       component: () => import('@/views/ResumeView.vue')
     },
     {
-      path: '/contact',
+      path: '/contact/',
       name: 'contact',
-      // component: Contact,
       component: () => import('@/views/ContactView.vue')
     },
     {
-      path: '/thanks',
+      path: '/thanks/',
       name: 'thanks',
-      // component: ContactSuccess,
       component: () => import('@/views/HomeView.vue')
     },
     {
-      path: '/posts',
+      path: '/posts/',
       name: 'posts',
-      // component: BlogPostList,
       component: () => import('@/views/PostsView.vue')
     },
     {
-      path: '/post/:slug',
+      path: '/post/:slug/',
       name: 'post',
-      // component: BlogPost,
       component: () => import('@/views/PostView.vue')
     },
     {
-      path: '/books',
+      path: '/books/',
       name: 'books',
-      // component: Books,
       component: () => import('@/views/BooksView.vue')
     },
     {
       path: '/:pathMatch(.*)',
       name: 'notfound',
-      // component: NotFound,
-      component: () => import('@/views/HomeView.vue')
+      component: () => import('@/views/NotFoundView.vue')
     }
   ]
 })
