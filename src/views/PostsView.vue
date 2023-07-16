@@ -107,6 +107,13 @@ await Butter('cd7317f31d717fc87a1374098f53651830003bed')
     <ul class="external-article-list">
       <li>
         <Article
+          title="Architectural decision records and the quest for consistency"
+          site="ITHAKA Tech"
+          link="https://medium.com/ithaka-tech/architectural-decision-records-and-the-quest-for-consistency-c9e0617aa7d0"
+        />
+      </li>
+      <li>
+        <Article
           title="Build a Blog Using Django, Vue, and GraphQL"
           site="Real Python"
           link="https://realpython.com/python-django-blog/"
@@ -136,14 +143,14 @@ await Butter('cd7317f31d717fc87a1374098f53651830003bed')
       <li>
         <Article
           title="Deploying Features Under the Cover of Darkness"
-          site="Build Smarter"
+          site="ITHAKA Tech"
           link="https://medium.com/build-smarter/deploying-features-under-cover-of-darkness-f112ce444bba"
         />
       </li>
       <li>
         <Article
           title="Blazing fast Python"
-          site="Build Smarter"
+          site="ITHAKA Tech"
           link="https://medium.com/build-smarter/blazing-fast-python-40a2b25b0495"
         />
       </li>
@@ -157,7 +164,7 @@ await Butter('cd7317f31d717fc87a1374098f53651830003bed')
       <li>
         <Article
           title="Django's cached template loader"
-          site="Build Smarter"
+          site="ITHAKA Tech"
           link="https://medium.com/build-smarter/djangos-cached-template-loader-829f7b176e6f"
         />
       </li>
