@@ -13,7 +13,8 @@ const props = defineProps<ExternalArticleProps>()
 const siteToColor: Record<string, string> = {
   ['Real Python']: '#18354c',
   ['ITHAKA Tech']: '#000000',
-  ['Easy as Python']: '#22ba9b'
+  ['Easy as Python']: '#22ba9b',
+  ['Jeli']: '#87538f'
 }
 const badgeColor = siteToColor[props.site]
 </script>
