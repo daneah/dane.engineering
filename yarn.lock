@@ -530,6 +530,7 @@ __metadata:
 "@rollup/rollup-linux-arm64-gnu@npm:4.6.0":
   version: 4.6.0
   resolution: "@rollup/rollup-linux-arm64-gnu@npm:4.6.0"
+  checksum: e9568851d9cd391a55c0ecff7e183dd3179dd8e0f382f9ad16a871523973531271c67b5bc8667db068e3e135163cd92711e19329a251bec79c7636915eee5580
   conditions: os=linux & cpu=arm64 & libc=glibc
   languageName: node
   linkType: hard
@@ -544,6 +545,7 @@ __metadata:
 "@rollup/rollup-linux-x64-gnu@npm:4.6.0":
   version: 4.6.0
   resolution: "@rollup/rollup-linux-x64-gnu@npm:4.6.0"
+  checksum: d0d48bab157c97d9b0ba1c8af3cb3da0df870644d5b655ce3d63e80a9032fe70418ffa8904989a63b6aebee6b3969884908e581702c1312f001e707063c539da
   conditions: os=linux & cpu=x64 & libc=glibc
   languageName: node
   linkType: hard
