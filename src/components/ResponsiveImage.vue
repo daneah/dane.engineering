@@ -8,7 +8,7 @@ interface ResponsiveImageProps {
   height: number
   width: number
   decoding?: ImageDecoding
-  loading?: string
+  loading?: 'lazy' | 'eager' | undefined
 }
 
 withDefaults(defineProps<ResponsiveImageProps>(), {

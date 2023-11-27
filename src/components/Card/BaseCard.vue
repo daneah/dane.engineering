@@ -41,7 +41,8 @@ defineProps<BaseCardProps>()
   --transition-easing: ease-in-out;
 
   border: 1px solid var(--gray);
-  transition: transform var(--transition-time) var(--transition-easing),
+  transition:
+    transform var(--transition-time) var(--transition-easing),
     box-shadow var(--transition-time) var(--transition-easing);
 
   &:hover {
