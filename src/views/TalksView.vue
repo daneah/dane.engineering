@@ -53,8 +53,10 @@ useHead({
         >
           <template #description>
             <p>
-              I provide a look into ITHAKA’s approach to incident management from response coordination to post-incident process flows.
-              We discuss some best practices around how the conditions are created in their processes to learn from incidents, as well as what to look out for when an organization is spending too much time in the "panic zone".
+              I provide a look into ITHAKA’s approach to incident management from response
+              coordination to post-incident process flows. We discuss some best practices around how
+              the conditions are created in their processes to learn from incidents, as well as what
+              to look out for when an organization is spending too much time in the "panic zone".
             </p>
           </template>
           <template #visuals>
