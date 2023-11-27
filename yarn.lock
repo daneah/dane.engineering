@@ -4617,11 +4617,11 @@ __metadata:
     "@rollup/rollup-linux-arm-gnueabihf":
       optional: true
     "@rollup/rollup-linux-arm64-gnu":
-      optional: true
+      optional: false
     "@rollup/rollup-linux-arm64-musl":
       optional: true
     "@rollup/rollup-linux-x64-gnu":
-      optional: true
+      optional: false
     "@rollup/rollup-linux-x64-musl":
       optional: true
     "@rollup/rollup-win32-arm64-msvc":
