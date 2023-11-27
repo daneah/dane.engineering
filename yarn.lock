@@ -151,6 +151,7 @@ __metadata:
 "@esbuild/linux-arm64@npm:0.19.8":
   version: 0.19.8
   resolution: "@esbuild/linux-arm64@npm:0.19.8"
+  checksum: d4c3e4f7d19f83d0fb9016e7c15a6d5652de11985fc0204bb4edc5993493c85e9d0fb10f552862e415cf9adeee45794bb94387741e9ab42146a6a5550a3012db
   conditions: os=linux & cpu=arm64
   languageName: node
   linkType: hard
@@ -207,6 +208,7 @@ __metadata:
 "@esbuild/linux-x64@npm:0.19.8":
   version: 0.19.8
   resolution: "@esbuild/linux-x64@npm:0.19.8"
+  checksum: 5f08ec37084f49213bf82fdb2f7f8ab005bf038a2b0b0f971502481fe93ac8f30f865d5212f5a423f4504a8c21ca7e309302b56b9c8750b6d34a6ab20c7ebfdb
   conditions: os=linux & cpu=x64
   languageName: node
   linkType: hard
@@ -505,6 +507,7 @@ __metadata:
 "@rollup/rollup-darwin-arm64@npm:4.6.0":
   version: 4.6.0
   resolution: "@rollup/rollup-darwin-arm64@npm:4.6.0"
+  checksum: 0add4397f1fb90488cfb6b53b96d56d6b9400e9ed824167edb29bd465bfa8c8b3df4d7e6de4f6adb6c8e059a28d177916ccbe162176dba2b9b6171cf054fca72
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
@@ -512,6 +515,7 @@ __metadata:
 "@rollup/rollup-darwin-x64@npm:4.6.0":
   version: 4.6.0
   resolution: "@rollup/rollup-darwin-x64@npm:4.6.0"
+  checksum: 336ab52a9d587fba0a35c76fd6907afee967c9ee982b8ce39d9bbfdf299f5d1ad93803aa213484b7bf590addbf0b3bda3e8cf121b6761caf7bc881773110cebb
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
@@ -2122,7 +2126,7 @@ __metadata:
     "@esbuild/linux-arm":
       optional: true
     "@esbuild/linux-arm64":
-      optional: true
+      optional: false
     "@esbuild/linux-ia32":
       optional: true
     "@esbuild/linux-loong64":
@@ -2136,7 +2140,7 @@ __metadata:
     "@esbuild/linux-s390x":
       optional: true
     "@esbuild/linux-x64":
-      optional: true
+      optional: false
     "@esbuild/netbsd-x64":
       optional: true
     "@esbuild/openbsd-x64":
@@ -4607,9 +4611,9 @@ __metadata:
     "@rollup/rollup-android-arm64":
       optional: true
     "@rollup/rollup-darwin-arm64":
-      optional: true
+      optional: false
     "@rollup/rollup-darwin-x64":
-      optional: true
+      optional: false
     "@rollup/rollup-linux-arm-gnueabihf":
       optional: true
     "@rollup/rollup-linux-arm64-gnu":
