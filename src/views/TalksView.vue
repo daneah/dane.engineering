@@ -6,6 +6,7 @@ import BaseLink from '@/components/Link/BaseLink.vue'
 import ResponsiveImage from '@/components/ResponsiveImage.vue'
 import YouTubeEmbed from '@/components/YouTubeEmbed.vue'
 import SpeakerDeckEmbed from '@/components/SpeakerDeckEmbed.vue'
+import jeli from '@/assets/jeli.jpg'
 import pybites from '@/assets/pybites.png'
 import djangocon2021 from '@/assets/djangocon-us-2021.png'
 import pygotham2021 from '@/assets/pygotham-tv-2021.png'
@@ -44,6 +45,24 @@ useHead({
     <h1>Talks</h1>
 
     <ul class="talk-list">
+      <li class="talk-list__talk">
+        <Talk
+          :headingLevel="2"
+          title="Creating the Conditions to Learn From Incidents"
+          subtitle="Jeli webinar"
+        >
+          <template #description>
+            <p>
+              I provide a look into ITHAKA’s approach to incident management from response coordination to post-incident process flows.
+              We discuss some best practices around how the conditions are created in their processes to learn from incidents, as well as what to look out for when an organization is spending too much time in the "panic zone".
+            </p>
+          </template>
+          <template #visuals>
+            <ResponsiveImage :src="jeli" alt="Jeli logo" :height="250" :width="250" />
+            <YouTubeEmbed video-id="nVs8xa69fcw" />
+          </template>
+        </Talk>
+      </li>
       <li class="talk-list__talk">
         <Talk
           :headingLevel="2"
