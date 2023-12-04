@@ -35,7 +35,7 @@ p {
   word-break: break-word;
   hyphens: auto;
   max-width: 65ch;
-  font-size: var(--text-lg);
+  font-size: var(--text-md);
 
   + p {
     text-indent: var(--space-lg);
@@ -54,7 +54,7 @@ blockquote {
   border-left: 8px solid var(--text-muted);
 
   p {
-    font-size: 2em;
+    font-size: var(--text-lg);
   }
 }
 
