@@ -6,6 +6,7 @@ import BaseLink from '@/components/Link/BaseLink.vue'
 import ResponsiveImage from '@/components/ResponsiveImage.vue'
 import YouTubeEmbed from '@/components/YouTubeEmbed.vue'
 import SpeakerDeckEmbed from '@/components/SpeakerDeckEmbed.vue'
+import thePythonShow from '@/assets/the-python-show.jpg'
 import jeli from '@/assets/jeli.jpg'
 import pybites from '@/assets/pybites.png'
 import djangocon2021 from '@/assets/djangocon-us-2021.png'
@@ -45,6 +46,28 @@ useHead({
     <h1>Talks</h1>
 
     <ul class="talk-list">
+      <li class="talk-list__talk">
+        <Talk
+          :headingLevel="2"
+          title="Writing Python Books"
+          subtitle="The Python Show"
+        >
+          <template #description>
+            <p>
+              Mike Driscoll and I talk a little about the ins and outs of technical book writing.
+            </p>
+          </template>
+          <template #visuals>
+            <ResponsiveImage :src="thePythonShow" alt="The Python Show logo" :height="250" :width="250" />
+            <p>
+              <BaseLink
+                href="https://www.pythonshow.com/p/26-writing-python-books"
+                >Listen to the podcast</BaseLink
+              >
+            </p>
+          </template>
+        </Talk>
+      </li>
       <li class="talk-list__talk">
         <Talk
           :headingLevel="2"
