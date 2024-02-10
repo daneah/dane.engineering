@@ -16,7 +16,8 @@ const navLinks = [
   { to: 'talks', text: 'Talks' },
   { to: 'posts', text: 'Posts' },
   { to: 'resume', text: 'Résumé' },
-  { to: 'contact', text: 'Contact' }
+  { to: 'contact', text: 'Contact' },
+  { to: 'worth-reading', text: 'Worth reading' }
 ]
 
 const route = useRoute()
