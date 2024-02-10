@@ -18,7 +18,7 @@ const canonicalLink = ref('')
 const apiToken = 'cd7317f31d717fc87a1374098f53651830003bed'
 
 useHead({
-  title: () => post.value?.data.seo_title || 'Post',
+  title: () => post.value?.seo_title || 'Post',
   link: [
     {
       rel: 'canonical',
@@ -28,19 +28,19 @@ useHead({
   meta: [
     {
       property: 'og:title',
-      content: () => `${post.value?.data.seo_title} | Dane Hillard`
+      content: () => `${post.value?.seo_title} | Dane Hillard`
     },
     {
       name: 'description',
-      content: () => post.value?.data.meta_description
+      content: () => post.value?.meta_description
     },
     {
       property: 'og:description',
-      content: () => post.value?.data.meta_description
+      content: () => post.value?.meta_description
     },
     {
       property: 'og:image',
-      content: () => post.value?.data.featured_image
+      content: () => post.value?.featured_image
     }
   ]
 })
@@ -61,8 +61,8 @@ onMounted(async () => {
         )
         .then((response) => {
           canonicalLink.value =
-            response.data.data.blog_post_seo.length > 0
-              ? response.data.data.blog_post_seo[0].canonical_link
+            response.data.blog_post_seo.length > 0
+              ? response.data.blog_post_seo[0].canonical_link
               : ''
         })
         .catch((response) => {
@@ -80,26 +80,26 @@ const getLocalDate = (timestamp: Date): string => {
   return new Intl.DateTimeFormat('en-US', { dateStyle: 'medium' }).format(date)
 }
 
-const publishedDate = () => (post.value?.data ? getLocalDate(post.value?.data.published) : '')
-const lastUpdatedDate = () => (post.value?.data ? getLocalDate(post.value?.data.updated) : '')
+const publishedDate = () => (post.value ? getLocalDate(post.value?.published) : '')
+const lastUpdatedDate = () => (post.value ? getLocalDate(post.value?.updated) : '')
 </script>
 
 <template>
   <div class="post">
     <main>
-      <article v-if="!loading && post?.data && post.data.published">
-        <h1>{{ post?.data.title }}</h1>
+      <article v-if="!loading && post && post.published">
+        <h1>{{ post?.title }}</h1>
         <div class="post__metadata">
           {{ publishedDate() }}
           <span v-if="publishedDate() !== lastUpdatedDate()"
             >(Updated {{ lastUpdatedDate() }})</span
           >
         </div>
-        <div v-html="post.data.body" />
+        <div v-html="post.body" />
       </article>
       <p v-else>Loading...</p>
     </main>
-    <footer class="post__footer" v-if="!loading && post?.data && post.data.published">
+    <footer class="post__footer" v-if="!loading && post && post.published">
       <span
         >This post is made better with
         <BaseLink href="https://buttercms.com">Butter</BaseLink></span
