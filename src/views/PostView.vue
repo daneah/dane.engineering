@@ -12,7 +12,7 @@ import BaseLink from '@/components/Link/BaseLink.vue'
 const route = useRoute()
 
 const loading = ref(true)
-const post: Ref<Butter.PostRetrieveResponse | undefined> = ref(undefined)
+const post: Ref<Butter.Post | undefined> = ref(undefined)
 const canonicalLink = ref('')
 
 const apiToken = 'cd7317f31d717fc87a1374098f53651830003bed'
@@ -49,7 +49,7 @@ onMounted(async () => {
   await Butter(apiToken)
     .post.retrieve(route.params.slug as string)
     .then(async (response) => {
-      post.value = response.data
+      post.value = (response.data as unknown as Butter.Post)
       nextTick(() =>
         window.requestAnimationFrame(() => {
           highlight.highlightAll()
