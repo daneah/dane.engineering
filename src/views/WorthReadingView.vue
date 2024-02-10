@@ -59,7 +59,7 @@ const blogs = [
     <p>{{ pageDescription }}</p>
 
     <ul>
-      <li v-for="blog in blogs" :key="blog.id">
+      <li v-for="blog in blogs" :key="blog.url">
         <BaseLink :href="blog.url">{{ blog.title }}</BaseLink>
       </li>
     </ul>
