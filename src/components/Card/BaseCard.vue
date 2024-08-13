@@ -66,8 +66,10 @@ defineProps<BaseCardProps>()
       font-size: var(--text-lg);
     }
 
-    word-break: break-word;
-    hyphens: auto;
+    & {
+      word-break: break-word;
+      hyphens: auto;
+    }
   }
 
   &:deep(img) {

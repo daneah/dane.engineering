@@ -47,21 +47,21 @@ useHead({
 
     <ul class="talk-list">
       <li class="talk-list__talk">
-        <Talk
-          :headingLevel="2"
-          title="Writing Python Books"
-          subtitle="The Python Show"
-        >
+        <Talk :headingLevel="2" title="Writing Python Books" subtitle="The Python Show">
           <template #description>
             <p>
               Mike Driscoll and I talk a little about the ins and outs of technical book writing.
             </p>
           </template>
           <template #visuals>
-            <ResponsiveImage :src="thePythonShow" alt="The Python Show logo" :height="250" :width="250" />
+            <ResponsiveImage
+              :src="thePythonShow"
+              alt="The Python Show logo"
+              :height="250"
+              :width="250"
+            />
             <p>
-              <BaseLink
-                href="https://www.pythonshow.com/p/26-writing-python-books"
+              <BaseLink href="https://www.pythonshow.com/p/26-writing-python-books"
                 >Listen to the podcast</BaseLink
               >
             </p>

@@ -36,7 +36,7 @@ const activeLinks: ComputedRef<NavLinkProps[]> = computed((): NavLinkProps[] => 
           custom
           v-slot="{ navigate }"
         >
-          <li @click="navigate" @keypress.enter="navigate" role="link" class="nav__link">
+          <li @click="navigate" role="link" class="nav__link">
             <BaseLink :href="router.resolve({ name: link.to }).href" :external="false">
               {{ link.text }}
             </BaseLink>

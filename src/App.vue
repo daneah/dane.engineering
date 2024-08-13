@@ -62,7 +62,7 @@ useHead({
         </template>
         <template v-else>
           <router-link :to="{ name: 'home' }" custom v-slot="{ navigate }">
-            <div @click="navigate" @keypress.enter="navigate" role="link">
+            <div @click="navigate" role="link">
               <BaseLink href="/" class="impact-heading" :external="false" :clean="true">
                 Hi, I'm Dane.
               </BaseLink>
