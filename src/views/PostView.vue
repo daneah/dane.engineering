@@ -49,7 +49,7 @@ onMounted(async () => {
   await Butter(apiToken)
     .post.retrieve(route.params.slug as string)
     .then(async (response) => {
-      post.value = (response.data as unknown as Butter.Post)
+      post.value = response.data as unknown as Butter.Post
       nextTick(() =>
         window.requestAnimationFrame(() => {
           highlight.highlightAll()

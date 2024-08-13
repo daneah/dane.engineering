@@ -25,7 +25,7 @@ useHead({
     <p>
       It looks like the page you're looking for doesn't exist. Try going
       <router-link :to="{ name: 'home' }" custom v-slot="{ navigate }">
-        <span @click="navigate" @keypress.enter="navigate" role="link">
+        <span @click="navigate" role="link">
           <BaseLink href="/" :external="false">home</BaseLink>
         </span>
       </router-link>

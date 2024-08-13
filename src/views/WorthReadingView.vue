@@ -3,7 +3,8 @@ import { useHead } from '@unhead/vue'
 
 import BaseLink from '@/components/Link/BaseLink.vue'
 
-const pageDescription = 'In no particular order, these are some of the other blogs out there that are worth your while to check out.'
+const pageDescription =
+  'In no particular order, these are some of the other blogs out there that are worth your while to check out.'
 useHead({
   title: 'Worth reading',
   meta: [
@@ -20,7 +21,7 @@ useHead({
 const blogs = [
   {
     url: 'https://nedbatchelder.com/',
-    title: 'Ned Batchelder\'s blog'
+    title: "Ned Batchelder's blog"
   },
   {
     url: 'https://danluu.com/',
