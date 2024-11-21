@@ -2138,10 +2138,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["cross-spawn", [\
-      ["npm:6.0.5", {\
-        "packageLocation": "./.yarn/cache/cross-spawn-npm-6.0.5-2deab6c280-f07e643b48.zip/node_modules/cross-spawn/",\
+      ["npm:6.0.6", {\
+        "packageLocation": "./.yarn/cache/cross-spawn-npm-6.0.6-a983639a0d-7abf6137b2.zip/node_modules/cross-spawn/",\
         "packageDependencies": [\
-          ["cross-spawn", "npm:6.0.5"],\
+          ["cross-spawn", "npm:6.0.6"],\
           ["nice-try", "npm:1.0.5"],\
           ["path-key", "npm:2.0.1"],\
           ["semver", "npm:5.7.2"],\
@@ -4617,7 +4617,7 @@ const RAW_RUNTIME_STATE =
           ["npm-run-all", "npm:4.1.5"],\
           ["ansi-styles", "npm:3.2.1"],\
           ["chalk", "npm:2.4.2"],\
-          ["cross-spawn", "npm:6.0.5"],\
+          ["cross-spawn", "npm:6.0.6"],\
           ["memorystream", "npm:0.3.1"],\
           ["minimatch", "npm:3.1.2"],\
           ["pidtree", "npm:0.3.1"],\
