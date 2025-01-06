@@ -49,7 +49,7 @@ onMounted(async () => {
   await Butter(apiToken)
     .post.retrieve(route.params.slug as string)
     .then(async (response) => {
-      post.value = response.data.data as unknown as Butter.Post
+      post.value = response.data?.data as unknown as Butter.Post
       nextTick(() =>
         window.requestAnimationFrame(() => {
           highlight.highlightAll()
@@ -61,7 +61,7 @@ onMounted(async () => {
         )
         .then((response) => {
           canonicalLink.value =
-            response.data.data.blog_post_seo.length > 0
+            response.data?.data.blog_post_seo.length > 0
               ? response.data.data.blog_post_seo[0].canonical_link
               : ''
         })
