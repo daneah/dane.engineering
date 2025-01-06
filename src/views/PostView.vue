@@ -2,7 +2,7 @@
 import highlight from 'highlight.js/lib/common'
 import type { Ref } from 'vue'
 import { useRoute } from 'vue-router'
-import { nextTick, onMounted, ref } from 'vue'
+import { nextTick, onMounted, onUpdated, ref } from 'vue'
 import Butter from 'buttercms'
 import { useHead } from '@unhead/vue'
 import axios from 'axios'
@@ -45,16 +45,20 @@ useHead({
   ]
 })
 
+onUpdated(() => {
+  nextTick(() =>
+    window.requestAnimationFrame(() => {
+      highlight.highlightAll()
+    })
+  )
+})
+
 onMounted(async () => {
   await Butter(apiToken)
     .post.retrieve(route.params.slug as string)
     .then(async (response) => {
       post.value = response.data?.data as unknown as Butter.Post
-      nextTick(() =>
-        window.requestAnimationFrame(() => {
-          highlight.highlightAll()
-        })
-      )
+
       await axios
         .get(
           `https://api.buttercms.com/v2/content/blog_post_seo/?fields.post_slug=${route.params.slug}&auth_token=${apiToken}`
