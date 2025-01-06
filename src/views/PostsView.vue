@@ -111,13 +111,6 @@ await Butter('cd7317f31d717fc87a1374098f53651830003bed')
     <ul class="external-article-list">
       <li>
         <Article
-          title="Creating The Conditions to Learn From Incidents"
-          site="Jeli"
-          link="https://www.jeli.io/blog/creating-the-conditions-to-learn-from-incidents"
-        />
-      </li>
-      <li>
-        <Article
           title="Find bugs before your users do: closing the software development risk exposure gap"
           site="ITHAKA Tech"
           link="https://medium.com/ithaka-tech/find-bugs-before-your-users-do-closing-the-software-development-risk-exposure-gap-cace5dbd19d2"
