@@ -18,6 +18,7 @@ import djangoChat from '@/assets/django-chat.jpg'
 import talkPython from '@/assets/talk-python.png'
 import djangocon2019 from '@/assets/djangocon-us-2019.jpg'
 import pyohio from '@/assets/pyohio-2019.png'
+import pytexas from '@/assets/pytexas.jpg'
 import noDogma from '@/assets/no-dogma.jpg'
 import theDevHell from '@/assets/the-dev-hell.png'
 import testAndCode from '@/assets/test-and-code.jpg'
@@ -46,6 +47,26 @@ useHead({
     <h1>Talks</h1>
 
     <ul class="talk-list">
+      <li class="talk-list__talk">
+        <Talk
+          :headingLevel="2"
+          title="Placemaking and Productivity"
+          subtitle="Build Maintainable Broad-Scale Tools With a Small Team"
+        >
+          <template #description>
+            <p>
+              I tell the story of how we started moving from a cottage industry of bespoke scripts to
+              a modular, scalable command-line interface. This story takes you through the principles,
+              practices, and specific packages we used to realize this so that you might be able to
+              do the same within your organization.
+            </p>
+          </template>
+          <template #visuals>
+            <ResponsiveImage :src="pytexas" alt="PyTexas logo" :height="250" :width="250" />
+            <YouTubeEmbed video-id="BbWTiGJQ9X0" />
+          </template>
+        </Talk>
+      </li>
       <li class="talk-list__talk">
         <Talk :headingLevel="2" title="Writing Python Books" subtitle="The Python Show">
           <template #description>
