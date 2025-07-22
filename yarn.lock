@@ -1750,6 +1750,7 @@ __metadata:
     react-dom: "npm:^18.3.1"
     sass: "npm:^1.77.8"
     typescript: "npm:~5.5.4"
+    vite: "npm:^5.4.19"
     vitest: "npm:2.1.9"
     vue: "npm:^3.4.37"
     vue-gtag: "npm:^2.0.1"
@@ -5546,7 +5547,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^5.0.0":
+"vite@npm:^5.0.0, vite@npm:^5.4.19":
   version: 5.4.19
   resolution: "vite@npm:5.4.19"
   dependencies:

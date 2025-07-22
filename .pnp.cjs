@@ -54,6 +54,7 @@ const RAW_RUNTIME_STATE =
           ["react-dom", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:18.3.1"],\
           ["sass", "npm:1.77.8"],\
           ["typescript", "patch:typescript@npm%3A5.5.4#optional!builtin<compat/typescript>::version=5.5.4&hash=379a07"],\
+          ["vite", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:5.4.19"],\
           ["vitest", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:2.1.9"],\
           ["vue", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:3.4.37"],\
           ["vue-gtag", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:2.0.1"],\
@@ -1148,7 +1149,7 @@ const RAW_RUNTIME_STATE =
           ["@vitejs/plugin-vue", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:5.1.2"],\
           ["@types/vite", null],\
           ["@types/vue", null],\
-          ["vite", null],\
+          ["vite", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:5.4.19"],\
           ["vue", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:3.4.37"]\
         ],\
         "packagePeers": [\
@@ -2248,6 +2249,7 @@ const RAW_RUNTIME_STATE =
           ["react-dom", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:18.3.1"],\
           ["sass", "npm:1.77.8"],\
           ["typescript", "patch:typescript@npm%3A5.5.4#optional!builtin<compat/typescript>::version=5.5.4&hash=379a07"],\
+          ["vite", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:5.4.19"],\
           ["vitest", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:2.1.9"],\
           ["vue", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:3.4.37"],\
           ["vue-gtag", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:2.0.1"],\
@@ -6404,6 +6406,49 @@ const RAW_RUNTIME_STATE =
           ["vite", "npm:5.4.19"]\
         ],\
         "linkType": "SOFT"\
+      }],\
+      ["virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:5.4.19", {\
+        "packageLocation": "./.yarn/__virtual__/vite-virtual-8139234939/0/cache/vite-npm-5.4.19-6d369030b0-27900c87ec.zip/node_modules/vite/",\
+        "packageDependencies": [\
+          ["vite", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:5.4.19"],\
+          ["@types/less", null],\
+          ["@types/lightningcss", null],\
+          ["@types/node", "npm:22.2.0"],\
+          ["@types/sass", null],\
+          ["@types/sass-embedded", null],\
+          ["@types/stylus", null],\
+          ["@types/sugarss", null],\
+          ["@types/terser", null],\
+          ["esbuild", "npm:0.21.5"],\
+          ["fsevents", "patch:fsevents@npm%3A2.3.3#optional!builtin<compat/fsevents>::version=2.3.3&hash=df0bf1"],\
+          ["less", null],\
+          ["lightningcss", null],\
+          ["postcss", "npm:8.4.47"],\
+          ["rollup", "npm:4.22.4"],\
+          ["sass", "npm:1.77.8"],\
+          ["sass-embedded", null],\
+          ["stylus", null],\
+          ["sugarss", null],\
+          ["terser", null]\
+        ],\
+        "packagePeers": [\
+          "@types/less",\
+          "@types/lightningcss",\
+          "@types/node",\
+          "@types/sass-embedded",\
+          "@types/sass",\
+          "@types/stylus",\
+          "@types/sugarss",\
+          "@types/terser",\
+          "less",\
+          "lightningcss",\
+          "sass-embedded",\
+          "sass",\
+          "stylus",\
+          "sugarss",\
+          "terser"\
+        ],\
+        "linkType": "HARD"\
       }],\
       ["virtual:84dcff71db8be9cbe950d0756a4f7772695095a485baf88f1cc98436fdd0ea49e9c6ac7f535ec4b7b26fd24d60bd4323cc6ed6d8629d5b2015f92d4613c7ffb6#npm:5.4.19", {\
         "packageLocation": "./.yarn/__virtual__/vite-virtual-d6f1744554/0/cache/vite-npm-5.4.19-6d369030b0-27900c87ec.zip/node_modules/vite/",\
