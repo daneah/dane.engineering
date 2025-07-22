@@ -41,7 +41,7 @@ const RAW_RUNTIME_STATE =
           ["@vue/shared", "npm:3.4.37"],\
           ["@vue/test-utils", "npm:2.4.6"],\
           ["@vue/tsconfig", "npm:0.5.1"],\
-          ["axios", "npm:1.7.3"],\
+          ["axios", "npm:1.10.0"],\
           ["buttercms", "npm:2.1.0"],\
           ["eslint", "npm:8.57.0"],\
           ["eslint-plugin-vue", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:9.27.0"],\
@@ -1779,11 +1779,11 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["axios", [\
-      ["npm:1.7.3", {\
-        "packageLocation": "./.yarn/cache/axios-npm-1.7.3-a63743a582-7f92af2057.zip/node_modules/axios/",\
+      ["npm:1.10.0", {\
+        "packageLocation": "./.yarn/cache/axios-npm-1.10.0-0c877f1ea6-d43c80316a.zip/node_modules/axios/",\
         "packageDependencies": [\
-          ["axios", "npm:1.7.3"],\
-          ["follow-redirects", "virtual:a63743a5822c3f4f0080debf0a45615212b5bd005b763a14221b5559794a4eab59edf521118fa1c78a2444ffb22b1d205323e984eccd051abda1334fb302f130#npm:1.15.6"],\
+          ["axios", "npm:1.10.0"],\
+          ["follow-redirects", "virtual:0c877f1ea627088aa7a1bdfef2b23b74690ff0132006b80a74eda5cd1c7ddf9090e5571b1d9e31fbfe0c1a2d6e4bb2fbebb5c63ff72b896b6cbc80384f357768#npm:1.15.6"],\
           ["form-data", "npm:4.0.4"],\
           ["proxy-from-env", "npm:1.1.0"]\
         ],\
@@ -2219,7 +2219,7 @@ const RAW_RUNTIME_STATE =
           ["@vue/shared", "npm:3.4.37"],\
           ["@vue/test-utils", "npm:2.4.6"],\
           ["@vue/tsconfig", "npm:0.5.1"],\
-          ["axios", "npm:1.7.3"],\
+          ["axios", "npm:1.10.0"],\
           ["buttercms", "npm:2.1.0"],\
           ["eslint", "npm:8.57.0"],\
           ["eslint-plugin-vue", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:9.27.0"],\
@@ -3116,10 +3116,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:a63743a5822c3f4f0080debf0a45615212b5bd005b763a14221b5559794a4eab59edf521118fa1c78a2444ffb22b1d205323e984eccd051abda1334fb302f130#npm:1.15.6", {\
-        "packageLocation": "./.yarn/__virtual__/follow-redirects-virtual-74498d9869/0/cache/follow-redirects-npm-1.15.6-50635fe51d-70c7612c4c.zip/node_modules/follow-redirects/",\
+      ["virtual:0c877f1ea627088aa7a1bdfef2b23b74690ff0132006b80a74eda5cd1c7ddf9090e5571b1d9e31fbfe0c1a2d6e4bb2fbebb5c63ff72b896b6cbc80384f357768#npm:1.15.6", {\
+        "packageLocation": "./.yarn/__virtual__/follow-redirects-virtual-def8cc5a71/0/cache/follow-redirects-npm-1.15.6-50635fe51d-70c7612c4c.zip/node_modules/follow-redirects/",\
         "packageDependencies": [\
-          ["follow-redirects", "virtual:a63743a5822c3f4f0080debf0a45615212b5bd005b763a14221b5559794a4eab59edf521118fa1c78a2444ffb22b1d205323e984eccd051abda1334fb302f130#npm:1.15.6"],\
+          ["follow-redirects", "virtual:0c877f1ea627088aa7a1bdfef2b23b74690ff0132006b80a74eda5cd1c7ddf9090e5571b1d9e31fbfe0c1a2d6e4bb2fbebb5c63ff72b896b6cbc80384f357768#npm:1.15.6"],\
           ["@types/debug", null],\
           ["debug", null]\
         ],\
