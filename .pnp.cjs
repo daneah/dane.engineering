@@ -4309,10 +4309,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["lodash", [\
-      ["npm:4.17.21", {\
-        "packageLocation": "./.yarn/cache/lodash-npm-4.17.21-6382451519-c08619c038.zip/node_modules/lodash/",\
+      ["npm:4.17.23", {\
+        "packageLocation": "./.yarn/cache/lodash-npm-4.17.23-50bdb1c01a-82504c8825.zip/node_modules/lodash/",\
         "packageDependencies": [\
-          ["lodash", "npm:4.17.21"]\
+          ["lodash", "npm:4.17.23"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -6715,7 +6715,7 @@ const RAW_RUNTIME_STATE =
           ["eslint-visitor-keys", "npm:3.4.1"],\
           ["espree", "npm:9.6.0"],\
           ["esquery", "npm:1.5.0"],\
-          ["lodash", "npm:4.17.21"],\
+          ["lodash", "npm:4.17.23"],\
           ["semver", "npm:7.5.3"]\
         ],\
         "packagePeers": [\
@@ -6735,7 +6735,7 @@ const RAW_RUNTIME_STATE =
           ["eslint-visitor-keys", "npm:3.4.1"],\
           ["espree", "npm:9.6.0"],\
           ["esquery", "npm:1.5.0"],\
-          ["lodash", "npm:4.17.21"],\
+          ["lodash", "npm:4.17.23"],\
           ["semver", "npm:7.5.3"]\
         ],\
         "packagePeers": [\
