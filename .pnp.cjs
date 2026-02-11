@@ -41,7 +41,7 @@ const RAW_RUNTIME_STATE =
           ["@vue/shared", "npm:3.4.37"],\
           ["@vue/test-utils", "npm:2.4.6"],\
           ["@vue/tsconfig", "npm:0.5.1"],\
-          ["axios", "npm:1.12.1"],\
+          ["axios", "npm:1.13.5"],\
           ["buttercms", "npm:2.1.0"],\
           ["eslint", "npm:8.57.0"],\
           ["eslint-plugin-vue", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:9.27.0"],\
@@ -1796,12 +1796,12 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["axios", [\
-      ["npm:1.12.1", {\
-        "packageLocation": "./.yarn/cache/axios-npm-1.12.1-ff6a194b62-928e88cba1.zip/node_modules/axios/",\
+      ["npm:1.13.5", {\
+        "packageLocation": "./.yarn/cache/axios-npm-1.13.5-ed8865f696-db726d0990.zip/node_modules/axios/",\
         "packageDependencies": [\
-          ["axios", "npm:1.12.1"],\
-          ["follow-redirects", "virtual:ff6a194b620abb339a40ad1b9d30dd71edce96bc69211f50dc1507f4df2083120914f7b88a35950a48e91e34be22a064bd3b6343ddce73235aca192c2efbd3c4#npm:1.15.6"],\
-          ["form-data", "npm:4.0.4"],\
+          ["axios", "npm:1.13.5"],\
+          ["follow-redirects", "virtual:ed8865f696cebfbc109886bcd430c823f73cb3daaa6597dac1f006748e0fc10ed81734823f049aec03fadda2608be9aa560f98b843c8321891f307f4a175db89#npm:1.15.11"],\
+          ["form-data", "npm:4.0.5"],\
           ["proxy-from-env", "npm:1.1.0"]\
         ],\
         "linkType": "HARD"\
@@ -2236,7 +2236,7 @@ const RAW_RUNTIME_STATE =
           ["@vue/shared", "npm:3.4.37"],\
           ["@vue/test-utils", "npm:2.4.6"],\
           ["@vue/tsconfig", "npm:0.5.1"],\
-          ["axios", "npm:1.12.1"],\
+          ["axios", "npm:1.13.5"],\
           ["buttercms", "npm:2.1.0"],\
           ["eslint", "npm:8.57.0"],\
           ["eslint-plugin-vue", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:9.27.0"],\
@@ -3149,17 +3149,17 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["follow-redirects", [\
-      ["npm:1.15.6", {\
-        "packageLocation": "./.yarn/cache/follow-redirects-npm-1.15.6-50635fe51d-70c7612c4c.zip/node_modules/follow-redirects/",\
+      ["npm:1.15.11", {\
+        "packageLocation": "./.yarn/cache/follow-redirects-npm-1.15.11-ae7b2db266-07372fd74b.zip/node_modules/follow-redirects/",\
         "packageDependencies": [\
-          ["follow-redirects", "npm:1.15.6"]\
+          ["follow-redirects", "npm:1.15.11"]\
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:ff6a194b620abb339a40ad1b9d30dd71edce96bc69211f50dc1507f4df2083120914f7b88a35950a48e91e34be22a064bd3b6343ddce73235aca192c2efbd3c4#npm:1.15.6", {\
-        "packageLocation": "./.yarn/__virtual__/follow-redirects-virtual-732acf3815/0/cache/follow-redirects-npm-1.15.6-50635fe51d-70c7612c4c.zip/node_modules/follow-redirects/",\
+      ["virtual:ed8865f696cebfbc109886bcd430c823f73cb3daaa6597dac1f006748e0fc10ed81734823f049aec03fadda2608be9aa560f98b843c8321891f307f4a175db89#npm:1.15.11", {\
+        "packageLocation": "./.yarn/__virtual__/follow-redirects-virtual-eba31d82f7/0/cache/follow-redirects-npm-1.15.11-ae7b2db266-07372fd74b.zip/node_modules/follow-redirects/",\
         "packageDependencies": [\
-          ["follow-redirects", "virtual:ff6a194b620abb339a40ad1b9d30dd71edce96bc69211f50dc1507f4df2083120914f7b88a35950a48e91e34be22a064bd3b6343ddce73235aca192c2efbd3c4#npm:1.15.6"],\
+          ["follow-redirects", "virtual:ed8865f696cebfbc109886bcd430c823f73cb3daaa6597dac1f006748e0fc10ed81734823f049aec03fadda2608be9aa560f98b843c8321891f307f4a175db89#npm:1.15.11"],\
           ["@types/debug", null],\
           ["debug", null]\
         ],\
@@ -3196,6 +3196,18 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/form-data-npm-4.0.4-10eb4ef9c3-a4b62e2193.zip/node_modules/form-data/",\
         "packageDependencies": [\
           ["form-data", "npm:4.0.4"],\
+          ["asynckit", "npm:0.4.0"],\
+          ["combined-stream", "npm:1.0.8"],\
+          ["es-set-tostringtag", "npm:2.1.0"],\
+          ["hasown", "npm:2.0.2"],\
+          ["mime-types", "npm:2.1.35"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:4.0.5", {\
+        "packageLocation": "./.yarn/cache/form-data-npm-4.0.5-c35fce815a-52ecd6e927.zip/node_modules/form-data/",\
+        "packageDependencies": [\
+          ["form-data", "npm:4.0.5"],\
           ["asynckit", "npm:0.4.0"],\
           ["combined-stream", "npm:1.0.8"],\
           ["es-set-tostringtag", "npm:2.1.0"],\
