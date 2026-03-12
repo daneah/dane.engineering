@@ -45,7 +45,7 @@ await Butter('cd7317f31d717fc87a1374098f53651830003bed')
     if (response.data) {
       const imageDimensionCalls = (response.data.data as unknown as Butter.Post[]).map(
         (post: Butter.Post) => {
-          const imageId = post.featured_image.replace(`${butterDomain}/`, '')
+          const imageId = post.featured_image?.replace(`${butterDomain}/`, '')
           const imageDimensionsUrl = `${butterDomain}/resize=width:${thumbnailSize},height:${thumbnailSize}/imagesize/${imageId}`
           return fetch(imageDimensionsUrl)
             .then((response) => response.json())
@@ -57,7 +57,7 @@ await Butter('cd7317f31d717fc87a1374098f53651830003bed')
           posts.value = (response.data.data as unknown as Butter.Post[]).map(
             (post: Butter.Post, postIndex: number) => {
               const value = values[postIndex]
-              const imageId = post.featured_image.replace(`${butterDomain}/`, '')
+              const imageId = post.featured_image?.replace(`${butterDomain}/`, '')
               return {
                 ...post,
                 thumbnailSrc: `${butterDomain}/resize=width:${thumbnailSize},height:${thumbnailSize}/${imageId}`,

@@ -84,8 +84,21 @@ const getLocalDate = (timestamp: Date): string => {
   return new Intl.DateTimeFormat('en-US', { dateStyle: 'medium' }).format(date)
 }
 
-const publishedDate = () => (post.value ? getLocalDate(post.value?.published) : '')
-const lastUpdatedDate = () => (post.value ? getLocalDate(post.value?.updated) : '')
+const publishedDate = (): string => {
+  if (post.value && post.value.published) {
+    return getLocalDate(new Date(post.value.published))
+  } else {
+    return ''
+  }
+}
+
+const lastUpdatedDate = (): string => {
+  if (post.value && post.value.updated) {
+    return getLocalDate(new Date(post.value.updated))
+  } else {
+    return ''
+  }
+}
 </script>
 
 <template>
@@ -113,7 +126,7 @@ const lastUpdatedDate = () => (post.value ? getLocalDate(post.value?.updated) : 
 </template>
 
 <style lang="scss" scoped>
-@import '../assets/_links';
+@use '../assets/links';
 
 .post {
   margin-top: 0;

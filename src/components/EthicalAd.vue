@@ -11,7 +11,7 @@ withDefaults(defineProps<EthicalAdProps>(), {
   keywords: () => []
 })
 
-onMounted(() => (globalThis as any).ethicalads?.load())
+onMounted(() => (globalThis as { ethicalads?: { load: () => void } }).ethicalads?.load())
 
 const darkMode = () =>
   globalThis.matchMedia && globalThis.matchMedia('(prefers-color-scheme: dark)').matches
