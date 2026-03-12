@@ -1,9 +1,9 @@
-@import 'highlight.js/styles/github-dark.css';
-@import 'colors';
-@import 'theme';
-@import 'spacing';
-@import 'typography';
-@import 'links';
+@use 'highlight.js/styles/github-dark.css';
+@use 'colors';
+@use 'theme';
+@use 'spacing';
+@use 'typography';
+@use 'links';
 
 * {
   margin: 0;
@@ -73,7 +73,7 @@ article {
 }
 
 .impact-heading {
-  @include title-font;
+  @include typography.title-font;
   font-size: var(--text-xl);
 }
 

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 interface BaseCardProps {
-  link?: Object
+  link?: object
 }
 
 defineProps<BaseCardProps>()
