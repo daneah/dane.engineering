@@ -28,7 +28,7 @@ const RAW_RUNTIME_STATE =
       [null, {\
         "packageLocation": "./",\
         "packageDependencies": [\
-          ["@tsconfig/node18", "npm:18.2.6"],\
+          ["@tsconfig/node22", "npm:22.0.5"],\
           ["@types/jsdom", "npm:28.0.0"],\
           ["@types/node", "npm:25.4.0"],\
           ["@unhead/addons", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:2.1.12"],\
@@ -1274,11 +1274,11 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["@tsconfig/node18", [\
-      ["npm:18.2.6", {\
-        "packageLocation": "./.yarn/cache/@tsconfig-node18-npm-18.2.6-0551d6d18a-e3d907c20d.zip/node_modules/@tsconfig/node18/",\
+    ["@tsconfig/node22", [\
+      ["npm:22.0.5", {\
+        "packageLocation": "./.yarn/cache/@tsconfig-node22-npm-22.0.5-db89de342a-2e21177946.zip/node_modules/@tsconfig/node22/",\
         "packageDependencies": [\
-          ["@tsconfig/node18", "npm:18.2.6"]\
+          ["@tsconfig/node22", "npm:22.0.5"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -2715,16 +2715,6 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
-      ["npm:7.0.3", {\
-        "packageLocation": "./.yarn/cache/cross-spawn-npm-7.0.3-e4ff3e65b3-e1a13869d2.zip/node_modules/cross-spawn/",\
-        "packageDependencies": [\
-          ["cross-spawn", "npm:7.0.3"],\
-          ["path-key", "npm:3.1.1"],\
-          ["shebang-command", "npm:2.0.0"],\
-          ["which", "npm:2.0.2"]\
-        ],\
-        "linkType": "HARD"\
-      }],\
       ["npm:7.0.6", {\
         "packageLocation": "./.yarn/cache/cross-spawn-npm-7.0.6-264bddf921-0d52657d7a.zip/node_modules/cross-spawn/",\
         "packageDependencies": [\
@@ -2782,7 +2772,7 @@ const RAW_RUNTIME_STATE =
       ["workspace:.", {\
         "packageLocation": "./",\
         "packageDependencies": [\
-          ["@tsconfig/node18", "npm:18.2.6"],\
+          ["@tsconfig/node22", "npm:22.0.5"],\
           ["@types/jsdom", "npm:28.0.0"],\
           ["@types/node", "npm:25.4.0"],\
           ["@unhead/addons", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:2.1.12"],\
@@ -3625,7 +3615,7 @@ const RAW_RUNTIME_STATE =
       ["npm:3.1.1", {\
         "packageLocation": "./.yarn/cache/foreground-child-npm-3.1.1-77e78ed774-087edd4485.zip/node_modules/foreground-child/",\
         "packageDependencies": [\
-          ["cross-spawn", "npm:7.0.3"],\
+          ["cross-spawn", "npm:7.0.6"],\
           ["foreground-child", "npm:3.1.1"],\
           ["signal-exit", "npm:4.0.2"]\
         ],\
