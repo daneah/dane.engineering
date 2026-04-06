@@ -45,7 +45,7 @@
     "react-dom": "^19.2.4",
     "sass": "^1.98.0",
     "typescript": "^5.9.3",
-    "vite": "^7.3.1",
+    "vite": "^7.3.2",
     "vitest": "4.0.18",
     "vue-eslint-parser": "^10.4.0",
     "vue-tsc": "^3.2.5"
