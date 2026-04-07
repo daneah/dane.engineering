@@ -2172,6 +2172,7 @@ __metadata:
     sass: "npm:^1.98.0"
     typescript: "npm:^5.9.3"
     unhead: "npm:^2.1.12"
+    vite: "npm:^7.3.2"
     vitest: "npm:4.0.18"
     vue: "npm:^3.5.30"
     vue-eslint-parser: "npm:^10.4.0"
@@ -5391,7 +5392,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^6.0.0 || ^7.0.0":
+"vite@npm:^6.0.0 || ^7.0.0, vite@npm:^7.3.2":
   version: 7.3.2
   resolution: "vite@npm:7.3.2"
   dependencies:
