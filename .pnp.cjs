@@ -55,7 +55,7 @@ const RAW_RUNTIME_STATE =
           ["react-dom", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:19.2.4"],\
           ["sass", "npm:1.98.0"],\
           ["typescript", "patch:typescript@npm%3A5.9.3#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5"],\
-          ["unhead", "npm:2.1.12"],\
+          ["unhead", "npm:2.1.13"],\
           ["vite", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:7.3.2"],\
           ["vitest", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:4.0.18"],\
           ["vue", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:3.5.30"],\
@@ -1628,7 +1628,7 @@ const RAW_RUNTIME_STATE =
           ["magic-string", "npm:0.30.21"],\
           ["mlly", "npm:1.8.1"],\
           ["ufo", "npm:1.6.3"],\
-          ["unhead", "npm:2.1.12"],\
+          ["unhead", "npm:2.1.13"],\
           ["unplugin", "npm:3.0.0"],\
           ["unplugin-ast", "npm:0.16.0"]\
         ],\
@@ -2799,7 +2799,7 @@ const RAW_RUNTIME_STATE =
           ["react-dom", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:19.2.4"],\
           ["sass", "npm:1.98.0"],\
           ["typescript", "patch:typescript@npm%3A5.9.3#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5"],\
-          ["unhead", "npm:2.1.12"],\
+          ["unhead", "npm:2.1.13"],\
           ["vite", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:7.3.2"],\
           ["vitest", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:4.0.18"],\
           ["vue", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:3.5.30"],\
@@ -6270,6 +6270,14 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["hookable", "npm:6.0.1"],\
           ["unhead", "npm:2.1.12"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:2.1.13", {\
+        "packageLocation": "./.yarn/cache/unhead-npm-2.1.13-2c386c5212-c8472491da.zip/node_modules/unhead/",\
+        "packageDependencies": [\
+          ["hookable", "npm:6.0.1"],\
+          ["unhead", "npm:2.1.13"]\
         ],\
         "linkType": "HARD"\
       }]\
