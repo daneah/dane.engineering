@@ -41,7 +41,7 @@ const RAW_RUNTIME_STATE =
           ["@vue/shared", "npm:3.5.30"],\
           ["@vue/test-utils", "npm:2.4.6"],\
           ["@vue/tsconfig", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:0.9.0"],\
-          ["axios", "npm:1.13.6"],\
+          ["axios", "npm:1.15.0"],\
           ["buttercms", "npm:3.0.3"],\
           ["dane.engineering", "workspace:."],\
           ["eslint", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:10.0.3"],\
@@ -2384,13 +2384,13 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["axios", [\
-      ["npm:1.13.6", {\
-        "packageLocation": "./.yarn/cache/axios-npm-1.13.6-d50d919f38-a7ed83c2af.zip/node_modules/axios/",\
+      ["npm:1.15.0", {\
+        "packageLocation": "./.yarn/cache/axios-npm-1.15.0-9132fa0a61-d39a2c0ebc.zip/node_modules/axios/",\
         "packageDependencies": [\
-          ["axios", "npm:1.13.6"],\
-          ["follow-redirects", "virtual:d50d919f386f79799dbf08310718a8c9d013b7f3b397074380009da46d244077279bb24d4805528d90f5d6fcb9c4461336f26e9e65c9ce8e9362a24682e57206#npm:1.15.11"],\
+          ["axios", "npm:1.15.0"],\
+          ["follow-redirects", "virtual:9132fa0a61efc86c3366c1f4c98c4eaafaefa0c123aca659f85cbce3e47a61c0090e4615b3b10a9c9285534e80db49e04a98baf895cccb5d9c934849464afff0#npm:1.15.11"],\
           ["form-data", "npm:4.0.5"],\
-          ["proxy-from-env", "npm:1.1.0"]\
+          ["proxy-from-env", "npm:2.1.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -2785,7 +2785,7 @@ const RAW_RUNTIME_STATE =
           ["@vue/shared", "npm:3.5.30"],\
           ["@vue/test-utils", "npm:2.4.6"],\
           ["@vue/tsconfig", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:0.9.0"],\
-          ["axios", "npm:1.13.6"],\
+          ["axios", "npm:1.15.0"],\
           ["buttercms", "npm:3.0.3"],\
           ["dane.engineering", "workspace:."],\
           ["eslint", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:10.0.3"],\
@@ -3587,12 +3587,12 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:d50d919f386f79799dbf08310718a8c9d013b7f3b397074380009da46d244077279bb24d4805528d90f5d6fcb9c4461336f26e9e65c9ce8e9362a24682e57206#npm:1.15.11", {\
-        "packageLocation": "./.yarn/__virtual__/follow-redirects-virtual-6127a471c1/0/cache/follow-redirects-npm-1.15.11-ae7b2db266-07372fd74b.zip/node_modules/follow-redirects/",\
+      ["virtual:9132fa0a61efc86c3366c1f4c98c4eaafaefa0c123aca659f85cbce3e47a61c0090e4615b3b10a9c9285534e80db49e04a98baf895cccb5d9c934849464afff0#npm:1.15.11", {\
+        "packageLocation": "./.yarn/__virtual__/follow-redirects-virtual-fdd81fa3e5/0/cache/follow-redirects-npm-1.15.11-ae7b2db266-07372fd74b.zip/node_modules/follow-redirects/",\
         "packageDependencies": [\
           ["@types/debug", null],\
           ["debug", null],\
-          ["follow-redirects", "virtual:d50d919f386f79799dbf08310718a8c9d013b7f3b397074380009da46d244077279bb24d4805528d90f5d6fcb9c4461336f26e9e65c9ce8e9362a24682e57206#npm:1.15.11"]\
+          ["follow-redirects", "virtual:9132fa0a61efc86c3366c1f4c98c4eaafaefa0c123aca659f85cbce3e47a61c0090e4615b3b10a9c9285534e80db49e04a98baf895cccb5d9c934849464afff0#npm:1.15.11"]\
         ],\
         "packagePeers": [\
           "@types/debug",\
@@ -5360,10 +5360,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["proxy-from-env", [\
-      ["npm:1.1.0", {\
-        "packageLocation": "./.yarn/cache/proxy-from-env-npm-1.1.0-c13d07f26b-f0bb4a87cf.zip/node_modules/proxy-from-env/",\
+      ["npm:2.1.0", {\
+        "packageLocation": "./.yarn/cache/proxy-from-env-npm-2.1.0-ce678f045b-fbbaf4dab2.zip/node_modules/proxy-from-env/",\
         "packageDependencies": [\
-          ["proxy-from-env", "npm:1.1.0"]\
+          ["proxy-from-env", "npm:2.1.0"]\
         ],\
         "linkType": "HARD"\
       }]\
