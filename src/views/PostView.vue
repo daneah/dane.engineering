@@ -5,7 +5,6 @@ import { useRoute } from 'vue-router'
 import { nextTick, onMounted, onUpdated, ref } from 'vue'
 import Butter from 'buttercms'
 import { useHead } from '@unhead/vue'
-import axios from 'axios'
 
 import BaseLink from '@/components/Link/BaseLink.vue'
 
@@ -59,18 +58,18 @@ onMounted(async () => {
     .then(async (response) => {
       post.value = response.data?.data as unknown as Butter.Post
 
-      await axios
-        .get(
+      await fetch(
           `https://api.buttercms.com/v2/content/blog_post_seo/?fields.post_slug=${route.params.slug}&auth_token=${apiToken}`
         )
-        .then((response) => {
+        .then((response) => response.json())
+        .then((data) => {
           canonicalLink.value =
-            response.data?.data.blog_post_seo.length > 0
-              ? response.data.data.blog_post_seo[0].canonical_link
+            data?.data.blog_post_seo.length > 0
+              ? data.data.blog_post_seo[0].canonical_link
               : ''
         })
-        .catch((response) => {
-          console.error(response)
+        .catch((error) => {
+          console.error(error)
         })
       loading.value = false
     })
