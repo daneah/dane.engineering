@@ -1881,7 +1881,7 @@ const RAW_RUNTIME_STATE =
           ["@vue/shared", "npm:3.5.30"],\
           ["estree-walker", "npm:2.0.2"],\
           ["magic-string", "npm:0.30.21"],\
-          ["postcss", "npm:8.5.8"],\
+          ["postcss", "npm:8.5.15"],\
           ["source-map-js", "npm:1.2.1"]\
         ],\
         "linkType": "HARD"\
@@ -4740,10 +4740,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["nanoid", [\
-      ["npm:3.3.11", {\
-        "packageLocation": "./.yarn/cache/nanoid-npm-3.3.11-f98c1f9ef6-73b5afe597.zip/node_modules/nanoid/",\
+      ["npm:3.3.12", {\
+        "packageLocation": "./.yarn/cache/nanoid-npm-3.3.12-41f8e0bb94-6eec280694.zip/node_modules/nanoid/",\
         "packageDependencies": [\
-          ["nanoid", "npm:3.3.11"]\
+          ["nanoid", "npm:3.3.12"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -5192,12 +5192,12 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["postcss", [\
-      ["npm:8.5.8", {\
-        "packageLocation": "./.yarn/cache/postcss-npm-8.5.8-b010bee8df-cbacbfd7f7.zip/node_modules/postcss/",\
+      ["npm:8.5.15", {\
+        "packageLocation": "./.yarn/cache/postcss-npm-8.5.15-8e6eef9b78-d02ad19eb1.zip/node_modules/postcss/",\
         "packageDependencies": [\
-          ["nanoid", "npm:3.3.11"],\
+          ["nanoid", "npm:3.3.12"],\
           ["picocolors", "npm:1.1.1"],\
-          ["postcss", "npm:8.5.8"],\
+          ["postcss", "npm:8.5.15"],\
           ["source-map-js", "npm:1.2.1"]\
         ],\
         "linkType": "HARD"\
@@ -6293,7 +6293,7 @@ const RAW_RUNTIME_STATE =
           ["less", null],\
           ["lightningcss", null],\
           ["picomatch", "npm:4.0.3"],\
-          ["postcss", "npm:8.5.8"],\
+          ["postcss", "npm:8.5.15"],\
           ["rollup", "npm:4.59.0"],\
           ["sass", "npm:1.98.0"],\
           ["sass-embedded", null],\
@@ -6351,7 +6351,7 @@ const RAW_RUNTIME_STATE =
           ["less", null],\
           ["lightningcss", null],\
           ["picomatch", "npm:4.0.3"],\
-          ["postcss", "npm:8.5.8"],\
+          ["postcss", "npm:8.5.15"],\
           ["rollup", "npm:4.59.0"],\
           ["sass", null],\
           ["sass-embedded", null],\
