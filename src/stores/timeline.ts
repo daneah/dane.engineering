@@ -10,7 +10,19 @@ export const useTimelineStore = defineStore('timeline', {
       [
         {
           image: ithaka,
-          years: [2022, -1],
+          years: [2025, -1],
+          title: 'Associate Director, Product Engineering',
+          subtitle: 'ITHAKA',
+          responsibilities: [
+            'Leading the platform engineering teams supporting the JSTOR, JSTOR Digital Stewardship Services, ITHAKA Labs, and Portico businesses.',
+            'Developing technical strategy for ITHAKA.',
+            'Leading maturity and optimization of the content processing pipeline for journals, books, and other content on JSTOR.',
+            "Lead the product engineering of JSTOR's on-demand remediation approach for accessible PDFs and image alt text.",
+          ]
+        },
+        {
+          image: ithaka,
+          years: [2022, 2025],
           title: 'Technical Architect',
           subtitle: 'ITHAKA',
           responsibilities: [
