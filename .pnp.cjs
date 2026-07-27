@@ -1745,7 +1745,7 @@ const RAW_RUNTIME_STATE =
           ["@vue/shared", "npm:3.5.30"],\
           ["estree-walker", "npm:2.0.2"],\
           ["magic-string", "npm:0.30.21"],\
-          ["postcss", "npm:8.5.15"],\
+          ["postcss", "npm:8.5.23"],\
           ["source-map-js", "npm:1.2.1"]\
         ],\
         "linkType": "HARD"\
@@ -4744,13 +4744,6 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["nanoid", [\
-      ["npm:3.3.12", {\
-        "packageLocation": "./.yarn/cache/nanoid-npm-3.3.12-41f8e0bb94-6eec280694.zip/node_modules/nanoid/",\
-        "packageDependencies": [\
-          ["nanoid", "npm:3.3.12"]\
-        ],\
-        "linkType": "HARD"\
-      }],\
       ["npm:3.3.16", {\
         "packageLocation": "./.yarn/cache/nanoid-npm-3.3.16-dbca216f06-8004af92b5.zip/node_modules/nanoid/",\
         "packageDependencies": [\
@@ -5226,16 +5219,6 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["postcss", [\
-      ["npm:8.5.15", {\
-        "packageLocation": "./.yarn/cache/postcss-npm-8.5.15-8e6eef9b78-d02ad19eb1.zip/node_modules/postcss/",\
-        "packageDependencies": [\
-          ["nanoid", "npm:3.3.12"],\
-          ["picocolors", "npm:1.1.1"],\
-          ["postcss", "npm:8.5.15"],\
-          ["source-map-js", "npm:1.2.1"]\
-        ],\
-        "linkType": "HARD"\
-      }],\
       ["npm:8.5.23", {\
         "packageLocation": "./.yarn/cache/postcss-npm-8.5.23-ea01eac089-8387f42121.zip/node_modules/postcss/",\
         "packageDependencies": [\
