@@ -4196,7 +4196,7 @@ const RAW_RUNTIME_STATE =
           ["saxes", "npm:6.0.0"],\
           ["symbol-tree", "npm:3.2.4"],\
           ["tough-cookie", "npm:6.0.2"],\
-          ["undici", "npm:8.9.0"],\
+          ["undici", "npm:8.11.2"],\
           ["w3c-xmlserializer", "npm:5.0.0"],\
           ["webidl-conversions", "npm:8.0.1"],\
           ["whatwg-mimetype", "npm:5.0.0"],\
@@ -6180,10 +6180,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["undici", [\
-      ["npm:8.9.0", {\
-        "packageLocation": "./.yarn/cache/undici-npm-8.9.0-493171ffbc-dfad3e2330.zip/node_modules/undici/",\
+      ["npm:8.11.2", {\
+        "packageLocation": "./.yarn/cache/undici-npm-8.11.2-527c40428e-a6d851b0a4.zip/node_modules/undici/",\
         "packageDependencies": [\
-          ["undici", "npm:8.9.0"]\
+          ["undici", "npm:8.11.2"]\
         ],\
         "linkType": "HARD"\
       }]\
