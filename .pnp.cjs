@@ -4864,7 +4864,7 @@ const RAW_RUNTIME_STATE =
           ["npm-run-all", "npm:4.1.5"],\
           ["pidtree", "npm:0.3.1"],\
           ["read-pkg", "npm:3.0.0"],\
-          ["shell-quote", "npm:1.10.0"],\
+          ["shell-quote", "npm:1.12.0"],\
           ["string.prototype.padend", "npm:3.1.4"]\
         ],\
         "linkType": "HARD"\
@@ -5628,10 +5628,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["shell-quote", [\
-      ["npm:1.10.0", {\
-        "packageLocation": "./.yarn/cache/shell-quote-npm-1.10.0-8aabc0056e-d4a22aeefe.zip/node_modules/shell-quote/",\
+      ["npm:1.12.0", {\
+        "packageLocation": "./.yarn/cache/shell-quote-npm-1.12.0-07cdcb44f1-18b3e38227.zip/node_modules/shell-quote/",\
         "packageDependencies": [\
-          ["shell-quote", "npm:1.10.0"]\
+          ["shell-quote", "npm:1.12.0"]\
         ],\
         "linkType": "HARD"\
       }]\
