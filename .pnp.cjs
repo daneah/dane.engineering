@@ -3126,7 +3126,7 @@ const RAW_RUNTIME_STATE =
           ["eslint-plugin-vue", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:10.10.0"],\
           ["natural-compare", "npm:1.4.0"],\
           ["nth-check", "npm:2.1.1"],\
-          ["postcss-selector-parser", "npm:7.1.4"],\
+          ["postcss-selector-parser", "npm:7.1.7"],\
           ["semver", "npm:7.8.5"],\
           ["vue-eslint-parser", "virtual:188c8f844daa6079bc555afe37eaa3bf1c26c16b2ade55a0de66a44dfedfbb53902633bc8d04138eed2fc32105bfa3ed1c2495802f7936f09816ab4a8197e92c#npm:10.4.1"],\
           ["xml-name-validator", "npm:5.0.0"]\
@@ -5234,11 +5234,11 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["postcss-selector-parser", [\
-      ["npm:7.1.4", {\
-        "packageLocation": "./.yarn/cache/postcss-selector-parser-npm-7.1.4-c111b52950-c6d36b37de.zip/node_modules/postcss-selector-parser/",\
+      ["npm:7.1.7", {\
+        "packageLocation": "./.yarn/cache/postcss-selector-parser-npm-7.1.7-3588268a74-9413749ad3.zip/node_modules/postcss-selector-parser/",\
         "packageDependencies": [\
           ["cssesc", "npm:3.0.0"],\
-          ["postcss-selector-parser", "npm:7.1.4"],\
+          ["postcss-selector-parser", "npm:7.1.7"],\
           ["util-deprecate", "npm:1.0.2"]\
         ],\
         "linkType": "HARD"\
